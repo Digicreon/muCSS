@@ -14,7 +14,23 @@ Lightweight CSS framework built on [PicoCSS v2](https://picocss.com/), part of t
 
 ## Installation
 
-Include a single CSS file from `dist/`:
+### CDN (jsDelivr)
+
+```html
+<!-- Default theme (azure) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@digicreon/mucss/dist/mu.css">
+
+<!-- Or pick a specific color theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@digicreon/mucss/dist/mu.violet.css">
+```
+
+### npm
+
+```bash
+npm install @digicreon/mucss
+```
+
+### Local
 
 ```html
 <!-- Default theme (azure) -->
