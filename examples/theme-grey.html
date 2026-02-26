@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Theme: Grey</title>
+	<link rel="stylesheet" href="../dist/mu.grey.css">
+	<style>.demo-grid [class*="col-"] > div { background: var(--pico-primary-background); color: var(--pico-primary); padding: 0.5rem; text-align: center; border-radius: 0.25rem; font-size: 0.875rem; }</style>
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Theme: Grey</h1>
+			<p>All components using the <strong>grey</strong> color theme.</p>
+		</hgroup>
+
+		<p>
+			<a href="index.html">&larr; Back to examples</a>&nbsp;&nbsp;
+			<button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button>
+		</p>
+
+		<!-- Buttons -->
+		<section>
+			<h2>Buttons</h2>
+			<p>
+				<button class="btn btn-primary">Primary</button>
+				<button class="btn btn-secondary">Secondary</button>
+				<button class="btn btn-tertiary">Tertiary</button>
+				<button class="btn btn-contrast">Contrast</button>
+				<button class="btn btn-success">Success</button>
+				<button class="btn btn-info">Info</button>
+				<button class="btn btn-warning">Warning</button>
+				<button class="btn btn-error">Error</button>
+			</p>
+			<p>
+				<button class="btn btn-ghost btn-primary">Ghost</button>
+				<button class="btn btn-link">Link</button>
+			</p>
+		</section>
+
+		<!-- Alerts -->
+		<section>
+			<h2>Alerts</h2>
+			<div class="alert alert-primary"><span class="alert-title">Primary</span><p>This is a primary alert.</p></div>
+			<div class="alert alert-success"><span class="alert-title">Success</span><p>This is a success alert.</p></div>
+			<div class="alert alert-warning"><span class="alert-title">Warning</span><p>This is a warning alert.</p></div>
+			<div class="alert alert-error"><span class="alert-title">Error</span><p>This is an error alert.</p></div>
+		</section>
+
+		<!-- Badges -->
+		<section>
+			<h2>Badges</h2>
+			<p>
+				<span class="badge badge-primary">Primary</span>
+				<span class="badge badge-secondary">Secondary</span>
+				<span class="badge badge-tertiary">Tertiary</span>
+				<span class="badge badge-contrast">Contrast</span>
+				<span class="badge badge-success">Success</span>
+				<span class="badge badge-info">Info</span>
+				<span class="badge badge-warning">Warning</span>
+				<span class="badge badge-error">Error</span>
+			</p>
+			<p>
+				<span class="badge badge-outline badge-primary">Outline</span>
+				<span class="badge badge-primary badge-pill">Pill</span>
+			</p>
+		</section>
+
+		<!-- Cards -->
+		<section>
+			<h2>Cards</h2>
+			<div class="row">
+				<div class="col-12 col-md-6">
+					<article class="card-primary">
+						<header>Primary card</header>
+						Card body content.
+						<footer>Footer</footer>
+					</article>
+				</div>
+				<div class="col-12 col-md-6">
+					<article class="card-success">
+						<header>Success card</header>
+						Card body content.
+						<footer>Footer</footer>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- Accordion -->
+		<section>
+			<h2>Accordion</h2>
+			<div class="accordion">
+				<details open>
+					<summary>Section One</summary>
+					<p>Content for section one.</p>
+				</details>
+				<details>
+					<summary>Section Two</summary>
+					<p>Content for section two.</p>
+				</details>
+				<details>
+					<summary>Section Three</summary>
+					<p>Content for section three.</p>
+				</details>
+			</div>
+		</section>
+
+		<!-- Breadcrumb -->
+		<section>
+			<h2>Breadcrumb</h2>
+			<nav aria-label="Breadcrumb">
+				<ul class="breadcrumb">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Category</a></li>
+					<li aria-current="page">Current Page</li>
+				</ul>
+			</nav>
+		</section>
+
+		<!-- Tabs -->
+		<section>
+			<h2>Tabs</h2>
+			<ul class="tabs" role="tablist">
+				<li><a href="#" role="tab" aria-selected="true" data-tab="t-1">Active</a></li>
+				<li><a href="#" role="tab" data-tab="t-2">Profile</a></li>
+				<li><a href="#" role="tab" data-tab="t-3">Settings</a></li>
+			</ul>
+			<div data-tab-panel="t-1">Active tab content.</div>
+			<div data-tab-panel="t-2" hidden>Profile tab content.</div>
+			<div data-tab-panel="t-3" hidden>Settings tab content.</div>
+		</section>
+
+		<!-- Table -->
+		<section>
+			<h2>Table</h2>
+			<table class="table-striped table-hover table-bordered table-fullwidth">
+				<thead>
+					<tr><th>Name</th><th>Role</th><th>Status</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>Alice</td><td>Developer</td><td>Active</td></tr>
+					<tr><td>Bob</td><td>Designer</td><td>Active</td></tr>
+					<tr><td>Charlie</td><td>Manager</td><td>Away</td></tr>
+					<tr><td>Diana</td><td>Developer</td><td>Active</td></tr>
+				</tbody>
+			</table>
+		</section>
+
+		<!-- Forms -->
+		<section>
+			<h2>Forms</h2>
+			<label>Default input
+				<input type="text" placeholder="Type something...">
+			</label>
+			<label>Success
+				<input type="text" class="input-success" value="Valid value">
+			</label>
+			<label>Warning
+				<input type="text" class="input-warning" value="Needs attention">
+			</label>
+			<label>Select
+				<select><option>Option 1</option><option>Option 2</option></select>
+			</label>
+		</section>
+
+		<!-- Progress -->
+		<section>
+			<h2>Progress</h2>
+			<progress class="progress-primary" value="75" max="100">75%</progress>
+			<progress class="progress-success" value="60" max="100">60%</progress>
+			<progress class="progress-warning" value="40" max="100">40%</progress>
+			<progress class="progress-error" value="20" max="100">20%</progress>
+		</section>
+
+		<!-- Spinners -->
+		<section>
+			<h2>Spinners</h2>
+			<p>
+				<span class="spinner spinner-primary"></span>&nbsp;
+				<span class="spinner spinner-secondary"></span>&nbsp;
+				<span class="spinner spinner-success"></span>&nbsp;
+				<span class="spinner spinner-info"></span>&nbsp;
+				<span class="spinner spinner-warning"></span>&nbsp;
+				<span class="spinner spinner-error"></span>
+			</p>
+		</section>
+
+		<!-- Pagination -->
+		<section>
+			<h2>Pagination</h2>
+			<nav aria-label="Pagination">
+				<ul class="pagination">
+					<li class="pagination-prev"><a href="#">&laquo; Prev</a></li>
+					<li><a href="#">1</a></li>
+					<li class="active"><a href="#" aria-current="page">2</a></li>
+					<li><a href="#">3</a></li>
+					<li class="pagination-ellipsis"><span>&hellip;</span></li>
+					<li><a href="#">10</a></li>
+					<li class="pagination-next"><a href="#">Next &raquo;</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<!-- Grid -->
+		<section class="demo-grid">
+			<h2>Grid</h2>
+			<div class="row">
+				<div class="col-4"><div>col-4</div></div>
+				<div class="col-4"><div>col-4</div></div>
+				<div class="col-4"><div>col-4</div></div>
+			</div>
+			<div class="row">
+				<div class="col-6"><div>col-6</div></div>
+				<div class="col-6"><div>col-6</div></div>
+			</div>
+		</section>
+
+		<!-- Modal -->
+		<section>
+			<h2>Modal</h2>
+			<button class="btn btn-primary" onclick="document.getElementById('demo-modal').showModal()">Open modal</button>
+			<dialog id="demo-modal">
+				<article>
+					<button class="modal-close" aria-label="Close" onclick="document.getElementById('demo-modal').close()">&times;</button>
+					<h3>Modal title</h3>
+					<p>This is a modal dialog using the Grey theme.</p>
+					<footer>
+						<button class="btn btn-primary" onclick="document.getElementById('demo-modal').close()">Close</button>
+					</footer>
+				</article>
+			</dialog>
+		</section>
+
+		<!-- Typography -->
+		<section>
+			<h2>Typography</h2>
+			<hgroup>
+				<h3>Heading group</h3>
+				<p>With a subtitle underneath.</p>
+			</hgroup>
+			<blockquote>
+				"Design is not just what it looks like. Design is how it works."
+				<footer><cite>Steve Jobs</cite></footer>
+			</blockquote>
+			<p>Inline: <strong>bold</strong>, <em>italic</em>, <mark>highlighted</mark>, <code>code</code>, <kbd>Ctrl+C</kbd>, <abbr title="Cascading Style Sheets">CSS</abbr>.</p>
+			<pre><code>&lt;link rel="stylesheet" href="mu.css"&gt;</code></pre>
+		</section>
+
+		<!-- Tooltip -->
+		<section>
+			<h2>Tooltip</h2>
+			<p>
+				<span data-tooltip="Top tooltip" data-placement="top" style="text-decoration:underline dotted;cursor:help">Top</span> &nbsp;
+				<span data-tooltip="Bottom tooltip" data-placement="bottom" style="text-decoration:underline dotted;cursor:help">Bottom</span> &nbsp;
+				<span data-tooltip="Left tooltip" data-placement="left" style="text-decoration:underline dotted;cursor:help">Left</span> &nbsp;
+				<span data-tooltip="Right tooltip" data-placement="right" style="text-decoration:underline dotted;cursor:help">Right</span>
+			</p>
+		</section>
+
+		<!-- Dropdown -->
+		<section>
+			<h2>Dropdown</h2>
+			<div style="display:flex;gap:1rem;flex-wrap:wrap">
+				<details class="dropdown">
+					<summary role="button">Primary</summary>
+					<ul><li><a href="#">Action 1</a></li><li><a href="#">Action 2</a></li></ul>
+				</details>
+				<details class="dropdown">
+					<summary role="button" class="secondary">Secondary</summary>
+					<ul><li><a href="#">Action 1</a></li><li><a href="#">Action 2</a></li></ul>
+				</details>
+				<details class="dropdown">
+					<summary role="button" class="outline">Outline</summary>
+					<ul><li><a href="#">Action 1</a></li><li><a href="#">Action 2</a></li></ul>
+				</details>
+			</div>
+		</section>
+
+		<!-- Group -->
+		<section>
+			<h2>Group</h2>
+			<div role="group">
+				<input type="email" placeholder="Enter your email">
+				<button>Subscribe</button>
+			</div>
+			<div role="group">
+				<button class="outline">Day</button>
+				<button class="outline">Week</button>
+				<button class="outline">Month</button>
+			</div>
+		</section>
+
+		<!-- Loading -->
+		<section>
+			<h2>Loading</h2>
+			<p>
+				<button aria-busy="true">Please wait...</button>
+				<button aria-busy="true" class="secondary">Loading</button>
+			</p>
+		</section>
+
+		<!-- Switch -->
+		<section>
+			<h2>Switch</h2>
+			<label><input type="checkbox" role="switch"> Off</label>
+			<label><input type="checkbox" role="switch" checked> On</label>
+			<label><input type="checkbox" role="switch" disabled> Disabled</label>
+		</section>
+
+		<!-- Checkbox & Radio -->
+		<section>
+			<h2>Checkbox &amp; Radio</h2>
+			<fieldset>
+				<legend>Checkboxes</legend>
+				<label><input type="checkbox" checked> Option A</label>
+				<label><input type="checkbox"> Option B</label>
+				<label><input type="checkbox" disabled> Disabled</label>
+			</fieldset>
+			<fieldset>
+				<legend>Radios</legend>
+				<label><input type="radio" name="demo-radio" checked> Choice 1</label>
+				<label><input type="radio" name="demo-radio"> Choice 2</label>
+				<label><input type="radio" name="demo-radio" disabled> Disabled</label>
+			</fieldset>
+		</section>
+
+		<!-- Range -->
+		<section>
+			<h2>Range</h2>
+			<label>Volume
+				<input type="range" min="0" max="100" value="50">
+			</label>
+		</section>
+
+		<!-- Forms advanced -->
+		<section>
+			<h2>Advanced form inputs</h2>
+			<label>Color <input type="color" value="#0172ad"></label>
+			<label>Date <input type="date"></label>
+			<label>File <input type="file"></label>
+			<label>Search <input type="search" placeholder="Search..."></label>
+		</section>
+
+	</main>
+
+	<script>
+	document.addEventListener("click", function(e) {
+		var tab = e.target.closest("[data-tab]");
+		if (!tab) return;
+		e.preventDefault();
+		var tablist = tab.closest("[role='tablist']");
+		tablist.querySelectorAll("[data-tab]").forEach(function(t) {
+			t.setAttribute("aria-selected", "false");
+		});
+		tab.setAttribute("aria-selected", "true");
+		var section = tablist.parentElement;
+		section.querySelectorAll("[data-tab-panel]").forEach(function(panel) {
+			panel.hidden = (panel.dataset.tabPanel !== tab.dataset.tab);
+		});
+	});
+	</script>
+</body>
+</html>

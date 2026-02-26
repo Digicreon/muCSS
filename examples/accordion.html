@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Accordion</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Accordion</h1>
+			<p>Collapsible sections built with native <code>&lt;details&gt;</code> elements.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Basic accordion</h2>
+			<div class="accordion">
+				<details open>
+					<summary>Section One</summary>
+					<p>This section is open by default. The accordion uses native HTML <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> elements — no JavaScript required for basic functionality.</p>
+				</details>
+				<details>
+					<summary>Section Two</summary>
+					<p>Each section can contain any HTML content. The chevron indicator rotates when the section is expanded.</p>
+				</details>
+				<details>
+					<summary>Section Three</summary>
+					<p>Sections are separated by borders automatically. The first and last items get rounded corners from the container.</p>
+				</details>
+			</div>
+		</section>
+
+		<section>
+			<h2>All sections closed</h2>
+			<div class="accordion">
+				<details>
+					<summary>First item</summary>
+					<p>Content for the first item.</p>
+				</details>
+				<details>
+					<summary>Second item</summary>
+					<p>Content for the second item.</p>
+				</details>
+				<details>
+					<summary>Third item</summary>
+					<p>Content for the third item.</p>
+				</details>
+			</div>
+		</section>
+
+		<section>
+			<h2>Rich content</h2>
+			<div class="accordion">
+				<details open>
+					<summary>With nested elements</summary>
+					<p>Accordions can contain any HTML:</p>
+					<ul>
+						<li>Unordered lists</li>
+						<li>Paragraphs and <strong>inline formatting</strong></li>
+						<li>Any block-level content</li>
+					</ul>
+				</details>
+				<details>
+					<summary>With a table</summary>
+					<table>
+						<thead><tr><th>Name</th><th>Value</th></tr></thead>
+						<tbody>
+							<tr><td>Alpha</td><td>100</td></tr>
+							<tr><td>Beta</td><td>200</td></tr>
+						</tbody>
+					</table>
+				</details>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

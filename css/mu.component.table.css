@@ -1,0 +1,24 @@
+/*
+ * µCSS Component: Table
+ */
+
+.table-striped tbody tr:nth-child(odd) th,
+.table-striped tbody tr:nth-child(odd) td {
+	background-color: color-mix(in srgb, var(--pico-secondary-background) 50%, transparent);
+}
+.table-hover tbody tr:hover th,
+.table-hover tbody tr:hover td {
+	background-color: var(--pico-secondary-background);
+}
+.table-bordered,
+.table-bordered th,
+.table-bordered td {
+	border: 1px solid var(--pico-secondary-background);
+}
+.table-compact th,
+.table-compact td {
+	padding: 0.25rem 0.5rem;
+}
+.table-fullwidth {
+	width: 100%;
+}

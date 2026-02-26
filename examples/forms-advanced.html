@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Forms (advanced)</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Forms (advanced)</h1>
+			<p>Specialized input types: color, date, time, file, search.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Color picker</h2>
+			<label>Pick a color
+				<input type="color" value="#0172ad">
+			</label>
+		</section>
+
+		<section>
+			<h2>Date &amp; time</h2>
+			<label>Date
+				<input type="date">
+			</label>
+			<label>Time
+				<input type="time">
+			</label>
+			<label>Date and time
+				<input type="datetime-local">
+			</label>
+			<label>Month
+				<input type="month">
+			</label>
+			<label>Week
+				<input type="week">
+			</label>
+		</section>
+
+		<section>
+			<h2>File upload</h2>
+			<label>Choose a file
+				<input type="file">
+			</label>
+			<label>Multiple files
+				<input type="file" multiple>
+			</label>
+		</section>
+
+		<section>
+			<h2>Search</h2>
+			<label>Search
+				<input type="search" placeholder="Search...">
+			</label>
+			<h3>Search with group</h3>
+			<div role="search">
+				<input type="search" placeholder="Search...">
+				<button>Go</button>
+			</div>
+		</section>
+
+		<section>
+			<h2>Other input types</h2>
+			<label>Number
+				<input type="number" value="42" min="0" max="100">
+			</label>
+			<label>URL
+				<input type="url" placeholder="https://example.com">
+			</label>
+			<label>Telephone
+				<input type="tel" placeholder="+1 (555) 123-4567">
+			</label>
+			<label>Password
+				<input type="password" value="secret123">
+			</label>
+		</section>
+
+		<section>
+			<h2>Disabled &amp; readonly</h2>
+			<label>Disabled input
+				<input type="text" value="Cannot edit" disabled>
+			</label>
+			<label>Readonly input
+				<input type="text" value="Read only" readonly>
+			</label>
+		</section>
+
+		<section>
+			<h2>Helper text</h2>
+			<label>Email
+				<input type="email" placeholder="user@example.com" aria-invalid="true">
+				<small>Please enter a valid email address.</small>
+			</label>
+			<label>Username
+				<input type="text" value="johndoe" aria-invalid="false">
+				<small>Username is available.</small>
+			</label>
+		</section>
+	</main>
+</body>
+</html>

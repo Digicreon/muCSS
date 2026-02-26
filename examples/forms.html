@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Forms</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Forms</h1>
+			<p>Extended form controls with sizes and validation states.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Input sizes</h2>
+			<label>Small input
+				<input type="text" class="input-sm" placeholder="Small input">
+			</label>
+			<label>Default input
+				<input type="text" placeholder="Default input">
+			</label>
+			<label>Large input
+				<input type="text" class="input-lg" placeholder="Large input">
+			</label>
+		</section>
+
+		<section>
+			<h2>Textarea sizes</h2>
+			<label>Small textarea
+				<textarea class="input-sm" placeholder="Small textarea"></textarea>
+			</label>
+			<label>Large textarea
+				<textarea class="input-lg" placeholder="Large textarea"></textarea>
+			</label>
+		</section>
+
+		<section>
+			<h2>Select sizes</h2>
+			<label>Small select
+				<select class="input-sm">
+					<option>Option 1</option>
+					<option>Option 2</option>
+					<option>Option 3</option>
+				</select>
+			</label>
+			<label>Large select
+				<select class="input-lg">
+					<option>Option 1</option>
+					<option>Option 2</option>
+					<option>Option 3</option>
+				</select>
+			</label>
+		</section>
+
+		<section>
+			<h2>Validation states</h2>
+			<label>Success (input-success)
+				<input type="text" class="input-success" value="Valid value">
+			</label>
+			<label>Warning (input-warning)
+				<input type="text" class="input-warning" value="Needs attention">
+			</label>
+			<label>Error (aria-invalid)
+				<input type="text" aria-invalid="true" value="Invalid value">
+			</label>
+		</section>
+
+		<section>
+			<h2>Validation on textarea</h2>
+			<label>Success textarea
+				<textarea class="input-success">This content is valid.</textarea>
+			</label>
+			<label>Warning textarea
+				<textarea class="input-warning">This content needs review.</textarea>
+			</label>
+		</section>
+
+		<section>
+			<h2>Validation on select</h2>
+			<label>Success select
+				<select class="input-success">
+					<option>Valid choice</option>
+				</select>
+			</label>
+			<label>Warning select
+				<select class="input-warning">
+					<option>Needs review</option>
+				</select>
+			</label>
+		</section>
+
+		<section>
+			<h2>Combined: size + validation</h2>
+			<label>Small + success
+				<input type="text" class="input-sm input-success" value="Small valid">
+			</label>
+			<label>Large + warning
+				<input type="text" class="input-lg input-warning" value="Large needs attention">
+			</label>
+		</section>
+	</main>
+</body>
+</html>

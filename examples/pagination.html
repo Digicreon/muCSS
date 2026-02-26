@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Pagination</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Pagination</h1>
+			<p>Page navigation with alignment, sizes, and responsive variants.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Basic</h2>
+			<nav aria-label="Pagination">
+				<ul class="pagination">
+					<li class="pagination-prev"><a href="#">&laquo; Prev</a></li>
+					<li><a href="#">1</a></li>
+					<li class="active"><a href="#" aria-current="page">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li class="pagination-next"><a href="#">Next &raquo;</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>With ellipsis and disabled</h2>
+			<nav aria-label="Pagination">
+				<ul class="pagination">
+					<li class="pagination-prev disabled"><a href="#">&laquo; Prev</a></li>
+					<li class="active"><a href="#" aria-current="page">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li class="pagination-ellipsis"><span>&hellip;</span></li>
+					<li><a href="#">20</a></li>
+					<li class="pagination-next"><a href="#">Next &raquo;</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>Centered</h2>
+			<nav aria-label="Pagination">
+				<ul class="pagination pagination-centered">
+					<li class="pagination-prev"><a href="#">&laquo;</a></li>
+					<li><a href="#">1</a></li>
+					<li class="active"><a href="#" aria-current="page">2</a></li>
+					<li><a href="#">3</a></li>
+					<li class="pagination-next"><a href="#">&raquo;</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>End-aligned</h2>
+			<nav aria-label="Pagination">
+				<ul class="pagination pagination-end">
+					<li class="pagination-prev"><a href="#">&laquo;</a></li>
+					<li><a href="#">1</a></li>
+					<li class="active"><a href="#" aria-current="page">2</a></li>
+					<li><a href="#">3</a></li>
+					<li class="pagination-next"><a href="#">&raquo;</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>Small</h2>
+			<nav aria-label="Pagination">
+				<ul class="pagination pagination-sm">
+					<li class="pagination-prev"><a href="#">&laquo;</a></li>
+					<li><a href="#">1</a></li>
+					<li class="active"><a href="#" aria-current="page">2</a></li>
+					<li><a href="#">3</a></li>
+					<li class="pagination-next"><a href="#">&raquo;</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>Large</h2>
+			<nav aria-label="Pagination">
+				<ul class="pagination pagination-lg">
+					<li class="pagination-prev"><a href="#">&laquo;</a></li>
+					<li><a href="#">1</a></li>
+					<li class="active"><a href="#" aria-current="page">2</a></li>
+					<li><a href="#">3</a></li>
+					<li class="pagination-next"><a href="#">&raquo;</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>Borderless</h2>
+			<nav aria-label="Pagination">
+				<ul class="pagination pagination-borderless">
+					<li class="pagination-prev"><a href="#">&laquo;</a></li>
+					<li><a href="#">1</a></li>
+					<li class="active"><a href="#" aria-current="page">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li class="pagination-next"><a href="#">&raquo;</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>Responsive</h2>
+			<p>On mobile (&lt;640px), only the active page and prev/next are shown.</p>
+			<nav aria-label="Pagination">
+				<ul class="pagination pagination-responsive">
+					<li class="pagination-prev"><a href="#">&laquo; Prev</a></li>
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li class="active"><a href="#" aria-current="page">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li class="pagination-next"><a href="#">Next &raquo;</a></li>
+				</ul>
+			</nav>
+		</section>
+	</main>
+</body>
+</html>

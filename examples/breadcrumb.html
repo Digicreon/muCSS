@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Breadcrumb</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Breadcrumb</h1>
+			<p>Navigation trail with multiple separator styles and a boxed variant.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Default separator (/)</h2>
+			<nav aria-label="Breadcrumb">
+				<ul class="breadcrumb">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Products</a></li>
+					<li><a href="#">Category</a></li>
+					<li aria-current="page">Current Page</li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>Arrow separator (&rsaquo;)</h2>
+			<nav aria-label="Breadcrumb">
+				<ul class="breadcrumb breadcrumb-arrow">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Library</a></li>
+					<li aria-current="page">Article</li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>Dot separator (&middot;)</h2>
+			<nav aria-label="Breadcrumb">
+				<ul class="breadcrumb breadcrumb-dot">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Settings</a></li>
+					<li aria-current="page">Profile</li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>Chevron separator (&raquo;)</h2>
+			<nav aria-label="Breadcrumb">
+				<ul class="breadcrumb breadcrumb-chevron">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Dashboard</a></li>
+					<li><a href="#">Reports</a></li>
+					<li aria-current="page">Monthly</li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>Boxed</h2>
+			<nav aria-label="Breadcrumb">
+				<ul class="breadcrumb breadcrumb-boxed">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Account</a></li>
+					<li aria-current="page">Settings</li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>Boxed with arrow</h2>
+			<nav aria-label="Breadcrumb">
+				<ul class="breadcrumb breadcrumb-boxed breadcrumb-arrow">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Projects</a></li>
+					<li aria-current="page">µCSS</li>
+				</ul>
+			</nav>
+		</section>
+	</main>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Progress</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Progress</h1>
+			<p>Colored progress bars using the native <code>&lt;progress&gt;</code> element.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>All 8 color variants</h2>
+			<label>Primary (75%)
+				<progress class="progress-primary" value="75" max="100">75%</progress>
+			</label>
+			<label>Secondary (60%)
+				<progress class="progress-secondary" value="60" max="100">60%</progress>
+			</label>
+			<label>Tertiary (45%)
+				<progress class="progress-tertiary" value="45" max="100">45%</progress>
+			</label>
+			<label>Contrast (90%)
+				<progress class="progress-contrast" value="90" max="100">90%</progress>
+			</label>
+			<label>Success (80%)
+				<progress class="progress-success" value="80" max="100">80%</progress>
+			</label>
+			<label>Info (50%)
+				<progress class="progress-info" value="50" max="100">50%</progress>
+			</label>
+			<label>Warning (35%)
+				<progress class="progress-warning" value="35" max="100">35%</progress>
+			</label>
+			<label>Error (20%)
+				<progress class="progress-error" value="20" max="100">20%</progress>
+			</label>
+		</section>
+
+		<section>
+			<h2>Various values</h2>
+			<label>0%
+				<progress class="progress-primary" value="0" max="100">0%</progress>
+			</label>
+			<label>25%
+				<progress class="progress-success" value="25" max="100">25%</progress>
+			</label>
+			<label>50%
+				<progress class="progress-info" value="50" max="100">50%</progress>
+			</label>
+			<label>100%
+				<progress class="progress-primary" value="100" max="100">100%</progress>
+			</label>
+		</section>
+
+		<section>
+			<h2>Indeterminate</h2>
+			<progress class="progress-primary">Loading...</progress>
+		</section>
+	</main>
+</body>
+</html>

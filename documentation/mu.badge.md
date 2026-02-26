@@ -1,0 +1,155 @@
+# µBadge
+
+**µBadge** is an inline label and counter component, part of the [µCSS](.) framework. It supports 8 color variants, outline style, pill shape, three sizes, and an attached positioning mode for notification counters.
+
+---
+
+## Basic usage
+
+Apply `.badge` along with a color variant class to a `<span>`:
+
+```html
+<span class="badge badge-primary">Primary</span>
+```
+
+The default badge (without a color class) uses `--pico-contrast` as its background color.
+
+---
+
+## Color variants (filled)
+
+All 8 color roles are available:
+
+```html
+<span class="badge badge-primary">Primary</span>
+<span class="badge badge-secondary">Secondary</span>
+<span class="badge badge-tertiary">Tertiary</span>
+<span class="badge badge-contrast">Contrast</span>
+<span class="badge badge-success">Success</span>
+<span class="badge badge-info">Info</span>
+<span class="badge badge-warning">Warning</span>
+<span class="badge badge-error">Error</span>
+```
+
+| Class | Background | Text color | Border |
+|-------|-----------|------------|--------|
+| `.badge-primary` | `--pico-primary` | `--pico-primary-inverse` | `--pico-primary` |
+| `.badge-secondary` | `--pico-secondary` | `--pico-secondary-inverse` | `--pico-secondary` |
+| `.badge-tertiary` | `--pico-tertiary` | `--pico-tertiary-inverse` | `--pico-tertiary` |
+| `.badge-contrast` | `--pico-contrast` | `--pico-contrast-inverse` | `--pico-contrast` |
+| `.badge-success` | `--pico-success` | `--pico-success-inverse` | `--pico-success` |
+| `.badge-info` | `--pico-info` | `--pico-info-inverse` | `--pico-info` |
+| `.badge-warning` | `--pico-warning` | `--pico-warning-inverse` | `--pico-warning` |
+| `.badge-error` | `--pico-error` | `--pico-error-inverse` | `--pico-error` |
+
+---
+
+## Outline variant
+
+Add `.badge-outline` to remove the background and keep only the border and colored text:
+
+```html
+<span class="badge badge-outline badge-primary">Primary</span>
+<span class="badge badge-outline badge-secondary">Secondary</span>
+<span class="badge badge-outline badge-tertiary">Tertiary</span>
+<span class="badge badge-outline badge-contrast">Contrast</span>
+<span class="badge badge-outline badge-success">Success</span>
+<span class="badge badge-outline badge-info">Info</span>
+<span class="badge badge-outline badge-warning">Warning</span>
+<span class="badge badge-outline badge-error">Error</span>
+```
+
+The `.badge-outline` class sets `background-color: transparent` and changes the text color to match the role color.
+
+---
+
+## Pill shape
+
+Add `.badge-pill` for fully rounded corners (useful for counters and short labels):
+
+```html
+<span class="badge badge-primary badge-pill">12</span>
+<span class="badge badge-success badge-pill">99+</span>
+<span class="badge badge-error badge-pill">New</span>
+<span class="badge badge-outline badge-info badge-pill">Beta</span>
+```
+
+---
+
+## Sizes
+
+Three sizes are available:
+
+```html
+<span class="badge badge-primary badge-sm">Small</span>
+<span class="badge badge-primary">Default</span>
+<span class="badge badge-primary badge-lg">Large</span>
+```
+
+| Class | Font size | Padding |
+|-------|-----------|---------|
+| `.badge-sm` | `0.6875rem` | `0.15em 0.4em` |
+| *(default)* | `0.75rem` | `0.2em 0.55em` |
+| `.badge-lg` | `0.875rem` | `0.3em 0.7em` |
+
+---
+
+## Attached (notification counter)
+
+Use `.badge-attached` to position a badge as a notification counter on the corner of a parent element. The parent must have `position: relative`:
+
+```html
+<span style="position: relative; display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--pico-secondary-background); border-radius: 0.375rem;">
+    Inbox
+    <span class="badge badge-error badge-attached badge-pill">3</span>
+</span>
+
+<span style="position: relative; display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--pico-secondary-background); border-radius: 0.375rem;">
+    Notifications
+    <span class="badge badge-warning badge-attached badge-pill">12</span>
+</span>
+```
+
+The `.badge-attached` class uses absolute positioning (`top: -0.4em; right: -0.4em`) and a pill border-radius. It has a smaller font size (`0.625rem`) and minimum dimensions of `1.2em`.
+
+---
+
+## As links
+
+Badges can be rendered as `<a>` or `<button>` elements for clickable behavior:
+
+```html
+<a class="badge badge-primary" href="#">Clickable</a>
+<a class="badge badge-outline badge-success" href="#">Link badge</a>
+```
+
+Link and button badges remove text-decoration, use a pointer cursor, and reduce opacity to `0.85` on hover.
+
+---
+
+## CSS classes reference
+
+| Class | Description |
+|-------|-------------|
+| `.badge` | Base badge (inline-flex, padding, font-size, border-radius) |
+| `.badge-{color}` | Color variant (`primary`, `secondary`, `tertiary`, `contrast`, `success`, `info`, `warning`, `error`) |
+| `.badge-outline` | Transparent background, colored text and border |
+| `.badge-pill` | Fully rounded corners (`border-radius: 50rem`) |
+| `.badge-sm` | Small size |
+| `.badge-lg` | Large size |
+| `.badge-attached` | Absolute positioning for notification counters |
+
+---
+
+## Styling details
+
+| Property | Value |
+|----------|-------|
+| Default border radius | `0.25rem` |
+| Font weight | `600` |
+| Line height | `1` |
+| Default font size | `0.75rem` |
+
+---
+
+→ [Voir l'exemple](../examples/badge.html)

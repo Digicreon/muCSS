@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Loading</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Loading</h1>
+			<p>Loading states using <code>aria-busy="true"</code>.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Button loading</h2>
+			<p>
+				<button aria-busy="true">Please wait...</button>
+				<button aria-busy="true" class="secondary">Loading</button>
+				<button aria-busy="true" class="contrast">Processing</button>
+			</p>
+		</section>
+
+		<section>
+			<h2>Empty loading (standalone spinner)</h2>
+			<div aria-busy="true" style="min-height: 3rem;"></div>
+		</section>
+
+		<section>
+			<h2>Loading on a card</h2>
+			<article aria-busy="true">
+				<p>This card is loading...</p>
+			</article>
+		</section>
+
+		<section>
+			<h2>Loading paragraph</h2>
+			<p aria-busy="true">Loading content...</p>
+		</section>
+
+		<section>
+			<h2>Toggle loading</h2>
+			<button onclick="var t=document.getElementById('toggle-target'); t.ariaBusy = t.ariaBusy === 'true' ? 'false' : 'true';">Toggle loading state</button>
+			<article id="toggle-target" aria-busy="false">
+				<p>Click the button above to toggle the loading state on this card.</p>
+			</article>
+		</section>
+	</main>
+</body>
+</html>

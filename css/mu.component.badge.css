@@ -1,0 +1,59 @@
+/*
+ * µCSS Component: Badge
+ */
+
+.badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.2em 0.55em;
+	font-size: 0.75rem;
+	font-weight: 600;
+	line-height: 1;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border: 1px solid transparent;
+	border-radius: 0.25rem;
+	color: var(--pico-contrast-inverse);
+	background-color: var(--pico-contrast);
+}
+a.badge, button.badge {
+	text-decoration: none;
+	cursor: pointer;
+	transition: opacity 0.15s ease-in-out;
+}
+a.badge:hover, button.badge:hover { opacity: 0.85; }
+
+.badge-pill { padding: 0.25em 0.6em; border-radius: 50rem; }
+.badge-sm { padding: 0.15em 0.4em; font-size: 0.6875rem; }
+.badge-lg { padding: 0.3em 0.7em; font-size: 0.875rem; }
+
+.badge-primary   { color: var(--pico-primary-inverse);   background-color: var(--pico-primary);   border-color: var(--pico-primary); }
+.badge-secondary { color: var(--pico-secondary-inverse); background-color: var(--pico-secondary); border-color: var(--pico-secondary); }
+.badge-tertiary  { color: var(--pico-tertiary-inverse);  background-color: var(--pico-tertiary);  border-color: var(--pico-tertiary); }
+.badge-contrast  { color: var(--pico-contrast-inverse);  background-color: var(--pico-contrast);  border-color: var(--pico-contrast); }
+.badge-success   { color: var(--pico-success-inverse);   background-color: var(--pico-success);   border-color: var(--pico-success); }
+.badge-info      { color: var(--pico-info-inverse);      background-color: var(--pico-info);      border-color: var(--pico-info); }
+.badge-warning   { color: var(--pico-warning-inverse);   background-color: var(--pico-warning);   border-color: var(--pico-warning); }
+.badge-error     { color: var(--pico-error-inverse);     background-color: var(--pico-error);     border-color: var(--pico-error); }
+
+.badge-outline { background-color: transparent; }
+.badge-outline.badge-primary   { color: var(--pico-primary); }
+.badge-outline.badge-secondary { color: var(--pico-secondary); }
+.badge-outline.badge-tertiary  { color: var(--pico-tertiary); }
+.badge-outline.badge-contrast  { color: var(--pico-contrast); }
+.badge-outline.badge-success   { color: var(--pico-success); }
+.badge-outline.badge-info      { color: var(--pico-info); }
+.badge-outline.badge-warning   { color: var(--pico-warning); }
+.badge-outline.badge-error     { color: var(--pico-error); }
+
+.badge-attached {
+	position: absolute;
+	top: -0.4em;
+	right: -0.4em;
+	min-width: 1.2em;
+	min-height: 1.2em;
+	padding: 0.15em 0.35em;
+	font-size: 0.625rem;
+	border-radius: 50rem;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Switch</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Switch</h1>
+			<p>Toggle switches using <code>&lt;input type="checkbox" role="switch"&gt;</code>.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Basic switch</h2>
+			<label>
+				<input type="checkbox" role="switch">
+				Enable notifications
+			</label>
+			<label>
+				<input type="checkbox" role="switch" checked>
+				Dark mode
+			</label>
+		</section>
+
+		<section>
+			<h2>Disabled</h2>
+			<label>
+				<input type="checkbox" role="switch" disabled>
+				Disabled off
+			</label>
+			<label>
+				<input type="checkbox" role="switch" disabled checked>
+				Disabled on
+			</label>
+		</section>
+
+		<section>
+			<h2>With validation</h2>
+			<label>
+				<input type="checkbox" role="switch" aria-invalid="false" checked>
+				Valid switch
+			</label>
+			<label>
+				<input type="checkbox" role="switch" aria-invalid="true">
+				Invalid switch
+			</label>
+		</section>
+
+		<section>
+			<h2>In a form context</h2>
+			<article>
+				<header>Preferences</header>
+				<label>
+					<input type="checkbox" role="switch" checked>
+					Receive email updates
+				</label>
+				<label>
+					<input type="checkbox" role="switch">
+					Make profile public
+				</label>
+				<label>
+					<input type="checkbox" role="switch" checked>
+					Enable two-factor authentication
+				</label>
+			</article>
+		</section>
+	</main>
+</body>
+</html>

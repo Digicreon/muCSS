@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Table</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Table</h1>
+			<p>Table variants: hover, striped, bordered, compact, fullwidth, and combinations.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Default table</h2>
+			<table>
+				<thead>
+					<tr><th>Name</th><th>Role</th><th>Status</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>Alice</td><td>Developer</td><td>Active</td></tr>
+					<tr><td>Bob</td><td>Designer</td><td>Active</td></tr>
+					<tr><td>Charlie</td><td>Manager</td><td>Away</td></tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section>
+			<h2>Hover</h2>
+			<table class="table-hover">
+				<thead>
+					<tr><th>Name</th><th>Role</th><th>Status</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>Alice</td><td>Developer</td><td>Active</td></tr>
+					<tr><td>Bob</td><td>Designer</td><td>Active</td></tr>
+					<tr><td>Charlie</td><td>Manager</td><td>Away</td></tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section>
+			<h2>Striped</h2>
+			<table class="table-striped table-fullwidth">
+				<thead>
+					<tr><th>Name</th><th>Role</th><th>Status</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>Alice</td><td>Developer</td><td>Active</td></tr>
+					<tr><td>Bob</td><td>Designer</td><td>Active</td></tr>
+					<tr><td>Charlie</td><td>Manager</td><td>Away</td></tr>
+					<tr><td>Diana</td><td>Developer</td><td>Active</td></tr>
+					<tr><td>Eve</td><td>Tester</td><td>Active</td></tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section>
+			<h2>Bordered</h2>
+			<table class="table-bordered">
+				<thead>
+					<tr><th>Name</th><th>Role</th><th>Status</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>Alice</td><td>Developer</td><td>Active</td></tr>
+					<tr><td>Bob</td><td>Designer</td><td>Active</td></tr>
+					<tr><td>Charlie</td><td>Manager</td><td>Away</td></tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section>
+			<h2>Compact</h2>
+			<table class="table-compact">
+				<thead>
+					<tr><th>Name</th><th>Role</th><th>Status</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>Alice</td><td>Developer</td><td>Active</td></tr>
+					<tr><td>Bob</td><td>Designer</td><td>Active</td></tr>
+					<tr><td>Charlie</td><td>Manager</td><td>Away</td></tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section>
+			<h2>Fullwidth</h2>
+			<table class="table-fullwidth">
+				<thead>
+					<tr><th>Name</th><th>Role</th><th>Status</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>Alice</td><td>Developer</td><td>Active</td></tr>
+					<tr><td>Bob</td><td>Designer</td><td>Active</td></tr>
+					<tr><td>Charlie</td><td>Manager</td><td>Away</td></tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section>
+			<h2>Combined: hover + bordered + fullwidth</h2>
+			<table class="table-hover table-bordered table-fullwidth">
+				<thead>
+					<tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>1</td><td>Alice</td><td>alice@example.com</td><td>Developer</td></tr>
+					<tr><td>2</td><td>Bob</td><td>bob@example.com</td><td>Designer</td></tr>
+					<tr><td>3</td><td>Charlie</td><td>charlie@example.com</td><td>Manager</td></tr>
+					<tr><td>4</td><td>Diana</td><td>diana@example.com</td><td>Developer</td></tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section>
+			<h2>Combined: compact + bordered + fullwidth</h2>
+			<table class="table-compact table-bordered table-fullwidth">
+				<thead>
+					<tr><th>Key</th><th>Value</th><th>Type</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>host</td><td>localhost</td><td>string</td></tr>
+					<tr><td>port</td><td>8080</td><td>integer</td></tr>
+					<tr><td>debug</td><td>true</td><td>boolean</td></tr>
+					<tr><td>timeout</td><td>30</td><td>integer</td></tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h2>Combined: striped + hover + bordered + fullwidth</h2>
+			<table class="table-striped table-hover table-bordered table-fullwidth">
+				<thead>
+					<tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>1</td><td>Alice</td><td>alice@example.com</td><td>Developer</td></tr>
+					<tr><td>2</td><td>Bob</td><td>bob@example.com</td><td>Designer</td></tr>
+					<tr><td>3</td><td>Charlie</td><td>charlie@example.com</td><td>Manager</td></tr>
+					<tr><td>4</td><td>Diana</td><td>diana@example.com</td><td>Developer</td></tr>
+					<tr><td>5</td><td>Eve</td><td>eve@example.com</td><td>Tester</td></tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</body>
+</html>

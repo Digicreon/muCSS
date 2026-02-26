@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Dropdown</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Dropdown</h1>
+			<p>Dropdowns using <code>&lt;details class="dropdown"&gt;</code>.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Basic dropdown</h2>
+			<details class="dropdown">
+				<summary>Select an option</summary>
+				<ul>
+					<li><a href="#">Option 1</a></li>
+					<li><a href="#">Option 2</a></li>
+					<li><a href="#">Option 3</a></li>
+				</ul>
+			</details>
+		</section>
+
+		<section>
+			<h2>Dropdown with button role</h2>
+			<details class="dropdown">
+				<summary role="button">Actions</summary>
+				<ul>
+					<li><a href="#">Edit</a></li>
+					<li><a href="#">Duplicate</a></li>
+					<li><a href="#">Archive</a></li>
+					<li><a href="#">Delete</a></li>
+				</ul>
+			</details>
+		</section>
+
+		<section>
+			<h2>Native variants</h2>
+			<div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+				<details class="dropdown">
+					<summary role="button">Primary</summary>
+					<ul>
+						<li><a href="#">Item A</a></li>
+						<li><a href="#">Item B</a></li>
+					</ul>
+				</details>
+				<details class="dropdown">
+					<summary role="button" class="secondary">Secondary</summary>
+					<ul>
+						<li><a href="#">Item A</a></li>
+						<li><a href="#">Item B</a></li>
+					</ul>
+				</details>
+				<details class="dropdown">
+					<summary role="button" class="contrast">Contrast</summary>
+					<ul>
+						<li><a href="#">Item A</a></li>
+						<li><a href="#">Item B</a></li>
+					</ul>
+				</details>
+				<details class="dropdown">
+					<summary role="button" class="outline">Outline</summary>
+					<ul>
+						<li><a href="#">Item A</a></li>
+						<li><a href="#">Item B</a></li>
+					</ul>
+				</details>
+			</div>
+		</section>
+
+		<section>
+			<h2>µCSS color variants</h2>
+			<p>Using <code>.btn-*</code> classes on the summary for all 8 color roles.</p>
+			<div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+				<details class="dropdown">
+					<summary role="button" class="btn-primary">Primary</summary>
+					<ul>
+						<li><a href="#">Item A</a></li>
+						<li><a href="#">Item B</a></li>
+					</ul>
+				</details>
+				<details class="dropdown">
+					<summary role="button" class="btn-secondary">Secondary</summary>
+					<ul>
+						<li><a href="#">Item A</a></li>
+						<li><a href="#">Item B</a></li>
+					</ul>
+				</details>
+				<details class="dropdown">
+					<summary role="button" class="btn-tertiary">Tertiary</summary>
+					<ul>
+						<li><a href="#">Item A</a></li>
+						<li><a href="#">Item B</a></li>
+					</ul>
+				</details>
+				<details class="dropdown">
+					<summary role="button" class="btn-contrast">Contrast</summary>
+					<ul>
+						<li><a href="#">Item A</a></li>
+						<li><a href="#">Item B</a></li>
+					</ul>
+				</details>
+				<details class="dropdown">
+					<summary role="button" class="btn-success">Success</summary>
+					<ul>
+						<li><a href="#">Item A</a></li>
+						<li><a href="#">Item B</a></li>
+					</ul>
+				</details>
+				<details class="dropdown">
+					<summary role="button" class="btn-info">Info</summary>
+					<ul>
+						<li><a href="#">Item A</a></li>
+						<li><a href="#">Item B</a></li>
+					</ul>
+				</details>
+				<details class="dropdown">
+					<summary role="button" class="btn-warning">Warning</summary>
+					<ul>
+						<li><a href="#">Item A</a></li>
+						<li><a href="#">Item B</a></li>
+					</ul>
+				</details>
+				<details class="dropdown">
+					<summary role="button" class="btn-error">Error</summary>
+					<ul>
+						<li><a href="#">Item A</a></li>
+						<li><a href="#">Item B</a></li>
+					</ul>
+				</details>
+			</div>
+		</section>
+
+		<section>
+			<h2>As select replacement</h2>
+			<label>Choose a fruit
+				<details class="dropdown">
+					<summary>Pick one...</summary>
+					<ul>
+						<li><a href="#">Apple</a></li>
+						<li><a href="#">Banana</a></li>
+						<li><a href="#">Cherry</a></li>
+						<li><a href="#">Mango</a></li>
+						<li><a href="#">Orange</a></li>
+					</ul>
+				</details>
+			</label>
+		</section>
+	</main>
+</body>
+</html>

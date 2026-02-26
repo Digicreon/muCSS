@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Group</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Group</h1>
+			<p>Input and button groups using <code>role="group"</code> and <code>role="search"</code>.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Button group</h2>
+			<div role="group">
+				<button>Left</button>
+				<button>Center</button>
+				<button>Right</button>
+			</div>
+		</section>
+
+		<section>
+			<h2>Input + button</h2>
+			<div role="group">
+				<input type="email" placeholder="Enter your email">
+				<button>Subscribe</button>
+			</div>
+		</section>
+
+		<section>
+			<h2>Search group</h2>
+			<div role="search">
+				<input type="search" placeholder="Search...">
+				<button>Search</button>
+			</div>
+		</section>
+
+		<section>
+			<h2>Input + select + button</h2>
+			<div role="group">
+				<select>
+					<option>USD</option>
+					<option>EUR</option>
+					<option>GBP</option>
+				</select>
+				<input type="number" placeholder="Amount">
+				<button>Convert</button>
+			</div>
+		</section>
+
+		<section>
+			<h2>Outline button group</h2>
+			<div role="group">
+				<button class="outline">Day</button>
+				<button class="outline">Week</button>
+				<button class="outline">Month</button>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

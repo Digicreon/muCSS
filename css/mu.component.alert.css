@@ -1,0 +1,97 @@
+/*
+ * µCSS Component: Alert
+ */
+
+.alert {
+	position: relative;
+	padding: 0.75rem 1rem;
+	margin-bottom: 1rem;
+	border: 1px solid transparent;
+	border-radius: 0.375rem;
+	font-size: 0.9375rem;
+	line-height: 1.5;
+}
+.alert a {
+	font-weight: 600;
+	color: inherit;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+.alert a:hover { opacity: 0.8; }
+.alert p { margin-bottom: 0; }
+.alert p + p { margin-top: 0.5rem; }
+
+.alert-title {
+	display: block;
+	margin-bottom: 0.25rem;
+	font-weight: 700;
+	font-size: 1rem;
+}
+
+.alert-success {
+	color: var(--pico-success);
+	background-color: var(--pico-success-background);
+	border-color: var(--pico-success);
+}
+.alert-info {
+	color: var(--pico-info);
+	background-color: var(--pico-info-background);
+	border-color: var(--pico-info);
+}
+.alert-warning {
+	color: var(--pico-warning);
+	background-color: var(--pico-warning-background);
+	border-color: var(--pico-warning);
+}
+.alert-error {
+	color: var(--pico-error);
+	background-color: var(--pico-error-background);
+	border-color: var(--pico-error);
+}
+.alert-primary {
+	color: var(--pico-primary);
+	background-color: var(--pico-primary-background);
+	border-color: var(--pico-primary);
+}
+.alert-secondary {
+	color: var(--pico-secondary);
+	background-color: var(--pico-secondary-background);
+	border-color: var(--pico-secondary);
+}
+.alert-tertiary {
+	color: var(--pico-tertiary);
+	background-color: var(--pico-tertiary-background);
+	border-color: var(--pico-tertiary);
+}
+.alert-contrast {
+	color: var(--pico-contrast);
+	background-color: var(--pico-contrast-background);
+	border-color: var(--pico-contrast);
+}
+
+.alert-dismissible { padding-right: 3rem; }
+.alert-close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 3rem;
+	height: 100%;
+	padding: 0;
+	border: none;
+	background: transparent;
+	color: inherit;
+	font-size: 1.25rem;
+	line-height: 1;
+	cursor: pointer;
+	opacity: 0.6;
+	transition: opacity 0.15s ease-in-out;
+}
+.alert-close:hover { opacity: 1; }
+.alert-close:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: -2px;
+	border-radius: 0.25rem;
+}

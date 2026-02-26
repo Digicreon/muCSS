@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Range</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Range</h1>
+			<p>Range slider using <code>&lt;input type="range"&gt;</code>.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Basic range</h2>
+			<label>Volume
+				<input type="range" min="0" max="100" value="50">
+			</label>
+		</section>
+
+		<section>
+			<h2>With output</h2>
+			<label>Brightness: <output id="brightness-val">75</output>%
+				<input type="range" min="0" max="100" value="75" oninput="document.getElementById('brightness-val').textContent = this.value">
+			</label>
+		</section>
+
+		<section>
+			<h2>With steps</h2>
+			<label>Rating (1-5): <output id="rating-val">3</output>
+				<input type="range" min="1" max="5" step="1" value="3" oninput="document.getElementById('rating-val').textContent = this.value">
+			</label>
+		</section>
+
+		<section>
+			<h2>Disabled</h2>
+			<label>Locked value
+				<input type="range" min="0" max="100" value="60" disabled>
+			</label>
+		</section>
+
+		<section>
+			<h2>In a form context</h2>
+			<article>
+				<header>Audio settings</header>
+				<label>Master volume: <output id="master-val">80</output>%
+					<input type="range" min="0" max="100" value="80" oninput="document.getElementById('master-val').textContent = this.value">
+				</label>
+				<label>Bass: <output id="bass-val">50</output>%
+					<input type="range" min="0" max="100" value="50" oninput="document.getElementById('bass-val').textContent = this.value">
+				</label>
+				<label>Treble: <output id="treble-val">65</output>%
+					<input type="range" min="0" max="100" value="65" oninput="document.getElementById('treble-val').textContent = this.value">
+				</label>
+			</article>
+		</section>
+	</main>
+</body>
+</html>

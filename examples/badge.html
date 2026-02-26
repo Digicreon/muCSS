@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Badge</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Badge</h1>
+			<p>Inline labels and counters with colors, sizes, and variants.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Filled (8 colors)</h2>
+			<p>
+				<span class="badge badge-primary">Primary</span>
+				<span class="badge badge-secondary">Secondary</span>
+				<span class="badge badge-tertiary">Tertiary</span>
+				<span class="badge badge-contrast">Contrast</span>
+				<span class="badge badge-success">Success</span>
+				<span class="badge badge-info">Info</span>
+				<span class="badge badge-warning">Warning</span>
+				<span class="badge badge-error">Error</span>
+			</p>
+		</section>
+
+		<section>
+			<h2>Outline (8 colors)</h2>
+			<p>
+				<span class="badge badge-outline badge-primary">Primary</span>
+				<span class="badge badge-outline badge-secondary">Secondary</span>
+				<span class="badge badge-outline badge-tertiary">Tertiary</span>
+				<span class="badge badge-outline badge-contrast">Contrast</span>
+				<span class="badge badge-outline badge-success">Success</span>
+				<span class="badge badge-outline badge-info">Info</span>
+				<span class="badge badge-outline badge-warning">Warning</span>
+				<span class="badge badge-outline badge-error">Error</span>
+			</p>
+		</section>
+
+		<section>
+			<h2>Pill</h2>
+			<p>
+				<span class="badge badge-primary badge-pill">12</span>
+				<span class="badge badge-success badge-pill">99+</span>
+				<span class="badge badge-error badge-pill">New</span>
+				<span class="badge badge-outline badge-info badge-pill">Beta</span>
+			</p>
+		</section>
+
+		<section>
+			<h2>Sizes</h2>
+			<p>
+				<span class="badge badge-primary badge-sm">Small</span>
+				<span class="badge badge-primary">Default</span>
+				<span class="badge badge-primary badge-lg">Large</span>
+			</p>
+		</section>
+
+		<section>
+			<h2>Attached (notification counter)</h2>
+			<p>
+				<span style="position: relative; display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--pico-secondary-background); border-radius: 0.375rem;">
+					Inbox
+					<span class="badge badge-error badge-attached badge-pill">3</span>
+				</span>
+				&nbsp;&nbsp;
+				<span style="position: relative; display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--pico-secondary-background); border-radius: 0.375rem;">
+					Notifications
+					<span class="badge badge-warning badge-attached badge-pill">12</span>
+				</span>
+			</p>
+		</section>
+
+		<section>
+			<h2>As links</h2>
+			<p>
+				<a class="badge badge-primary" href="#">Clickable</a>
+				<a class="badge badge-outline badge-success" href="#">Link badge</a>
+			</p>
+		</section>
+	</main>
+</body>
+</html>

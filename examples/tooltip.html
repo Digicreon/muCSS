@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Tooltip</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Tooltip</h1>
+			<p>Tooltips using the <code>data-tooltip</code> attribute.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Basic tooltip (top)</h2>
+			<p>Hover over <span data-tooltip="This is a tooltip" style="text-decoration: underline dotted; cursor: help;">this text</span> to see a tooltip.</p>
+		</section>
+
+		<section>
+			<h2>Placement</h2>
+			<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 3rem 0;">
+				<span data-tooltip="Top tooltip" data-placement="top" style="text-decoration: underline dotted; cursor: help;">Top</span>
+				<span data-tooltip="Bottom tooltip" data-placement="bottom" style="text-decoration: underline dotted; cursor: help;">Bottom</span>
+				<span data-tooltip="Left tooltip" data-placement="left" style="text-decoration: underline dotted; cursor: help;">Left</span>
+				<span data-tooltip="Right tooltip" data-placement="right" style="text-decoration: underline dotted; cursor: help;">Right</span>
+			</div>
+		</section>
+
+		<section>
+			<h2>On buttons</h2>
+			<p>
+				<button class="btn btn-primary" data-tooltip="Save your changes">Save</button>
+				<button class="btn btn-ghost btn-error" data-tooltip="This action cannot be undone" data-placement="bottom">Delete</button>
+			</p>
+		</section>
+
+		<section>
+			<h2>On links</h2>
+			<p>Visit the <a href="#" data-tooltip="Go to the homepage">homepage</a> or check the <a href="#" data-tooltip="Read the full documentation" data-placement="bottom">documentation</a>.</p>
+		</section>
+
+		<section>
+			<h2>On form elements</h2>
+			<label>Username
+				<input type="text" data-tooltip="Must be 3-20 characters" placeholder="Enter username">
+			</label>
+		</section>
+	</main>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Checkbox &amp; Radio</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Checkbox &amp; Radio</h1>
+			<p>Checkbox and radio button styling.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Checkboxes</h2>
+			<fieldset>
+				<legend>Select your interests</legend>
+				<label><input type="checkbox" checked> Design</label>
+				<label><input type="checkbox"> Development</label>
+				<label><input type="checkbox"> Marketing</label>
+				<label><input type="checkbox" disabled> Disabled option</label>
+			</fieldset>
+		</section>
+
+		<section>
+			<h2>Indeterminate checkbox</h2>
+			<label>
+				<input type="checkbox" id="indeterminate-check"> Indeterminate state
+			</label>
+			<script>document.getElementById('indeterminate-check').indeterminate = true;</script>
+		</section>
+
+		<section>
+			<h2>Checkbox validation</h2>
+			<label><input type="checkbox" aria-invalid="false" checked> Valid checkbox</label>
+			<label><input type="checkbox" aria-invalid="true"> Invalid checkbox</label>
+		</section>
+
+		<section>
+			<h2>Radio buttons</h2>
+			<fieldset>
+				<legend>Choose a plan</legend>
+				<label><input type="radio" name="plan" checked> Free</label>
+				<label><input type="radio" name="plan"> Pro</label>
+				<label><input type="radio" name="plan"> Enterprise</label>
+				<label><input type="radio" name="plan" disabled> Deprecated plan</label>
+			</fieldset>
+		</section>
+
+		<section>
+			<h2>Radio validation</h2>
+			<fieldset>
+				<legend>Select a valid option</legend>
+				<label><input type="radio" name="valid-radio" aria-invalid="false" checked> Valid choice</label>
+				<label><input type="radio" name="invalid-radio" aria-invalid="true"> Invalid choice</label>
+			</fieldset>
+		</section>
+
+		<section>
+			<h2>In a form</h2>
+			<article>
+				<header>Registration</header>
+				<fieldset>
+					<legend>Account type</legend>
+					<label><input type="radio" name="type" checked> Personal</label>
+					<label><input type="radio" name="type"> Business</label>
+				</fieldset>
+				<fieldset>
+					<legend>Agreements</legend>
+					<label><input type="checkbox" required> I accept the terms and conditions</label>
+					<label><input type="checkbox"> Subscribe to newsletter</label>
+				</fieldset>
+			</article>
+		</section>
+	</main>
+</body>
+</html>

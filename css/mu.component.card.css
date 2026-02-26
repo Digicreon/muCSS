@@ -1,0 +1,55 @@
+/*
+ * µCSS Component: Card
+ */
+
+.card-primary {
+	--card-color: var(--pico-primary);
+	--card-bg: var(--pico-primary-background);
+}
+.card-secondary {
+	--card-color: var(--pico-secondary);
+	--card-bg: var(--pico-secondary-background);
+}
+.card-tertiary {
+	--card-color: var(--pico-tertiary);
+	--card-bg: var(--pico-tertiary-background);
+}
+.card-contrast {
+	--card-color: var(--pico-contrast);
+	--card-bg: var(--pico-contrast-background);
+}
+.card-success {
+	--card-color: var(--pico-success);
+	--card-bg: var(--pico-success-background);
+}
+.card-info {
+	--card-color: var(--pico-info);
+	--card-bg: var(--pico-info-background);
+}
+.card-warning {
+	--card-color: var(--pico-warning);
+	--card-bg: var(--pico-warning-background);
+}
+.card-error {
+	--card-color: var(--pico-error);
+	--card-bg: var(--pico-error-background);
+}
+
+article > *:last-child:not(header):not(footer) {
+	margin-bottom: 0;
+}
+
+article[class*="card-"] {
+	border-left: 4px solid var(--card-color);
+	background-color: var(--card-bg);
+}
+article[class*="card-"] > header,
+article[class*="card-"] > footer {
+	background-color: color-mix(in srgb, var(--card-color) 12%, var(--card-bg));
+}
+article[class*="card-"] > header {
+	border-bottom-color: color-mix(in srgb, var(--card-color) 20%, transparent);
+}
+article[class*="card-"] > footer {
+	border-top-color: color-mix(in srgb, var(--card-color) 20%, transparent);
+}

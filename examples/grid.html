@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Grid</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+	<style>
+		/* Visual aid for grid demos */
+		.demo-grid [class*="col-"] > div {
+			background: var(--pico-primary-background);
+			color: var(--pico-primary);
+			padding: 0.75rem;
+			text-align: center;
+			border-radius: 0.25rem;
+			font-size: 0.875rem;
+			margin-bottom: 0.5rem;
+		}
+	</style>
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Grid</h1>
+			<p>12-column flexbox grid with 5 breakpoints, offsets, ordering, and display utilities.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section class="demo-grid">
+			<h2>Basic columns</h2>
+			<div class="row">
+				<div class="col-12"><div>col-12</div></div>
+			</div>
+			<div class="row">
+				<div class="col-6"><div>col-6</div></div>
+				<div class="col-6"><div>col-6</div></div>
+			</div>
+			<div class="row">
+				<div class="col-4"><div>col-4</div></div>
+				<div class="col-4"><div>col-4</div></div>
+				<div class="col-4"><div>col-4</div></div>
+			</div>
+			<div class="row">
+				<div class="col-3"><div>col-3</div></div>
+				<div class="col-3"><div>col-3</div></div>
+				<div class="col-3"><div>col-3</div></div>
+				<div class="col-3"><div>col-3</div></div>
+			</div>
+			<div class="row">
+				<div class="col-2"><div>col-2</div></div>
+				<div class="col-2"><div>col-2</div></div>
+				<div class="col-2"><div>col-2</div></div>
+				<div class="col-2"><div>col-2</div></div>
+				<div class="col-2"><div>col-2</div></div>
+				<div class="col-2"><div>col-2</div></div>
+			</div>
+		</section>
+
+		<section class="demo-grid">
+			<h2>Responsive columns</h2>
+			<p>Resize the browser to see the columns adapt.</p>
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-4"><div>col-12 col-md-6 col-lg-4</div></div>
+				<div class="col-12 col-md-6 col-lg-4"><div>col-12 col-md-6 col-lg-4</div></div>
+				<div class="col-12 col-md-12 col-lg-4"><div>col-12 col-md-12 col-lg-4</div></div>
+			</div>
+			<div class="row">
+				<div class="col-12 col-sm-6 col-lg-3"><div>col-12 col-sm-6 col-lg-3</div></div>
+				<div class="col-12 col-sm-6 col-lg-3"><div>col-12 col-sm-6 col-lg-3</div></div>
+				<div class="col-12 col-sm-6 col-lg-3"><div>col-12 col-sm-6 col-lg-3</div></div>
+				<div class="col-12 col-sm-6 col-lg-3"><div>col-12 col-sm-6 col-lg-3</div></div>
+			</div>
+		</section>
+
+		<section class="demo-grid">
+			<h2>Offsets</h2>
+			<div class="row">
+				<div class="col-6 offset-3"><div>col-6 offset-3</div></div>
+			</div>
+			<div class="row">
+				<div class="col-4 offset-2"><div>col-4 offset-2</div></div>
+				<div class="col-4"><div>col-4</div></div>
+			</div>
+			<div class="row">
+				<div class="col-3 offset-1"><div>col-3 offset-1</div></div>
+				<div class="col-3 offset-4"><div>col-3 offset-4</div></div>
+			</div>
+		</section>
+
+		<section class="demo-grid">
+			<h2>Ordering</h2>
+			<div class="row">
+				<div class="col-4 order-3"><div>First in DOM, order-3</div></div>
+				<div class="col-4 order-1"><div>Second in DOM, order-1</div></div>
+				<div class="col-4 order-2"><div>Third in DOM, order-2</div></div>
+			</div>
+			<div class="row">
+				<div class="col-4 order-last"><div>order-last</div></div>
+				<div class="col-4"><div>No order</div></div>
+				<div class="col-4 order-first"><div>order-first</div></div>
+			</div>
+		</section>
+
+		<section class="demo-grid">
+			<h2>Display utilities</h2>
+			<div class="row">
+				<div class="col-6"><div>Always visible</div></div>
+				<div class="col-6 d-none d-md-block"><div>Hidden on mobile, visible from md</div></div>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

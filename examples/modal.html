@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Modal</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Modal</h1>
+			<p>Dialog modals in 4 sizes using the native <code>&lt;dialog&gt;</code> element.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Open modals</h2>
+			<p>
+				<button class="btn btn-primary" onclick="document.getElementById('modal-sm').showModal()">Small modal</button>
+				<button class="btn btn-secondary" onclick="document.getElementById('modal-default').showModal()">Default modal</button>
+				<button class="btn btn-tertiary" onclick="document.getElementById('modal-lg').showModal()">Large modal</button>
+				<button class="btn btn-contrast" onclick="document.getElementById('modal-fullscreen').showModal()">Fullscreen modal</button>
+			</p>
+		</section>
+
+		<!-- Small modal -->
+		<dialog id="modal-sm" class="modal-sm">
+			<article>
+				<button class="modal-close" aria-label="Close" onclick="document.getElementById('modal-sm').close()">&times;</button>
+				<h3>Small modal</h3>
+				<p>This is a small modal (max-width: 400px). Ideal for confirmations and simple prompts.</p>
+				<footer>
+					<button class="btn btn-ghost btn-secondary" onclick="document.getElementById('modal-sm').close()">Cancel</button>
+					<button class="btn btn-primary" onclick="document.getElementById('modal-sm').close()">Confirm</button>
+				</footer>
+			</article>
+		</dialog>
+
+		<!-- Default modal -->
+		<dialog id="modal-default">
+			<article>
+				<button class="modal-close" aria-label="Close" onclick="document.getElementById('modal-default').close()">&times;</button>
+				<h3>Default modal</h3>
+				<p>This is the default modal size. Suitable for most content.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<footer>
+					<button class="btn btn-primary" onclick="document.getElementById('modal-default').close()">Close</button>
+				</footer>
+			</article>
+		</dialog>
+
+		<!-- Large modal -->
+		<dialog id="modal-lg" class="modal-lg">
+			<article>
+				<button class="modal-close" aria-label="Close" onclick="document.getElementById('modal-lg').close()">&times;</button>
+				<h3>Large modal</h3>
+				<p>This is a large modal (max-width: 900px). Useful for forms or detailed content.</p>
+				<div class="row">
+					<div class="col-6">
+						<label>First name <input type="text" placeholder="First name"></label>
+					</div>
+					<div class="col-6">
+						<label>Last name <input type="text" placeholder="Last name"></label>
+					</div>
+				</div>
+				<label>Email <input type="email" placeholder="Email address"></label>
+				<footer>
+					<button class="btn btn-ghost btn-secondary" onclick="document.getElementById('modal-lg').close()">Cancel</button>
+					<button class="btn btn-success" onclick="document.getElementById('modal-lg').close()">Save</button>
+				</footer>
+			</article>
+		</dialog>
+
+		<!-- Fullscreen modal -->
+		<dialog id="modal-fullscreen" class="modal-fullscreen">
+			<article>
+				<button class="modal-close" aria-label="Close" onclick="document.getElementById('modal-fullscreen').close()">&times;</button>
+				<h3>Fullscreen modal</h3>
+				<p>This modal covers the entire viewport. Suitable for immersive experiences, image galleries, or complex workflows.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<footer>
+					<button class="btn btn-error" onclick="document.getElementById('modal-fullscreen').close()">Close</button>
+				</footer>
+			</article>
+		</dialog>
+	</main>
+</body>
+</html>

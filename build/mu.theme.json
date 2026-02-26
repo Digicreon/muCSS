@@ -1,0 +1,202 @@
+[
+	{
+		"primary":   "azure",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "violet",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "red",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "cyan",
+		"success":   "green",
+		"info":      "azure",
+		"warning":   "amber",
+		"error":     "pink"
+	},
+	{
+		"primary":   "pink",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "azure",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "fuchsia",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "jade",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "purple",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "orange",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "violet",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "orange",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "indigo",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "orange",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "blue",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "violet",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "cyan",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "violet",
+		"success":   "green",
+		"info":      "azure",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "jade",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "violet",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "green",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "violet",
+		"success":   "jade",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "lime",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "violet",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "yellow",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "indigo",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "amber",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "violet",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "yellow",
+		"error":     "red"
+	},
+	{
+		"primary":   "pumpkin",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "indigo",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "orange",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "indigo",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "sand",
+		"secondary": "slate",
+		"tertiary":  "grey",
+		"contrast":  "violet",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "grey",
+		"secondary": "slate",
+		"tertiary":  "sand",
+		"contrast":  "violet",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "zinc",
+		"secondary": "slate",
+		"tertiary":  "grey",
+		"contrast":  "violet",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	},
+	{
+		"primary":   "slate",
+		"secondary": "grey",
+		"tertiary":  "sand",
+		"contrast":  "violet",
+		"success":   "green",
+		"info":      "cyan",
+		"warning":   "amber",
+		"error":     "red"
+	}
+]

@@ -1,0 +1,150 @@
+/*
+ * µCSS Component: Button
+ */
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5em;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.5;
+	white-space: nowrap;
+	vertical-align: middle;
+	text-decoration: none;
+	border: 1px solid transparent;
+	border-radius: 0.375rem;
+	cursor: pointer;
+	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.btn:focus-visible {
+	outline: 2px solid var(--pico-primary-focus);
+	outline-offset: 2px;
+}
+
+/* Sizes */
+.btn-sm {
+	padding: 0.375rem 0.625rem;
+	font-size: 0.8125rem;
+}
+.btn-lg {
+	padding: 0.75rem 1.25rem;
+	font-size: 1.125rem;
+}
+
+/* Roles — filled */
+.btn-primary {
+	background-color: var(--pico-primary);
+	border-color: var(--pico-primary);
+	color: var(--pico-primary-inverse);
+}
+.btn-primary:hover {
+	background-color: var(--pico-primary-hover);
+	border-color: var(--pico-primary-hover);
+}
+.btn-primary:focus-visible { outline-color: var(--pico-primary-focus); }
+
+.btn-secondary {
+	background-color: var(--pico-secondary);
+	border-color: var(--pico-secondary);
+	color: var(--pico-secondary-inverse);
+}
+.btn-secondary:hover {
+	background-color: var(--pico-secondary-hover);
+	border-color: var(--pico-secondary-hover);
+}
+.btn-secondary:focus-visible { outline-color: var(--pico-secondary-focus); }
+
+.btn-tertiary {
+	background-color: var(--pico-tertiary);
+	border-color: var(--pico-tertiary);
+	color: var(--pico-tertiary-inverse);
+}
+.btn-tertiary:hover {
+	background-color: var(--pico-tertiary-hover);
+	border-color: var(--pico-tertiary-hover);
+}
+.btn-tertiary:focus-visible { outline-color: var(--pico-tertiary-focus); }
+
+.btn-contrast {
+	background-color: var(--pico-contrast);
+	border-color: var(--pico-contrast);
+	color: var(--pico-contrast-inverse);
+}
+.btn-contrast:hover {
+	background-color: var(--pico-contrast-hover);
+	border-color: var(--pico-contrast-hover);
+}
+.btn-contrast:focus-visible { outline-color: var(--pico-contrast-focus); }
+
+.btn-success {
+	background-color: var(--pico-success);
+	border-color: var(--pico-success);
+	color: var(--pico-success-inverse);
+}
+.btn-success:hover {
+	background-color: var(--pico-success-hover);
+	border-color: var(--pico-success-hover);
+}
+.btn-success:focus-visible { outline-color: var(--pico-success-focus); }
+
+.btn-info {
+	background-color: var(--pico-info);
+	border-color: var(--pico-info);
+	color: var(--pico-info-inverse);
+}
+.btn-info:hover {
+	background-color: var(--pico-info-hover);
+	border-color: var(--pico-info-hover);
+}
+.btn-info:focus-visible { outline-color: var(--pico-info-focus); }
+
+.btn-warning {
+	background-color: var(--pico-warning);
+	border-color: var(--pico-warning);
+	color: var(--pico-warning-inverse);
+}
+.btn-warning:hover {
+	background-color: var(--pico-warning-hover);
+	border-color: var(--pico-warning-hover);
+}
+.btn-warning:focus-visible { outline-color: var(--pico-warning-focus); }
+
+.btn-error {
+	background-color: var(--pico-error);
+	border-color: var(--pico-error);
+	color: var(--pico-error-inverse);
+}
+.btn-error:hover {
+	background-color: var(--pico-error-hover);
+	border-color: var(--pico-error-hover);
+}
+.btn-error:focus-visible { outline-color: var(--pico-error-focus); }
+
+/* Ghost — transparent background, visible border, colored text */
+.btn-ghost {
+	background-color: transparent;
+}
+.btn-ghost.btn-primary   { color: var(--pico-primary);   border-color: var(--pico-primary); }
+.btn-ghost.btn-secondary { color: var(--pico-secondary); border-color: var(--pico-secondary); }
+.btn-ghost.btn-tertiary  { color: var(--pico-tertiary);  border-color: var(--pico-tertiary); }
+.btn-ghost.btn-contrast  { color: var(--pico-contrast);  border-color: var(--pico-contrast); }
+.btn-ghost.btn-success   { color: var(--pico-success);   border-color: var(--pico-success); }
+.btn-ghost.btn-info      { color: var(--pico-info);      border-color: var(--pico-info); }
+.btn-ghost.btn-warning   { color: var(--pico-warning);   border-color: var(--pico-warning); }
+.btn-ghost.btn-error     { color: var(--pico-error);     border-color: var(--pico-error); }
+.btn-ghost:hover { opacity: 0.8; }
+
+/* Link — looks like a link, no background, no border */
+.btn-link {
+	background-color: transparent;
+	border-color: transparent;
+	color: var(--pico-primary);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+.btn-link:hover {
+	color: var(--pico-primary-hover);
+}

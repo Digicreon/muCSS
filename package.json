@@ -1,0 +1,31 @@
+{
+	"name": "mucss",
+	"version": "1.0.0",
+	"description": "µCSS — A CSS framework built on PicoCSS v2",
+	"main": "dist/mu.css",
+	"style": "dist/mu.css",
+	"files": [
+		"dist/",
+		"documentation/",
+		"README.md"
+	],
+	"keywords": [
+		"css",
+		"framework",
+		"picocss",
+		"responsive",
+		"grid",
+		"components",
+		"dark-mode",
+		"accessible"
+	],
+	"homepage": "https://www.mucss.org",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Digicreon/muCSS.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Digicreon/muCSS/issues"
+	},
+	"license": "MIT"
+}

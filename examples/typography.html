@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Typography</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Typography</h1>
+			<p>Typographic elements.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Headings</h2>
+			<h1>Heading 1</h1>
+			<h2>Heading 2</h2>
+			<h3>Heading 3</h3>
+			<h4>Heading 4</h4>
+			<h5>Heading 5</h5>
+			<h6>Heading 6</h6>
+		</section>
+
+		<section>
+			<h2>Heading group</h2>
+			<hgroup>
+				<h2>Main heading</h2>
+				<p>Subtitle or tagline below the heading.</p>
+			</hgroup>
+		</section>
+
+		<section>
+			<h2>Paragraph</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+		</section>
+
+		<section>
+			<h2>Blockquote</h2>
+			<blockquote>
+				"Design is not just what it looks like and feels like. Design is how it works."
+				<footer><cite>Steve Jobs</cite></footer>
+			</blockquote>
+		</section>
+
+		<section>
+			<h2>Lists</h2>
+			<h3>Unordered list</h3>
+			<ul>
+				<li>First item</li>
+				<li>Second item
+					<ul>
+						<li>Nested item A</li>
+						<li>Nested item B</li>
+					</ul>
+				</li>
+				<li>Third item</li>
+			</ul>
+			<h3>Ordered list</h3>
+			<ol>
+				<li>Step one</li>
+				<li>Step two</li>
+				<li>Step three</li>
+			</ol>
+			<h3>Definition list</h3>
+			<dl>
+				<dt>Term</dt>
+				<dd>Definition of the term.</dd>
+				<dt>Another term</dt>
+				<dd>Another definition.</dd>
+			</dl>
+		</section>
+
+		<section>
+			<h2>Inline text</h2>
+			<p><strong>Bold text</strong> and <em>italic text</em> and <u>underlined text</u>.</p>
+			<p><small>Small text</small> and <del>deleted text</del> and <ins>inserted text</ins>.</p>
+			<p><abbr title="Cascading Style Sheets">CSS</abbr> is an abbreviation.</p>
+			<p><mark>Highlighted text</mark> using the mark element.</p>
+			<p>Text with <sub>subscript</sub> and <sup>superscript</sup>.</p>
+		</section>
+
+		<section>
+			<h2>Code</h2>
+			<p>Inline <code>code element</code> within text.</p>
+			<pre><code>&lt;div class="container"&gt;
+  &lt;h1&gt;Hello World&lt;/h1&gt;
+  &lt;p&gt;This is a code block.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+		</section>
+
+		<section>
+			<h2>Keyboard</h2>
+			<p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy, <kbd>Ctrl</kbd> + <kbd>V</kbd> to paste.</p>
+		</section>
+
+		<section>
+			<h2>Horizontal rule</h2>
+			<p>Content above the separator.</p>
+			<hr>
+			<p>Content below the separator.</p>
+		</section>
+
+		<section>
+			<h2>Figure</h2>
+			<figure>
+				<table>
+					<thead><tr><th>Name</th><th>Value</th></tr></thead>
+					<tbody><tr><td>Alpha</td><td>100</td></tr></tbody>
+				</table>
+				<figcaption>Figure 1 — A table inside a figure element.</figcaption>
+			</figure>
+		</section>
+	</main>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Spinner</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Spinner</h1>
+			<p>Loading indicators in 8 colors and 3 sizes.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>All 8 colors (default size)</h2>
+			<p>
+				<span class="spinner spinner-primary"></span>&nbsp;
+				<span class="spinner spinner-secondary"></span>&nbsp;
+				<span class="spinner spinner-tertiary"></span>&nbsp;
+				<span class="spinner spinner-contrast"></span>&nbsp;
+				<span class="spinner spinner-success"></span>&nbsp;
+				<span class="spinner spinner-info"></span>&nbsp;
+				<span class="spinner spinner-warning"></span>&nbsp;
+				<span class="spinner spinner-error"></span>
+			</p>
+		</section>
+
+		<section>
+			<h2>3 sizes</h2>
+			<p>
+				<span class="spinner spinner-sm spinner-primary"></span>&nbsp; Small
+			</p>
+			<p>
+				<span class="spinner spinner-primary"></span>&nbsp; Default
+			</p>
+			<p>
+				<span class="spinner spinner-lg spinner-primary"></span>&nbsp; Large
+			</p>
+		</section>
+
+		<section>
+			<h2>In context</h2>
+			<p>
+				<button class="btn btn-primary" disabled>
+					<span class="spinner spinner-sm"></span>&nbsp; Loading...
+				</button>
+			</p>
+		</section>
+	</main>
+</body>
+</html>

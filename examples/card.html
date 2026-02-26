@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Card</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Card</h1>
+			<p>Colored cards using <code>&lt;article&gt;</code> with optional header and footer.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>All 8 color variants</h2>
+			<div class="row">
+				<div class="col-12 col-md-6">
+					<article class="card-primary">
+						<header>Primary</header>
+						Card body with primary accent.
+						<footer>Card footer</footer>
+					</article>
+				</div>
+				<div class="col-12 col-md-6">
+					<article class="card-secondary">
+						<header>Secondary</header>
+						Card body with secondary accent.
+						<footer>Card footer</footer>
+					</article>
+				</div>
+				<div class="col-12 col-md-6">
+					<article class="card-tertiary">
+						<header>Tertiary</header>
+						Card body with tertiary accent.
+						<footer>Card footer</footer>
+					</article>
+				</div>
+				<div class="col-12 col-md-6">
+					<article class="card-contrast">
+						<header>Contrast</header>
+						Card body with contrast accent.
+						<footer>Card footer</footer>
+					</article>
+				</div>
+				<div class="col-12 col-md-6">
+					<article class="card-success">
+						<header>Success</header>
+						Card body with success accent.
+						<footer>Card footer</footer>
+					</article>
+				</div>
+				<div class="col-12 col-md-6">
+					<article class="card-info">
+						<header>Info</header>
+						Card body with info accent.
+						<footer>Card footer</footer>
+					</article>
+				</div>
+				<div class="col-12 col-md-6">
+					<article class="card-warning">
+						<header>Warning</header>
+						Card body with warning accent.
+						<footer>Card footer</footer>
+					</article>
+				</div>
+				<div class="col-12 col-md-6">
+					<article class="card-error">
+						<header>Error</header>
+						Card body with error accent.
+						<footer>Card footer</footer>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<h2>Body only</h2>
+			<article class="card-info">
+				<p>A simple card with content only, no header or footer.</p>
+			</article>
+		</section>
+
+		<section>
+			<h2>Default card (no color)</h2>
+			<article>
+				<header>Standard card</header>
+				This card uses the default <code>&lt;article&gt;</code> styling without any color class.
+				<footer>Footer</footer>
+			</article>
+		</section>
+	</main>
+</body>
+</html>
