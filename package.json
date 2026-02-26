@@ -1,5 +1,5 @@
 {
-	"name": "mucss",
+	"name": "@digicreon/mucss",
 	"version": "1.0.0",
 	"description": "µCSS — A CSS framework built on PicoCSS v2",
 	"main": "dist/mu.css",
