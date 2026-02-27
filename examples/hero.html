@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Hero</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Hero</h1>
+			<p>Full-width hero sections with gradient background, badges and call-to-action buttons.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+	</main>
+
+	<!-- Full hero (primary) -->
+	<section class="hero hero-primary">
+		<div class="container">
+			<h1>µCSS Framework</h1>
+			<p class="hero-tagline">Lightweight CSS framework built on PicoCSS</p>
+			<p class="hero-subtitle">20 themes, 14 components, dark mode, zero JavaScript</p>
+			<div class="hero-badges">
+				<span class="badge badge-pill">~15 KB gzipped</span>
+				<span class="badge badge-pill">Zero dependencies</span>
+				<span class="badge badge-pill">MIT license</span>
+			</div>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="#">Get Started</a>
+				<a class="btn btn-secondary" href="#">GitHub</a>
+			</div>
+		</div>
+	</section>
+
+	<main class="container">
+		<section>
+			<h2>8 color variants</h2>
+		</section>
+	</main>
+
+	<section class="hero hero-primary">
+		<div class="container">
+			<h1>Primary</h1>
+			<p class="hero-tagline">The default hero color</p>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="#">Action</a>
+				<a class="btn btn-secondary" href="#">Learn more</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="hero hero-secondary">
+		<div class="container">
+			<h1>Secondary</h1>
+			<p class="hero-tagline">Secondary color variant</p>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="#">Action</a>
+				<a class="btn btn-secondary" href="#">Learn more</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="hero hero-tertiary">
+		<div class="container">
+			<h1>Tertiary</h1>
+			<p class="hero-tagline">Tertiary color variant</p>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="#">Action</a>
+				<a class="btn btn-secondary" href="#">Learn more</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="hero hero-contrast">
+		<div class="container">
+			<h1>Contrast</h1>
+			<p class="hero-tagline">Contrast color variant</p>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="#">Action</a>
+				<a class="btn btn-secondary" href="#">Learn more</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="hero hero-success">
+		<div class="container">
+			<h1>Success</h1>
+			<p class="hero-tagline">Success color variant</p>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="#">Action</a>
+				<a class="btn btn-secondary" href="#">Learn more</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="hero hero-info">
+		<div class="container">
+			<h1>Info</h1>
+			<p class="hero-tagline">Info color variant</p>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="#">Action</a>
+				<a class="btn btn-secondary" href="#">Learn more</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="hero hero-warning">
+		<div class="container">
+			<h1>Warning</h1>
+			<p class="hero-tagline">Warning color variant</p>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="#">Action</a>
+				<a class="btn btn-secondary" href="#">Learn more</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="hero hero-error">
+		<div class="container">
+			<h1>Error</h1>
+			<p class="hero-tagline">Error color variant</p>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="#">Action</a>
+				<a class="btn btn-secondary" href="#">Learn more</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Flat variant -->
+	<main class="container">
+		<section>
+			<h2>Flat variant</h2>
+			<p>Use <code>.hero-flat</code> for a solid background without gradient.</p>
+		</section>
+	</main>
+
+	<section class="hero hero-primary hero-flat">
+		<div class="container">
+			<h1>Flat Hero</h1>
+			<p class="hero-tagline">Solid background, no gradient</p>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="#">Action</a>
+				<a class="btn btn-secondary" href="#">Learn more</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Left-aligned variant -->
+	<main class="container">
+		<section>
+			<h2>Left-aligned variant</h2>
+			<p>Use <code>.hero-start</code> for left-aligned content.</p>
+		</section>
+	</main>
+
+	<section class="hero hero-primary hero-start">
+		<div class="container">
+			<h1>Left-Aligned</h1>
+			<p class="hero-tagline">Content aligned to the start</p>
+			<p class="hero-subtitle">Useful for landing pages with asymmetric layouts</p>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="#">Action</a>
+				<a class="btn btn-secondary" href="#">Learn more</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Minimal -->
+	<main class="container">
+		<section>
+			<h2>Minimal hero</h2>
+			<p>Title and tagline only, no badges or actions.</p>
+		</section>
+	</main>
+
+	<section class="hero hero-secondary">
+		<div class="container">
+			<h1>Minimal Hero</h1>
+			<p class="hero-tagline">Just a title and a tagline</p>
+		</div>
+	</section>
+</body>
+</html>

@@ -12,9 +12,9 @@
 - `build/mu.theme.json` — Array of 20 theme definitions (one per PicoCSS color)
 - `build/pico.css`, `build/pico.colors.css` — PicoCSS v2 base (external, do not modify)
 - `css/mu.grid.css` — 12-column responsive grid
-- `css/mu.component.*.css` — UI components (13 files)
+- `css/mu.component.*.css` — UI components (14 files)
 - `dist/` — Build output (21 CSS files: `mu.css` + 20 `mu.{color}.css`)
-- `examples/` — HTML demos (44 files: index + 14 component pages + 9 native element pages + 20 theme recap pages)
+- `examples/` — HTML demos (45 files: index + 15 component pages + 9 native element pages + 20 theme recap pages)
 - `README.md` — Project documentation with installation, components, grid, dark mode, build
 
 ## Build commands

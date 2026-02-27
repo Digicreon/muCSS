@@ -1,0 +1,145 @@
+/*
+ * µCSS Component: Hero
+ */
+
+/* --- Color variants (bridge pattern) --- */
+.hero-primary {
+	--hero-color: var(--pico-primary);
+	--hero-text: var(--pico-primary-inverse);
+}
+.hero-secondary {
+	--hero-color: var(--pico-secondary);
+	--hero-text: var(--pico-secondary-inverse);
+}
+.hero-tertiary {
+	--hero-color: var(--pico-tertiary);
+	--hero-text: var(--pico-tertiary-inverse);
+}
+.hero-contrast {
+	--hero-color: var(--pico-contrast);
+	--hero-text: var(--pico-contrast-inverse);
+}
+.hero-success {
+	--hero-color: var(--pico-success);
+	--hero-text: var(--pico-success-inverse);
+}
+.hero-info {
+	--hero-color: var(--pico-info);
+	--hero-text: var(--pico-info-inverse);
+}
+.hero-warning {
+	--hero-color: var(--pico-warning);
+	--hero-text: var(--pico-warning-inverse);
+}
+.hero-error {
+	--hero-color: var(--pico-error);
+	--hero-text: var(--pico-error-inverse);
+}
+
+/* --- Base --- */
+.hero {
+	text-align: center;
+	padding: 4rem 0 3rem;
+	background: linear-gradient(135deg, var(--hero-color) 0%, color-mix(in srgb, var(--hero-color) 70%, #000) 100%);
+	color: var(--hero-text);
+}
+
+/* --- Title --- */
+.hero h1 {
+	font-size: 3.5rem;
+	color: inherit;
+	margin-bottom: 0.25rem;
+	letter-spacing: -0.02em;
+}
+
+/* --- Tagline --- */
+.hero-tagline {
+	font-size: 1.35rem;
+	opacity: 0.9;
+	margin-bottom: 0.25rem;
+}
+
+/* --- Subtitle --- */
+.hero-subtitle {
+	font-size: 1.05rem;
+	opacity: 0.75;
+	margin-bottom: 1.5rem;
+}
+
+/* --- Badges --- */
+.hero-badges {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-bottom: 2rem;
+	flex-wrap: wrap;
+}
+.hero-badges .badge {
+	background: rgba(255, 255, 255, 0.2);
+	color: inherit;
+	border-color: transparent;
+	backdrop-filter: blur(4px);
+}
+
+/* --- Actions --- */
+.hero-actions {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+.hero-actions .btn-primary {
+	background-color: var(--hero-text);
+	border-color: var(--hero-text);
+	color: var(--hero-color);
+}
+.hero-actions .btn-primary:hover {
+	opacity: 0.85;
+}
+.hero-actions .btn-secondary {
+	background-color: rgba(255, 255, 255, 0.15);
+	border-color: rgba(255, 255, 255, 0.4);
+	color: inherit;
+}
+.hero-actions .btn-secondary:hover {
+	background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* --- Modifiers --- */
+.hero.hero-flat {
+	background: var(--hero-color);
+}
+.hero.hero-start {
+	text-align: left;
+}
+.hero.hero-start .hero-badges,
+.hero.hero-start .hero-actions {
+	justify-content: flex-start;
+}
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+	.hero {
+		padding: 3rem 0 2rem;
+	}
+	.hero h1 {
+		font-size: 2.5rem;
+	}
+	.hero-tagline {
+		font-size: 1.15rem;
+	}
+	.hero-subtitle {
+		font-size: 0.95rem;
+	}
+}
+@media (min-width: 960px) {
+	.hero {
+		padding: 5rem 0 4rem;
+	}
+	.hero h1 {
+		font-size: 4rem;
+	}
+	.hero-tagline {
+		font-size: 1.5rem;
+	}
+}
