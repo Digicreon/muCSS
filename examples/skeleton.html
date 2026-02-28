@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Skeleton</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Skeleton</h1>
+			<p>Loading placeholders with shimmer animation — text, title, avatar, image.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Text lines</h2>
+			<div class="skeleton skeleton-text"></div>
+			<div class="skeleton skeleton-text"></div>
+			<div class="skeleton skeleton-text"></div>
+			<div class="skeleton skeleton-text"></div>
+		</section>
+
+		<section>
+			<h2>Title</h2>
+			<div class="skeleton skeleton-title"></div>
+		</section>
+
+		<section>
+			<h2>Avatar</h2>
+			<div class="skeleton skeleton-avatar"></div>
+		</section>
+
+		<section>
+			<h2>Image</h2>
+			<div class="skeleton skeleton-image"></div>
+		</section>
+
+		<section>
+			<h2>Card skeleton</h2>
+			<article>
+				<header>
+					<div style="display: flex; align-items: center; gap: 0.75rem;">
+						<div class="skeleton skeleton-avatar"></div>
+						<div style="flex: 1;">
+							<div class="skeleton skeleton-title" style="margin-bottom: 0.25rem;"></div>
+							<div class="skeleton skeleton-text" style="width: 40%;"></div>
+						</div>
+					</div>
+				</header>
+				<div class="skeleton skeleton-image" style="margin-bottom: 1rem;"></div>
+				<div class="skeleton skeleton-text"></div>
+				<div class="skeleton skeleton-text"></div>
+				<div class="skeleton skeleton-text"></div>
+			</article>
+		</section>
+
+		<section>
+			<h2>Toggle: skeleton / content</h2>
+			<p><button class="btn btn-sm btn-primary" onclick="toggleSkeleton()">Toggle</button></p>
+			<div id="toggle-demo">
+				<article>
+					<header>
+						<div style="display: flex; align-items: center; gap: 0.75rem;">
+							<div class="skeleton skeleton-avatar"></div>
+							<div style="flex: 1;">
+								<div class="skeleton skeleton-title" style="margin-bottom: 0.25rem;"></div>
+								<div class="skeleton skeleton-text" style="width: 40%;"></div>
+							</div>
+						</div>
+					</header>
+					<div class="skeleton skeleton-image" style="margin-bottom: 1rem;"></div>
+					<div class="skeleton skeleton-text"></div>
+					<div class="skeleton skeleton-text"></div>
+					<div class="skeleton skeleton-text"></div>
+				</article>
+			</div>
+			<div id="toggle-content" style="display: none;">
+				<article>
+					<header>
+						<div style="display: flex; align-items: center; gap: 0.75rem;">
+							<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Crect fill='%230172ad' width='48' height='48' rx='24'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='20'%3EAB%3C/text%3E%3C/svg%3E" alt="Avatar" style="width: 3rem; height: 3rem; border-radius: 50%;">
+							<div>
+								<strong>Amaury Bouchard</strong><br>
+								<small>Posted 2 hours ago</small>
+							</div>
+						</div>
+					</header>
+					<p>This is the actual content that was loading. The skeleton placeholders have been replaced with real data.</p>
+					<p>Skeleton loaders help reduce perceived loading time by showing the shape of content before it arrives.</p>
+				</article>
+			</div>
+		</section>
+	</main>
+
+	<script>
+	var showing = false;
+	function toggleSkeleton() {
+		showing = !showing;
+		document.getElementById('toggle-demo').style.display = showing ? 'none' : '';
+		document.getElementById('toggle-content').style.display = showing ? '' : 'none';
+	}
+	</script>
+</body>
+</html>

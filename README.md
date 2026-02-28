@@ -6,7 +6,7 @@ Lightweight CSS framework built on [PicoCSS v2](https://picocss.com/), part of t
 
 - **20 color themes** — One CSS file per theme, ready to use
 - **12-column responsive grid** — 5 breakpoints, offsets, ordering, display utilities
-- **15 UI components** — Accordion, Alert, Badge, Breadcrumb, Button, Card, Forms, Hero, Modal, Pagination, Progress, Spinner, Table, Toast, Tabs
+- **16 UI components** — Accordion, Alert, Badge, Breadcrumb, Button, Card, Forms, Hero, Modal, Pagination, Progress, Skeleton, Spinner, Table, Toast, Tabs
 - **Dark mode** — Automatic (prefers-color-scheme) or manual (`data-theme`)
 - **Pure CSS** — No JavaScript dependency
 - **PHP tooling** — Build and theming via PHP scripts, no Node.js/SASS required
@@ -67,6 +67,7 @@ Each file is self-contained (PicoCSS base + colors + grid + all components).
 | Modal | Dialog sizes (sm/default/lg/fullscreen) | [modal.html](examples/modal.html) |
 | Pagination | Aligned, sized, borderless, responsive | [pagination.html](examples/pagination.html) |
 | Progress | Colored progress bars | [progress.html](examples/progress.html) |
+| Skeleton | Loading placeholders, text, title, avatar, image | [skeleton.html](examples/skeleton.html) |
 | Spinner | Loading spinners, 8 colors, 3 sizes | [spinner.html](examples/spinner.html) |
 | Table | Hover, striped, bordered, compact, fullwidth | [table.html](examples/table.html) |
 | Toast | Fixed-position notifications, 6 positions, 8 colors | [toast.html](examples/toast.html) |

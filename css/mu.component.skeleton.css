@@ -1,0 +1,47 @@
+/*
+ * µCSS Component: Skeleton
+ * Loading placeholders with shimmer animation.
+ */
+
+.skeleton {
+	display: block;
+	background-color: var(--pico-secondary-background);
+	color: transparent;
+	border-radius: 0.25rem;
+	background-image: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 50%, transparent 100%);
+	background-size: 200% 100%;
+	animation: mu-shimmer 1.5s ease-in-out infinite;
+	user-select: none;
+	pointer-events: none;
+}
+@keyframes mu-shimmer {
+	0% { background-position: 200% 0; }
+	100% { background-position: -200% 0; }
+}
+
+/* Text line */
+.skeleton-text {
+	height: 1em;
+	margin-bottom: 0.5rem;
+}
+.skeleton-text:last-child { width: 75%; }
+
+/* Title */
+.skeleton-title {
+	height: 1.5rem;
+	width: 50%;
+	margin-bottom: 0.75rem;
+}
+
+/* Avatar (circle) */
+.skeleton-avatar {
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+}
+
+/* Image placeholder */
+.skeleton-image {
+	height: 12rem;
+	border-radius: 0.5rem;
+}
