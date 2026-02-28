@@ -6,7 +6,7 @@ Lightweight CSS framework built on [PicoCSS v2](https://picocss.com/), part of t
 
 - **20 color themes** — One CSS file per theme, ready to use
 - **12-column responsive grid** — 5 breakpoints, offsets, ordering, display utilities
-- **14 UI components** — Accordion, Alert, Badge, Breadcrumb, Button, Card, Forms, Hero, Modal, Pagination, Progress, Spinner, Table, Tabs
+- **15 UI components** — Accordion, Alert, Badge, Breadcrumb, Button, Card, Forms, Hero, Modal, Pagination, Progress, Spinner, Table, Toast, Tabs
 - **Dark mode** — Automatic (prefers-color-scheme) or manual (`data-theme`)
 - **Pure CSS** — No JavaScript dependency
 - **PHP tooling** — Build and theming via PHP scripts, no Node.js/SASS required
@@ -69,6 +69,7 @@ Each file is self-contained (PicoCSS base + colors + grid + all components).
 | Progress | Colored progress bars | [progress.html](examples/progress.html) |
 | Spinner | Loading spinners, 8 colors, 3 sizes | [spinner.html](examples/spinner.html) |
 | Table | Hover, striped, bordered, compact, fullwidth | [table.html](examples/table.html) |
+| Toast | Fixed-position notifications, 6 positions, 8 colors | [toast.html](examples/toast.html) |
 | Tabs | Standard, pills, aligned, fullwidth | [tabs.html](examples/tabs.html) |
 
 ## PicoCSS native
@@ -145,7 +146,7 @@ mucss/
     pico.colors.css       # PicoCSS palette (external)
   css/
     mu.grid.css           # 12-column grid
-    mu.component.*.css    # UI components (14 files)
+    mu.component.*.css    # UI components (15 files)
   dist/                   # Build output (21 CSS files)
   examples/               # HTML demos for each component
   specification.md        # Full specification

@@ -1,0 +1,31 @@
+/*
+ * µCSS Component: Toast
+ * Fixed-position notification wrapper. Uses .alert for content styling.
+ */
+
+.toast {
+	position: fixed;
+	z-index: 1050;
+	max-width: 350px;
+}
+.toast .alert {
+	margin-bottom: 0;
+}
+
+/* Positions */
+.toast-top-right { top: 1rem; right: 1rem; }
+.toast-top-left { top: 1rem; left: 1rem; }
+.toast-bottom-right { bottom: 1rem; right: 1rem; }
+.toast-bottom-left { bottom: 1rem; left: 1rem; }
+.toast-top-center { top: 1rem; left: 50%; transform: translateX(-50%); }
+.toast-bottom-center { bottom: 1rem; left: 50%; transform: translateX(-50%); }
+
+/* Mobile: full-width for all positions */
+@media (max-width: 639px) {
+	.toast {
+		left: 1rem;
+		right: 1rem;
+		max-width: none;
+		transform: none;
+	}
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Toast</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Toast</h1>
+			<p>Fixed-position notifications using alert styling — 6 positions, 8 colors.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Trigger toasts</h2>
+			<p>Click a button to show a toast in the corresponding position. It auto-removes after 4 seconds.</p>
+			<div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+				<button class="btn btn-sm btn-primary" onclick="showToast('top-left', 'info')">Top left</button>
+				<button class="btn btn-sm btn-primary" onclick="showToast('top-center', 'success')">Top center</button>
+				<button class="btn btn-sm btn-primary" onclick="showToast('top-right', 'warning')">Top right</button>
+				<button class="btn btn-sm btn-primary" onclick="showToast('bottom-left', 'error')">Bottom left</button>
+				<button class="btn btn-sm btn-primary" onclick="showToast('bottom-center', 'primary')">Bottom center</button>
+				<button class="btn btn-sm btn-primary" onclick="showToast('bottom-right', 'secondary')">Bottom right</button>
+			</div>
+		</section>
+
+		<section>
+			<h2>Color variants</h2>
+			<p>Toasts reuse <code>.alert .alert-{variant}</code> for content styling.</p>
+			<div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+				<button class="btn btn-sm" onclick="showToast('top-right', 'primary')">Primary</button>
+				<button class="btn btn-sm" onclick="showToast('top-right', 'secondary')">Secondary</button>
+				<button class="btn btn-sm" onclick="showToast('top-right', 'tertiary')">Tertiary</button>
+				<button class="btn btn-sm" onclick="showToast('top-right', 'contrast')">Contrast</button>
+				<button class="btn btn-sm" onclick="showToast('top-right', 'success')">Success</button>
+				<button class="btn btn-sm" onclick="showToast('top-right', 'info')">Info</button>
+				<button class="btn btn-sm" onclick="showToast('top-right', 'warning')">Warning</button>
+				<button class="btn btn-sm" onclick="showToast('top-right', 'error')">Error</button>
+			</div>
+		</section>
+
+		<section>
+			<h2>With title and dismiss button</h2>
+			<button class="btn btn-sm btn-primary" onclick="showToastTitled('top-right', 'success', 'Saved!', 'Your changes have been saved.')">Titled + dismissible</button>
+		</section>
+
+		<section>
+			<h2>Static examples</h2>
+			<p>Below are static (non-fixed) toasts for reference. In real use, these are fixed-positioned.</p>
+
+			<div class="alert alert-success"><p>This is a <strong>success</strong> toast.</p></div>
+			<div class="alert alert-info alert-dismissible">
+				<span class="alert-title">Heads up!</span>
+				<p>This toast has a title and is dismissible.</p>
+				<button class="alert-close" aria-label="Close" onclick="this.parentElement.remove()">&times;</button>
+			</div>
+			<div class="alert alert-warning"><p>This is a <strong>warning</strong> toast.</p></div>
+			<div class="alert alert-error"><p>This is an <strong>error</strong> toast.</p></div>
+		</section>
+
+		<section>
+			<h2>Usage</h2>
+			<pre><code>&lt;div class="toast toast-top-right"&gt;
+  &lt;div class="alert alert-success" role="alert"&gt;
+    &lt;p&gt;Changes saved.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</section>
+	</main>
+
+	<script>
+	function showToast(position, variant) {
+		var wrapper = document.createElement('div');
+		wrapper.className = 'toast toast-' + position;
+		wrapper.innerHTML = '<div class="alert alert-' + variant + '" role="alert"><p>Toast <strong>' + variant + '</strong> at ' + position + '.</p></div>';
+		document.body.appendChild(wrapper);
+		setTimeout(function() { wrapper.remove(); }, 4000);
+	}
+	function showToastTitled(position, variant, title, message) {
+		var wrapper = document.createElement('div');
+		wrapper.className = 'toast toast-' + position;
+		wrapper.innerHTML = '<div class="alert alert-' + variant + ' alert-dismissible" role="alert">' +
+			'<span class="alert-title">' + title + '</span>' +
+			'<p>' + message + '</p>' +
+			'<button class="alert-close" aria-label="Close" onclick="this.closest(\'.toast\').remove()">&times;</button>' +
+			'</div>';
+		document.body.appendChild(wrapper);
+		setTimeout(function() { wrapper.remove(); }, 4000);
+	}
+	</script>
+</body>
+</html>
