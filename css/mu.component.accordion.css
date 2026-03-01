@@ -3,13 +3,13 @@
  */
 
 .accordion {
-	border: 1px solid var(--pico-secondary-background);
+	border: 1px solid var(--mu-secondary-background);
 	border-radius: 0.375rem;
 	overflow: hidden;
 }
 .accordion > details {
 	margin-bottom: 0;
-	border-bottom: 1px solid var(--pico-secondary-background);
+	border-bottom: 1px solid var(--mu-secondary-background);
 	border-radius: 0;
 }
 .accordion > details:last-child {
@@ -39,7 +39,7 @@
 	transform: rotate(45deg);
 }
 .accordion > details[open] > summary {
-	border-bottom: 1px solid var(--pico-secondary-background);
+	border-bottom: 1px solid var(--mu-secondary-background);
 }
 .accordion > details > :not(summary) {
 	padding: 0.75rem 1rem;

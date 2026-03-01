@@ -28,21 +28,21 @@
 	content: "/";
 	display: inline-block;
 	margin: 0 0.5rem;
-	color: var(--pico-secondary);
+	color: var(--mu-secondary);
 	opacity: 0.6;
 }
 .breadcrumb a {
-	color: var(--pico-primary);
+	color: var(--mu-primary);
 	text-decoration: none;
 }
 .breadcrumb a:hover {
-	color: var(--pico-primary-hover);
+	color: var(--mu-primary-hover);
 	text-decoration: underline;
 	text-underline-offset: 2px;
 }
 .breadcrumb li:last-child,
 .breadcrumb li[aria-current] {
-	color: var(--pico-secondary);
+	color: var(--mu-secondary);
 }
 
 .breadcrumb-arrow li + li::before   { content: "›"; font-size: 1.1em; }
@@ -51,6 +51,6 @@
 
 .breadcrumb-boxed {
 	padding: 0.5rem 1rem;
-	background-color: var(--pico-secondary-background);
+	background-color: var(--mu-secondary-background);
 	border-radius: 0.375rem;
 }

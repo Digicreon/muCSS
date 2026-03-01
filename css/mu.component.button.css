@@ -20,7 +20,7 @@
 	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, color 0.15s ease-in-out;
 }
 .btn:focus-visible {
-	outline: 2px solid var(--pico-primary-focus);
+	outline: 2px solid var(--mu-primary-focus);
 	outline-offset: 2px;
 }
 
@@ -36,115 +36,115 @@
 
 /* Roles — filled */
 .btn-primary {
-	background-color: var(--pico-primary);
-	border-color: var(--pico-primary);
-	color: var(--pico-primary-inverse);
+	background-color: var(--mu-primary);
+	border-color: var(--mu-primary);
+	color: var(--mu-primary-inverse);
 }
 .btn-primary:hover {
-	background-color: var(--pico-primary-hover);
-	border-color: var(--pico-primary-hover);
+	background-color: var(--mu-primary-hover);
+	border-color: var(--mu-primary-hover);
 }
-.btn-primary:focus-visible { outline-color: var(--pico-primary-focus); }
+.btn-primary:focus-visible { outline-color: var(--mu-primary-focus); }
 
 .btn-secondary {
-	background-color: var(--pico-secondary);
-	border-color: var(--pico-secondary);
-	color: var(--pico-secondary-inverse);
+	background-color: var(--mu-secondary);
+	border-color: var(--mu-secondary);
+	color: var(--mu-secondary-inverse);
 }
 .btn-secondary:hover {
-	background-color: var(--pico-secondary-hover);
-	border-color: var(--pico-secondary-hover);
+	background-color: var(--mu-secondary-hover);
+	border-color: var(--mu-secondary-hover);
 }
-.btn-secondary:focus-visible { outline-color: var(--pico-secondary-focus); }
+.btn-secondary:focus-visible { outline-color: var(--mu-secondary-focus); }
 
 .btn-tertiary {
-	background-color: var(--pico-tertiary);
-	border-color: var(--pico-tertiary);
-	color: var(--pico-tertiary-inverse);
+	background-color: var(--mu-tertiary);
+	border-color: var(--mu-tertiary);
+	color: var(--mu-tertiary-inverse);
 }
 .btn-tertiary:hover {
-	background-color: var(--pico-tertiary-hover);
-	border-color: var(--pico-tertiary-hover);
+	background-color: var(--mu-tertiary-hover);
+	border-color: var(--mu-tertiary-hover);
 }
-.btn-tertiary:focus-visible { outline-color: var(--pico-tertiary-focus); }
+.btn-tertiary:focus-visible { outline-color: var(--mu-tertiary-focus); }
 
 .btn-contrast {
-	background-color: var(--pico-contrast);
-	border-color: var(--pico-contrast);
-	color: var(--pico-contrast-inverse);
+	background-color: var(--mu-contrast);
+	border-color: var(--mu-contrast);
+	color: var(--mu-contrast-inverse);
 }
 .btn-contrast:hover {
-	background-color: var(--pico-contrast-hover);
-	border-color: var(--pico-contrast-hover);
+	background-color: var(--mu-contrast-hover);
+	border-color: var(--mu-contrast-hover);
 }
-.btn-contrast:focus-visible { outline-color: var(--pico-contrast-focus); }
+.btn-contrast:focus-visible { outline-color: var(--mu-contrast-focus); }
 
 .btn-success {
-	background-color: var(--pico-success);
-	border-color: var(--pico-success);
-	color: var(--pico-success-inverse);
+	background-color: var(--mu-success);
+	border-color: var(--mu-success);
+	color: var(--mu-success-inverse);
 }
 .btn-success:hover {
-	background-color: var(--pico-success-hover);
-	border-color: var(--pico-success-hover);
+	background-color: var(--mu-success-hover);
+	border-color: var(--mu-success-hover);
 }
-.btn-success:focus-visible { outline-color: var(--pico-success-focus); }
+.btn-success:focus-visible { outline-color: var(--mu-success-focus); }
 
 .btn-info {
-	background-color: var(--pico-info);
-	border-color: var(--pico-info);
-	color: var(--pico-info-inverse);
+	background-color: var(--mu-info);
+	border-color: var(--mu-info);
+	color: var(--mu-info-inverse);
 }
 .btn-info:hover {
-	background-color: var(--pico-info-hover);
-	border-color: var(--pico-info-hover);
+	background-color: var(--mu-info-hover);
+	border-color: var(--mu-info-hover);
 }
-.btn-info:focus-visible { outline-color: var(--pico-info-focus); }
+.btn-info:focus-visible { outline-color: var(--mu-info-focus); }
 
 .btn-warning {
-	background-color: var(--pico-warning);
-	border-color: var(--pico-warning);
-	color: var(--pico-warning-inverse);
+	background-color: var(--mu-warning);
+	border-color: var(--mu-warning);
+	color: var(--mu-warning-inverse);
 }
 .btn-warning:hover {
-	background-color: var(--pico-warning-hover);
-	border-color: var(--pico-warning-hover);
+	background-color: var(--mu-warning-hover);
+	border-color: var(--mu-warning-hover);
 }
-.btn-warning:focus-visible { outline-color: var(--pico-warning-focus); }
+.btn-warning:focus-visible { outline-color: var(--mu-warning-focus); }
 
 .btn-error {
-	background-color: var(--pico-error);
-	border-color: var(--pico-error);
-	color: var(--pico-error-inverse);
+	background-color: var(--mu-error);
+	border-color: var(--mu-error);
+	color: var(--mu-error-inverse);
 }
 .btn-error:hover {
-	background-color: var(--pico-error-hover);
-	border-color: var(--pico-error-hover);
+	background-color: var(--mu-error-hover);
+	border-color: var(--mu-error-hover);
 }
-.btn-error:focus-visible { outline-color: var(--pico-error-focus); }
+.btn-error:focus-visible { outline-color: var(--mu-error-focus); }
 
 /* Ghost — transparent background, visible border, colored text */
 .btn-ghost {
 	background-color: transparent;
 }
-.btn-ghost.btn-primary   { color: var(--pico-primary);   border-color: var(--pico-primary); }
-.btn-ghost.btn-secondary { color: var(--pico-secondary); border-color: var(--pico-secondary); }
-.btn-ghost.btn-tertiary  { color: var(--pico-tertiary);  border-color: var(--pico-tertiary); }
-.btn-ghost.btn-contrast  { color: var(--pico-contrast);  border-color: var(--pico-contrast); }
-.btn-ghost.btn-success   { color: var(--pico-success);   border-color: var(--pico-success); }
-.btn-ghost.btn-info      { color: var(--pico-info);      border-color: var(--pico-info); }
-.btn-ghost.btn-warning   { color: var(--pico-warning);   border-color: var(--pico-warning); }
-.btn-ghost.btn-error     { color: var(--pico-error);     border-color: var(--pico-error); }
+.btn-ghost.btn-primary   { color: var(--mu-primary);   border-color: var(--mu-primary); }
+.btn-ghost.btn-secondary { color: var(--mu-secondary); border-color: var(--mu-secondary); }
+.btn-ghost.btn-tertiary  { color: var(--mu-tertiary);  border-color: var(--mu-tertiary); }
+.btn-ghost.btn-contrast  { color: var(--mu-contrast);  border-color: var(--mu-contrast); }
+.btn-ghost.btn-success   { color: var(--mu-success);   border-color: var(--mu-success); }
+.btn-ghost.btn-info      { color: var(--mu-info);      border-color: var(--mu-info); }
+.btn-ghost.btn-warning   { color: var(--mu-warning);   border-color: var(--mu-warning); }
+.btn-ghost.btn-error     { color: var(--mu-error);     border-color: var(--mu-error); }
 .btn-ghost:hover { opacity: 0.8; }
 
 /* Link — looks like a link, no background, no border */
 .btn-link {
 	background-color: transparent;
 	border-color: transparent;
-	color: var(--pico-primary);
+	color: var(--mu-primary);
 	text-decoration: underline;
 	text-underline-offset: 2px;
 }
 .btn-link:hover {
-	color: var(--pico-primary-hover);
+	color: var(--mu-primary-hover);
 }

@@ -6,7 +6,7 @@
 
 ## Usage
 
-Apply a color class directly on a `<progress>` element to change the bar color. Without a color class, the default PicoCSS progress styling applies.
+Apply a color class directly on a `<progress>` element to change the bar color. Without a color class, the default progress styling applies.
 
 ```html
 <progress class="progress-primary" value="75" max="100">75%</progress>
@@ -22,14 +22,14 @@ The text content inside `<progress>` serves as a fallback for browsers that do n
 
 | Class                | Color variable       |
 |----------------------|----------------------|
-| `.progress-primary`  | `--pico-primary`     |
-| `.progress-secondary`| `--pico-secondary`   |
-| `.progress-tertiary` | `--pico-tertiary`    |
-| `.progress-contrast` | `--pico-contrast`    |
-| `.progress-success`  | `--pico-success`     |
-| `.progress-info`     | `--pico-info`        |
-| `.progress-warning`  | `--pico-warning`     |
-| `.progress-error`    | `--pico-error`       |
+| `.progress-primary`  | `--mu-primary`     |
+| `.progress-secondary`| `--mu-secondary`   |
+| `.progress-tertiary` | `--mu-tertiary`    |
+| `.progress-contrast` | `--mu-contrast`    |
+| `.progress-success`  | `--mu-success`     |
+| `.progress-info`     | `--mu-info`        |
+| `.progress-warning`  | `--mu-warning`     |
+| `.progress-error`    | `--mu-error`       |
 
 ### All 8 variants
 
@@ -120,4 +120,6 @@ Each color variant sets three properties for full browser support:
 
 ---
 
-→ [Voir l'exemple](../examples/progress.html)
+> See also : [µLoading](mu.loading.md) · [µSpinner](mu.spinner.md)
+
+→ [See example](../examples/progress.html)

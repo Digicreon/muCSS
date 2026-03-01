@@ -22,43 +22,43 @@
 	font-size: 0.875rem;
 	line-height: 1;
 	text-decoration: none;
-	border: 1px solid var(--pico-secondary-background);
+	border: 1px solid var(--mu-secondary-background);
 	border-radius: 0.25rem;
-	color: var(--pico-primary);
+	color: var(--mu-primary);
 	background-color: transparent;
 	transition: color 0.15s ease-in-out,
 	            background-color 0.15s ease-in-out,
 	            border-color 0.15s ease-in-out;
 }
 .pagination li a:hover {
-	color: var(--pico-primary-hover);
-	background-color: var(--pico-primary-background);
-	border-color: var(--pico-primary-background);
+	color: var(--mu-primary-hover);
+	background-color: var(--mu-primary-background);
+	border-color: var(--mu-primary-background);
 }
 .pagination li a:focus-visible {
-	outline: 2px solid var(--pico-primary-focus);
+	outline: 2px solid var(--mu-primary-focus);
 	outline-offset: 1px;
 }
 .pagination li.active a,
 .pagination li.active a:hover {
-	color: var(--pico-primary-inverse);
-	background-color: var(--pico-primary);
-	border-color: var(--pico-primary);
+	color: var(--mu-primary-inverse);
+	background-color: var(--mu-primary);
+	border-color: var(--mu-primary);
 	cursor: default;
 	pointer-events: none;
 }
 .pagination li.disabled a,
 .pagination li.disabled span,
 .pagination li.disabled a:hover {
-	color: var(--pico-secondary);
+	color: var(--mu-secondary);
 	opacity: 0.5;
 	background-color: transparent;
-	border-color: var(--pico-secondary-background);
+	border-color: var(--mu-secondary-background);
 	cursor: not-allowed;
 	pointer-events: none;
 }
 
-.pagination-ellipsis span { border-color: transparent; color: var(--pico-secondary); cursor: default; }
+.pagination-ellipsis span { border-color: transparent; color: var(--mu-secondary); cursor: default; }
 .pagination-prev a, .pagination-next a { font-weight: 500; }
 
 .pagination-centered { justify-content: center; }

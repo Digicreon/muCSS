@@ -40,6 +40,7 @@ const SHADE_MAP = [
 
 const ROLES = ['primary', 'secondary', 'tertiary', 'contrast', 'success', 'info', 'warning', 'error'];
 
+
 function parsePicoColors(string $file): array {
 	if (!is_readable($file)) {
 		fprintf(STDERR, "Error: cannot read PicoCSS colors file: %s\n", $file);
@@ -150,7 +151,7 @@ function generateRoleVars(string $role, string $family, array $palette, string $
 	$baseHex  = resolveShade($shades, $map['base'], $family);
 	$bgHex    = resolveShade($shades, $map['background'], $family);
 	$hoverHex = resolveShade($shades, $map['hover'], $family);
-	$prefix = "--pico-{$role}";
+	$prefix = "--mu-{$role}";
 	return [
 		$prefix                      => $baseHex,
 		"{$prefix}-background"       => $bgHex,

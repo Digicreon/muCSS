@@ -1,6 +1,6 @@
 # µRange
 
-**µRange** describes the native range slider styling provided by [µCSS](.) via PicoCSS. Range sliders use the standard `<input type="range">` element, which PicoCSS styles with a custom track and thumb without any additional classes.
+**µRange** describes the native range slider styling provided by [µCSS](.). Range sliders use the standard `<input type="range">` element, which µCSS styles with a custom track and thumb without any additional classes.
 
 ---
 
@@ -100,4 +100,6 @@ Range sliders work well inside cards (`<article>`) for settings panels.
 
 ---
 
-→ [Voir l'exemple](../examples/range.html)
+> See also : [µForms](mu.forms.md)
+
+→ [See example](../examples/range.html)

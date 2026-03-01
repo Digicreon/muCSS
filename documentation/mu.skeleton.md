@@ -87,7 +87,7 @@ Combine shapes to build skeleton layouts that mirror real content:
 
 | Property | Value |
 |----------|-------|
-| Background | `var(--pico-secondary-background)` |
+| Background | `var(--mu-secondary-background)` |
 | Animation | `mu-shimmer` — 1.5s ease-in-out infinite |
 | Border radius (base) | `0.25rem` |
 | Text line height | `1em` |
@@ -106,4 +106,6 @@ Combine shapes to build skeleton layouts that mirror real content:
 
 ---
 
-→ [Voir l'exemple](../examples/skeleton.html)
+> See also : [µLoading](mu.loading.md) · [µSpinner](mu.spinner.md)
+
+→ [See example](../examples/skeleton.html)

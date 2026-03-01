@@ -2,34 +2,34 @@
  * µCSS Component: Progress
  */
 
-progress.progress-primary { accent-color: var(--pico-primary); }
-progress.progress-primary::-webkit-progress-value { background-color: var(--pico-primary); }
-progress.progress-primary::-moz-progress-bar { background-color: var(--pico-primary); }
+progress.progress-primary { accent-color: var(--mu-primary); }
+progress.progress-primary::-webkit-progress-value { background-color: var(--mu-primary); }
+progress.progress-primary::-moz-progress-bar { background-color: var(--mu-primary); }
 
-progress.progress-secondary { accent-color: var(--pico-secondary); }
-progress.progress-secondary::-webkit-progress-value { background-color: var(--pico-secondary); }
-progress.progress-secondary::-moz-progress-bar { background-color: var(--pico-secondary); }
+progress.progress-secondary { accent-color: var(--mu-secondary); }
+progress.progress-secondary::-webkit-progress-value { background-color: var(--mu-secondary); }
+progress.progress-secondary::-moz-progress-bar { background-color: var(--mu-secondary); }
 
-progress.progress-tertiary { accent-color: var(--pico-tertiary); }
-progress.progress-tertiary::-webkit-progress-value { background-color: var(--pico-tertiary); }
-progress.progress-tertiary::-moz-progress-bar { background-color: var(--pico-tertiary); }
+progress.progress-tertiary { accent-color: var(--mu-tertiary); }
+progress.progress-tertiary::-webkit-progress-value { background-color: var(--mu-tertiary); }
+progress.progress-tertiary::-moz-progress-bar { background-color: var(--mu-tertiary); }
 
-progress.progress-contrast { accent-color: var(--pico-contrast); }
-progress.progress-contrast::-webkit-progress-value { background-color: var(--pico-contrast); }
-progress.progress-contrast::-moz-progress-bar { background-color: var(--pico-contrast); }
+progress.progress-contrast { accent-color: var(--mu-contrast); }
+progress.progress-contrast::-webkit-progress-value { background-color: var(--mu-contrast); }
+progress.progress-contrast::-moz-progress-bar { background-color: var(--mu-contrast); }
 
-progress.progress-success { accent-color: var(--pico-success); }
-progress.progress-success::-webkit-progress-value { background-color: var(--pico-success); }
-progress.progress-success::-moz-progress-bar { background-color: var(--pico-success); }
+progress.progress-success { accent-color: var(--mu-success); }
+progress.progress-success::-webkit-progress-value { background-color: var(--mu-success); }
+progress.progress-success::-moz-progress-bar { background-color: var(--mu-success); }
 
-progress.progress-info { accent-color: var(--pico-info); }
-progress.progress-info::-webkit-progress-value { background-color: var(--pico-info); }
-progress.progress-info::-moz-progress-bar { background-color: var(--pico-info); }
+progress.progress-info { accent-color: var(--mu-info); }
+progress.progress-info::-webkit-progress-value { background-color: var(--mu-info); }
+progress.progress-info::-moz-progress-bar { background-color: var(--mu-info); }
 
-progress.progress-warning { accent-color: var(--pico-warning); }
-progress.progress-warning::-webkit-progress-value { background-color: var(--pico-warning); }
-progress.progress-warning::-moz-progress-bar { background-color: var(--pico-warning); }
+progress.progress-warning { accent-color: var(--mu-warning); }
+progress.progress-warning::-webkit-progress-value { background-color: var(--mu-warning); }
+progress.progress-warning::-moz-progress-bar { background-color: var(--mu-warning); }
 
-progress.progress-error { accent-color: var(--pico-error); }
-progress.progress-error::-webkit-progress-value { background-color: var(--pico-error); }
-progress.progress-error::-moz-progress-bar { background-color: var(--pico-error); }
+progress.progress-error { accent-color: var(--mu-error); }
+progress.progress-error::-webkit-progress-value { background-color: var(--mu-error); }
+progress.progress-error::-moz-progress-bar { background-color: var(--mu-error); }

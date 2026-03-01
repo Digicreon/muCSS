@@ -155,10 +155,12 @@ The active tab is indicated by the `aria-selected="true"` attribute on the `<a>`
 
 ---
 
-## Note on PicoCSS compatibility
+## Implementation note
 
-PicoCSS applies `list-style: square` to `ul li` elements. µTabs explicitly sets `list-style: none` on `.tabs` and `.tabs li` to neutralize this default and prevent bullet markers from appearing next to tab items.
+The base styles apply `list-style: square` to `ul li` elements. µTabs explicitly sets `list-style: none` on `.tabs` and `.tabs li` to neutralize this default and prevent bullet markers from appearing next to tab items.
 
 ---
 
-→ [Voir l'exemple](../examples/tabs.html)
+> See also : [µNav](mu.nav.md) · [µAccordion](mu.accordion.md)
+
+→ [See example](../examples/tabs.html)

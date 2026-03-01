@@ -12,7 +12,7 @@ Apply `.badge` along with a color variant class to a `<span>`:
 <span class="badge badge-primary">Primary</span>
 ```
 
-The default badge (without a color class) uses `--pico-contrast` as its background color.
+The default badge (without a color class) uses `--mu-contrast` as its background color.
 
 ---
 
@@ -33,14 +33,14 @@ All 8 color roles are available:
 
 | Class | Background | Text color | Border |
 |-------|-----------|------------|--------|
-| `.badge-primary` | `--pico-primary` | `--pico-primary-inverse` | `--pico-primary` |
-| `.badge-secondary` | `--pico-secondary` | `--pico-secondary-inverse` | `--pico-secondary` |
-| `.badge-tertiary` | `--pico-tertiary` | `--pico-tertiary-inverse` | `--pico-tertiary` |
-| `.badge-contrast` | `--pico-contrast` | `--pico-contrast-inverse` | `--pico-contrast` |
-| `.badge-success` | `--pico-success` | `--pico-success-inverse` | `--pico-success` |
-| `.badge-info` | `--pico-info` | `--pico-info-inverse` | `--pico-info` |
-| `.badge-warning` | `--pico-warning` | `--pico-warning-inverse` | `--pico-warning` |
-| `.badge-error` | `--pico-error` | `--pico-error-inverse` | `--pico-error` |
+| `.badge-primary` | `--mu-primary` | `--mu-primary-inverse` | `--mu-primary` |
+| `.badge-secondary` | `--mu-secondary` | `--mu-secondary-inverse` | `--mu-secondary` |
+| `.badge-tertiary` | `--mu-tertiary` | `--mu-tertiary-inverse` | `--mu-tertiary` |
+| `.badge-contrast` | `--mu-contrast` | `--mu-contrast-inverse` | `--mu-contrast` |
+| `.badge-success` | `--mu-success` | `--mu-success-inverse` | `--mu-success` |
+| `.badge-info` | `--mu-info` | `--mu-info-inverse` | `--mu-info` |
+| `.badge-warning` | `--mu-warning` | `--mu-warning-inverse` | `--mu-warning` |
+| `.badge-error` | `--mu-error` | `--mu-error-inverse` | `--mu-error` |
 
 ---
 
@@ -99,12 +99,12 @@ Three sizes are available:
 Use `.badge-attached` to position a badge as a notification counter on the corner of a parent element. The parent must have `position: relative`:
 
 ```html
-<span style="position: relative; display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--pico-secondary-background); border-radius: 0.375rem;">
+<span style="position: relative; display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--mu-secondary-background); border-radius: 0.375rem;">
     Inbox
     <span class="badge badge-error badge-attached badge-pill">3</span>
 </span>
 
-<span style="position: relative; display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--pico-secondary-background); border-radius: 0.375rem;">
+<span style="position: relative; display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--mu-secondary-background); border-radius: 0.375rem;">
     Notifications
     <span class="badge badge-warning badge-attached badge-pill">12</span>
 </span>
@@ -152,4 +152,15 @@ Link and button badges remove text-decoration, use a pointer cursor, and reduce 
 
 ---
 
-→ [Voir l'exemple](../examples/badge.html)
+## Accessibility
+
+- Badges used as links should have descriptive text or `aria-label` for screen readers.
+- Ensure sufficient color contrast between badge text and background (WCAG AA minimum).
+- Avoid using color alone to convey meaning — pair colored badges with text labels.
+- For notification badges (counts), use `aria-label` to describe the count in context (e.g., `aria-label="3 unread messages"`).
+
+---
+
+> See also : [µAlert](mu.alert.md) · [µButton](mu.button.md)
+
+→ [See example](../examples/badge.html)

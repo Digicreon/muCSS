@@ -1,6 +1,6 @@
 # µLoading
 
-**µLoading** describes the loading indicator states available natively in [µCSS](.) via PicoCSS. Loading states are activated using the standard `aria-busy="true"` attribute on any element, which displays an animated spinner without requiring any additional CSS class or JavaScript library.
+**µLoading** describes the loading indicator states available natively in [µCSS](.). Loading states are activated using the standard `aria-busy="true"` attribute on any element, which displays an animated spinner without requiring any additional CSS class or JavaScript library.
 
 ---
 
@@ -96,4 +96,6 @@ Any element that accepts `aria-busy` can display the loading indicator.
 
 ---
 
-→ [Voir l'exemple](../examples/loading.html)
+> See also : [µSpinner](mu.spinner.md) · [µSkeleton](mu.skeleton.md)
+
+→ [See example](../examples/loading.html)

@@ -119,12 +119,12 @@ The boxed variant can be combined with any separator style:
 |----------|-------|
 | Font size | `0.875rem` |
 | Separator margin | `0 0.5rem` |
-| Separator color | `var(--pico-secondary)` at 60% opacity |
-| Link color | `var(--pico-primary)` |
-| Link hover | `var(--pico-primary-hover)` with underline |
-| Current page color | `var(--pico-secondary)` |
+| Separator color | `var(--mu-secondary)` at 60% opacity |
+| Link color | `var(--mu-primary)` |
+| Link hover | `var(--mu-primary-hover)` with underline |
+| Current page color | `var(--mu-secondary)` |
 | Boxed padding | `0.5rem 1rem` |
-| Boxed background | `var(--pico-secondary-background)` |
+| Boxed background | `var(--mu-secondary-background)` |
 | Boxed border radius | `0.375rem` |
 
 ---
@@ -137,4 +137,6 @@ The boxed variant can be combined with any separator style:
 
 ---
 
-→ [Voir l'exemple](../examples/breadcrumb.html)
+> See also : [µNav](mu.nav.md) · [µPagination](mu.pagination.md)
+
+→ [See example](../examples/breadcrumb.html)

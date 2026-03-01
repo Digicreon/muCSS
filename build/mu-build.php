@@ -4,7 +4,7 @@
  * µCSS Build Script
  *
  * Assembles mu.css files by concatenating:
- *   1. pico.css, 2. pico.colors.css, 3. mu.colors.css, 4. mu.grid.css, 5. mu.component.*.css
+ *   1. pico.css, 2. mu.colors.css, 3. mu.grid.css, 4. mu.component.*.css
  *
  * Reads an array of themes from mu.theme.json and generates one CSS file per theme in dist/.
  *
@@ -55,9 +55,6 @@ if (!is_readable($picoFile)) {
 	exit(1);
 }
 $baseFiles[] = ['label' => 'PicoCSS base', 'path' => $picoFile];
-if (is_readable($picoColors)) {
-	$baseFiles[] = ['label' => 'PicoCSS colors', 'path' => $picoColors];
-}
 
 $gridFile = $cssDir . '/mu.grid.css';
 if (is_readable($gridFile)) {
@@ -120,6 +117,10 @@ foreach ($baseFiles as $f) {
 	$content = file_get_contents($f['path']);
 	$content = str_replace("\xEF\xBB\xBF", '', $content);
 	$content = preg_replace('/@charset\s+"[^"]*"\s*;?\s*/', '', $content);
+	// Rename PicoCSS namespace to µCSS
+	if ($f['label'] === 'PicoCSS base') {
+		$content = str_replace('--pico-', '--mu-', $content);
+	}
 	$baseContents[] = ['label' => $f['label'], 'content' => trim($content)];
 }
 
@@ -175,8 +176,8 @@ foreach ($themes as $i => $theme) {
 		$parts[] = "/* === {$bc['label']} === */\n";
 		$parts[] = $bc['content'] . "\n\n";
 
-		// Insert mu.colors right after PicoCSS colors
-		if (!$colorsInserted && $bc['label'] === 'PicoCSS colors') {
+		// Insert mu.colors right after PicoCSS base
+		if (!$colorsInserted && $bc['label'] === 'PicoCSS base') {
 			$parts[] = "/* === µCSS colors === */\n";
 			$parts[] = trim($colorsContent) . "\n\n";
 			$colorsInserted = true;
@@ -200,7 +201,7 @@ foreach ($themes as $i => $theme) {
 		$output = preg_replace('/\s+/', ' ', $output);
 		$output = preg_replace('/\s*([{};:,])\s*/', '$1', $output);
 		$output = str_replace(';}', '}', $output);
-		$banner = $noBanner ? '' : "/* µCSS (muCSS) v1.0 - mucss.org */\n";
+		$banner = $noBanner ? '' : "/* µCSS (muCSS) - mucss.org */\n";
 		$output = $banner . trim($output) . "\n";
 	}
 

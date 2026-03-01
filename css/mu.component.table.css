@@ -4,16 +4,16 @@
 
 .table-striped tbody tr:nth-child(odd) th,
 .table-striped tbody tr:nth-child(odd) td {
-	background-color: color-mix(in srgb, var(--pico-secondary-background) 50%, transparent);
+	background-color: color-mix(in srgb, var(--mu-secondary-background) 50%, transparent);
 }
 .table-hover tbody tr:hover th,
 .table-hover tbody tr:hover td {
-	background-color: var(--pico-secondary-background);
+	background-color: var(--mu-secondary-background);
 }
 .table-bordered,
 .table-bordered th,
 .table-bordered td {
-	border: 1px solid var(--pico-secondary-background);
+	border: 1px solid var(--mu-secondary-background);
 }
 .table-compact th,
 .table-compact td {

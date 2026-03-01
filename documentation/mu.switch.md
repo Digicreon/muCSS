@@ -1,6 +1,6 @@
 # µSwitch
 
-**µSwitch** describes the toggle switch controls available natively in [µCSS](.) via PicoCSS. Switches are standard checkboxes enhanced with `role="switch"`, which PicoCSS styles as visual toggle switches without any additional CSS or JavaScript.
+**µSwitch** describes the toggle switch controls available natively in [µCSS](.). Switches are standard checkboxes enhanced with `role="switch"`, which µCSS styles as visual toggle switches without any additional CSS or JavaScript.
 
 ---
 
@@ -107,4 +107,6 @@ Switches work well inside cards (`<article>`) for settings or preference panels.
 
 ---
 
-→ [Voir l'exemple](../examples/switch.html)
+> See also : [µCheckbox & Radio](mu.checkbox-radio.md) · [µForms](mu.forms.md)
+
+→ [See example](../examples/switch.html)

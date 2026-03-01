@@ -1,12 +1,12 @@
 # µForms
 
-**µForms** extends PicoCSS form controls with size variants and validation states, part of the [µCSS](.) framework. It applies to `<input>`, `<textarea>`, and `<select>` elements.
+**µForms** provides form controls with size variants and validation states, part of the [µCSS](.) framework. It applies to `<input>`, `<textarea>`, and `<select>` elements.
 
 ---
 
 ## Input sizes
 
-Two size modifiers adjust padding and font size. Without a size class, the default PicoCSS styling applies.
+Two size modifiers adjust padding and font size. Without a size class, the default styling applies.
 
 ```html
 <label>Small input
@@ -25,7 +25,7 @@ Two size modifiers adjust padding and font size. Without a size class, the defau
 | Class       | Padding                  | Font size     | Applies to                       |
 |-------------|--------------------------|---------------|----------------------------------|
 | `.input-sm` | `0.375rem 0.625rem`      | `0.8125rem`   | `input`, `textarea`, `select`    |
-| *(default)* | *(PicoCSS default)*      | *(default)*   | `input`, `textarea`, `select`    |
+| *(default)* | *(default)*              | *(default)*   | `input`, `textarea`, `select`    |
 | `.input-lg` | `0.75rem 1rem`           | `1.125rem`    | `input`, `textarea`, `select`    |
 
 ### Textarea sizes
@@ -60,7 +60,7 @@ Two size modifiers adjust padding and font size. Without a size class, the defau
 
 ## Validation states
 
-µForms provides two validation classes that set border color and focus ring color. For error states, use the native `aria-invalid="true"` attribute (handled by PicoCSS).
+µForms provides two validation classes that set border color and focus ring color. For error states, use the native `aria-invalid="true"` attribute (built-in).
 
 ```html
 <label>Success
@@ -78,9 +78,9 @@ Two size modifiers adjust padding and font size. Without a size class, the defau
 
 | Class / Attribute        | Border color          | Focus ring color          |
 |--------------------------|-----------------------|---------------------------|
-| `.input-success`         | `--pico-success`      | `--pico-success-focus`    |
-| `.input-warning`         | `--pico-warning`      | `--pico-warning-focus`    |
-| `aria-invalid="true"`    | *(PicoCSS built-in)*  | *(PicoCSS built-in)*     |
+| `.input-success`         | `--mu-success`      | `--mu-success-focus`    |
+| `.input-warning`         | `--mu-warning`      | `--mu-warning-focus`    |
+| `aria-invalid="true"`    | *(built-in)*          | *(built-in)*             |
 
 ### Validation on textarea
 
@@ -138,10 +138,12 @@ Size and validation classes can be used together on the same element:
 
 ## Accessibility
 
-- Use `aria-invalid="true"` for error states (PicoCSS native support).
+- Use `aria-invalid="true"` for error states (native support).
 - Always wrap form controls inside `<label>` elements for proper association.
 - Validation colors supplement, but do not replace, text-based error messages.
 
 ---
 
-→ [Voir l'exemple](../examples/forms.html)
+> See also : [µForms (advanced)](mu.forms-advanced.md) · [µGroup](mu.group.md) · [µCheckbox & Radio](mu.checkbox-radio.md)
+
+→ [See example](../examples/forms.html)

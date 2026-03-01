@@ -1,12 +1,12 @@
 # µDropdown
 
-**µDropdown** fournit des menus deroulants CSS purs via l'element `<details class="dropdown">`, styles par [PicoCSS](https://picocss.com) au sein du framework [µCSS](.). Aucun JavaScript n'est necessaire : l'ouverture et la fermeture sont gerees nativement par le navigateur.
+**µDropdown** provides pure CSS dropdown menus via the `<details class="dropdown">` element, styled by [µCSS](.). No JavaScript is required: opening and closing are handled natively by the browser.
 
 ---
 
-## Utilisation de base
+## Basic usage
 
-Un dropdown est construit avec `<details class="dropdown">`. Le `<summary>` sert de declencheur et la liste `<ul>` contient les options.
+A dropdown is built with `<details class="dropdown">`. The `<summary>` serves as the trigger and the `<ul>` list contains the options.
 
 ```html
 <details class="dropdown">
@@ -21,9 +21,9 @@ Un dropdown est construit avec `<details class="dropdown">`. Le `<summary>` sert
 
 ---
 
-## Style bouton
+## Button style
 
-Ajoutez `role="button"` sur le `<summary>` pour lui donner l'apparence d'un bouton.
+Add `role="button"` to the `<summary>` to give it the appearance of a button.
 
 ```html
 <details class="dropdown">
@@ -39,13 +39,13 @@ Ajoutez `role="button"` sur le `<summary>` pour lui donner l'apparence d'un bout
 
 ---
 
-## Variantes natives PicoCSS
+## Native variants
 
-PicoCSS fournit des variantes de style via des classes sur le `<summary role="button">` :
+µCSS provides style variants via classes on the `<summary role="button">`:
 
-| Classe | Apparence |
-|--------|-----------|
-| *(aucune)* | Primary (defaut) |
+| Class | Appearance |
+|-------|------------|
+| *(none)* | Primary (default) |
 | `.secondary` | Secondary |
 | `.contrast` | Contrast |
 | `.outline` | Outline |
@@ -86,12 +86,12 @@ PicoCSS fournit des variantes de style via des classes sur le `<summary role="bu
 
 ---
 
-## Variantes de couleur µCSS
+## µCSS color variants
 
-µCSS etend les dropdowns avec les classes `.btn-*` sur le `<summary>` pour les 8 roles de couleur :
+µCSS extends dropdowns with `.btn-*` classes on the `<summary>` for the 8 color roles:
 
-| Classe | Couleur |
-|--------|---------|
+| Class | Color |
+|-------|-------|
 | `.btn-primary` | Primary |
 | `.btn-secondary` | Secondary |
 | `.btn-tertiary` | Tertiary |
@@ -129,9 +129,9 @@ PicoCSS fournit des variantes de style via des classes sur le `<summary role="bu
 
 ---
 
-## Remplacement de select
+## Select replacement
 
-Un dropdown peut servir d'alternative stylee a un `<select>` natif en le placant dans un `<label>`.
+A dropdown can serve as a styled alternative to a native `<select>` by placing it inside a `<label>`.
 
 ```html
 <label>Choose a fruit
@@ -148,7 +148,7 @@ Un dropdown peut servir d'alternative stylee a un `<select>` natif en le placant
 </label>
 ```
 
-**Note :** contrairement a un `<select>` natif, la valeur selectionnee n'est pas geree automatiquement. Un minimum de JavaScript applicatif est necessaire pour mettre a jour le texte du `<summary>` apres selection.
+**Note:** unlike a native `<select>`, the selected value is not managed automatically. A minimum of application JavaScript is required to update the `<summary>` text after selection.
 
 ---
 
@@ -166,18 +166,20 @@ Un dropdown peut servir d'alternative stylee a un `<select>` natif en le placant
 
 | Element | Role |
 |---------|------|
-| `<details class="dropdown">` | Conteneur du dropdown |
-| `<summary>` | Declencheur (texte ou bouton) |
-| `<summary role="button">` | Declencheur avec apparence bouton |
-| `<ul>` | Liste des options |
-| `<li><a>` | Element de menu cliquable |
+| `<details class="dropdown">` | Dropdown container |
+| `<summary>` | Trigger (text or button) |
+| `<summary role="button">` | Trigger with button appearance |
+| `<ul>` | Options list |
+| `<li><a>` | Clickable menu item |
 
 ---
 
-## Accessibilite
+## Accessibility
 
-- Le composant repose sur l'element natif `<details>`/`<summary>`, accessible par defaut au clavier (ouverture via `Enter` ou `Space`).
-- L'attribut `role="button"` sur `<summary>` informe les technologies d'assistance que l'element agit comme un bouton.
-- Le menu se ferme automatiquement lorsque l'utilisateur clique en dehors (comportement natif de `<details>`).
+- The component relies on the native `<details>`/`<summary>` element, which is keyboard accessible by default (opens via `Enter` or `Space`).
+- The `role="button"` attribute on `<summary>` informs assistive technologies that the element acts as a button.
+- The menu closes automatically when the user clicks outside (native `<details>` behavior).
 
-→ [Voir l'exemple](../examples/dropdown.html)
+> See also : [µNav](mu.nav.md) · [µButton](mu.button.md)
+
+> [See example](../examples/dropdown.html)

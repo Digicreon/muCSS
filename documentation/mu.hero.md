@@ -36,18 +36,18 @@ All 8 color roles are available:
 <section class="hero hero-error">...</section>
 ```
 
-Each variant defines `--hero-color` and `--hero-text` using the corresponding `--pico-{role}` and `--pico-{role}-inverse` variables (bridge pattern).
+Each variant defines `--hero-color` and `--hero-text` using the corresponding `--mu-{role}` and `--mu-{role}-inverse` variables (bridge pattern).
 
 | Class | Background | Text color |
 |-------|-----------|------------|
-| `.hero-primary` | `--pico-primary` | `--pico-primary-inverse` |
-| `.hero-secondary` | `--pico-secondary` | `--pico-secondary-inverse` |
-| `.hero-tertiary` | `--pico-tertiary` | `--pico-tertiary-inverse` |
-| `.hero-contrast` | `--pico-contrast` | `--pico-contrast-inverse` |
-| `.hero-success` | `--pico-success` | `--pico-success-inverse` |
-| `.hero-info` | `--pico-info` | `--pico-info-inverse` |
-| `.hero-warning` | `--pico-warning` | `--pico-warning-inverse` |
-| `.hero-error` | `--pico-error` | `--pico-error-inverse` |
+| `.hero-primary` | `--mu-primary` | `--mu-primary-inverse` |
+| `.hero-secondary` | `--mu-secondary` | `--mu-secondary-inverse` |
+| `.hero-tertiary` | `--mu-tertiary` | `--mu-tertiary-inverse` |
+| `.hero-contrast` | `--mu-contrast` | `--mu-contrast-inverse` |
+| `.hero-success` | `--mu-success` | `--mu-success-inverse` |
+| `.hero-info` | `--mu-info` | `--mu-info-inverse` |
+| `.hero-warning` | `--mu-warning` | `--mu-warning-inverse` |
+| `.hero-error` | `--mu-error` | `--mu-error-inverse` |
 
 ---
 
@@ -185,8 +185,10 @@ The hero adapts across three breakpoints:
 - Use semantic `<section>` elements for heroes
 - Use `<h1>` for the main title
 - Action links use `.btn` classes which include `:focus-visible` outlines
-- Color contrast is ensured via `--pico-{role}-inverse` text colors
+- Color contrast is ensured via `--mu-{role}-inverse` text colors
 
 ---
 
-→ [Voir l'exemple](../examples/hero.html)
+> See also : [µButton](mu.button.md) · [µBadge](mu.badge.md)
+
+→ [See example](../examples/hero.html)

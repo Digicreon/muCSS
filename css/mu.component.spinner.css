@@ -6,8 +6,8 @@
 	display: inline-block;
 	width: 1.5rem;
 	height: 1.5rem;
-	border: 0.2em solid var(--pico-secondary-background);
-	border-top-color: var(--pico-primary);
+	border: 0.2em solid var(--mu-secondary-background);
+	border-top-color: var(--mu-primary);
 	border-radius: 50%;
 	animation: mu-spin 0.6s linear infinite;
 }
@@ -18,11 +18,11 @@
 .spinner-lg { width: 2.5rem; height: 2.5rem; border-width: 0.25em; }
 
 /* Colors */
-.spinner-primary   { border-top-color: var(--pico-primary); }
-.spinner-secondary { border-top-color: var(--pico-secondary); }
-.spinner-tertiary  { border-top-color: var(--pico-tertiary); }
-.spinner-contrast  { border-top-color: var(--pico-contrast); }
-.spinner-success   { border-top-color: var(--pico-success); }
-.spinner-info      { border-top-color: var(--pico-info); }
-.spinner-warning   { border-top-color: var(--pico-warning); }
-.spinner-error     { border-top-color: var(--pico-error); }
+.spinner-primary   { border-top-color: var(--mu-primary); }
+.spinner-secondary { border-top-color: var(--mu-secondary); }
+.spinner-tertiary  { border-top-color: var(--mu-tertiary); }
+.spinner-contrast  { border-top-color: var(--mu-contrast); }
+.spinner-success   { border-top-color: var(--mu-success); }
+.spinner-info      { border-top-color: var(--mu-info); }
+.spinner-warning   { border-top-color: var(--mu-warning); }
+.spinner-error     { border-top-color: var(--mu-error); }

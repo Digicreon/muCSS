@@ -1,6 +1,6 @@
 # µCard
 
-**µCard** provides colored card variants for the `<article>` element, part of the [µCSS](.) framework. It extends PicoCSS's default card styling with 8 color accents, automatic header/footer shading, and a left border indicator.
+**µCard** provides colored card variants for the `<article>` element, part of the [µCSS](.) framework. It extends the default card styling with 8 color accents, automatic header/footer shading, and a left border indicator.
 
 ---
 
@@ -28,7 +28,7 @@ A card can contain any combination of `<header>`, body content, and `<footer>`. 
 
 ### Default card (no color)
 
-Without a color class, `<article>` renders with the standard PicoCSS card styling:
+Without a color class, `<article>` renders with the standard card styling:
 
 ```html
 <article>
@@ -46,14 +46,14 @@ Without a color class, `<article>` renders with the standard PicoCSS card stylin
 
 | Class             | Color role | Left border          | Background                 |
 |-------------------|------------|----------------------|----------------------------|
-| `.card-primary`   | Primary    | `--pico-primary`     | `--pico-primary-background`   |
-| `.card-secondary` | Secondary  | `--pico-secondary`   | `--pico-secondary-background` |
-| `.card-tertiary`  | Tertiary   | `--pico-tertiary`    | `--pico-tertiary-background`  |
-| `.card-contrast`  | Contrast   | `--pico-contrast`    | `--pico-contrast-background`  |
-| `.card-success`   | Success    | `--pico-success`     | `--pico-success-background`   |
-| `.card-info`      | Info       | `--pico-info`        | `--pico-info-background`      |
-| `.card-warning`   | Warning    | `--pico-warning`     | `--pico-warning-background`   |
-| `.card-error`     | Error      | `--pico-error`       | `--pico-error-background`     |
+| `.card-primary`   | Primary    | `--mu-primary`     | `--mu-primary-background`   |
+| `.card-secondary` | Secondary  | `--mu-secondary`   | `--mu-secondary-background` |
+| `.card-tertiary`  | Tertiary   | `--mu-tertiary`    | `--mu-tertiary-background`  |
+| `.card-contrast`  | Contrast   | `--mu-contrast`    | `--mu-contrast-background`  |
+| `.card-success`   | Success    | `--mu-success`     | `--mu-success-background`   |
+| `.card-info`      | Info       | `--mu-info`        | `--mu-info-background`      |
+| `.card-warning`   | Warning    | `--mu-warning`     | `--mu-warning-background`   |
+| `.card-error`     | Error      | `--mu-error`       | `--mu-error-background`     |
 
 ### All 8 variants example
 
@@ -103,7 +103,7 @@ Colored cards (`article[class*="card-"]`) apply the following styles:
 
 ---
 
-## PicoCSS override
+## Implementation note
 
 µCard includes one global fix:
 
@@ -113,7 +113,7 @@ article > *:last-child:not(header):not(footer) {
 }
 ```
 
-This removes the bottom margin on the last content element inside a card (e.g., a `<p>` tag), preventing unwanted spacing before the card's bottom edge or footer. This is necessary because PicoCSS applies default margins to `<p>` elements.
+This removes the bottom margin on the last content element inside a card (e.g., a `<p>` tag), preventing unwanted spacing before the card's bottom edge or footer. This is necessary because the base styles apply default margins to `<p>` elements.
 
 ---
 
@@ -132,4 +132,15 @@ This removes the bottom margin on the last content element inside a card (e.g., 
 
 ---
 
-→ [Voir l'exemple](../examples/card.html)
+## Accessibility
+
+- The `<article>` element is a semantic landmark — screen readers announce it as an article.
+- Always include a heading (`<h2>`–`<h6>`) inside the card for screen reader navigation.
+- Card `<header>` and `<footer>` are announced as part of the article structure.
+- For clickable cards, make the heading link the primary interactive element rather than wrapping the entire card in `<a>`.
+
+---
+
+> See also : [µGrid](mu.grid.md) · [µHero](mu.hero.md)
+
+→ [See example](../examples/card.html)

@@ -26,7 +26,7 @@ dialog.modal-fullscreen > article {
 	padding: 0;
 	border: none;
 	background: transparent;
-	color: var(--pico-secondary);
+	color: var(--mu-secondary);
 	font-size: 1.25rem;
 	line-height: 1;
 	cursor: pointer;

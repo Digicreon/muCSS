@@ -1,6 +1,6 @@
 # µCheckbox & Radio
 
-**µCheckbox & Radio** describes the native checkbox and radio button styling provided by [µCSS](.) via PicoCSS. These are standard HTML form controls (`<input type="checkbox">` and `<input type="radio">`) that PicoCSS styles automatically without any additional classes.
+**µCheckbox & Radio** describes the native checkbox and radio button styling provided by [µCSS](.). These are standard HTML form controls (`<input type="checkbox">` and `<input type="radio">`) that µCSS styles automatically without any additional classes.
 
 ---
 
@@ -118,4 +118,6 @@ Checkboxes and radio buttons can be combined inside a card (`<article>`) for str
 
 ---
 
-→ [Voir l'exemple](../examples/checkbox-radio.html)
+> See also : [µSwitch](mu.switch.md) · [µForms](mu.forms.md)
+
+→ [See example](../examples/checkbox-radio.html)

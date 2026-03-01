@@ -129,4 +129,6 @@ On viewports narrower than 640px, all toast positions switch to full-width (`lef
 
 ---
 
-→ [Voir l'exemple](../examples/toast.html)
+> See also : [µAlert](mu.alert.md)
+
+→ [See example](../examples/toast.html)

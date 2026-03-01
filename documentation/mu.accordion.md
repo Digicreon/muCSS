@@ -100,7 +100,7 @@ No additional CSS classes are needed on child elements. All styling targets the 
 
 | Property | Value |
 |----------|-------|
-| Border | `1px solid var(--pico-secondary-background)` |
+| Border | `1px solid var(--mu-secondary-background)` |
 | Border radius | `0.375rem` |
 | Summary padding | `0.75rem 1rem` |
 | Content padding | `0.75rem 1rem` |
@@ -116,4 +116,6 @@ No additional CSS classes are needed on child elements. All styling targets the 
 
 ---
 
-→ [Voir l'exemple](../examples/accordion.html)
+> See also : [µCard](mu.card.md) · [µTabs](mu.tabs.md)
+
+→ [See example](../examples/accordion.html)

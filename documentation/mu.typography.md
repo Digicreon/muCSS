@@ -1,12 +1,12 @@
 # µTypography
 
-**µTypography** regroupe les elements typographiques natifs HTML styles par [PicoCSS](https://picocss.com) au sein du framework [µCSS](.). Aucun fichier CSS supplementaire n'est necessaire : les titres, paragraphes, listes, citations, code et elements semantiques inline sont styles automatiquement.
+**µTypography** covers native HTML typographic elements styled by [µCSS](.). No additional CSS file is needed: headings, paragraphs, lists, quotes, code and inline semantic elements are styled automatically.
 
 ---
 
-## Titres
+## Headings
 
-Les six niveaux de titres HTML sont styles avec des tailles et graisses progressives.
+The six HTML heading levels are styled with progressive sizes and weights.
 
 ```html
 <h1>Heading 1</h1>
@@ -19,7 +19,7 @@ Les six niveaux de titres HTML sont styles avec des tailles et graisses progress
 
 ### Heading group
 
-L'element `<hgroup>` permet d'associer un titre principal a un sous-titre ou une accroche.
+The `<hgroup>` element allows associating a main heading with a subtitle or tagline.
 
 ```html
 <hgroup>
@@ -28,13 +28,13 @@ L'element `<hgroup>` permet d'associer un titre principal a un sous-titre ou une
 </hgroup>
 ```
 
-Le paragraphe a l'interieur de `<hgroup>` est affiche dans un style attenue (couleur secondaire, taille reduite).
+The paragraph inside `<hgroup>` is displayed in a muted style (secondary color, reduced size).
 
 ---
 
-## Paragraphes
+## Paragraphs
 
-Les paragraphes utilisent le style par defaut de PicoCSS avec un espacement vertical harmonieux.
+Paragraphs use the default µCSS style with harmonious vertical spacing.
 
 ```html
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
@@ -45,9 +45,9 @@ dolore eu fugiat nulla pariatur.</p>
 
 ---
 
-## Citations
+## Blockquotes
 
-L'element `<blockquote>` affiche une citation avec un style visuel distinct (bordure laterale, retrait). Un `<footer>` avec `<cite>` permet d'attribuer la source.
+The `<blockquote>` element displays a quote with a distinct visual style (side border, indentation). A `<footer>` with `<cite>` allows attributing the source.
 
 ```html
 <blockquote>
@@ -58,9 +58,9 @@ L'element `<blockquote>` affiche une citation avec un style visuel distinct (bor
 
 ---
 
-## Listes
+## Lists
 
-### Liste non ordonnee
+### Unordered list
 
 ```html
 <ul>
@@ -75,7 +75,7 @@ L'element `<blockquote>` affiche une citation avec un style visuel distinct (bor
 </ul>
 ```
 
-### Liste ordonnee
+### Ordered list
 
 ```html
 <ol>
@@ -85,7 +85,7 @@ L'element `<blockquote>` affiche une citation avec un style visuel distinct (bor
 </ol>
 ```
 
-### Liste de definitions
+### Definition list
 
 ```html
 <dl>
@@ -98,22 +98,22 @@ L'element `<blockquote>` affiche une citation avec un style visuel distinct (bor
 
 ---
 
-## Texte inline semantique
+## Inline semantic text
 
-PicoCSS style automatiquement les elements semantiques inline :
+µCSS automatically styles inline semantic elements:
 
-| Element | Rendu | Usage |
-|---------|-------|-------|
-| `<strong>` | **Gras** | Importance forte |
-| `<em>` | *Italique* | Emphase |
-| `<u>` | Souligne | Annotation |
-| `<small>` | Petit texte | Mentions legales, notes |
-| `<del>` | ~~Barre~~ | Texte supprime |
-| `<ins>` | Souligne | Texte insere |
-| `<abbr>` | Pointille | Abreviation (avec `title`) |
-| `<mark>` | Surligne | Texte mis en evidence |
-| `<sub>` | Indice | Formules, notes |
-| `<sup>` | Exposant | References, puissances |
+| Element | Rendering | Usage |
+|---------|-----------|-------|
+| `<strong>` | **Bold** | Strong importance |
+| `<em>` | *Italic* | Emphasis |
+| `<u>` | Underlined | Annotation |
+| `<small>` | Small text | Legal mentions, notes |
+| `<del>` | ~~Strikethrough~~ | Deleted text |
+| `<ins>` | Underlined | Inserted text |
+| `<abbr>` | Dotted | Abbreviation (with `title`) |
+| `<mark>` | Highlighted | Highlighted text |
+| `<sub>` | Subscript | Formulas, notes |
+| `<sup>` | Superscript | References, powers |
 
 ```html
 <p><strong>Bold text</strong> and <em>italic text</em> and <u>underlined text</u>.</p>
@@ -127,17 +127,17 @@ PicoCSS style automatiquement les elements semantiques inline :
 
 ## Code
 
-### Code inline
+### Inline code
 
-L'element `<code>` affiche du code dans une police monospace avec un fond legerement colore.
+The `<code>` element displays code in a monospace font with a slightly colored background.
 
 ```html
 <p>Inline <code>code element</code> within text.</p>
 ```
 
-### Bloc de code
+### Code block
 
-Le couple `<pre><code>` affiche un bloc de code preformate avec fond distinct et defilement horizontal si necessaire.
+The `<pre><code>` combination displays a preformatted code block with a distinct background and horizontal scrolling if needed.
 
 ```html
 <pre><code>&lt;div class="container"&gt;
@@ -148,9 +148,9 @@ Le couple `<pre><code>` affiche un bloc de code preformate avec fond distinct et
 
 ---
 
-## Clavier
+## Keyboard
 
-L'element `<kbd>` represente une touche ou combinaison de touches avec un style de touche physique.
+The `<kbd>` element represents a key or key combination with a physical key style.
 
 ```html
 <p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy, <kbd>Ctrl</kbd> + <kbd>V</kbd> to paste.</p>
@@ -158,9 +158,9 @@ L'element `<kbd>` represente une touche ou combinaison de touches avec un style 
 
 ---
 
-## Separateur horizontal
+## Horizontal separator
 
-L'element `<hr>` affiche un trait fin separant deux blocs de contenu.
+The `<hr>` element displays a thin line separating two content blocks.
 
 ```html
 <p>Content above the separator.</p>
@@ -172,7 +172,7 @@ L'element `<hr>` affiche un trait fin separant deux blocs de contenu.
 
 ## Figure
 
-L'element `<figure>` encadre un contenu (tableau, image, etc.) avec une legende via `<figcaption>`.
+The `<figure>` element wraps content (table, image, etc.) with a caption via `<figcaption>`.
 
 ```html
 <figure>
@@ -186,11 +186,13 @@ L'element `<figure>` encadre un contenu (tableau, image, etc.) avec une legende 
 
 ---
 
-## Accessibilite
+## Accessibility
 
-- Utiliser les niveaux de titres dans l'ordre hierarchique (`h1` > `h2` > `h3`...) pour la navigation au lecteur d'ecran.
-- L'attribut `title` sur `<abbr>` fournit la forme complete de l'abreviation aux technologies d'assistance.
-- `<blockquote>` avec `<cite>` permet aux lecteurs d'ecran d'identifier la source d'une citation.
-- L'element `<mark>` est annonce comme "surbrillance" par les lecteurs d'ecran.
+- Use heading levels in hierarchical order (`h1` > `h2` > `h3`...) for screen reader navigation.
+- The `title` attribute on `<abbr>` provides the full form of the abbreviation to assistive technologies.
+- `<blockquote>` with `<cite>` allows screen readers to identify the source of a quote.
+- The `<mark>` element is announced as "highlight" by screen readers.
 
-→ [Voir l'exemple](../examples/typography.html)
+> See also : [µLink](mu.link.md) · [µCode](mu.code.md)
+
+> [See example](../examples/typography.html)

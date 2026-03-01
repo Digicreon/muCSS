@@ -14,14 +14,14 @@ input.input-lg, textarea.input-lg, select.input-lg {
 
 /* Validation colors */
 input.input-success, textarea.input-success, select.input-success {
-	border-color: var(--pico-success);
+	border-color: var(--mu-success);
 }
 input.input-success:focus, textarea.input-success:focus, select.input-success:focus {
-	box-shadow: 0 0 0 0.2rem var(--pico-success-focus);
+	box-shadow: 0 0 0 0.2rem var(--mu-success-focus);
 }
 input.input-warning, textarea.input-warning, select.input-warning {
-	border-color: var(--pico-warning);
+	border-color: var(--mu-warning);
 }
 input.input-warning:focus, textarea.input-warning:focus, select.input-warning:focus {
-	box-shadow: 0 0 0 0.2rem var(--pico-warning-focus);
+	box-shadow: 0 0 0 0.2rem var(--mu-warning-focus);
 }

@@ -7,7 +7,7 @@
 	list-style: none;
 	padding: 0;
 	margin: 0 0 1rem 0;
-	border-bottom: 2px solid var(--pico-secondary-background);
+	border-bottom: 2px solid var(--mu-secondary-background);
 	gap: 0;
 }
 .tabs li {
@@ -18,16 +18,16 @@
 	display: block;
 	padding: 0.625rem 1rem;
 	text-decoration: none;
-	color: var(--pico-secondary);
+	color: var(--mu-secondary);
 	border-bottom: 2px solid transparent;
 	transition: color 0.15s, border-color 0.15s;
 }
 .tabs a:hover {
-	color: var(--pico-primary-hover);
+	color: var(--mu-primary-hover);
 }
 .tabs a[aria-selected="true"] {
-	color: var(--pico-primary);
-	border-bottom-color: var(--pico-primary);
+	color: var(--mu-primary);
+	border-bottom-color: var(--mu-primary);
 	font-weight: 600;
 }
 
@@ -44,11 +44,11 @@
 	border-radius: 0.375rem;
 }
 .tabs-pills a:hover {
-	background-color: var(--pico-secondary-background);
+	background-color: var(--mu-secondary-background);
 }
 .tabs-pills a[aria-selected="true"] {
-	color: var(--pico-primary-inverse);
-	background-color: var(--pico-primary);
+	color: var(--mu-primary-inverse);
+	background-color: var(--mu-primary);
 }
 
 /* Alignment */

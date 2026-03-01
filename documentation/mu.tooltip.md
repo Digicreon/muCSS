@@ -1,18 +1,18 @@
 # µTooltip
 
-**µTooltip** fournit des infobulles CSS pures via l'attribut `data-tooltip`, styles par [PicoCSS](https://picocss.com) au sein du framework [µCSS](.). Aucun JavaScript n'est necessaire : les tooltips apparaissent au survol ou au focus.
+**µTooltip** provides pure CSS tooltips via the `data-tooltip` attribute, styled by [µCSS](.). No JavaScript is required: tooltips appear on hover or focus.
 
 ---
 
-## Utilisation de base
+## Basic usage
 
-Ajoutez l'attribut `data-tooltip` sur n'importe quel element HTML pour afficher une infobulle au survol. Par defaut, le tooltip apparait au-dessus de l'element.
+Add the `data-tooltip` attribute to any HTML element to display a tooltip on hover. By default, the tooltip appears above the element.
 
 ```html
 <span data-tooltip="This is a tooltip">Hover me</span>
 ```
 
-Pour un rendu visuel clair sur du texte inline, on peut ajouter un style de soulignement :
+For a clear visual rendering on inline text, you can add an underline style:
 
 ```html
 <span data-tooltip="This is a tooltip"
@@ -23,14 +23,14 @@ Pour un rendu visuel clair sur du texte inline, on peut ajouter un style de soul
 
 ## Placement
 
-L'attribut `data-placement` controle la position du tooltip. Quatre positions sont disponibles :
+The `data-placement` attribute controls the tooltip position. Four positions are available:
 
-| Valeur | Position |
-|--------|----------|
-| `top` | Au-dessus (par defaut) |
-| `bottom` | En dessous |
-| `left` | A gauche |
-| `right` | A droite |
+| Value | Position |
+|-------|----------|
+| `top` | Above (default) |
+| `bottom` | Below |
+| `left` | To the left |
+| `right` | To the right |
 
 ```html
 <span data-tooltip="Top tooltip" data-placement="top">Top</span>
@@ -41,9 +41,9 @@ L'attribut `data-placement` controle la position du tooltip. Quatre positions so
 
 ---
 
-## Sur des boutons
+## On buttons
 
-Les tooltips fonctionnent sur les boutons pour fournir un contexte supplementaire sur l'action.
+Tooltips work on buttons to provide additional context about the action.
 
 ```html
 <button class="btn btn-primary" data-tooltip="Save your changes">Save</button>
@@ -54,9 +54,9 @@ Les tooltips fonctionnent sur les boutons pour fournir un contexte supplementair
 
 ---
 
-## Sur des liens
+## On links
 
-Ajoutez un tooltip sur un lien pour decrire la destination ou l'action.
+Add a tooltip to a link to describe the destination or action.
 
 ```html
 <p>Visit the <a href="#" data-tooltip="Go to the homepage">homepage</a>
@@ -66,9 +66,9 @@ data-placement="bottom">documentation</a>.</p>
 
 ---
 
-## Sur des champs de formulaire
+## On form fields
 
-Les tooltips peuvent etre places sur des elements de formulaire pour guider l'utilisateur.
+Tooltips can be placed on form elements to guide the user.
 
 ```html
 <label>Username
@@ -80,19 +80,21 @@ Les tooltips peuvent etre places sur des elements de formulaire pour guider l'ut
 
 ---
 
-## Resume des attributs
+## Attribute summary
 
-| Attribut | Requis | Description |
-|----------|--------|-------------|
-| `data-tooltip` | Oui | Texte affiche dans l'infobulle |
-| `data-placement` | Non | Position : `top` (defaut), `bottom`, `left`, `right` |
+| Attribute | Required | Description |
+|-----------|----------|-------------|
+| `data-tooltip` | Yes | Text displayed in the tooltip |
+| `data-placement` | No | Position: `top` (default), `bottom`, `left`, `right` |
 
 ---
 
-## Accessibilite
+## Accessibility
 
-- Les tooltips sont accessibles au clavier via le focus (`:focus` en plus de `:hover`).
-- Le contenu du `data-tooltip` est lu par les technologies d'assistance.
-- Evitez de placer des informations essentielles uniquement dans un tooltip ; le contenu doit rester comprehensible sans interaction de survol.
+- Tooltips are keyboard accessible via focus (`:focus` in addition to `:hover`).
+- The `data-tooltip` content is read by assistive technologies.
+- Avoid placing essential information only in a tooltip; the content should remain understandable without hover interaction.
 
-→ [Voir l'exemple](../examples/tooltip.html)
+> See also : [µLink](mu.link.md)
+
+> [See example](../examples/tooltip.html)

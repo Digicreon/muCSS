@@ -1,12 +1,12 @@
 # µGroup
 
-**µGroup** permet de regrouper visuellement des champs de formulaire et des boutons en une seule ligne, grace a l'attribut `role="group"` style par [PicoCSS](https://picocss.com) au sein du framework [µCSS](.). Les elements groupes partagent des bordures communes et s'alignent horizontalement.
+**µGroup** allows visually grouping form fields and buttons on a single line, using the `role="group"` attribute styled by [µCSS](.). Grouped elements share common borders and align horizontally.
 
 ---
 
-## Groupe de boutons
+## Button group
 
-L'attribut `role="group"` sur un conteneur regroupe les boutons en une barre horizontale avec des bordures fusionnees.
+The `role="group"` attribute on a container groups buttons into a horizontal bar with merged borders.
 
 ```html
 <div role="group">
@@ -18,9 +18,9 @@ L'attribut `role="group"` sur un conteneur regroupe les boutons en une barre hor
 
 ---
 
-## Input + bouton
+## Input + button
 
-Combinez un champ de saisie et un bouton dans un meme groupe pour creer un formulaire inline compact.
+Combine an input field and a button in the same group to create a compact inline form.
 
 ```html
 <div role="group">
@@ -31,9 +31,9 @@ Combinez un champ de saisie et un bouton dans un meme groupe pour creer un formu
 
 ---
 
-## Groupe de recherche
+## Search group
 
-Utilisez `role="search"` pour un groupe semantiquement identifie comme zone de recherche. Le rendu visuel est identique a `role="group"`.
+Use `role="search"` for a group semantically identified as a search area. The visual rendering is identical to `role="group"`.
 
 ```html
 <div role="search">
@@ -44,9 +44,9 @@ Utilisez `role="search"` pour un groupe semantiquement identifie comme zone de r
 
 ---
 
-## Input + select + bouton
+## Input + select + button
 
-Un groupe peut contenir plus de deux elements, par exemple un `<select>`, un `<input>` et un `<button>`.
+A group can contain more than two elements, for example a `<select>`, an `<input>` and a `<button>`.
 
 ```html
 <div role="group">
@@ -62,9 +62,9 @@ Un groupe peut contenir plus de deux elements, par exemple un `<select>`, un `<i
 
 ---
 
-## Boutons outline
+## Outline buttons
 
-Les boutons `.outline` fonctionnent egalement dans un groupe, offrant un style de barre de selection (toggle bar).
+`.outline` buttons also work within a group, providing a toggle bar style.
 
 ```html
 <div role="group">
@@ -76,27 +76,29 @@ Les boutons `.outline` fonctionnent egalement dans un groupe, offrant un style d
 
 ---
 
-## Resume des roles
+## Role summary
 
-| Attribut | Usage |
-|----------|-------|
-| `role="group"` | Groupe generique (boutons, inputs, selects) |
-| `role="search"` | Groupe de recherche (semantique) |
+| Attribute | Usage |
+|-----------|-------|
+| `role="group"` | Generic group (buttons, inputs, selects) |
+| `role="search"` | Search group (semantic) |
 
-## Elements supportes dans un groupe
+## Supported elements in a group
 
-| Element | Comportement |
-|---------|-------------|
-| `<button>` | Bouton d'action |
-| `<input>` | Champ de saisie (text, email, search, number, etc.) |
-| `<select>` | Liste de selection |
+| Element | Behavior |
+|---------|----------|
+| `<button>` | Action button |
+| `<input>` | Input field (text, email, search, number, etc.) |
+| `<select>` | Selection list |
 
 ---
 
-## Accessibilite
+## Accessibility
 
-- `role="group"` informe les technologies d'assistance que les elements sont lies et forment un ensemble logique.
-- `role="search"` identifie semantiquement la zone comme fonctionnalite de recherche, ce qui aide la navigation au lecteur d'ecran.
-- Les elements du groupe restent accessibles individuellement au clavier (navigation par `Tab`).
+- `role="group"` informs assistive technologies that the elements are related and form a logical set.
+- `role="search"` semantically identifies the area as a search feature, which helps screen reader navigation.
+- Elements within the group remain individually accessible via keyboard (`Tab` navigation).
 
-→ [Voir l'exemple](../examples/group.html)
+> See also : [µForms](mu.forms.md) · [µButton](mu.button.md)
+
+> [See example](../examples/group.html)

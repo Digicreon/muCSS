@@ -33,14 +33,14 @@ All 8 color roles are available:
 
 | Class | Text color | Background | Border |
 |-------|-----------|------------|--------|
-| `.alert-primary` | `--pico-primary` | `--pico-primary-background` | `--pico-primary` |
-| `.alert-secondary` | `--pico-secondary` | `--pico-secondary-background` | `--pico-secondary` |
-| `.alert-tertiary` | `--pico-tertiary` | `--pico-tertiary-background` | `--pico-tertiary` |
-| `.alert-contrast` | `--pico-contrast` | `--pico-contrast-background` | `--pico-contrast` |
-| `.alert-success` | `--pico-success` | `--pico-success-background` | `--pico-success` |
-| `.alert-info` | `--pico-info` | `--pico-info-background` | `--pico-info` |
-| `.alert-warning` | `--pico-warning` | `--pico-warning-background` | `--pico-warning` |
-| `.alert-error` | `--pico-error` | `--pico-error-background` | `--pico-error` |
+| `.alert-primary` | `--mu-primary` | `--mu-primary-background` | `--mu-primary` |
+| `.alert-secondary` | `--mu-secondary` | `--mu-secondary-background` | `--mu-secondary` |
+| `.alert-tertiary` | `--mu-tertiary` | `--mu-tertiary-background` | `--mu-tertiary` |
+| `.alert-contrast` | `--mu-contrast` | `--mu-contrast-background` | `--mu-contrast` |
+| `.alert-success` | `--mu-success` | `--mu-success-background` | `--mu-success` |
+| `.alert-info` | `--mu-info` | `--mu-info-background` | `--mu-info` |
+| `.alert-warning` | `--mu-warning` | `--mu-warning-background` | `--mu-warning` |
+| `.alert-error` | `--mu-error` | `--mu-error-background` | `--mu-error` |
 
 ---
 
@@ -131,4 +131,6 @@ Links inside alerts are styled with `font-weight: 600`, inherit the alert color,
 
 ---
 
-→ [Voir l'exemple](../examples/alert.html)
+> See also : [µToast](mu.toast.md) · [µBadge](mu.badge.md)
+
+→ [See example](../examples/alert.html)

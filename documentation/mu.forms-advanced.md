@@ -1,6 +1,6 @@
 # µForms (advanced)
 
-**µForms (advanced)** describes the specialized native input types styled by [µCSS](.) via PicoCSS. These include color pickers, date/time inputs, file uploads, search fields, and other input types, all styled automatically without additional classes.
+**µForms (advanced)** describes the specialized native input types styled by [µCSS](.). These include color pickers, date/time inputs, file uploads, search fields, and other input types, all styled automatically without additional classes.
 
 ---
 
@@ -18,7 +18,7 @@ The `<input type="color">` renders a native color picker widget.
 
 ## Date & time inputs
 
-PicoCSS styles all native date and time input types consistently.
+µCSS styles all native date and time input types consistently.
 
 ```html
 <label>Date
@@ -88,7 +88,7 @@ Wrap a search input and button inside a `<div role="search">` for a grouped sear
 
 ## Other input types
 
-PicoCSS styles several additional input types natively.
+µCSS styles several additional input types natively.
 
 ```html
 <label>Number
@@ -161,4 +161,6 @@ Use `aria-invalid` to indicate validation state visually. Add a `<small>` elemen
 
 ---
 
-→ [Voir l'exemple](../examples/forms-advanced.html)
+> See also : [µForms](mu.forms.md) · [µGroup](mu.group.md)
+
+→ [See example](../examples/forms-advanced.html)

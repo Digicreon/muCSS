@@ -39,14 +39,14 @@ Each filled button has a solid background, matching border, and an inverse text 
 
 | Class | Background | Text color | Hover background |
 |-------|-----------|------------|-----------------|
-| `.btn-primary` | `--pico-primary` | `--pico-primary-inverse` | `--pico-primary-hover` |
-| `.btn-secondary` | `--pico-secondary` | `--pico-secondary-inverse` | `--pico-secondary-hover` |
-| `.btn-tertiary` | `--pico-tertiary` | `--pico-tertiary-inverse` | `--pico-tertiary-hover` |
-| `.btn-contrast` | `--pico-contrast` | `--pico-contrast-inverse` | `--pico-contrast-hover` |
-| `.btn-success` | `--pico-success` | `--pico-success-inverse` | `--pico-success-hover` |
-| `.btn-info` | `--pico-info` | `--pico-info-inverse` | `--pico-info-hover` |
-| `.btn-warning` | `--pico-warning` | `--pico-warning-inverse` | `--pico-warning-hover` |
-| `.btn-error` | `--pico-error` | `--pico-error-inverse` | `--pico-error-hover` |
+| `.btn-primary` | `--mu-primary` | `--mu-primary-inverse` | `--mu-primary-hover` |
+| `.btn-secondary` | `--mu-secondary` | `--mu-secondary-inverse` | `--mu-secondary-hover` |
+| `.btn-tertiary` | `--mu-tertiary` | `--mu-tertiary-inverse` | `--mu-tertiary-hover` |
+| `.btn-contrast` | `--mu-contrast` | `--mu-contrast-inverse` | `--mu-contrast-hover` |
+| `.btn-success` | `--mu-success` | `--mu-success-inverse` | `--mu-success-hover` |
+| `.btn-info` | `--mu-info` | `--mu-info-inverse` | `--mu-info-hover` |
+| `.btn-warning` | `--mu-warning` | `--mu-warning-inverse` | `--mu-warning-hover` |
+| `.btn-error` | `--mu-error` | `--mu-error-inverse` | `--mu-error-hover` |
 
 ---
 
@@ -77,7 +77,7 @@ Use `.btn-link` for a button that looks like a text link (no background, no bord
 <button class="btn btn-link">Link button</button>
 ```
 
-The link style uses `--pico-primary` as its text color and `--pico-primary-hover` on hover.
+The link style uses `--mu-primary` as its text color and `--mu-primary-hover` on hover.
 
 ---
 
@@ -138,10 +138,12 @@ Any `<a>` element can use `.btn` classes to look like a button:
 
 ## Accessibility
 
-- Each color variant has a dedicated `:focus-visible` outline using the `--pico-{color}-focus` variable with a `2px` outline offset.
+- Each color variant has a dedicated `:focus-visible` outline using the `--mu-{color}-focus` variable with a `2px` outline offset.
 - The `.btn-link` variant follows link color conventions for consistency with standard anchor styling.
 - Use `<button>` for actions and `<a>` for navigation to maintain proper semantics.
 
 ---
 
-→ [Voir l'exemple](../examples/button.html)
+> See also : [µLink](mu.link.md) · [µForms](mu.forms.md)
+
+→ [See example](../examples/button.html)

@@ -193,4 +193,6 @@ On mobile (<640px), only `.pagination-prev`, `.pagination-next`, and `.active` i
 
 ---
 
-→ [Voir l'exemple](../examples/pagination.html)
+> See also : [µNav](mu.nav.md) · [µBreadcrumb](mu.breadcrumb.md)
+
+→ [See example](../examples/pagination.html)

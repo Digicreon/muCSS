@@ -1,6 +1,6 @@
 # µModal
 
-**µModal** provides size variants and a close button for native `<dialog>` modals, part of the [µCSS](.) framework. It builds on PicoCSS's dialog styling with small, large, and fullscreen options.
+**µModal** provides size variants and a close button for native `<dialog>` modals, part of the [µCSS](.) framework. It provides dialog styling with small, large, and fullscreen options.
 
 ---
 
@@ -30,12 +30,12 @@ Modals use the native HTML `<dialog>` element containing an `<article>`. Open wi
 
 ## Size variants
 
-4 sizes are available. Without a size class, the default PicoCSS dialog width applies.
+4 sizes are available. Without a size class, the default dialog width applies.
 
 | Class               | Max-width    | Description                          |
 |---------------------|--------------|--------------------------------------|
 | `.modal-sm`         | 400px        | Confirmations and simple prompts     |
-| *(default)*         | *(PicoCSS)*  | Suitable for most content            |
+| *(default)*         | *(default)*  | Suitable for most content            |
 | `.modal-lg`         | 900px        | Forms or detailed content            |
 | `.modal-fullscreen` | 100vw        | Full viewport, no border-radius      |
 
@@ -124,7 +124,7 @@ The `.modal-close` class styles a close button positioned absolutely in the top-
 | Position          | Absolute, top-right corner      |
 | Size              | 3rem x 3rem                     |
 | Background        | Transparent                     |
-| Color             | `--pico-secondary`              |
+| Color             | `--mu-secondary`              |
 | Opacity           | 0.6 (1 on hover)               |
 | Focus indicator   | 2px solid outline, 0.25rem radius |
 
@@ -160,4 +160,6 @@ Modals rely on the native `<dialog>` API. No JavaScript is bundled with µCSS --
 
 ---
 
-→ [Voir l'exemple](../examples/modal.html)
+> See also : [µButton](mu.button.md)
+
+→ [See example](../examples/modal.html)

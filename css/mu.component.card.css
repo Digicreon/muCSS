@@ -3,36 +3,36 @@
  */
 
 .card-primary {
-	--card-color: var(--pico-primary);
-	--card-bg: var(--pico-primary-background);
+	--card-color: var(--mu-primary);
+	--card-bg: var(--mu-primary-background);
 }
 .card-secondary {
-	--card-color: var(--pico-secondary);
-	--card-bg: var(--pico-secondary-background);
+	--card-color: var(--mu-secondary);
+	--card-bg: var(--mu-secondary-background);
 }
 .card-tertiary {
-	--card-color: var(--pico-tertiary);
-	--card-bg: var(--pico-tertiary-background);
+	--card-color: var(--mu-tertiary);
+	--card-bg: var(--mu-tertiary-background);
 }
 .card-contrast {
-	--card-color: var(--pico-contrast);
-	--card-bg: var(--pico-contrast-background);
+	--card-color: var(--mu-contrast);
+	--card-bg: var(--mu-contrast-background);
 }
 .card-success {
-	--card-color: var(--pico-success);
-	--card-bg: var(--pico-success-background);
+	--card-color: var(--mu-success);
+	--card-bg: var(--mu-success-background);
 }
 .card-info {
-	--card-color: var(--pico-info);
-	--card-bg: var(--pico-info-background);
+	--card-color: var(--mu-info);
+	--card-bg: var(--mu-info-background);
 }
 .card-warning {
-	--card-color: var(--pico-warning);
-	--card-bg: var(--pico-warning-background);
+	--card-color: var(--mu-warning);
+	--card-bg: var(--mu-warning-background);
 }
 .card-error {
-	--card-color: var(--pico-error);
-	--card-bg: var(--pico-error-background);
+	--card-color: var(--mu-error);
+	--card-bg: var(--mu-error-background);
 }
 
 article > *:last-child:not(header):not(footer) {

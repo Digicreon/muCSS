@@ -1,6 +1,6 @@
 # µGrid
 
-**µGrid** is a lightweight flexbox-based 12-column responsive grid system, part of the [µCSS](.) framework. It provides a Bootstrap-compatible grid fallback for CSS frameworks that lack a built-in responsive grid (such as PicoCSS).
+**µGrid** is a lightweight flexbox-based 12-column responsive grid system, part of the [µCSS](.) framework. It provides a Bootstrap-compatible grid fallback for CSS frameworks that lack a built-in responsive grid (such as PicoCSS v2).
 
 **Weight:** ~4 KB uncompressed, ~1 KB gzipped.
 
@@ -173,3 +173,9 @@ When showing a `.row` that was previously hidden, use `d-{bp}-flex` instead of `
 - **No auto-sizing columns**: `.col` (without a number) is not supported.
 - **No `row-cols-*`**: automatic column count per row is not supported.
 - **No flex alignment utilities**: `justify-content-*`, `align-items-*` are not included.
+
+---
+
+> See also : [µContainer](mu.container.md)
+
+> [See example](../examples/grid.html)

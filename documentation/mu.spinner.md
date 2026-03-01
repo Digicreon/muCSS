@@ -35,14 +35,14 @@ The default spinner uses the primary color and a standard size of 1.5rem.
 
 | Class               | Color variable          |
 |---------------------|-------------------------|
-| `.spinner-primary`  | `--pico-primary`        |
-| `.spinner-secondary`| `--pico-secondary`      |
-| `.spinner-tertiary` | `--pico-tertiary`       |
-| `.spinner-contrast` | `--pico-contrast`       |
-| `.spinner-success`  | `--pico-success`        |
-| `.spinner-info`     | `--pico-info`           |
-| `.spinner-warning`  | `--pico-warning`        |
-| `.spinner-error`    | `--pico-error`          |
+| `.spinner-primary`  | `--mu-primary`        |
+| `.spinner-secondary`| `--mu-secondary`      |
+| `.spinner-tertiary` | `--mu-tertiary`       |
+| `.spinner-contrast` | `--mu-contrast`       |
+| `.spinner-success`  | `--mu-success`        |
+| `.spinner-info`     | `--mu-info`           |
+| `.spinner-warning`  | `--mu-warning`        |
+| `.spinner-error`    | `--mu-error`          |
 
 ---
 
@@ -85,7 +85,7 @@ A common pattern is placing a small spinner inside a disabled button to indicate
 
 ## How it works
 
-The spinner is a bordered `inline-block` element with a colored top border and a transparent-ish track (using `--pico-secondary-background`). It rotates continuously via the `mu-spin` keyframe animation (0.6s linear infinite).
+The spinner is a bordered `inline-block` element with a colored top border and a transparent-ish track (using `--mu-secondary-background`). It rotates continuously via the `mu-spin` keyframe animation (0.6s linear infinite).
 
 ---
 
@@ -99,4 +99,6 @@ The spinner is purely visual. For screen readers, pair it with appropriate text 
 
 ---
 
-→ [Voir l'exemple](../examples/spinner.html)
+> See also : [µLoading](mu.loading.md) · [µSkeleton](mu.skeleton.md)
+
+→ [See example](../examples/spinner.html)

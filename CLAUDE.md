@@ -6,7 +6,6 @@
 
 ## Key files
 
-- `specification.md` — Full project specification (architecture, components, design rules)
 - `build/mu-build.php` — Main build script, generates themed CSS files into `dist/`
 - `build/mu-color-gen.php` — Color generator, reads PicoCSS palette + theme → CSS variables
 - `build/mu.theme.json` — Array of 20 theme definitions (one per PicoCSS color)
@@ -30,7 +29,7 @@ php build/mu-build.php --output=f   # Backward compat: single theme → file
 
 - Respond in **French** to the user
 - Keep responses **concise and factual**
-- All CSS variables use the `--pico-` prefix (PicoCSS compatibility)
+- All CSS variables use the `--mu-` prefix (PicoCSS `--pico-` vars are renamed at build time)
 - Components follow naming pattern `mu.component.{name}.css`
 - 8 color roles: primary, secondary, tertiary, contrast, success, info, warning, error
 - No JavaScript in CSS files — behavior is the application's JS responsibility

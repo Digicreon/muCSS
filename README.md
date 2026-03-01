@@ -10,7 +10,7 @@ Lightweight CSS framework built on [PicoCSS v2](https://picocss.com/), part of t
 - **Dark mode** — Automatic (prefers-color-scheme) or manual (`data-theme`)
 - **Pure CSS** — No JavaScript dependency
 - **PHP tooling** — Build and theming via PHP scripts, no Node.js/SASS required
-- **PicoCSS compatible** — All variables use the `--pico-` prefix
+- **PicoCSS compatible** — Own `--mu-` prefix with automatic `--pico-` bridge variables
 
 ## Installation
 
@@ -149,8 +149,8 @@ mucss/
     mu.grid.css           # 12-column grid
     mu.component.*.css    # UI components (15 files)
   dist/                   # Build output (21 CSS files)
+  documentation/          # Component and feature documentation
   examples/               # HTML demos for each component
-  specification.md        # Full specification
 ```
 
 ## Color roles

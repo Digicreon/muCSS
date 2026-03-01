@@ -1,6 +1,6 @@
 # µTable
 
-**µTable** provides enhanced table styles for the [µCSS](.) framework. It adds hover highlights, striped rows, bordered cells, compact padding, and fullwidth layout on top of PicoCSS's default table styling.
+**µTable** provides enhanced table styles for the [µCSS](.) framework. It adds hover highlights, striped rows, bordered cells, compact padding, and fullwidth layout on top of the default table styling.
 
 ---
 
@@ -116,8 +116,8 @@ All modifier classes can be combined freely. Common combinations:
 
 | Class              | Effect                                                                 |
 |--------------------|------------------------------------------------------------------------|
-| `.table-hover`     | Background highlight on row hover (`--pico-secondary-background`)      |
-| `.table-striped`   | Alternating background on odd rows (50% `--pico-secondary-background`) |
+| `.table-hover`     | Background highlight on row hover (`--mu-secondary-background`)      |
+| `.table-striped`   | Alternating background on odd rows (50% `--mu-secondary-background`) |
 | `.table-bordered`  | 1px solid border on table, `<th>`, and `<td>`                          |
 | `.table-compact`   | Reduced padding: `0.25rem 0.5rem`                                      |
 | `.table-fullwidth` | `width: 100%`                                                          |
@@ -138,10 +138,22 @@ For tables wider than their container, wrap them in a scrollable `<div>`:
 
 ---
 
-## Note on PicoCSS compatibility
+## Implementation note
 
-PicoCSS sets `background-color` on individual `<th>` and `<td>` cells rather than on `<tr>` rows. For this reason, `.table-hover` and `.table-striped` target `th` and `td` elements directly instead of `tr`. This ensures the hover and stripe backgrounds correctly override PicoCSS cell styles.
+The base styles set `background-color` on individual `<th>` and `<td>` cells rather than on `<tr>` rows. For this reason, `.table-hover` and `.table-striped` target `th` and `td` elements directly instead of `tr`. This ensures the hover and stripe backgrounds correctly override default cell styles.
 
 ---
 
-→ [Voir l'exemple](../examples/table.html)
+## Accessibility
+
+- Use `<caption>` to provide a descriptive title for the table.
+- Use `<thead>`, `<tbody>`, and `<tfoot>` to group rows semantically.
+- Use `scope="col"` on header cells in `<thead>` and `scope="row"` on row headers.
+- For complex tables, use `aria-describedby` to reference a longer description.
+- Avoid using tables for layout — only use them for tabular data.
+
+---
+
+> See also : [µForms](mu.forms.md) · [µGrid](mu.grid.md)
+
+→ [See example](../examples/table.html)
