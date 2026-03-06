@@ -15,7 +15,7 @@
 - `css/mu.utilities.css` — Positioning utilities (`.sticky-top`, `.fixed-top`, `.fixed-bottom`)
 - `css/mu.component.*.css` — UI components (17 files)
 - `dist/` — Build output (21 CSS files: `mu.css` + 20 `mu.{color}.css`)
-- `examples/` — HTML demos (47 files: index + 17 component pages + 9 native element pages + 20 theme recap pages)
+- `examples/` — HTML demos (49 files: index + 19 component pages + 9 native element pages + 20 theme recap pages)
 - `README.md` — Project documentation with installation, components, grid, dark mode, build
 
 ## Build commands
