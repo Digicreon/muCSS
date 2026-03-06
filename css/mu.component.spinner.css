@@ -26,3 +26,6 @@
 .spinner-info      { border-top-color: var(--mu-info); }
 .spinner-warning   { border-top-color: var(--mu-warning); }
 .spinner-error     { border-top-color: var(--mu-error); }
+.spinner-accent    { border-top-color: var(--mu-accent); }
+.spinner-pop       { border-top-color: var(--mu-pop); }
+.spinner-spark     { border-top-color: var(--mu-spark); }

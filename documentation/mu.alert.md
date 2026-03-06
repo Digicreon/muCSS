@@ -1,6 +1,6 @@
 # µAlert
 
-**µAlert** is a notification banner component, part of the [µCSS](.) framework. It provides 8 color variants, an optional title, inline links, and a dismissible close button.
+**µAlert** is a notification banner component, part of the [µCSS](.) framework. It provides 11 color variants, an optional title, inline links, and a dismissible close button.
 
 ---
 
@@ -18,7 +18,7 @@ Apply `.alert` along with a color variant class to a `<div>`:
 
 ## Color variants
 
-All 8 color roles are available:
+All 11 color roles are available:
 
 ```html
 <div class="alert alert-primary"><p>This is a <strong>primary</strong> alert.</p></div>
@@ -29,18 +29,24 @@ All 8 color roles are available:
 <div class="alert alert-info"><p>This is an <strong>info</strong> alert.</p></div>
 <div class="alert alert-warning"><p>This is a <strong>warning</strong> alert.</p></div>
 <div class="alert alert-error"><p>This is an <strong>error</strong> alert.</p></div>
+<div class="alert alert-accent"><p>This is an <strong>accent</strong> alert.</p></div>
+<div class="alert alert-pop"><p>This is a <strong>pop</strong> alert.</p></div>
+<div class="alert alert-spark"><p>This is a <strong>spark</strong> alert.</p></div>
 ```
 
-| Class | Text color | Background | Border |
-|-------|-----------|------------|--------|
-| `.alert-primary` | `--mu-primary` | `--mu-primary-background` | `--mu-primary` |
-| `.alert-secondary` | `--mu-secondary` | `--mu-secondary-background` | `--mu-secondary` |
-| `.alert-tertiary` | `--mu-tertiary` | `--mu-tertiary-background` | `--mu-tertiary` |
-| `.alert-contrast` | `--mu-contrast` | `--mu-contrast-background` | `--mu-contrast` |
-| `.alert-success` | `--mu-success` | `--mu-success-background` | `--mu-success` |
-| `.alert-info` | `--mu-info` | `--mu-info-background` | `--mu-info` |
-| `.alert-warning` | `--mu-warning` | `--mu-warning-background` | `--mu-warning` |
-| `.alert-error` | `--mu-error` | `--mu-error-background` | `--mu-error` |
+| Class | Text color | Background |
+|-------|-----------|------------|
+| `.alert-primary` | `--mu-primary` | `--mu-primary-background` |
+| `.alert-secondary` | `--mu-secondary` | `--mu-secondary-background` |
+| `.alert-tertiary` | `--mu-tertiary` | `--mu-tertiary-background` |
+| `.alert-contrast` | `--mu-contrast` | `--mu-contrast-background` |
+| `.alert-success` | `--mu-success` | `--mu-success-background` |
+| `.alert-info` | `--mu-info` | `--mu-info-background` |
+| `.alert-warning` | `--mu-warning` | `--mu-warning-background` |
+| `.alert-error` | `--mu-error` | `--mu-error-background` |
+| `.alert-accent` | `--mu-accent` | `--mu-accent-background` |
+| `.alert-pop` | `--mu-pop` | `--mu-pop-background` |
+| `.alert-spark` | `--mu-spark` | `--mu-spark-background` |
 
 ---
 
@@ -104,7 +110,7 @@ Links inside alerts are styled with `font-weight: 600`, inherit the alert color,
 | Class | Description |
 |-------|-------------|
 | `.alert` | Base alert container (padding, border-radius, margin-bottom) |
-| `.alert-{color}` | Color variant (`primary`, `secondary`, `tertiary`, `contrast`, `success`, `info`, `warning`, `error`) |
+| `.alert-{color}` | Color variant (`primary`, `secondary`, `tertiary`, `contrast`, `success`, `info`, `warning`, `error`, `accent`, `pop`, `spark`) |
 | `.alert-title` | Bold title block inside the alert |
 | `.alert-dismissible` | Adds right padding for the close button |
 | `.alert-close` | Close button, positioned absolutely at the right |

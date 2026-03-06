@@ -1,6 +1,6 @@
 # µHero
 
-**µHero** is a full-width hero section component, part of the [µCSS](.) framework. It provides 8 color roles with gradient backgrounds, badges, call-to-action buttons, and responsive sizing.
+**µHero** is a full-width hero section component, part of the [µCSS](.) framework. It provides 11 color roles with gradient backgrounds, badges, call-to-action buttons, and responsive sizing.
 
 ---
 
@@ -21,9 +21,9 @@ The hero must be placed **outside** `<main class="container">` for full-width re
 
 ---
 
-## Color variants (8 colors)
+## Color variants (11 colors)
 
-All 8 color roles are available:
+All 11 color roles are available:
 
 ```html
 <section class="hero hero-primary">...</section>
@@ -34,6 +34,9 @@ All 8 color roles are available:
 <section class="hero hero-info">...</section>
 <section class="hero hero-warning">...</section>
 <section class="hero hero-error">...</section>
+<section class="hero hero-accent">...</section>
+<section class="hero hero-pop">...</section>
+<section class="hero hero-spark">...</section>
 ```
 
 Each variant defines `--hero-color` and `--hero-text` using the corresponding `--mu-{role}` and `--mu-{role}-inverse` variables (bridge pattern).
@@ -48,6 +51,9 @@ Each variant defines `--hero-color` and `--hero-text` using the corresponding `-
 | `.hero-info` | `--mu-info` | `--mu-info-inverse` |
 | `.hero-warning` | `--mu-warning` | `--mu-warning-inverse` |
 | `.hero-error` | `--mu-error` | `--mu-error-inverse` |
+| `.hero-accent` | `--mu-accent` | `--mu-accent-inverse` |
+| `.hero-pop` | `--mu-pop` | `--mu-pop-inverse` |
+| `.hero-spark` | `--mu-spark` | `--mu-spark-inverse` |
 
 ---
 
@@ -147,7 +153,7 @@ Use `.hero-start` for left-aligned content:
 | Class | Description |
 |-------|-------------|
 | `.hero` | Base hero section (centered, padded, gradient background) |
-| `.hero-{color}` | Color variant (`primary`, `secondary`, `tertiary`, `contrast`, `success`, `info`, `warning`, `error`) |
+| `.hero-{color}` | Color variant (`primary`, `secondary`, `tertiary`, `contrast`, `success`, `info`, `warning`, `error`, `accent`, `pop`, `spark`) |
 | `.hero-tagline` | Tagline text (1.35rem, opacity 0.9) |
 | `.hero-subtitle` | Subtitle text (1.05rem, opacity 0.75) |
 | `.hero-badges` | Flex container for badges |
@@ -162,7 +168,7 @@ Use `.hero-start` for left-aligned content:
 | Property | Value |
 |----------|-------|
 | Padding | `4rem 0 3rem` (default), `3rem 0 2rem` (mobile), `5rem 0 4rem` (desktop) |
-| Gradient | `linear-gradient(135deg, --hero-color 0%, color-mix(...70%, #000) 100%)` |
+| Gradient | `linear-gradient(135deg, color-mix(in oklch, --hero-color 80%, #000) 0%, color-mix(in oklch, --hero-color 50%, #000) 100%)` |
 | Title size | `3.5rem` (default), `2.5rem` (mobile), `4rem` (desktop) |
 | Badge background | `rgba(255, 255, 255, 0.2)` with `backdrop-filter: blur(4px)` |
 

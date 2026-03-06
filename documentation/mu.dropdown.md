@@ -88,7 +88,7 @@ Add `role="button"` to the `<summary>` to give it the appearance of a button.
 
 ## µCSS color variants
 
-µCSS extends dropdowns with `.btn-*` classes on the `<summary>` for the 8 color roles:
+µCSS extends dropdowns with `.btn-*` classes on the `<summary>` for the 11 color roles:
 
 | Class | Color |
 |-------|-------|
@@ -96,10 +96,13 @@ Add `role="button"` to the `<summary>` to give it the appearance of a button.
 | `.btn-secondary` | Secondary |
 | `.btn-tertiary` | Tertiary |
 | `.btn-contrast` | Contrast |
+| `.btn-accent` | Accent |
 | `.btn-success` | Success |
 | `.btn-info` | Info |
 | `.btn-warning` | Warning |
 | `.btn-error` | Error |
+| `.btn-pop` | Pop |
+| `.btn-spark` | Spark |
 
 ```html
 <details class="dropdown">

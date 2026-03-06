@@ -13,7 +13,7 @@
 .table-bordered,
 .table-bordered th,
 .table-bordered td {
-	border: 1px solid var(--mu-secondary-background);
+	border: 1px solid color-mix(in srgb, var(--mu-muted-color) 30%, var(--mu-muted-border-color));
 }
 .table-compact th,
 .table-compact td {

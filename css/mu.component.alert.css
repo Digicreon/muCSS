@@ -31,42 +31,46 @@
 .alert-success {
 	color: var(--mu-success);
 	background-color: var(--mu-success-background);
-	border-color: var(--mu-success);
 }
 .alert-info {
 	color: var(--mu-info);
 	background-color: var(--mu-info-background);
-	border-color: var(--mu-info);
 }
 .alert-warning {
 	color: var(--mu-warning);
 	background-color: var(--mu-warning-background);
-	border-color: var(--mu-warning);
 }
 .alert-error {
 	color: var(--mu-error);
 	background-color: var(--mu-error-background);
-	border-color: var(--mu-error);
 }
 .alert-primary {
 	color: var(--mu-primary);
 	background-color: var(--mu-primary-background);
-	border-color: var(--mu-primary);
 }
 .alert-secondary {
 	color: var(--mu-secondary);
 	background-color: var(--mu-secondary-background);
-	border-color: var(--mu-secondary);
 }
 .alert-tertiary {
 	color: var(--mu-tertiary);
 	background-color: var(--mu-tertiary-background);
-	border-color: var(--mu-tertiary);
 }
 .alert-contrast {
 	color: var(--mu-contrast);
 	background-color: var(--mu-contrast-background);
-	border-color: var(--mu-contrast);
+}
+.alert-accent {
+	color: var(--mu-accent);
+	background-color: var(--mu-accent-background);
+}
+.alert-pop {
+	color: var(--mu-pop);
+	background-color: var(--mu-pop-background);
+}
+.alert-spark {
+	color: var(--mu-spark);
+	background-color: var(--mu-spark-background);
 }
 
 .alert-dismissible { padding-right: 3rem; }

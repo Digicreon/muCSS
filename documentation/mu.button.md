@@ -1,6 +1,6 @@
 # µButton
 
-**µButton** is a button component, part of the [µCSS](.) framework. It provides 8 color roles in filled and ghost variants, a link style, three sizes, and works on both `<button>` and `<a>` elements.
+**µButton** is a button component, part of the [µCSS](.) framework. It provides 11 color roles in filled and ghost variants, a link style, three sizes, and works on both `<button>` and `<a>` elements.
 
 ---
 
@@ -20,9 +20,9 @@ The `.btn` class can also be applied to `<a>` elements to render links as button
 
 ---
 
-## Filled variants (8 colors)
+## Filled variants (11 colors)
 
-All 8 color roles are available as filled buttons:
+All 11 color roles are available as filled buttons:
 
 ```html
 <button class="btn btn-primary">Primary</button>
@@ -33,6 +33,9 @@ All 8 color roles are available as filled buttons:
 <button class="btn btn-info">Info</button>
 <button class="btn btn-warning">Warning</button>
 <button class="btn btn-error">Error</button>
+<button class="btn btn-accent">Accent</button>
+<button class="btn btn-pop">Pop</button>
+<button class="btn btn-spark">Spark</button>
 ```
 
 Each filled button has a solid background, matching border, and an inverse text color. On hover, the background and border shift to the `-hover` variant of the color.
@@ -47,6 +50,9 @@ Each filled button has a solid background, matching border, and an inverse text 
 | `.btn-info` | `--mu-info` | `--mu-info-inverse` | `--mu-info-hover` |
 | `.btn-warning` | `--mu-warning` | `--mu-warning-inverse` | `--mu-warning-hover` |
 | `.btn-error` | `--mu-error` | `--mu-error-inverse` | `--mu-error-hover` |
+| `.btn-accent` | `--mu-accent` | `--mu-accent-inverse` | `--mu-accent-hover` |
+| `.btn-pop` | `--mu-pop` | `--mu-pop-inverse` | `--mu-pop-hover` |
+| `.btn-spark` | `--mu-spark` | `--mu-spark-inverse` | `--mu-spark-hover` |
 
 ---
 
@@ -63,6 +69,9 @@ Add `.btn-ghost` alongside a color class for a transparent background with visib
 <button class="btn btn-ghost btn-info">Info</button>
 <button class="btn btn-ghost btn-warning">Warning</button>
 <button class="btn btn-ghost btn-error">Error</button>
+<button class="btn btn-ghost btn-accent">Accent</button>
+<button class="btn btn-ghost btn-pop">Pop</button>
+<button class="btn btn-ghost btn-spark">Spark</button>
 ```
 
 Ghost buttons have `background-color: transparent`, text color matching the role, and a matching border. On hover, opacity is reduced to `0.8`.
@@ -116,7 +125,7 @@ Any `<a>` element can use `.btn` classes to look like a button:
 | Class | Description |
 |-------|-------------|
 | `.btn` | Base button (inline-flex, padding, font-weight 600, border-radius, transitions) |
-| `.btn-{color}` | Filled color variant (`primary`, `secondary`, `tertiary`, `contrast`, `success`, `info`, `warning`, `error`) |
+| `.btn-{color}` | Filled color variant (`primary`, `secondary`, `tertiary`, `contrast`, `success`, `info`, `warning`, `error`, `accent`, `pop`, `spark`) |
 | `.btn-ghost` | Transparent background, colored border and text |
 | `.btn-link` | Looks like a text link (transparent, underlined, primary color) |
 | `.btn-sm` | Small size |

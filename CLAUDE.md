@@ -11,7 +11,9 @@
 - `build/mu.theme.json` — Array of 20 theme definitions (one per PicoCSS color)
 - `build/pico.css`, `build/pico.colors.css` — PicoCSS v2 base (external, do not modify)
 - `css/mu.grid.css` — 12-column responsive grid
-- `css/mu.component.*.css` — UI components (16 files)
+- `css/mu.colors.css` — Color utility classes (`.c-*`, `.bg-*`, `.border-*`)
+- `css/mu.utilities.css` — Positioning utilities (`.sticky-top`, `.fixed-top`, `.fixed-bottom`)
+- `css/mu.component.*.css` — UI components (17 files)
 - `dist/` — Build output (21 CSS files: `mu.css` + 20 `mu.{color}.css`)
 - `examples/` — HTML demos (47 files: index + 17 component pages + 9 native element pages + 20 theme recap pages)
 - `README.md` — Project documentation with installation, components, grid, dark mode, build
@@ -31,7 +33,7 @@ php build/mu-build.php --output=f   # Backward compat: single theme → file
 - Keep responses **concise and factual**
 - All CSS variables use the `--mu-` prefix (PicoCSS `--pico-` vars are renamed at build time)
 - Components follow naming pattern `mu.component.{name}.css`
-- 8 color roles: primary, secondary, tertiary, contrast, success, info, warning, error
+- 11 color roles: primary, secondary, tertiary, contrast, accent, success, info, warning, error, pop, spark
 - No JavaScript in CSS files — behavior is the application's JS responsibility
 - Mobile-first, accessible (ARIA), semantic HTML
 - PHP tooling only, no Node.js/SASS dependencies
@@ -48,3 +50,6 @@ These µCSS rules exist to fix PicoCSS default behaviors:
 - `.breadcrumb li { padding: 0; margin: 0 }` / `.breadcrumb li a { margin: 0; padding: 0 }` — Neutralize PicoCSS nav spacing on breadcrumb items
 - `.table-hover` / `.table-striped` target `th`/`td` not `tr` — PicoCSS sets `background-color` on cells, not rows
 - Card `header`/`footer` override `background-color: var(--pico-card-sectioning-background-color)` with `color-mix()` shade
+- `nav a { text-decoration: none }` — Remove underline on all nav links (PicoCSS hover underline)
+- `.table-bordered` border uses `color-mix()` blend for visible but lighter cell borders
+- Nav/header with `.bg-*` get a gradient via `color-mix(in oklch)` (same as hero)

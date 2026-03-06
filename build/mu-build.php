@@ -61,6 +61,16 @@ if (is_readable($gridFile)) {
 	$baseFiles[] = ['label' => 'µCSS grid', 'path' => $gridFile];
 }
 
+$colorsUtilFile = $cssDir . '/mu.colors.css';
+if (is_readable($colorsUtilFile)) {
+	$baseFiles[] = ['label' => 'µCSS color utilities', 'path' => $colorsUtilFile];
+}
+
+$utilitiesFile = $cssDir . '/mu.utilities.css';
+if (is_readable($utilitiesFile)) {
+	$baseFiles[] = ['label' => 'µCSS utilities', 'path' => $utilitiesFile];
+}
+
 $components = glob($cssDir . '/mu.component.*.css') ?: [];
 sort($components);
 foreach ($components as $comp) {

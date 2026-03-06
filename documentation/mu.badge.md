@@ -1,6 +1,6 @@
 # µBadge
 
-**µBadge** is an inline label and counter component, part of the [µCSS](.) framework. It supports 8 color variants, outline style, pill shape, three sizes, and an attached positioning mode for notification counters.
+**µBadge** is an inline label and counter component, part of the [µCSS](.) framework. It supports 11 color variants, outline style, pill shape, three sizes, and an attached positioning mode for notification counters.
 
 ---
 
@@ -18,7 +18,7 @@ The default badge (without a color class) uses `--mu-contrast` as its background
 
 ## Color variants (filled)
 
-All 8 color roles are available:
+All 11 color roles are available:
 
 ```html
 <span class="badge badge-primary">Primary</span>
@@ -29,6 +29,9 @@ All 8 color roles are available:
 <span class="badge badge-info">Info</span>
 <span class="badge badge-warning">Warning</span>
 <span class="badge badge-error">Error</span>
+<span class="badge badge-accent">Accent</span>
+<span class="badge badge-pop">Pop</span>
+<span class="badge badge-spark">Spark</span>
 ```
 
 | Class | Background | Text color | Border |
@@ -41,6 +44,9 @@ All 8 color roles are available:
 | `.badge-info` | `--mu-info` | `--mu-info-inverse` | `--mu-info` |
 | `.badge-warning` | `--mu-warning` | `--mu-warning-inverse` | `--mu-warning` |
 | `.badge-error` | `--mu-error` | `--mu-error-inverse` | `--mu-error` |
+| `.badge-accent` | `--mu-accent` | `--mu-accent-inverse` | `--mu-accent` |
+| `.badge-pop` | `--mu-pop` | `--mu-pop-inverse` | `--mu-pop` |
+| `.badge-spark` | `--mu-spark` | `--mu-spark-inverse` | `--mu-spark` |
 
 ---
 
@@ -57,6 +63,9 @@ Add `.badge-outline` to remove the background and keep only the border and color
 <span class="badge badge-outline badge-info">Info</span>
 <span class="badge badge-outline badge-warning">Warning</span>
 <span class="badge badge-outline badge-error">Error</span>
+<span class="badge badge-outline badge-accent">Accent</span>
+<span class="badge badge-outline badge-pop">Pop</span>
+<span class="badge badge-outline badge-spark">Spark</span>
 ```
 
 The `.badge-outline` class sets `background-color: transparent` and changes the text color to match the role color.
@@ -132,7 +141,7 @@ Link and button badges remove text-decoration, use a pointer cursor, and reduce 
 | Class | Description |
 |-------|-------------|
 | `.badge` | Base badge (inline-flex, padding, font-size, border-radius) |
-| `.badge-{color}` | Color variant (`primary`, `secondary`, `tertiary`, `contrast`, `success`, `info`, `warning`, `error`) |
+| `.badge-{color}` | Color variant (`primary`, `secondary`, `tertiary`, `contrast`, `success`, `info`, `warning`, `error`, `accent`, `pop`, `spark`) |
 | `.badge-outline` | Transparent background, colored text and border |
 | `.badge-pill` | Fully rounded corners (`border-radius: 50rem`) |
 | `.badge-sm` | Small size |

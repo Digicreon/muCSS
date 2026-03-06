@@ -102,11 +102,11 @@ These variables change between light and dark themes (see [µDark Mode](mu.dark-
 
 ## Role colors
 
-8 color roles, each providing 7 variants. Values depend on the theme (see `build/mu.theme.json`).
+11 color roles, each providing 7 variants. Values depend on the theme (see `build/mu.theme.json`).
 
 ### Variants per role
 
-For each role (`primary`, `secondary`, `tertiary`, `contrast`, `success`, `info`, `warning`, `error`):
+For each role (`primary`, `secondary`, `tertiary`, `contrast`, `accent`, `success`, `info`, `warning`, `error`, `pop`, `spark`):
 
 | Suffix | Description |
 |--------|-------------|

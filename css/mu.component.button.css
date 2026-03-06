@@ -123,6 +123,39 @@
 }
 .btn-error:focus-visible { outline-color: var(--mu-error-focus); }
 
+.btn-accent {
+	background-color: var(--mu-accent);
+	border-color: var(--mu-accent);
+	color: var(--mu-accent-inverse);
+}
+.btn-accent:hover {
+	background-color: var(--mu-accent-hover);
+	border-color: var(--mu-accent-hover);
+}
+.btn-accent:focus-visible { outline-color: var(--mu-accent-focus); }
+
+.btn-pop {
+	background-color: var(--mu-pop);
+	border-color: var(--mu-pop);
+	color: var(--mu-pop-inverse);
+}
+.btn-pop:hover {
+	background-color: var(--mu-pop-hover);
+	border-color: var(--mu-pop-hover);
+}
+.btn-pop:focus-visible { outline-color: var(--mu-pop-focus); }
+
+.btn-spark {
+	background-color: var(--mu-spark);
+	border-color: var(--mu-spark);
+	color: var(--mu-spark-inverse);
+}
+.btn-spark:hover {
+	background-color: var(--mu-spark-hover);
+	border-color: var(--mu-spark-hover);
+}
+.btn-spark:focus-visible { outline-color: var(--mu-spark-focus); }
+
 /* Ghost — transparent background, visible border, colored text */
 .btn-ghost {
 	background-color: transparent;
@@ -135,6 +168,9 @@
 .btn-ghost.btn-info      { color: var(--mu-info);      border-color: var(--mu-info); }
 .btn-ghost.btn-warning   { color: var(--mu-warning);   border-color: var(--mu-warning); }
 .btn-ghost.btn-error     { color: var(--mu-error);     border-color: var(--mu-error); }
+.btn-ghost.btn-accent    { color: var(--mu-accent);    border-color: var(--mu-accent); }
+.btn-ghost.btn-pop       { color: var(--mu-pop);       border-color: var(--mu-pop); }
+.btn-ghost.btn-spark     { color: var(--mu-spark);     border-color: var(--mu-spark); }
 .btn-ghost:hover { opacity: 0.8; }
 
 /* Link — looks like a link, no background, no border */

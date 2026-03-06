@@ -36,6 +36,9 @@ a.badge:hover, button.badge:hover { opacity: 0.85; }
 .badge-info      { color: var(--mu-info-inverse);      background-color: var(--mu-info);      border-color: var(--mu-info); }
 .badge-warning   { color: var(--mu-warning-inverse);   background-color: var(--mu-warning);   border-color: var(--mu-warning); }
 .badge-error     { color: var(--mu-error-inverse);     background-color: var(--mu-error);     border-color: var(--mu-error); }
+.badge-accent    { color: var(--mu-accent-inverse);    background-color: var(--mu-accent);    border-color: var(--mu-accent); }
+.badge-pop       { color: var(--mu-pop-inverse);       background-color: var(--mu-pop);       border-color: var(--mu-pop); }
+.badge-spark     { color: var(--mu-spark-inverse);     background-color: var(--mu-spark);     border-color: var(--mu-spark); }
 
 .badge-outline { background-color: transparent; }
 .badge-outline.badge-primary   { color: var(--mu-primary); }
@@ -46,6 +49,9 @@ a.badge:hover, button.badge:hover { opacity: 0.85; }
 .badge-outline.badge-info      { color: var(--mu-info); }
 .badge-outline.badge-warning   { color: var(--mu-warning); }
 .badge-outline.badge-error     { color: var(--mu-error); }
+.badge-outline.badge-accent    { color: var(--mu-accent); }
+.badge-outline.badge-pop       { color: var(--mu-pop); }
+.badge-outline.badge-spark     { color: var(--mu-spark); }
 
 .badge-attached {
 	position: absolute;

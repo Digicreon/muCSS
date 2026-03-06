@@ -30,7 +30,7 @@ const SHADE_MAP = [
 		'underline'  => 0.5,
 	],
 	'dark' => [
-		'base'       => 400,
+		'base'       => 450,
 		'background' => 850,
 		'hover'      => 300,
 		'focus'      => 0.375,
@@ -38,7 +38,27 @@ const SHADE_MAP = [
 	],
 ];
 
-const ROLES = ['primary', 'secondary', 'tertiary', 'contrast', 'success', 'info', 'warning', 'error'];
+const POP_SHADE_MAP = [
+	'light' => [
+		'base'       => 350,
+		'background' => 100,
+		'hover'      => 500,
+		'focus'      => 0.375,
+		'underline'  => 0.5,
+	],
+	'dark' => [
+		'base'       => 250,
+		'background' => 900,
+		'hover'      => 150,
+		'focus'      => 0.375,
+		'underline'  => 0.5,
+	],
+];
+
+const ROLES = ['primary', 'secondary', 'tertiary', 'contrast', 'accent', 'success', 'info', 'warning', 'error', 'pop', 'spark'];
+
+// Derived roles: the role inherits its color family from another role
+const DERIVED_ROLES = ['pop' => 'accent', 'spark' => 'contrast'];
 
 
 function parsePicoColors(string $file): array {
@@ -67,6 +87,8 @@ function parsePicoColors(string $file): array {
 
 function validateTheme(array $theme): array {
 	foreach (ROLES as $role) {
+		// Skip derived roles (e.g. pop derives from accent)
+		if (isset(DERIVED_ROLES[$role])) continue;
 		if (!isset($theme[$role]) || !is_string($theme[$role])) {
 			fprintf(STDERR, "Error: missing or invalid role '%s' in theme\n", $role);
 			exit(1);
@@ -145,9 +167,9 @@ function resolveShade(array $shades, int $target, string $family): string {
 	return $nearest;
 }
 
-function generateRoleVars(string $role, string $family, array $palette, string $mode): array {
+function generateRoleVars(string $role, string $family, array $palette, string $mode, ?array $shadeMap = null): array {
 	$shades = $palette[$family];
-	$map = SHADE_MAP[$mode];
+	$map = ($shadeMap ?? SHADE_MAP)[$mode];
 	$baseHex  = resolveShade($shades, $map['base'], $family);
 	$bgHex    = resolveShade($shades, $map['background'], $family);
 	$hoverHex = resolveShade($shades, $map['hover'], $family);
@@ -176,9 +198,11 @@ function buildCss(array $theme, array $palette): string {
 	$out[] = '[data-theme="light"],';
 	$out[] = ':root:not([data-theme="dark"]) {';
 	foreach (ROLES as $role) {
-		$vars = generateRoleVars($role, $theme[$role], $palette, 'light');
+		$family = isset(DERIVED_ROLES[$role]) ? $theme[DERIVED_ROLES[$role]] : $theme[$role];
+		$shadeMap = isset(DERIVED_ROLES[$role]) ? POP_SHADE_MAP : null;
+		$vars = generateRoleVars($role, $family, $palette, 'light', $shadeMap);
 		$out[] = '';
-		$out[] = "\t/* {$role} ({$theme[$role]}) */";
+		$out[] = "\t/* {$role} ({$family}) */";
 		foreach ($vars as $name => $value) {
 			$out[] = "\t{$name}: {$value};";
 		}
@@ -190,9 +214,11 @@ function buildCss(array $theme, array $palette): string {
 	$out[] = '@media only screen and (prefers-color-scheme: dark) {';
 	$out[] = "\t:root:not([data-theme]) {";
 	foreach (ROLES as $role) {
-		$vars = generateRoleVars($role, $theme[$role], $palette, 'dark');
+		$family = isset(DERIVED_ROLES[$role]) ? $theme[DERIVED_ROLES[$role]] : $theme[$role];
+		$shadeMap = isset(DERIVED_ROLES[$role]) ? POP_SHADE_MAP : null;
+		$vars = generateRoleVars($role, $family, $palette, 'dark', $shadeMap);
 		$out[] = '';
-		$out[] = "\t\t/* {$role} ({$theme[$role]}) */";
+		$out[] = "\t\t/* {$role} ({$family}) */";
 		foreach ($vars as $name => $value) {
 			$out[] = "\t\t{$name}: {$value};";
 		}
@@ -204,9 +230,11 @@ function buildCss(array $theme, array $palette): string {
 	$out[] = '/* Dark color scheme (Forced) */';
 	$out[] = '[data-theme="dark"] {';
 	foreach (ROLES as $role) {
-		$vars = generateRoleVars($role, $theme[$role], $palette, 'dark');
+		$family = isset(DERIVED_ROLES[$role]) ? $theme[DERIVED_ROLES[$role]] : $theme[$role];
+		$shadeMap = isset(DERIVED_ROLES[$role]) ? POP_SHADE_MAP : null;
+		$vars = generateRoleVars($role, $family, $palette, 'dark', $shadeMap);
 		$out[] = '';
-		$out[] = "\t/* {$role} ({$theme[$role]}) */";
+		$out[] = "\t/* {$role} ({$family}) */";
 		foreach ($vars as $name => $value) {
 			$out[] = "\t{$name}: {$value};";
 		}
@@ -231,6 +259,7 @@ $theme = $themeData !== null ? readThemeData($themeData) : readTheme($themeFile)
 fprintf(STDERR, "Theme: %s\n", json_encode($theme, JSON_UNESCAPED_SLASHES));
 
 foreach ($theme as $role => $family) {
+	if (isset(DERIVED_ROLES[$role])) continue;
 	if (!isset($palette[$family])) {
 		fprintf(STDERR, "Error: color family '%s' (role '%s') not found in palette\n", $family, $role);
 		fprintf(STDERR, "Available families: %s\n", implode(', ', array_keys($palette)));

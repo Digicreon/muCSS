@@ -142,6 +142,8 @@ For tables wider than their container, wrap them in a scrollable `<div>`:
 
 The base styles set `background-color` on individual `<th>` and `<td>` cells rather than on `<tr>` rows. For this reason, `.table-hover` and `.table-striped` target `th` and `td` elements directly instead of `tr`. This ensures the hover and stripe backgrounds correctly override default cell styles.
 
+The `.table-bordered` variant uses `color-mix()` to blend `--mu-muted-color` (30%) with `--mu-muted-border-color` (70%) for visible but not heavy cell borders.
+
 ---
 
 ## Accessibility

@@ -35,12 +35,24 @@
 	--hero-color: var(--mu-error);
 	--hero-text: var(--mu-error-inverse);
 }
+.hero-accent {
+	--hero-color: var(--mu-accent);
+	--hero-text: var(--mu-accent-inverse);
+}
+.hero-pop {
+	--hero-color: var(--mu-pop);
+	--hero-text: var(--mu-pop-inverse);
+}
+.hero-spark {
+	--hero-color: var(--mu-spark);
+	--hero-text: var(--mu-spark-inverse);
+}
 
 /* --- Base --- */
 .hero {
 	text-align: center;
 	padding: 4rem 0 3rem;
-	background: linear-gradient(135deg, var(--hero-color) 0%, color-mix(in srgb, var(--hero-color) 70%, #000) 100%);
+	background: linear-gradient(135deg, color-mix(in oklch, var(--hero-color) 80%, #000) 0%, color-mix(in oklch, var(--hero-color) 50%, #000) 100%);
 	color: var(--hero-text);
 }
 

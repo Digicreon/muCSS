@@ -6,7 +6,8 @@ Lightweight CSS framework built on [PicoCSS v2](https://picocss.com/), part of t
 
 - **20 color themes** — One CSS file per theme, ready to use
 - **12-column responsive grid** — 5 breakpoints, offsets, ordering, display utilities
-- **16 UI components** — Accordion, Alert, Badge, Breadcrumb, Button, Card, Forms, Hero, Modal, Pagination, Progress, Skeleton, Spinner, Table, Toast, Tabs
+- **17 UI components** — Accordion, Alert, Badge, Breadcrumb, Button, Card, Forms, Hero, Modal, Nav, Pagination, Progress, Skeleton, Spinner, Table, Toast, Tabs
+- **Utility classes** — Color (text, background, border), positioning (sticky, fixed)
 - **Dark mode** — Automatic (prefers-color-scheme) or manual (`data-theme`)
 - **Pure CSS** — No JavaScript dependency
 - **PHP tooling** — Build and theming via PHP scripts, no Node.js/SASS required
@@ -57,20 +58,21 @@ Each file is self-contained (PicoCSS base + colors + grid + all components).
 | Component | Description | Example |
 |-----------|-------------|---------|
 | Accordion | Collapsible sections using `<details>` | [accordion.html](examples/accordion.html) |
-| Alert | Notification banners, 8 colors, dismissible | [alert.html](examples/alert.html) |
+| Alert | Notification banners, 11 colors, dismissible | [alert.html](examples/alert.html) |
 | Badge | Inline labels, pills, outline, attached | [badge.html](examples/badge.html) |
 | Breadcrumb | Navigation trail, 4 separator styles, boxed | [breadcrumb.html](examples/breadcrumb.html) |
-| Button | 8 colors, ghost, link, 3 sizes | [button.html](examples/button.html) |
+| Button | 11 colors, ghost, link, 3 sizes | [button.html](examples/button.html) |
 | Card | Colored `<article>` with header/footer | [card.html](examples/card.html) |
 | Forms | Input sizes (sm/lg) and validation states | [forms.html](examples/forms.html) |
-| Hero | Full-width hero sections, 8 colors, gradient | [hero.html](examples/hero.html) |
+| Hero | Full-width hero sections, 11 colors, gradient | [hero.html](examples/hero.html) |
 | Modal | Dialog sizes (sm/default/lg/fullscreen) | [modal.html](examples/modal.html) |
+| Nav | Responsive navbar, burger menu, colored, sticky/fixed | [nav.html](examples/nav.html) |
 | Pagination | Aligned, sized, borderless, responsive | [pagination.html](examples/pagination.html) |
 | Progress | Colored progress bars | [progress.html](examples/progress.html) |
 | Skeleton | Loading placeholders, text, title, avatar, image | [skeleton.html](examples/skeleton.html) |
-| Spinner | Loading spinners, 8 colors, 3 sizes | [spinner.html](examples/spinner.html) |
+| Spinner | Loading spinners, 11 colors, 3 sizes | [spinner.html](examples/spinner.html) |
 | Table | Hover, striped, bordered, compact, fullwidth | [table.html](examples/table.html) |
-| Toast | Fixed-position notifications, 6 positions, 8 colors | [toast.html](examples/toast.html) |
+| Toast | Fixed-position notifications, 6 positions, 11 colors | [toast.html](examples/toast.html) |
 | Tabs | Standard, pills, aligned, fullwidth | [tabs.html](examples/tabs.html) |
 
 ## PicoCSS native
@@ -110,6 +112,29 @@ Offsets (`offset-{n}`, `offset-md-{n}`...), ordering (`order-first`, `order-md-2
 
 See [grid example](examples/grid.html).
 
+## Utilities
+
+### Color classes
+
+33 utility classes for text, background, and border colors:
+
+- `.c-{role}` — text color (`.c-primary`, `.c-success`, …)
+- `.bg-{role}` — background color with automatic inverse text and link color
+- `.border-{role}` — border color
+- `.c-inverse` — white/black text for use on filled backgrounds
+
+On `<nav>` or its parent (e.g. `<header>`), `.bg-*` classes also apply a gradient.
+
+### Positioning
+
+| Class | Effect |
+|-------|--------|
+| `.sticky-top` | Sticks to top on scroll (stays in flow) |
+| `.fixed-top` | Fixed to viewport top (out of flow) |
+| `.fixed-bottom` | Fixed to viewport bottom (out of flow) |
+
+On `<nav>`, these classes automatically add `z-index` and `box-shadow`.
+
 ## Dark mode
 
 µCSS supports three modes:
@@ -147,7 +172,9 @@ mucss/
     pico.colors.css       # PicoCSS palette (external)
   css/
     mu.grid.css           # 12-column grid
-    mu.component.*.css    # UI components (15 files)
+    mu.colors.css         # Color utility classes
+    mu.utilities.css      # Positioning utilities (sticky, fixed)
+    mu.component.*.css    # UI components (17 files)
   dist/                   # Build output (21 CSS files)
   documentation/          # Component and feature documentation
   examples/               # HTML demos for each component
@@ -155,9 +182,13 @@ mucss/
 
 ## Color roles
 
-Each theme maps 8 semantic roles to PicoCSS color families:
+Each theme maps 11 semantic roles to PicoCSS color families:
 
-**primary** · **secondary** · **tertiary** · **contrast** · **success** · **info** · **warning** · **error**
+**primary** · **secondary** · **tertiary** · **contrast** · **accent** · **success** · **info** · **warning** · **error** · **pop** · **spark**
+
+> `pop` and `spark` are derived roles — `pop` uses the same color family as `accent` with lighter shades, and `spark` uses the same color family as `contrast` with lighter shades. They do not appear in the theme JSON.
+
+µCSS also provides utility classes for color and positioning — see [Utilities](#utilities).
 
 ## License
 

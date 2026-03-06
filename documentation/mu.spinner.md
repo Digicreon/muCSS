@@ -1,6 +1,6 @@
 # µSpinner
 
-**µSpinner** is a lightweight CSS loading indicator, part of the [µCSS](.) framework. It provides an animated circular spinner available in 8 color variants and 3 sizes, with no JavaScript required.
+**µSpinner** is a lightweight CSS loading indicator, part of the [µCSS](.) framework. It provides an animated circular spinner available in 11 color variants and 3 sizes, with no JavaScript required.
 
 ---
 
@@ -18,17 +18,20 @@ The default spinner uses the primary color and a standard size of 1.5rem.
 
 ## Color variants
 
-µSpinner supports the 8 standard µCSS color roles. Add a color modifier class alongside `.spinner`:
+µSpinner supports the 11 standard µCSS color roles. Add a color modifier class alongside `.spinner`:
 
 ```html
 <span class="spinner spinner-primary"></span>
 <span class="spinner spinner-secondary"></span>
 <span class="spinner spinner-tertiary"></span>
 <span class="spinner spinner-contrast"></span>
+<span class="spinner spinner-accent"></span>
 <span class="spinner spinner-success"></span>
 <span class="spinner spinner-info"></span>
 <span class="spinner spinner-warning"></span>
 <span class="spinner spinner-error"></span>
+<span class="spinner spinner-pop"></span>
+<span class="spinner spinner-spark"></span>
 ```
 
 ### Color class reference
@@ -39,10 +42,13 @@ The default spinner uses the primary color and a standard size of 1.5rem.
 | `.spinner-secondary`| `--mu-secondary`      |
 | `.spinner-tertiary` | `--mu-tertiary`       |
 | `.spinner-contrast` | `--mu-contrast`       |
+| `.spinner-accent`   | `--mu-accent`         |
 | `.spinner-success`  | `--mu-success`        |
 | `.spinner-info`     | `--mu-info`           |
 | `.spinner-warning`  | `--mu-warning`        |
 | `.spinner-error`    | `--mu-error`          |
+| `.spinner-pop`      | `--mu-pop`            |
+| `.spinner-spark`    | `--mu-spark`          |
 
 ---
 

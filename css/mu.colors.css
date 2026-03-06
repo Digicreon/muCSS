@@ -1,0 +1,52 @@
+/*
+ * µCSS Utility: Color classes
+ */
+
+/* Text color */
+.c-primary   { color: var(--mu-primary); }
+.c-secondary { color: var(--mu-secondary); }
+.c-tertiary  { color: var(--mu-tertiary); }
+.c-contrast  { color: var(--mu-contrast); }
+.c-accent    { color: var(--mu-accent); }
+.c-success   { color: var(--mu-success); }
+.c-info      { color: var(--mu-info); }
+.c-warning   { color: var(--mu-warning); }
+.c-error     { color: var(--mu-error); }
+.c-pop       { color: var(--mu-pop); }
+.c-spark     { color: var(--mu-spark); }
+
+/* Text color (inverse — for use on filled backgrounds) */
+.c-inverse { color: var(--mu-primary-inverse); }
+
+/* Background color (includes inverse text) */
+.bg-primary   { background-color: var(--mu-primary);   color: var(--mu-primary-inverse); }
+.bg-secondary { background-color: var(--mu-secondary); color: var(--mu-primary-inverse); }
+.bg-tertiary  { background-color: var(--mu-tertiary);  color: var(--mu-primary-inverse); }
+.bg-contrast  { background-color: var(--mu-contrast);  color: var(--mu-primary-inverse); }
+.bg-accent    { background-color: var(--mu-accent);    color: var(--mu-primary-inverse); }
+.bg-success   { background-color: var(--mu-success);   color: var(--mu-primary-inverse); }
+.bg-info      { background-color: var(--mu-info);      color: var(--mu-primary-inverse); }
+.bg-warning   { background-color: var(--mu-warning);   color: var(--mu-primary-inverse); }
+.bg-error     { background-color: var(--mu-error);     color: var(--mu-primary-inverse); }
+.bg-pop       { background-color: var(--mu-pop);       color: var(--mu-primary-inverse); }
+.bg-spark     { background-color: var(--mu-spark);     color: var(--mu-primary-inverse); }
+
+/* Links inside filled backgrounds inherit inverse color */
+:is(.bg-primary, .bg-secondary, .bg-tertiary, .bg-contrast,
+.bg-accent, .bg-success, .bg-info, .bg-warning,
+.bg-error, .bg-pop, .bg-spark) a {
+	color: inherit;
+}
+
+/* Border color */
+.border-primary   { border-color: var(--mu-primary); }
+.border-secondary { border-color: var(--mu-secondary); }
+.border-tertiary  { border-color: var(--mu-tertiary); }
+.border-contrast  { border-color: var(--mu-contrast); }
+.border-accent    { border-color: var(--mu-accent); }
+.border-success   { border-color: var(--mu-success); }
+.border-info      { border-color: var(--mu-info); }
+.border-warning   { border-color: var(--mu-warning); }
+.border-error     { border-color: var(--mu-error); }
+.border-pop       { border-color: var(--mu-pop); }
+.border-spark     { border-color: var(--mu-spark); }

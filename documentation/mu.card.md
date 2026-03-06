@@ -1,12 +1,12 @@
 # µCard
 
-**µCard** provides colored card variants for the `<article>` element, part of the [µCSS](.) framework. It extends the default card styling with 8 color accents, automatic header/footer shading, and a left border indicator.
+**µCard** provides colored card variants for the `<article>` element, part of the [µCSS](.) framework. It extends the default card styling with 11 color accents and automatic header/footer shading.
 
 ---
 
 ## Usage
 
-Cards use the standard HTML `<article>` element. Add a color class to apply a colored variant with a left border accent and tinted background.
+Cards use the standard HTML `<article>` element. Add a color class to apply a colored variant with a tinted background.
 
 ```html
 <article class="card-primary">
@@ -42,20 +42,23 @@ Without a color class, `<article>` renders with the standard card styling:
 
 ## Color variants
 
-8 color classes are available, matching the µCSS color roles:
+11 color classes are available, matching the µCSS color roles:
 
-| Class             | Color role | Left border          | Background                 |
-|-------------------|------------|----------------------|----------------------------|
-| `.card-primary`   | Primary    | `--mu-primary`     | `--mu-primary-background`   |
-| `.card-secondary` | Secondary  | `--mu-secondary`   | `--mu-secondary-background` |
-| `.card-tertiary`  | Tertiary   | `--mu-tertiary`    | `--mu-tertiary-background`  |
-| `.card-contrast`  | Contrast   | `--mu-contrast`    | `--mu-contrast-background`  |
-| `.card-success`   | Success    | `--mu-success`     | `--mu-success-background`   |
-| `.card-info`      | Info       | `--mu-info`        | `--mu-info-background`      |
-| `.card-warning`   | Warning    | `--mu-warning`     | `--mu-warning-background`   |
-| `.card-error`     | Error      | `--mu-error`       | `--mu-error-background`     |
+| Class             | Color role | Background                 |
+|-------------------|------------|----------------------------|
+| `.card-primary`   | Primary    | `--mu-primary-background`   |
+| `.card-secondary` | Secondary  | `--mu-secondary-background` |
+| `.card-tertiary`  | Tertiary   | `--mu-tertiary-background`  |
+| `.card-contrast`  | Contrast   | `--mu-contrast-background`  |
+| `.card-accent`    | Accent     | `--mu-accent-background`    |
+| `.card-success`   | Success    | `--mu-success-background`   |
+| `.card-info`      | Info       | `--mu-info-background`      |
+| `.card-warning`   | Warning    | `--mu-warning-background`   |
+| `.card-error`     | Error      | `--mu-error-background`     |
+| `.card-pop`       | Pop        | `--mu-pop-background`       |
+| `.card-spark`     | Spark      | `--mu-spark-background`     |
 
-### All 8 variants example
+### All 11 variants example
 
 ```html
 <div class="row">
@@ -96,7 +99,6 @@ Without a color class, `<article>` renders with the standard card styling:
 
 Colored cards (`article[class*="card-"]`) apply the following styles:
 
-- **Left border**: 4px solid in the card's color role.
 - **Background**: the card's light background tint.
 - **Header/footer background**: a `color-mix()` blend of 12% card color into the card background, creating a subtle shading difference.
 - **Header border-bottom / footer border-top**: `color-mix()` blend of 20% card color, providing a gentle separator.
@@ -125,10 +127,13 @@ This removes the bottom margin on the last content element inside a card (e.g., 
 | `.card-secondary` | Secondary color variant                          |
 | `.card-tertiary`  | Tertiary color variant                           |
 | `.card-contrast`  | Contrast color variant                           |
+| `.card-accent`    | Accent color variant                             |
 | `.card-success`   | Success color variant                            |
 | `.card-info`      | Info color variant                               |
 | `.card-warning`   | Warning color variant                            |
 | `.card-error`     | Error color variant                              |
+| `.card-pop`       | Pop color variant (lighter accent)               |
+| `.card-spark`     | Spark color variant (lighter contrast)            |
 
 ---
 

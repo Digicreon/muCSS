@@ -1,0 +1,22 @@
+/*
+ * µCSS Utilities: Positioning
+ */
+
+.sticky-top {
+	position: sticky;
+	top: 0;
+}
+
+.fixed-top {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+}
+
+.fixed-bottom {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}

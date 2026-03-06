@@ -34,13 +34,24 @@
 	--card-color: var(--mu-error);
 	--card-bg: var(--mu-error-background);
 }
+.card-accent {
+	--card-color: var(--mu-accent);
+	--card-bg: var(--mu-accent-background);
+}
+.card-pop {
+	--card-color: var(--mu-pop);
+	--card-bg: var(--mu-pop-background);
+}
+.card-spark {
+	--card-color: var(--mu-spark);
+	--card-bg: var(--mu-spark-background);
+}
 
 article > *:last-child:not(header):not(footer) {
 	margin-bottom: 0;
 }
 
 article[class*="card-"] {
-	border-left: 4px solid var(--card-color);
 	background-color: var(--card-bg);
 }
 article[class*="card-"] > header,

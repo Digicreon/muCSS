@@ -44,7 +44,7 @@ Wrap an `.alert` inside a `.toast` container with a position class:
 
 ## Color variants
 
-Toasts reuse the alert color variants. All 8 color roles are available:
+Toasts reuse the alert color variants. All 11 color roles are available:
 
 ```html
 <div class="toast toast-top-right">
@@ -56,7 +56,7 @@ Toasts reuse the alert color variants. All 8 color roles are available:
 </div>
 ```
 
-Available variants: `alert-primary`, `alert-secondary`, `alert-tertiary`, `alert-contrast`, `alert-success`, `alert-info`, `alert-warning`, `alert-error`.
+Available variants: `alert-primary`, `alert-secondary`, `alert-tertiary`, `alert-contrast`, `alert-accent`, `alert-success`, `alert-info`, `alert-warning`, `alert-error`, `alert-pop`, `alert-spark`.
 
 ---
 

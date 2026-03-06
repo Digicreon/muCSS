@@ -33,3 +33,15 @@ progress.progress-warning::-moz-progress-bar { background-color: var(--mu-warnin
 progress.progress-error { accent-color: var(--mu-error); }
 progress.progress-error::-webkit-progress-value { background-color: var(--mu-error); }
 progress.progress-error::-moz-progress-bar { background-color: var(--mu-error); }
+
+progress.progress-accent { accent-color: var(--mu-accent); }
+progress.progress-accent::-webkit-progress-value { background-color: var(--mu-accent); }
+progress.progress-accent::-moz-progress-bar { background-color: var(--mu-accent); }
+
+progress.progress-pop { accent-color: var(--mu-pop); }
+progress.progress-pop::-webkit-progress-value { background-color: var(--mu-pop); }
+progress.progress-pop::-moz-progress-bar { background-color: var(--mu-pop); }
+
+progress.progress-spark { accent-color: var(--mu-spark); }
+progress.progress-spark::-webkit-progress-value { background-color: var(--mu-spark); }
+progress.progress-spark::-moz-progress-bar { background-color: var(--mu-spark); }

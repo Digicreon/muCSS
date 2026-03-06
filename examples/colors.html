@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Colors</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+	<style>
+		.swatch {
+			display: inline-block;
+			width: 3rem;
+			height: 3rem;
+			border-radius: var(--mu-border-radius);
+			vertical-align: middle;
+		}
+		.swatch-row {
+			display: flex;
+			gap: 0.5rem;
+			flex-wrap: wrap;
+			margin-bottom: 1rem;
+		}
+		.swatch-card {
+			text-align: center;
+			font-size: 0.75rem;
+			width: 5.5rem;
+		}
+		.swatch-card .swatch {
+			width: 100%;
+			height: 2.5rem;
+			margin-bottom: 0.25rem;
+		}
+		.theme-azure { background: #0172ad; color: #fff; }
+		.theme-red { background: #c52f21; color: #fff; }
+		.theme-pink { background: #c72259; color: #fff; }
+		.theme-fuchsia { background: #c1208b; color: #fff; }
+		.theme-purple { background: #aa40bf; color: #fff; }
+		.theme-violet { background: #8352c5; color: #fff; }
+		.theme-indigo { background: #655cd6; color: #fff; }
+		.theme-blue { background: #2060df; color: #fff; }
+		.theme-cyan { background: #047878; color: #fff; }
+		.theme-jade { background: #007a50; color: #fff; }
+		.theme-green { background: #33790f; color: #fff; }
+		.theme-lime { background: #577400; color: #fff; }
+		.theme-yellow { background: #756b00; color: #fff; }
+		.theme-amber { background: #876400; color: #fff; }
+		.theme-pumpkin { background: #9c5900; color: #fff; }
+		.theme-orange { background: #bd3c13; color: #fff; }
+		.theme-sand { background: #6e6a60; color: #fff; }
+		.theme-grey { background: #6a6a6a; color: #fff; }
+		.theme-zinc { background: #646b79; color: #fff; }
+		.theme-slate { background: #5d6b89; color: #fff; }
+		.pop-azure { background: #01aaff; color: #fff; }
+		.pop-red { background: #f17961; color: #fff; }
+		.pop-pink { background: #f7708e; color: #fff; }
+		.pop-fuchsia { background: #f869bf; color: #fff; }
+		.pop-purple { background: #d47de4; color: #fff; }
+		.pop-violet { background: #b290d9; color: #fff; }
+		.pop-indigo { background: #a294e5; color: #fff; }
+		.pop-blue { background: #8999f9; color: #fff; }
+		.pop-cyan { background: #0ab1b1; color: #fff; }
+		.pop-jade { background: #00b478; color: #fff; }
+		.pop-green { background: #4eb31b; color: #fff; }
+		.pop-lime { background: #82ab00; color: #fff; }
+		.pop-yellow { background: #ad9f00; color: #fff; }
+		.pop-amber { background: #c79400; color: #fff; }
+		.pop-pumpkin { background: #e48500; color: #fff; }
+		.pop-orange { background: #f56b3d; color: #fff; }
+		.pop-sand { background: #a39e8f; color: #fff; }
+		.pop-grey { background: #9e9e9e; color: #fff; }
+		.pop-zinc { background: #969eaf; color: #fff; }
+		.pop-slate { background: #909ebe; color: #fff; }
+		.spark-azure { background: #f869bf; color: #fff; }
+		.spark-red { background: #a294e5; color: #fff; }
+		.spark-pink { background: #01aaff; color: #fff; }
+		.spark-fuchsia { background: #8999f9; color: #fff; }
+		.spark-purple { background: #e48500; color: #fff; }
+		.spark-violet { background: #e48500; color: #fff; }
+		.spark-indigo { background: #f7708e; color: #fff; }
+		.spark-blue { background: #f7708e; color: #fff; }
+		.spark-cyan { background: #f869bf; color: #fff; }
+		.spark-jade { background: #b290d9; color: #fff; }
+		.spark-green { background: #8999f9; color: #fff; }
+		.spark-lime { background: #f7708e; color: #fff; }
+		.spark-yellow { background: #d47de4; color: #fff; }
+		.spark-amber { background: #d47de4; color: #fff; }
+		.spark-pumpkin { background: #b290d9; color: #fff; }
+		.spark-orange { background: #b290d9; color: #fff; }
+		.spark-sand { background: #d47de4; color: #fff; }
+		.spark-grey { background: #b290d9; color: #fff; }
+		.spark-zinc { background: #b290d9; color: #fff; }
+		.spark-slate { background: #f7708e; color: #fff; }
+		.util-demo {
+			display: inline-block;
+			padding: 0.25rem 0.75rem;
+			margin: 0.15rem;
+			border: 2px solid transparent;
+			border-radius: 0.25rem;
+			font-size: 0.85rem;
+		}
+	</style>
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Colors</h1>
+			<p>The 11 color roles, their CSS variables, and how they apply to components.</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<!-- Color swatches -->
+		<section>
+			<h2>Color roles</h2>
+			<p>Each role provides a base color, a background tint, a hover shade, and a focus ring. Toggle dark mode to see how they adapt.</p>
+
+			<table class="table-fullwidth">
+				<thead>
+					<tr>
+						<th>Role</th>
+						<th>Base</th>
+						<th>Background</th>
+						<th>Hover</th>
+						<th>Focus</th>
+						<th>Inverse</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><strong>primary</strong></td>
+						<td><span class="swatch" style="background:var(--mu-primary)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-primary-background)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-primary-hover)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-primary-focus)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-primary-inverse); border: 1px solid var(--mu-muted-border-color)"></span></td>
+					</tr>
+					<tr>
+						<td><strong>secondary</strong></td>
+						<td><span class="swatch" style="background:var(--mu-secondary)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-secondary-background)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-secondary-hover)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-secondary-focus)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-secondary-inverse); border: 1px solid var(--mu-muted-border-color)"></span></td>
+					</tr>
+					<tr>
+						<td><strong>tertiary</strong></td>
+						<td><span class="swatch" style="background:var(--mu-tertiary)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-tertiary-background)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-tertiary-hover)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-tertiary-focus)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-tertiary-inverse); border: 1px solid var(--mu-muted-border-color)"></span></td>
+					</tr>
+					<tr>
+						<td><strong>contrast</strong></td>
+						<td><span class="swatch" style="background:var(--mu-contrast)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-contrast-background)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-contrast-hover)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-contrast-focus)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-contrast-inverse); border: 1px solid var(--mu-muted-border-color)"></span></td>
+					</tr>
+					<tr>
+						<td><strong>accent</strong></td>
+						<td><span class="swatch" style="background:var(--mu-accent)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-accent-background)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-accent-hover)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-accent-focus)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-accent-inverse); border: 1px solid var(--mu-muted-border-color)"></span></td>
+					</tr>
+					<tr>
+						<td><strong>success</strong></td>
+						<td><span class="swatch" style="background:var(--mu-success)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-success-background)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-success-hover)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-success-focus)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-success-inverse); border: 1px solid var(--mu-muted-border-color)"></span></td>
+					</tr>
+					<tr>
+						<td><strong>info</strong></td>
+						<td><span class="swatch" style="background:var(--mu-info)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-info-background)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-info-hover)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-info-focus)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-info-inverse); border: 1px solid var(--mu-muted-border-color)"></span></td>
+					</tr>
+					<tr>
+						<td><strong>warning</strong></td>
+						<td><span class="swatch" style="background:var(--mu-warning)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-warning-background)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-warning-hover)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-warning-focus)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-warning-inverse); border: 1px solid var(--mu-muted-border-color)"></span></td>
+					</tr>
+					<tr>
+						<td><strong>error</strong></td>
+						<td><span class="swatch" style="background:var(--mu-error)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-error-background)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-error-hover)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-error-focus)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-error-inverse); border: 1px solid var(--mu-muted-border-color)"></span></td>
+					</tr>
+					<tr>
+						<td><strong>pop</strong> <small>(lighter accent)</small></td>
+						<td><span class="swatch" style="background:var(--mu-pop)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-pop-background)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-pop-hover)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-pop-focus)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-pop-inverse); border: 1px solid var(--mu-muted-border-color)"></span></td>
+					</tr>
+					<tr>
+						<td><strong>spark</strong> <small>(lighter contrast)</small></td>
+						<td><span class="swatch" style="background:var(--mu-spark)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-spark-background)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-spark-hover)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-spark-focus)"></span></td>
+						<td><span class="swatch" style="background:var(--mu-spark-inverse); border: 1px solid var(--mu-muted-border-color)"></span></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<!-- Base theme colors -->
+		<section>
+			<h2>Base theme colors</h2>
+			<div class="swatch-row">
+				<div class="swatch-card">
+					<div class="swatch" style="background:var(--mu-background-color); border: 1px solid var(--mu-muted-border-color)"></div>
+					background
+				</div>
+				<div class="swatch-card">
+					<div class="swatch" style="background:var(--mu-color)"></div>
+					color
+				</div>
+				<div class="swatch-card">
+					<div class="swatch" style="background:var(--mu-muted-color)"></div>
+					muted
+				</div>
+				<div class="swatch-card">
+					<div class="swatch" style="background:var(--mu-muted-border-color)"></div>
+					muted-border
+				</div>
+				<div class="swatch-card">
+					<div class="swatch" style="background:var(--mu-h1-color)"></div>
+					h1
+				</div>
+				<div class="swatch-card">
+					<div class="swatch" style="background:var(--mu-h3-color)"></div>
+					h3
+				</div>
+				<div class="swatch-card">
+					<div class="swatch" style="background:var(--mu-h6-color)"></div>
+					h6
+				</div>
+			</div>
+		</section>
+
+		<!-- Themes -->
+		<section>
+			<h2>Color themes</h2>
+			<p>µCSS ships with 20 pre-built color themes. Each theme remaps the 11 color roles to different color families. The default theme is <strong>Azure</strong> (<code>mu.css</code>). To use another theme, load <code>mu.{name}.css</code> instead.</p>
+
+			<div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+				<a class="btn btn-sm" style="background:#0172ad;border-color:#0172ad;color:#fff" href="theme-azure.html">Azure</a>
+				<a class="btn btn-sm" style="background:#c52f21;border-color:#c52f21;color:#fff" href="theme-red.html">Red</a>
+				<a class="btn btn-sm" style="background:#c72259;border-color:#c72259;color:#fff" href="theme-pink.html">Pink</a>
+				<a class="btn btn-sm" style="background:#c1208b;border-color:#c1208b;color:#fff" href="theme-fuchsia.html">Fuchsia</a>
+				<a class="btn btn-sm" style="background:#aa40bf;border-color:#aa40bf;color:#fff" href="theme-purple.html">Purple</a>
+				<a class="btn btn-sm" style="background:#8352c5;border-color:#8352c5;color:#fff" href="theme-violet.html">Violet</a>
+				<a class="btn btn-sm" style="background:#655cd6;border-color:#655cd6;color:#fff" href="theme-indigo.html">Indigo</a>
+				<a class="btn btn-sm" style="background:#2060df;border-color:#2060df;color:#fff" href="theme-blue.html">Blue</a>
+				<a class="btn btn-sm" style="background:#047878;border-color:#047878;color:#fff" href="theme-cyan.html">Cyan</a>
+				<a class="btn btn-sm" style="background:#007a50;border-color:#007a50;color:#fff" href="theme-jade.html">Jade</a>
+				<a class="btn btn-sm" style="background:#33790f;border-color:#33790f;color:#fff" href="theme-green.html">Green</a>
+				<a class="btn btn-sm" style="background:#577400;border-color:#577400;color:#fff" href="theme-lime.html">Lime</a>
+				<a class="btn btn-sm" style="background:#756b00;border-color:#756b00;color:#fff" href="theme-yellow.html">Yellow</a>
+				<a class="btn btn-sm" style="background:#876400;border-color:#876400;color:#fff" href="theme-amber.html">Amber</a>
+				<a class="btn btn-sm" style="background:#9c5900;border-color:#9c5900;color:#fff" href="theme-pumpkin.html">Pumpkin</a>
+				<a class="btn btn-sm" style="background:#bd3c13;border-color:#bd3c13;color:#fff" href="theme-orange.html">Orange</a>
+				<a class="btn btn-sm" style="background:#6e6a60;border-color:#6e6a60;color:#fff" href="theme-sand.html">Sand</a>
+				<a class="btn btn-sm" style="background:#6a6a6a;border-color:#6a6a6a;color:#fff" href="theme-grey.html">Grey</a>
+				<a class="btn btn-sm" style="background:#646b79;border-color:#646b79;color:#fff" href="theme-zinc.html">Zinc</a>
+				<a class="btn btn-sm" style="background:#5d6b89;border-color:#5d6b89;color:#fff" href="theme-slate.html">Slate</a>
+			</div>
+
+			<h3>Role mapping per theme</h3>
+			<p>Each theme is named after its <code>primary</code> color. Most themes share the same defaults for secondary (slate), tertiary (sand), success (green), info (cyan), warning (amber), and error (red). The table below highlights the differences.</p>
+			<div style="overflow-x: auto;">
+				<table class="table-fullwidth" style="font-size: 0.85rem;">
+					<thead>
+						<tr>
+							<th style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);">Theme</th>
+							<th>primary</th>
+							<th>secondary</th>
+							<th>tertiary</th>
+							<th>contrast</th>
+							<th>accent</th>
+							<th>pop</th>
+							<th>spark</th>
+							<th>success</th>
+							<th>info</th>
+							<th>warning</th>
+							<th>error</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>azure</strong></td><td class="theme-azure">azure</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-fuchsia">fuchsia</td><td class="theme-lime">lime</td><td class="pop-lime">lime</td><td class="spark-azure">fuchsia</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>red</strong></td><td class="theme-red">red</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-indigo">indigo</td><td class="theme-jade">jade</td><td class="pop-jade">jade</td><td class="spark-red">indigo</td><td class="theme-green">green</td><td class="theme-azure">azure</td><td class="theme-amber">amber</td><td class="theme-pink">pink</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>pink</strong></td><td class="theme-pink">pink</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-azure">azure</td><td class="theme-lime">lime</td><td class="pop-lime">lime</td><td class="spark-pink">azure</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>fuchsia</strong></td><td class="theme-fuchsia">fuchsia</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-blue">blue</td><td class="theme-lime">lime</td><td class="pop-lime">lime</td><td class="spark-fuchsia">blue</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>purple</strong></td><td class="theme-purple">purple</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-pumpkin">pumpkin</td><td class="theme-jade">jade</td><td class="pop-jade">jade</td><td class="spark-purple">pumpkin</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>violet</strong></td><td class="theme-violet">violet</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-pumpkin">pumpkin</td><td class="theme-jade">jade</td><td class="pop-jade">jade</td><td class="spark-violet">pumpkin</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>indigo</strong></td><td class="theme-indigo">indigo</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-pink">pink</td><td class="theme-lime">lime</td><td class="pop-lime">lime</td><td class="spark-indigo">pink</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>blue</strong></td><td class="theme-blue">blue</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-pink">pink</td><td class="theme-lime">lime</td><td class="pop-lime">lime</td><td class="spark-blue">pink</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>cyan</strong></td><td class="theme-cyan">cyan</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-fuchsia">fuchsia</td><td class="theme-lime">lime</td><td class="pop-lime">lime</td><td class="spark-cyan">fuchsia</td><td class="theme-green">green</td><td class="theme-azure">azure</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>jade</strong></td><td class="theme-jade">jade</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-violet">violet</td><td class="theme-pumpkin">pumpkin</td><td class="pop-pumpkin">pumpkin</td><td class="spark-jade">violet</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>green</strong></td><td class="theme-green">green</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-blue">blue</td><td class="theme-pink">pink</td><td class="pop-pink">pink</td><td class="spark-green">blue</td><td class="theme-jade">jade</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>lime</strong></td><td class="theme-lime">lime</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-pink">pink</td><td class="theme-azure">azure</td><td class="pop-azure">azure</td><td class="spark-lime">pink</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>yellow</strong></td><td class="theme-yellow">yellow</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-purple">purple</td><td class="theme-jade">jade</td><td class="pop-jade">jade</td><td class="spark-yellow">purple</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>amber</strong></td><td class="theme-amber">amber</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-purple">purple</td><td class="theme-jade">jade</td><td class="pop-jade">jade</td><td class="spark-amber">purple</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-yellow">yellow</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>pumpkin</strong></td><td class="theme-pumpkin">pumpkin</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-violet">violet</td><td class="theme-jade">jade</td><td class="pop-jade">jade</td><td class="spark-pumpkin">violet</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>orange</strong></td><td class="theme-orange">orange</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-violet">violet</td><td class="theme-jade">jade</td><td class="pop-jade">jade</td><td class="spark-orange">violet</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>sand</strong></td><td class="theme-sand">sand</td><td class="theme-slate">slate</td><td class="theme-grey">grey</td><td class="theme-purple">purple</td><td class="theme-jade">jade</td><td class="pop-jade">jade</td><td class="spark-sand">purple</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>grey</strong></td><td class="theme-grey">grey</td><td class="theme-slate">slate</td><td class="theme-sand">sand</td><td class="theme-violet">violet</td><td class="theme-orange">orange</td><td class="pop-orange">orange</td><td class="spark-grey">violet</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>zinc</strong></td><td class="theme-zinc">zinc</td><td class="theme-slate">slate</td><td class="theme-grey">grey</td><td class="theme-violet">violet</td><td class="theme-pumpkin">pumpkin</td><td class="pop-pumpkin">pumpkin</td><td class="spark-zinc">violet</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+						<tr><td style="position: sticky; left: 0; z-index: 1; background-color: var(--mu-background-color);"><strong>slate</strong></td><td class="theme-slate">slate</td><td class="theme-grey">grey</td><td class="theme-sand">sand</td><td class="theme-pink">pink</td><td class="theme-lime">lime</td><td class="pop-lime">lime</td><td class="spark-slate">pink</td><td class="theme-green">green</td><td class="theme-cyan">cyan</td><td class="theme-amber">amber</td><td class="theme-red">red</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<p><small>The default theme is azure (first row). Each cell shows the color family assigned to the role. Pop derives from accent with lighter shades. Spark derives from contrast with lighter shades.</small></p>
+		</section>
+
+		<!-- Buttons -->
+		<section>
+			<h2>Buttons</h2>
+			<h3>Filled</h3>
+			<p>
+				<button class="btn btn-primary">Primary</button>
+				<button class="btn btn-secondary">Secondary</button>
+				<button class="btn btn-tertiary">Tertiary</button>
+				<button class="btn btn-contrast">Contrast</button>
+				<button class="btn btn-accent">Accent</button>
+				<button class="btn btn-success">Success</button>
+				<button class="btn btn-info">Info</button>
+				<button class="btn btn-warning">Warning</button>
+				<button class="btn btn-error">Error</button>
+				<button class="btn btn-pop">Pop</button>
+				<button class="btn btn-spark">Spark</button>
+			</p>
+			<h3>Ghost</h3>
+			<p>
+				<button class="btn btn-ghost btn-primary">Primary</button>
+				<button class="btn btn-ghost btn-secondary">Secondary</button>
+				<button class="btn btn-ghost btn-tertiary">Tertiary</button>
+				<button class="btn btn-ghost btn-contrast">Contrast</button>
+				<button class="btn btn-ghost btn-accent">Accent</button>
+				<button class="btn btn-ghost btn-success">Success</button>
+				<button class="btn btn-ghost btn-info">Info</button>
+				<button class="btn btn-ghost btn-warning">Warning</button>
+				<button class="btn btn-ghost btn-error">Error</button>
+				<button class="btn btn-ghost btn-pop">Pop</button>
+				<button class="btn btn-ghost btn-spark">Spark</button>
+			</p>
+		</section>
+
+		<!-- Alerts -->
+		<section>
+			<h2>Alerts</h2>
+			<div class="alert alert-primary"><p><strong>Primary</strong> — informational message.</p></div>
+			<div class="alert alert-secondary"><p><strong>Secondary</strong> — subtle notice.</p></div>
+			<div class="alert alert-tertiary"><p><strong>Tertiary</strong> — accent notice.</p></div>
+			<div class="alert alert-contrast"><p><strong>Contrast</strong> — high emphasis.</p></div>
+			<div class="alert alert-accent"><p><strong>Accent</strong> — eye-catching highlight.</p></div>
+			<div class="alert alert-success"><p><strong>Success</strong> — operation completed.</p></div>
+			<div class="alert alert-info"><p><strong>Info</strong> — helpful information.</p></div>
+			<div class="alert alert-warning"><p><strong>Warning</strong> — proceed with caution.</p></div>
+			<div class="alert alert-error"><p><strong>Error</strong> — something went wrong.</p></div>
+			<div class="alert alert-pop"><p><strong>Pop</strong> — lighter accent variant.</p></div>
+			<div class="alert alert-spark"><p><strong>Spark</strong> — lighter contrast variant.</p></div>
+		</section>
+
+		<!-- Badges -->
+		<section>
+			<h2>Badges</h2>
+			<h3>Solid</h3>
+			<p>
+				<span class="badge badge-primary">Primary</span>
+				<span class="badge badge-secondary">Secondary</span>
+				<span class="badge badge-tertiary">Tertiary</span>
+				<span class="badge badge-contrast">Contrast</span>
+				<span class="badge badge-accent">Accent</span>
+				<span class="badge badge-success">Success</span>
+				<span class="badge badge-info">Info</span>
+				<span class="badge badge-warning">Warning</span>
+				<span class="badge badge-error">Error</span>
+				<span class="badge badge-pop">Pop</span>
+				<span class="badge badge-spark">Spark</span>
+			</p>
+			<h3>Outline</h3>
+			<p>
+				<span class="badge badge-outline badge-primary">Primary</span>
+				<span class="badge badge-outline badge-secondary">Secondary</span>
+				<span class="badge badge-outline badge-tertiary">Tertiary</span>
+				<span class="badge badge-outline badge-contrast">Contrast</span>
+				<span class="badge badge-outline badge-accent">Accent</span>
+				<span class="badge badge-outline badge-success">Success</span>
+				<span class="badge badge-outline badge-info">Info</span>
+				<span class="badge badge-outline badge-warning">Warning</span>
+				<span class="badge badge-outline badge-error">Error</span>
+				<span class="badge badge-outline badge-pop">Pop</span>
+				<span class="badge badge-outline badge-spark">Spark</span>
+			</p>
+		</section>
+
+		<!-- Cards -->
+		<section>
+			<h2>Cards</h2>
+			<div class="row">
+				<div class="col-3"><article class="card-primary"><header>Primary</header><p>Card content</p></article></div>
+				<div class="col-3"><article class="card-secondary"><header>Secondary</header><p>Card content</p></article></div>
+				<div class="col-3"><article class="card-accent"><header>Accent</header><p>Card content</p></article></div>
+				<div class="col-3"><article class="card-pop"><header>Pop</header><p>Card content</p></article></div>
+				<div class="col-3"><article class="card-spark"><header>Spark</header><p>Card content</p></article></div>
+			</div>
+			<div class="row">
+				<div class="col-3"><article class="card-success"><header>Success</header><p>Card content</p></article></div>
+				<div class="col-3"><article class="card-info"><header>Info</header><p>Card content</p></article></div>
+				<div class="col-3"><article class="card-warning"><header>Warning</header><p>Card content</p></article></div>
+				<div class="col-3"><article class="card-error"><header>Error</header><p>Card content</p></article></div>
+			</div>
+		</section>
+
+		<!-- Progress -->
+		<section>
+			<h2>Progress bars</h2>
+			<progress class="progress-primary" value="80" max="100"></progress>
+			<progress class="progress-accent" value="70" max="100"></progress>
+			<progress class="progress-success" value="65" max="100"></progress>
+			<progress class="progress-warning" value="45" max="100"></progress>
+			<progress class="progress-error" value="30" max="100"></progress>
+			<progress class="progress-pop" value="55" max="100"></progress>
+			<progress class="progress-spark" value="40" max="100"></progress>
+		</section>
+
+		<!-- Spinners -->
+		<section>
+			<h2>Spinners</h2>
+			<p>
+				<span class="spinner spinner-primary"></span>
+				<span class="spinner spinner-secondary"></span>
+				<span class="spinner spinner-tertiary"></span>
+				<span class="spinner spinner-contrast"></span>
+				<span class="spinner spinner-accent"></span>
+				<span class="spinner spinner-success"></span>
+				<span class="spinner spinner-info"></span>
+				<span class="spinner spinner-warning"></span>
+				<span class="spinner spinner-error"></span>
+				<span class="spinner spinner-pop"></span>
+				<span class="spinner spinner-spark"></span>
+			</p>
+		</section>
+
+		<!-- Utility classes -->
+		<section>
+			<h2>Utility classes</h2>
+			<p>µCSS provides utility classes for text color (<code>.c-{role}</code>), background (<code>.bg-{role}</code>), and border (<code>.border-{role}</code>).</p>
+
+			<h3>Text color <code>.c-*</code></h3>
+			<p>
+				<span class="c-primary">Primary</span> &middot;
+				<span class="c-secondary">Secondary</span> &middot;
+				<span class="c-tertiary">Tertiary</span> &middot;
+				<span class="c-contrast">Contrast</span> &middot;
+				<span class="c-accent">Accent</span> &middot;
+				<span class="c-success">Success</span> &middot;
+				<span class="c-info">Info</span> &middot;
+				<span class="c-warning">Warning</span> &middot;
+				<span class="c-error">Error</span> &middot;
+				<span class="c-pop">Pop</span> &middot;
+				<span class="c-spark">Spark</span>
+			</p>
+
+			<h3>Text color inverse <code>.c-inverse</code></h3>
+			<p>For readable text on filled backgrounds — typically white or black.</p>
+			<p>
+				<span class="util-demo bg-primary c-inverse">Primary</span>
+				<span class="util-demo bg-secondary c-inverse">Secondary</span>
+				<span class="util-demo bg-tertiary c-inverse">Tertiary</span>
+				<span class="util-demo bg-contrast c-inverse">Contrast</span>
+				<span class="util-demo bg-accent c-inverse">Accent</span>
+				<span class="util-demo bg-success c-inverse">Success</span>
+				<span class="util-demo bg-info c-inverse">Info</span>
+				<span class="util-demo bg-warning c-inverse">Warning</span>
+				<span class="util-demo bg-error c-inverse">Error</span>
+				<span class="util-demo bg-pop c-inverse">Pop</span>
+				<span class="util-demo bg-spark c-inverse">Spark</span>
+			</p>
+
+			<h3>Background <code>.bg-*</code></h3>
+			<p>
+				<span class="util-demo bg-primary" style="color:var(--mu-primary-inverse)">Primary</span>
+				<span class="util-demo bg-secondary" style="color:var(--mu-secondary-inverse)">Secondary</span>
+				<span class="util-demo bg-tertiary" style="color:var(--mu-tertiary-inverse)">Tertiary</span>
+				<span class="util-demo bg-contrast" style="color:var(--mu-contrast-inverse)">Contrast</span>
+				<span class="util-demo bg-accent" style="color:var(--mu-accent-inverse)">Accent</span>
+				<span class="util-demo bg-success" style="color:var(--mu-success-inverse)">Success</span>
+				<span class="util-demo bg-info" style="color:var(--mu-info-inverse)">Info</span>
+				<span class="util-demo bg-warning" style="color:var(--mu-warning-inverse)">Warning</span>
+				<span class="util-demo bg-error" style="color:var(--mu-error-inverse)">Error</span>
+				<span class="util-demo bg-pop" style="color:var(--mu-pop-inverse)">Pop</span>
+				<span class="util-demo bg-spark" style="color:var(--mu-spark-inverse)">Spark</span>
+			</p>
+
+			<h3>Border <code>.border-*</code></h3>
+			<p>
+				<span class="util-demo border-primary" style="border-width:2px;border-style:solid">Primary</span>
+				<span class="util-demo border-secondary" style="border-width:2px;border-style:solid">Secondary</span>
+				<span class="util-demo border-tertiary" style="border-width:2px;border-style:solid">Tertiary</span>
+				<span class="util-demo border-contrast" style="border-width:2px;border-style:solid">Contrast</span>
+				<span class="util-demo border-accent" style="border-width:2px;border-style:solid">Accent</span>
+				<span class="util-demo border-success" style="border-width:2px;border-style:solid">Success</span>
+				<span class="util-demo border-info" style="border-width:2px;border-style:solid">Info</span>
+				<span class="util-demo border-warning" style="border-width:2px;border-style:solid">Warning</span>
+				<span class="util-demo border-error" style="border-width:2px;border-style:solid">Error</span>
+				<span class="util-demo border-pop" style="border-width:2px;border-style:solid">Pop</span>
+				<span class="util-demo border-spark" style="border-width:2px;border-style:solid">Spark</span>
+			</p>
+		</section>
+
+		<!-- Links -->
+		<section>
+			<h2>Links</h2>
+			<p>
+				<a href="#">Primary link (default)</a> ·
+				<a href="#" class="secondary">Secondary link</a> ·
+				<a href="#" class="contrast">Contrast link</a>
+			</p>
+		</section>
+
+		<!-- CSS variables reference -->
+		<section>
+			<h2>CSS variable pattern</h2>
+			<p>Each role follows the same naming convention:</p>
+			<pre><code>--mu-{role}
+--mu-{role}-background
+--mu-{role}-hover
+--mu-{role}-hover-background
+--mu-{role}-focus
+--mu-{role}-inverse
+--mu-{role}-underline</code></pre>
+			<p>Where <code>{role}</code> is one of: <code>primary</code>, <code>secondary</code>, <code>tertiary</code>, <code>contrast</code>, <code>accent</code>, <code>success</code>, <code>info</code>, <code>warning</code>, <code>error</code>, <code>pop</code>, <code>spark</code>.</p>
+		</section>
+
+		<!-- CSS class reference -->
+		<section>
+			<h2>CSS class pattern</h2>
+			<p>Components that accept color variants follow the pattern <code>.{component}-{role}</code>:</p>
+			<table class="table-fullwidth">
+				<thead>
+					<tr>
+						<th>Component</th>
+						<th>Class pattern</th>
+						<th>Example</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Button</td>
+						<td><code>.btn-{role}</code></td>
+						<td><code>.btn-primary</code>, <code>.btn-accent</code></td>
+					</tr>
+					<tr>
+						<td>Button (ghost)</td>
+						<td><code>.btn-ghost .btn-{role}</code></td>
+						<td><code>.btn-ghost .btn-error</code></td>
+					</tr>
+					<tr>
+						<td>Alert</td>
+						<td><code>.alert-{role}</code></td>
+						<td><code>.alert-warning</code>, <code>.alert-info</code></td>
+					</tr>
+					<tr>
+						<td>Badge</td>
+						<td><code>.badge-{role}</code></td>
+						<td><code>.badge-success</code>, <code>.badge-pop</code></td>
+					</tr>
+					<tr>
+						<td>Badge (outline)</td>
+						<td><code>.badge-outline .badge-{role}</code></td>
+						<td><code>.badge-outline .badge-error</code></td>
+					</tr>
+					<tr>
+						<td>Card</td>
+						<td><code>.card-{role}</code></td>
+						<td><code>.card-info</code>, <code>.card-spark</code></td>
+					</tr>
+					<tr>
+						<td>Hero</td>
+						<td><code>.hero-{role}</code></td>
+						<td><code>.hero-primary</code>, <code>.hero-accent</code></td>
+					</tr>
+					<tr>
+						<td>Progress</td>
+						<td><code>.progress-{role}</code></td>
+						<td><code>.progress-success</code>, <code>.progress-warning</code></td>
+					</tr>
+					<tr>
+						<td>Spinner</td>
+						<td><code>.spinner-{role}</code></td>
+						<td><code>.spinner-primary</code>, <code>.spinner-error</code></td>
+					</tr>
+					<tr>
+						<td>Text color</td>
+						<td><code>.c-{role}</code></td>
+						<td><code>.c-error</code>, <code>.c-accent</code></td>
+					</tr>
+					<tr>
+						<td>Text color (inverse)</td>
+						<td><code>.c-inverse</code></td>
+						<td><code>.bg-primary .c-inverse</code></td>
+					</tr>
+					<tr>
+						<td>Background</td>
+						<td><code>.bg-{role}</code></td>
+						<td><code>.bg-primary</code>, <code>.bg-success</code></td>
+					</tr>
+					<tr>
+						<td>Border</td>
+						<td><code>.border-{role}</code></td>
+						<td><code>.border-warning</code>, <code>.border-info</code></td>
+					</tr>
+				</tbody>
+			</table>
+			<p>All patterns accept the 11 roles: <code>primary</code>, <code>secondary</code>, <code>tertiary</code>, <code>contrast</code>, <code>accent</code>, <code>success</code>, <code>info</code>, <code>warning</code>, <code>error</code>, <code>pop</code>, <code>spark</code>.</p>
+		</section>
+	</main>
+</body>
+</html>

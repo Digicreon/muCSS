@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>µCSS — Nav</title>
+	<link rel="stylesheet" href="../dist/mu.css">
+</head>
+<body>
+	<main class="container">
+		<hgroup>
+			<h1>Nav</h1>
+			<p>Horizontal navigation bar — brand, links, buttons, dropdown, vertical. All navbars collapse into a ☰ burger menu on mobile (&lt; 640px).</p>
+		</hgroup>
+
+		<p><a href="index.html">&larr; Back to examples</a></p>
+		<p><button class="btn btn-sm btn-secondary" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle dark mode</button></p>
+
+		<section>
+			<h2>Basic</h2>
+			<p>Brand on the left, links on the right. <code>.active</code> bolds the current page. Resize the window to see the burger.</p>
+			<nav style="background-color: var(--mu-secondary-background); border-radius: var(--mu-border-radius); padding: 0.5rem 1rem;">
+				<ul>
+					<li><strong>Brand</strong></li>
+				</ul>
+				<input type="checkbox" id="nav-basic" class="navbar-toggle" hidden>
+				<label for="nav-basic" class="navbar-burger">☰</label>
+				<ul class="navbar-menu">
+					<li><a href="#" class="active">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>Contrast links</h2>
+			<p>Using <code>.contrast</code> on links for stronger visibility.</p>
+			<nav style="background-color: var(--mu-secondary-background); border-radius: var(--mu-border-radius); padding: 0.5rem 1rem;">
+				<ul>
+					<li><strong>Brand</strong></li>
+				</ul>
+				<input type="checkbox" id="nav-contrast" class="navbar-toggle" hidden>
+				<label for="nav-contrast" class="navbar-burger">☰</label>
+				<ul class="navbar-menu">
+					<li><a href="#" class="contrast">Home</a></li>
+					<li><a href="#" class="contrast">About</a></li>
+					<li><a href="#" class="contrast">Contact</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>Secondary links</h2>
+			<p>Using <code>.secondary</code> on links for lighter styling.</p>
+			<nav style="background-color: var(--mu-secondary-background); border-radius: var(--mu-border-radius); padding: 0.5rem 1rem;">
+				<ul>
+					<li><strong>Brand</strong></li>
+				</ul>
+				<input type="checkbox" id="nav-secondary" class="navbar-toggle" hidden>
+				<label for="nav-secondary" class="navbar-burger">☰</label>
+				<ul class="navbar-menu">
+					<li><a href="#" class="secondary">Home</a></li>
+					<li><a href="#" class="secondary">About</a></li>
+					<li><a href="#" class="secondary">Services</a></li>
+					<li><a href="#" class="secondary">Contact</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>With buttons</h2>
+			<p>Mixing links and buttons in the navigation.</p>
+			<nav style="background-color: var(--mu-secondary-background); border-radius: var(--mu-border-radius); padding: 0.5rem 1rem;">
+				<ul>
+					<li><strong>Brand</strong></li>
+				</ul>
+				<input type="checkbox" id="nav-buttons" class="navbar-toggle" hidden>
+				<label for="nav-buttons" class="navbar-burger">☰</label>
+				<ul class="navbar-menu">
+					<li><a href="#">Docs</a></li>
+					<li><a href="#" role="button">Sign up</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>With dropdown</h2>
+			<p>Integrating a <code>&lt;details class="dropdown"&gt;</code> inside the nav.</p>
+			<nav style="background-color: var(--mu-secondary-background); border-radius: var(--mu-border-radius); padding: 0.5rem 1rem;">
+				<ul>
+					<li><strong>Brand</strong></li>
+				</ul>
+				<input type="checkbox" id="nav-dropdown" class="navbar-toggle" hidden>
+				<label for="nav-dropdown" class="navbar-burger">☰</label>
+				<ul class="navbar-menu">
+					<li><a href="#">Home</a></li>
+					<li>
+						<details class="dropdown">
+							<summary>More</summary>
+							<ul>
+								<li><a href="#">Settings</a></li>
+								<li><a href="#">Profile</a></li>
+								<li><a href="#">Logout</a></li>
+							</ul>
+						</details>
+					</li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>Vertical (aside)</h2>
+			<p>Stacked navigation inside an <code>&lt;aside&gt;</code>.</p>
+			<aside style="background-color: var(--mu-secondary-background); border-radius: var(--mu-border-radius); padding: 0.5rem 1rem;">
+				<nav>
+					<ul>
+						<li><a href="#">Dashboard</a></li>
+						<li><a href="#">Users</a></li>
+						<li><a href="#" class="secondary">Settings</a></li>
+						<li><a href="#" class="secondary">Help</a></li>
+					</ul>
+				</nav>
+			</aside>
+		</section>
+
+		<section>
+			<h2>Colored navbars</h2>
+			<p>Use <code>.bg-{role}</code> for the background — a gradient is applied and text/links switch to inverse color. Works on <code>&lt;nav&gt;</code> or on a parent <code>&lt;header&gt;</code>.</p>
+
+			<nav class="bg-primary" style="border-radius: var(--mu-border-radius); padding: 0.5rem 1rem;">
+				<ul>
+					<li><strong>Primary</strong></li>
+				</ul>
+				<input type="checkbox" id="nav-primary" class="navbar-toggle" hidden>
+				<label for="nav-primary" class="navbar-burger">☰</label>
+				<ul class="navbar-menu">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+
+			<br>
+
+			<nav class="bg-contrast" style="border-radius: var(--mu-border-radius); padding: 0.5rem 1rem;">
+				<ul>
+					<li><strong>Contrast</strong></li>
+				</ul>
+				<input type="checkbox" id="nav-contrast-bg" class="navbar-toggle" hidden>
+				<label for="nav-contrast-bg" class="navbar-burger">☰</label>
+				<ul class="navbar-menu">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+
+			<br>
+
+			<nav class="bg-accent" style="border-radius: var(--mu-border-radius); padding: 0.5rem 1rem;">
+				<ul>
+					<li><strong>Accent</strong></li>
+				</ul>
+				<input type="checkbox" id="nav-accent" class="navbar-toggle" hidden>
+				<label for="nav-accent" class="navbar-burger">☰</label>
+				<ul class="navbar-menu">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+
+			<br>
+
+			<p>Full-width colored bar with <code>.bg-primary</code> on the <code>&lt;header&gt;</code> and <code>.container</code> on the <code>&lt;nav&gt;</code>:</p>
+			<header class="bg-primary" style="border-radius: var(--mu-border-radius); padding: 0.5rem 1rem;">
+				<nav class="container">
+					<ul>
+						<li><strong>Full-width</strong></li>
+					</ul>
+					<input type="checkbox" id="nav-fullwidth" class="navbar-toggle" hidden>
+					<label for="nav-fullwidth" class="navbar-burger">☰</label>
+					<ul class="navbar-menu">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+		</section>
+		<section>
+			<h2>Active link</h2>
+			<p>Add <code>.active</code> to bold the current page link.</p>
+			<nav style="background-color: var(--mu-secondary-background); border-radius: var(--mu-border-radius); padding: 0.5rem 1rem;">
+				<ul>
+					<li><strong>Brand</strong></li>
+				</ul>
+				<input type="checkbox" id="nav-active" class="navbar-toggle" hidden>
+				<label for="nav-active" class="navbar-burger">☰</label>
+				<ul class="navbar-menu">
+					<li><a href="#" class="active">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h2>Sticky top</h2>
+			<p>Add <code>.sticky-top</code> to make the nav stick when scrolling. On a nav, a <code>z-index</code> and <code>box-shadow</code> are added automatically.</p>
+			<nav class="sticky-top" style="background-color: var(--mu-secondary-background); border-radius: var(--mu-border-radius); padding: 0.5rem 1rem;">
+				<ul>
+					<li><strong>Sticky</strong></li>
+				</ul>
+				<input type="checkbox" id="nav-sticky" class="navbar-toggle" hidden>
+				<label for="nav-sticky" class="navbar-burger">☰</label>
+				<ul class="navbar-menu">
+					<li><a href="#" class="active">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</section>
+	</main>
+</body>
+</html>

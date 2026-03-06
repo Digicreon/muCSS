@@ -1,6 +1,6 @@
 # µProgress
 
-**µProgress** adds 8 color variants to the native `<progress>` element, part of the [µCSS](.) framework. It uses `accent-color` and vendor-specific pseudo-elements for cross-browser compatibility.
+**µProgress** adds 11 color variants to the native `<progress>` element, part of the [µCSS](.) framework. It uses `accent-color` and vendor-specific pseudo-elements for cross-browser compatibility.
 
 ---
 
@@ -18,7 +18,7 @@ The text content inside `<progress>` serves as a fallback for browsers that do n
 
 ## Color variants
 
-8 color classes are available, matching the µCSS color roles:
+11 color classes are available, matching the µCSS color roles:
 
 | Class                | Color variable       |
 |----------------------|----------------------|
@@ -26,12 +26,15 @@ The text content inside `<progress>` serves as a fallback for browsers that do n
 | `.progress-secondary`| `--mu-secondary`   |
 | `.progress-tertiary` | `--mu-tertiary`    |
 | `.progress-contrast` | `--mu-contrast`    |
+| `.progress-accent`   | `--mu-accent`      |
 | `.progress-success`  | `--mu-success`     |
 | `.progress-info`     | `--mu-info`        |
 | `.progress-warning`  | `--mu-warning`     |
 | `.progress-error`    | `--mu-error`       |
+| `.progress-pop`      | `--mu-pop`         |
+| `.progress-spark`    | `--mu-spark`       |
 
-### All 8 variants
+### All 11 variants
 
 ```html
 <label>Primary (75%)
@@ -57,6 +60,15 @@ The text content inside `<progress>` serves as a fallback for browsers that do n
 </label>
 <label>Error (20%)
 	<progress class="progress-error" value="20" max="100">20%</progress>
+</label>
+<label>Accent (70%)
+	<progress class="progress-accent" value="70" max="100">70%</progress>
+</label>
+<label>Pop (55%)
+	<progress class="progress-pop" value="55" max="100">55%</progress>
+</label>
+<label>Spark (40%)
+	<progress class="progress-spark" value="40" max="100">40%</progress>
 </label>
 ```
 
@@ -105,10 +117,13 @@ Each color variant sets three properties for full browser support:
 | `.progress-secondary`| Secondary color progress bar         |
 | `.progress-tertiary` | Tertiary color progress bar          |
 | `.progress-contrast` | Contrast color progress bar          |
+| `.progress-accent`   | Accent color progress bar            |
 | `.progress-success`  | Success (green) progress bar         |
 | `.progress-info`     | Info (blue) progress bar             |
 | `.progress-warning`  | Warning (orange/yellow) progress bar |
 | `.progress-error`    | Error (red) progress bar             |
+| `.progress-pop`      | Pop (lighter accent) progress bar    |
+| `.progress-spark`    | Spark (lighter contrast) progress bar|
 
 ---
 

@@ -1,0 +1,124 @@
+/*
+ * µCSS Component: Nav (burger menu)
+ *
+ * Checkbox hack for CSS-only responsive nav toggle.
+ * Mobile (< 640px): ☰ label toggles a dropdown menu.
+ * Desktop (≥ 640px): burger hidden, links displayed inline via PicoCSS nav flex.
+ *
+ * HTML pattern:
+ *   <nav>
+ *     <ul><li><strong>Brand</strong></li></ul>
+ *     <input type="checkbox" id="ID" class="navbar-toggle" hidden>
+ *     <label for="ID" class="navbar-burger">☰</label>
+ *     <ul class="navbar-menu">
+ *       <li><a href="#">Link</a></li>
+ *     </ul>
+ *   </nav>
+ */
+
+/* Always hide the checkbox */
+nav > .navbar-toggle {
+	display: none;
+}
+
+/* Burger icon: hidden on desktop */
+nav > .navbar-burger {
+	display: none;
+	align-self: center;
+	cursor: pointer;
+	font-size: 1.5rem;
+	line-height: 1;
+	padding: 0.25rem 0.5rem;
+}
+
+/* Remove underline on all nav links (overrides PicoCSS hover underline) */
+nav a {
+	text-decoration: none;
+}
+
+/* Gradient background on colored navbars (same as hero) — works on nav or its parent (e.g. header) */
+:is(nav, :has(> nav)):is(.bg-primary, .bg-secondary, .bg-tertiary, .bg-contrast,
+.bg-accent, .bg-success, .bg-info, .bg-warning,
+.bg-error, .bg-pop, .bg-spark) {
+	background: linear-gradient(135deg, color-mix(in oklch, var(--nav-bg) 80%, #000) 0%, color-mix(in oklch, var(--nav-bg) 50%, #000) 100%);
+}
+:is(nav, :has(> nav)).bg-primary   { --nav-bg: var(--mu-primary); }
+:is(nav, :has(> nav)).bg-secondary { --nav-bg: var(--mu-secondary); }
+:is(nav, :has(> nav)).bg-tertiary  { --nav-bg: var(--mu-tertiary); }
+:is(nav, :has(> nav)).bg-contrast  { --nav-bg: var(--mu-contrast); }
+:is(nav, :has(> nav)).bg-accent    { --nav-bg: var(--mu-accent); }
+:is(nav, :has(> nav)).bg-success   { --nav-bg: var(--mu-success); }
+:is(nav, :has(> nav)).bg-info      { --nav-bg: var(--mu-info); }
+:is(nav, :has(> nav)).bg-warning   { --nav-bg: var(--mu-warning); }
+:is(nav, :has(> nav)).bg-error     { --nav-bg: var(--mu-error); }
+:is(nav, :has(> nav)).bg-pop       { --nav-bg: var(--mu-pop); }
+:is(nav, :has(> nav)).bg-spark     { --nav-bg: var(--mu-spark); }
+
+/* Active link (current page) */
+nav .active {
+	font-weight: bold;
+}
+
+/* Sticky/fixed nav: elevate above content */
+nav:is(.sticky-top, .fixed-top, .fixed-bottom) {
+	z-index: 100;
+	box-shadow: var(--mu-box-shadow);
+}
+
+/* Mobile */
+@media (max-width: 639px) {
+	nav:has(> .navbar-burger) {
+		position: relative;
+	}
+	nav > .navbar-burger {
+		display: block;
+	}
+	/* Hide menu by default on mobile */
+	nav > .navbar-menu {
+		display: none;
+		z-index: 99;
+		position: absolute;
+		top: 100%;
+		right: 0;
+		flex-direction: column;
+		align-items: stretch;
+		min-width: fit-content;
+		margin: 0;
+		padding: 0;
+		border: var(--mu-border-width) solid var(--mu-dropdown-border-color);
+		border-radius: var(--mu-border-radius);
+		background-color: var(--mu-dropdown-background-color);
+		box-shadow: var(--mu-dropdown-box-shadow);
+		color: var(--mu-dropdown-color);
+		white-space: nowrap;
+		list-style: none;
+	}
+	/* Show menu when checkbox is checked */
+	nav > .navbar-toggle:checked ~ .navbar-menu {
+		display: flex;
+	}
+	/* Dropdown item styling (mirrors PicoCSS dropdown) */
+	nav > .navbar-menu > li {
+		width: 100%;
+		margin: 0;
+		padding: calc(var(--mu-form-element-spacing-vertical) * 0.5) var(--mu-form-element-spacing-horizontal);
+	}
+	nav > .navbar-menu > li:first-of-type {
+		margin-top: calc(var(--mu-form-element-spacing-vertical) * 0.5);
+	}
+	nav > .navbar-menu > li:last-of-type {
+		margin-bottom: calc(var(--mu-form-element-spacing-vertical) * 0.5);
+	}
+	nav > .navbar-menu > li > a {
+		display: block;
+		margin: calc(var(--mu-form-element-spacing-vertical) * -0.5) calc(var(--mu-form-element-spacing-horizontal) * -1);
+		padding: calc(var(--mu-form-element-spacing-vertical) * 0.5) var(--mu-form-element-spacing-horizontal);
+		border-radius: 0;
+		color: var(--mu-dropdown-color);
+		text-decoration: none;
+	}
+	nav > .navbar-menu > li > a:hover,
+	nav > .navbar-menu > li > a:focus {
+		background-color: var(--mu-dropdown-hover-background-color);
+	}
+}
