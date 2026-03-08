@@ -1,6 +1,6 @@
 # µCSS
 
-Lightweight CSS framework built on [PicoCSS v2](https://picocss.com/), part of the **Temma-UI** project.
+Full-featured themeable CSS framework built on [PicoCSS v2](https://picocss.com/).
 
 ## Features
 
@@ -11,7 +11,6 @@ Lightweight CSS framework built on [PicoCSS v2](https://picocss.com/), part of t
 - **Dark mode** — Automatic (prefers-color-scheme) or manual (`data-theme`)
 - **Pure CSS** — No JavaScript dependency
 - **PHP tooling** — Build and theming via PHP scripts, no Node.js/SASS required
-- **PicoCSS compatible** — Own `--mu-` prefix with automatic `--pico-` bridge variables
 
 ## Installation
 

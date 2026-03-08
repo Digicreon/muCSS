@@ -1,7 +1,7 @@
 {
 	"name": "@digicreon/mucss",
-	"version": "1.0.0",
-	"description": "µCSS — A CSS framework built on PicoCSS v2",
+	"version": "1.2.0",
+	"description": "µCSS — Full-featured themeable CSS framework.",
 	"main": "dist/mu.css",
 	"style": "dist/mu.css",
 	"files": [
@@ -12,12 +12,14 @@
 	"keywords": [
 		"css",
 		"framework",
+		"web",
 		"picocss",
 		"responsive",
 		"grid",
 		"components",
 		"dark-mode",
-		"accessible"
+		"front-end",
+		"mobile-first"
 	],
 	"homepage": "https://www.mucss.org",
 	"repository": {
