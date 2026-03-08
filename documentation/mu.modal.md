@@ -51,7 +51,7 @@ Size classes are applied on the `<dialog>` element, not on the inner `<article>`
 		<h3>Small modal</h3>
 		<p>This is a small modal (max-width: 400px). Ideal for confirmations and simple prompts.</p>
 		<footer>
-			<button class="btn btn-ghost btn-secondary"
+			<button class="btn btn-outline btn-secondary"
 				onclick="document.getElementById('modal-sm').close()">Cancel</button>
 			<button class="btn btn-primary"
 				onclick="document.getElementById('modal-sm').close()">Confirm</button>
@@ -79,7 +79,7 @@ Size classes are applied on the `<dialog>` element, not on the inner `<article>`
 		</div>
 		<label>Email <input type="email" placeholder="Email address"></label>
 		<footer>
-			<button class="btn btn-ghost btn-secondary"
+			<button class="btn btn-outline btn-secondary"
 				onclick="document.getElementById('modal-lg').close()">Cancel</button>
 			<button class="btn btn-success"
 				onclick="document.getElementById('modal-lg').close()">Save</button>

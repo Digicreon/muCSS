@@ -61,7 +61,7 @@ Each file is self-contained (PicoCSS base + colors + grid + all components).
 | Alert | Notification banners, 11 colors, dismissible | [alert.html](examples/alert.html) |
 | Badge | Inline labels, pills, outline, attached | [badge.html](examples/badge.html) |
 | Breadcrumb | Navigation trail, 4 separator styles, boxed | [breadcrumb.html](examples/breadcrumb.html) |
-| Button | 11 colors, ghost, link, 3 sizes | [button.html](examples/button.html) |
+| Button | 11 colors, outline, link, 3 sizes | [button.html](examples/button.html) |
 | Card | Colored `<article>` with header/footer | [card.html](examples/card.html) |
 | Forms | Input sizes (sm/lg) and validation states | [forms.html](examples/forms.html) |
 | Hero | Full-width hero sections, 11 colors, gradient | [hero.html](examples/hero.html) |

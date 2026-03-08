@@ -1,6 +1,6 @@
 # µButton
 
-**µButton** is a button component, part of the [µCSS](.) framework. It provides 11 color roles in filled and ghost variants, a link style, three sizes, and works on both `<button>` and `<a>` elements.
+**µButton** is a button component, part of the [µCSS](.) framework. It provides 11 color roles in filled and outline variants, a link style, three sizes, and works on both `<button>` and `<a>` elements.
 
 ---
 
@@ -56,25 +56,25 @@ Each filled button has a solid background, matching border, and an inverse text 
 
 ---
 
-## Ghost variant
+## Outline variant
 
-Add `.btn-ghost` alongside a color class for a transparent background with visible border and colored text:
+Add `.btn-outline` alongside a color class for a transparent background with visible border and colored text:
 
 ```html
-<button class="btn btn-ghost btn-primary">Primary</button>
-<button class="btn btn-ghost btn-secondary">Secondary</button>
-<button class="btn btn-ghost btn-tertiary">Tertiary</button>
-<button class="btn btn-ghost btn-contrast">Contrast</button>
-<button class="btn btn-ghost btn-success">Success</button>
-<button class="btn btn-ghost btn-info">Info</button>
-<button class="btn btn-ghost btn-warning">Warning</button>
-<button class="btn btn-ghost btn-error">Error</button>
-<button class="btn btn-ghost btn-accent">Accent</button>
-<button class="btn btn-ghost btn-pop">Pop</button>
-<button class="btn btn-ghost btn-spark">Spark</button>
+<button class="btn btn-outline btn-primary">Primary</button>
+<button class="btn btn-outline btn-secondary">Secondary</button>
+<button class="btn btn-outline btn-tertiary">Tertiary</button>
+<button class="btn btn-outline btn-contrast">Contrast</button>
+<button class="btn btn-outline btn-success">Success</button>
+<button class="btn btn-outline btn-info">Info</button>
+<button class="btn btn-outline btn-warning">Warning</button>
+<button class="btn btn-outline btn-error">Error</button>
+<button class="btn btn-outline btn-accent">Accent</button>
+<button class="btn btn-outline btn-pop">Pop</button>
+<button class="btn btn-outline btn-spark">Spark</button>
 ```
 
-Ghost buttons have `background-color: transparent`, text color matching the role, and a matching border. On hover, opacity is reduced to `0.8`.
+Outline buttons have `background-color: transparent`, text color matching the role, and a matching border. On hover, the background fills with the role color and the text switches to its inverse.
 
 ---
 
@@ -114,7 +114,7 @@ Any `<a>` element can use `.btn` classes to look like a button:
 
 ```html
 <a class="btn btn-primary" href="#">Link as button</a>
-<a class="btn btn-ghost btn-success" href="#">Ghost link</a>
+<a class="btn btn-outline btn-success" href="#">Outline link</a>
 <a class="btn btn-error btn-lg" href="#">Large link</a>
 ```
 
@@ -126,7 +126,7 @@ Any `<a>` element can use `.btn` classes to look like a button:
 |-------|-------------|
 | `.btn` | Base button (inline-flex, padding, font-weight 600, border-radius, transitions) |
 | `.btn-{color}` | Filled color variant (`primary`, `secondary`, `tertiary`, `contrast`, `success`, `info`, `warning`, `error`, `accent`, `pop`, `spark`) |
-| `.btn-ghost` | Transparent background, colored border and text |
+| `.btn-outline` | Transparent background, colored border and text |
 | `.btn-link` | Looks like a text link (transparent, underlined, primary color) |
 | `.btn-sm` | Small size |
 | `.btn-lg` | Large size |

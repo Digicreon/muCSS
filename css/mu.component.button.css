@@ -156,22 +156,32 @@
 }
 .btn-spark:focus-visible { outline-color: var(--mu-spark-focus); }
 
-/* Ghost — transparent background, visible border, colored text */
-.btn-ghost {
+/* Outline — transparent background, visible border, colored text */
+.btn-outline {
 	background-color: transparent;
 }
-.btn-ghost.btn-primary   { color: var(--mu-primary);   border-color: var(--mu-primary); }
-.btn-ghost.btn-secondary { color: var(--mu-secondary); border-color: var(--mu-secondary); }
-.btn-ghost.btn-tertiary  { color: var(--mu-tertiary);  border-color: var(--mu-tertiary); }
-.btn-ghost.btn-contrast  { color: var(--mu-contrast);  border-color: var(--mu-contrast); }
-.btn-ghost.btn-success   { color: var(--mu-success);   border-color: var(--mu-success); }
-.btn-ghost.btn-info      { color: var(--mu-info);      border-color: var(--mu-info); }
-.btn-ghost.btn-warning   { color: var(--mu-warning);   border-color: var(--mu-warning); }
-.btn-ghost.btn-error     { color: var(--mu-error);     border-color: var(--mu-error); }
-.btn-ghost.btn-accent    { color: var(--mu-accent);    border-color: var(--mu-accent); }
-.btn-ghost.btn-pop       { color: var(--mu-pop);       border-color: var(--mu-pop); }
-.btn-ghost.btn-spark     { color: var(--mu-spark);     border-color: var(--mu-spark); }
-.btn-ghost:hover { opacity: 0.8; }
+.btn-outline.btn-primary   { color: var(--mu-primary);   border-color: var(--mu-primary); }
+.btn-outline.btn-secondary { color: var(--mu-secondary); border-color: var(--mu-secondary); }
+.btn-outline.btn-tertiary  { color: var(--mu-tertiary);  border-color: var(--mu-tertiary); }
+.btn-outline.btn-contrast  { color: var(--mu-contrast);  border-color: var(--mu-contrast); }
+.btn-outline.btn-success   { color: var(--mu-success);   border-color: var(--mu-success); }
+.btn-outline.btn-info      { color: var(--mu-info);      border-color: var(--mu-info); }
+.btn-outline.btn-warning   { color: var(--mu-warning);   border-color: var(--mu-warning); }
+.btn-outline.btn-error     { color: var(--mu-error);     border-color: var(--mu-error); }
+.btn-outline.btn-accent    { color: var(--mu-accent);    border-color: var(--mu-accent); }
+.btn-outline.btn-pop       { color: var(--mu-pop);       border-color: var(--mu-pop); }
+.btn-outline.btn-spark     { color: var(--mu-spark);     border-color: var(--mu-spark); }
+.btn-outline.btn-primary:hover   { background-color: var(--mu-primary);   color: var(--mu-primary-inverse); }
+.btn-outline.btn-secondary:hover { background-color: var(--mu-secondary); color: var(--mu-secondary-inverse); }
+.btn-outline.btn-tertiary:hover  { background-color: var(--mu-tertiary);  color: var(--mu-tertiary-inverse); }
+.btn-outline.btn-contrast:hover  { background-color: var(--mu-contrast);  color: var(--mu-contrast-inverse); }
+.btn-outline.btn-success:hover   { background-color: var(--mu-success);   color: var(--mu-success-inverse); }
+.btn-outline.btn-info:hover      { background-color: var(--mu-info);      color: var(--mu-info-inverse); }
+.btn-outline.btn-warning:hover   { background-color: var(--mu-warning);   color: var(--mu-warning-inverse); }
+.btn-outline.btn-error:hover     { background-color: var(--mu-error);     color: var(--mu-error-inverse); }
+.btn-outline.btn-accent:hover    { background-color: var(--mu-accent);    color: var(--mu-accent-inverse); }
+.btn-outline.btn-pop:hover       { background-color: var(--mu-pop);       color: var(--mu-pop-inverse); }
+.btn-outline.btn-spark:hover     { background-color: var(--mu-spark);     color: var(--mu-spark-inverse); }
 
 /* Link — looks like a link, no background, no border */
 .btn-link {

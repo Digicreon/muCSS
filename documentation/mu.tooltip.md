@@ -47,7 +47,7 @@ Tooltips work on buttons to provide additional context about the action.
 
 ```html
 <button class="btn btn-primary" data-tooltip="Save your changes">Save</button>
-<button class="btn btn-ghost btn-error"
+<button class="btn btn-outline btn-error"
         data-tooltip="This action cannot be undone"
         data-placement="bottom">Delete</button>
 ```

@@ -100,17 +100,17 @@ The following components accept color classes for all 11 roles:
 
 ### Button
 
-Filled buttons use the role color as background. Ghost buttons use it as text and border only.
+Filled buttons use the role color as background. Outline buttons use it as text and border only.
 
 | Class | Style |
 |-------|-------|
 | `.btn-primary` … `.btn-spark` | Filled background with inverse text |
-| `.btn-ghost.btn-primary` … `.btn-ghost.btn-spark` | Transparent background, colored text and border |
+| `.btn-outline.btn-primary` … `.btn-outline.btn-spark` | Transparent background, colored text and border |
 | `.btn-link` | Link appearance using primary color |
 
 ```html
 <button class="btn btn-success">Save</button>
-<button class="btn btn-ghost btn-error">Delete</button>
+<button class="btn btn-outline btn-error">Delete</button>
 <button class="btn btn-accent">Highlight</button>
 <button class="btn btn-pop">Pop action</button>
 <button class="btn btn-spark">Spark action</button>

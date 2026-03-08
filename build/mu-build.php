@@ -162,7 +162,7 @@ foreach ($themes as $i => $theme) {
 	// Assemble
 	$parts = [];
 	if (!$noBanner) {
-		$parts[] = "/*!\n * µCSS v0.1.0 — theme: {$primary}\n * Built on PicoCSS v2 — https://picocss.com\n * Generated: " . date('Y-m-d H:i:s') . "\n */\n";
+		$parts[] = "/*!\n * µCSS v1.2.0 — theme: {$primary}\n * Built on PicoCSS v2 — https://picocss.com\n * Generated: " . date('Y-m-d H:i:s') . "\n */\n";
 	}
 
 	// PicoCSS base + colors
@@ -178,7 +178,7 @@ foreach ($themes as $i => $theme) {
 	// Actually, let's assemble properly: pico.css, pico.colors.css, mu.colors, grid, components
 	$parts = [];
 	if (!$noBanner) {
-		$parts[] = "/*!\n * µCSS v0.1.0 — theme: {$primary}\n * Built on PicoCSS v2 — https://picocss.com\n * Generated: " . date('Y-m-d H:i:s') . "\n */\n";
+		$parts[] = "/*!\n * µCSS v1.2.0 — theme: {$primary}\n * Built on PicoCSS v2 — https://picocss.com\n * Generated: " . date('Y-m-d H:i:s') . "\n */\n";
 	}
 
 	$colorsInserted = false;
