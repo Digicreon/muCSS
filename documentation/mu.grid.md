@@ -8,15 +8,16 @@
 
 ## Breakpoints
 
-µGrid uses a mobile-first approach with 4 breakpoints:
+µGrid uses a mobile-first approach with 5 breakpoints:
 
 | Name | Prefix | Min-width | Typical use          |
 |------|--------|-----------|----------------------|
 | —    | *(none)* | 0       | Mobile (default)     |
-| sm   | `-sm-` | 640px     | Mobile landscape     |
-| md   | `-md-` | 960px     | Tablet               |
-| lg   | `-lg-` | 1200px    | Desktop              |
-| xl   | `-xl-` | 1400px    | Large desktop        |
+| sm   | `-sm-` | 576px     | Mobile landscape     |
+| md   | `-md-` | 768px     | Tablet               |
+| lg   | `-lg-` | 1024px    | Desktop              |
+| xl   | `-xl-` | 1280px    | Large desktop        |
+| xxl  | `-xxl-`| 1536px    | Extra-large desktop  |
 
 All classes without a breakpoint prefix apply to all screen sizes. Prefixed classes apply from the specified breakpoint and up.
 
@@ -168,8 +169,7 @@ When showing a `.row` that was previously hidden, use `d-{bp}-flex` instead of `
 
 µGrid uses the same class naming conventions as Bootstrap 5. Main differences:
 
-- **4 breakpoints** instead of 5: Bootstrap's `xl` and `xxl` are merged into `xl`.
-- **Breakpoint values differ slightly**: `sm` is 640px (vs 576px), `md` is 960px (vs 768px).
+- **Breakpoint values differ slightly** from Bootstrap: `lg` is 1024px (vs 992px), `xl` is 1280px (vs 1200px), `xxl` is 1536px (vs 1400px).
 - **No auto-sizing columns**: `.col` (without a number) is not supported.
 - **No `row-cols-*`**: automatic column count per row is not supported.
 - **No flex alignment utilities**: `justify-content-*`, `align-items-*` are not included.

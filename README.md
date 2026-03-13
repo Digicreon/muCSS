@@ -5,7 +5,7 @@ Full-featured themeable CSS framework built on [PicoCSS v2](https://picocss.com/
 ## Features
 
 - **20 color themes** — One CSS file per theme, ready to use
-- **12-column responsive grid** — 5 breakpoints, offsets, ordering, display utilities
+- **12-column responsive grid** — 6 breakpoints, offsets, ordering, display utilities
 - **17 UI components** — Accordion, Alert, Badge, Breadcrumb, Button, Card, Forms, Hero, Modal, Nav, Pagination, Progress, Skeleton, Spinner, Table, Toast, Tabs
 - **Utility classes** — Color (text, background, border), positioning (sticky, fixed)
 - **Dark mode** — Automatic (prefers-color-scheme) or manual (`data-theme`)
@@ -90,15 +90,16 @@ Each file is self-contained (PicoCSS base + colors + grid + all components).
 
 ## Grid
 
-Flexbox 12-column grid with 5 breakpoints:
+Flexbox 12-column grid with 6 breakpoints:
 
 | Breakpoint | Prefix | Min-width |
 |------------|--------|-----------|
 | Default | `col-` | 0 |
-| Small | `col-sm-` | 640px |
-| Medium | `col-md-` | 960px |
-| Large | `col-lg-` | 1200px |
-| Extra-large | `col-xl-` | 1400px |
+| Small | `col-sm-` | 576px |
+| Medium | `col-md-` | 768px |
+| Large | `col-lg-` | 1024px |
+| Extra-large | `col-xl-` | 1280px |
+| Extra-extra-large | `col-xxl-` | 1536px |
 
 ```html
 <div class="row">
