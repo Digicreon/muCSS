@@ -55,5 +55,6 @@ These µCSS rules exist to fix PicoCSS default behaviors:
 - Nav/header with `.bg-*` get a gradient via `color-mix(in oklch)` (same as hero)
 - `li ul, li ol { margin-bottom: 0 }` — Fix nested list extra margin (picocss/pico#672) — remove when fixed upstream
 - `nav details.dropdown { display: inline-block }` — Fix Firefox full-width nav dropdowns (picocss/pico#701) — remove when fixed upstream
+- `:where([role=group], [role=search]) + small` — Fix helper text not styled after input groups (picocss/pico#540, picocss/pico#700) — remove when fixed upstream
 - PicoCSS sets `:where(table) { width: 100% }` — all tables are fullwidth by default, no `.table-fullwidth` class needed
 - PicoCSS `.outline` button style (3 colors) coexists with µCSS `.btn-outline` (11 colors) — different selectors, no conflict

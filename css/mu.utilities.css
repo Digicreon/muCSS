@@ -8,6 +8,21 @@ li ol {
 	margin-bottom: 0;
 }
 
+/* PicoCSS bugfix: helper text (<small>) not styled after group (picocss/pico#540, picocss/pico#700) — remove when fixed upstream */
+:where([role=group], [role=search]) + small {
+	display: block;
+	width: 100%;
+	margin-top: calc(var(--mu-spacing) * -0.75);
+	margin-bottom: var(--mu-spacing);
+	color: var(--mu-muted-color);
+}
+:where([role=group], [role=search]):has([aria-invalid=false]) + small {
+	color: var(--mu-ins-color);
+}
+:where([role=group], [role=search]):has([aria-invalid=true]) + small {
+	color: var(--mu-del-color);
+}
+
 /* Positioning */
 
 .sticky-top {
