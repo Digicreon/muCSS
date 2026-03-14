@@ -33,6 +33,16 @@ $minify     = !isset($opts['no-minify']);
 $noBanner   = isset($opts['no-banner']);
 $listOnly   = isset($opts['list']);
 
+// Read version from package.json
+$packageFile = dirname(__DIR__) . '/package.json';
+$version = 'dev';
+if (is_readable($packageFile)) {
+	$pkg = json_decode(file_get_contents($packageFile), true);
+	if (!empty($pkg['version'])) {
+		$version = $pkg['version'];
+	}
+}
+
 // --- Read themes ---
 if (!is_readable($themeFile)) {
 	fprintf(STDERR, "Error: cannot read theme file: %s\n", $themeFile);
@@ -162,7 +172,7 @@ foreach ($themes as $i => $theme) {
 	// Assemble
 	$parts = [];
 	if (!$noBanner) {
-		$parts[] = "/*!\n * µCSS v1.4.0 — theme: {$primary}\n * Built on PicoCSS v2 — https://picocss.com\n * Generated: " . date('Y-m-d H:i:s') . "\n */\n";
+		$parts[] = "/*!\n * µCSS v{$version} — theme: {$primary}\n * Built on PicoCSS v2 — https://picocss.com\n * Generated: " . date('Y-m-d H:i:s') . "\n */\n";
 	}
 
 	// PicoCSS base + colors
@@ -178,7 +188,7 @@ foreach ($themes as $i => $theme) {
 	// Actually, let's assemble properly: pico.css, pico.colors.css, mu.colors, grid, components
 	$parts = [];
 	if (!$noBanner) {
-		$parts[] = "/*!\n * µCSS v1.4.0 — theme: {$primary}\n * Built on PicoCSS v2 — https://picocss.com\n * Generated: " . date('Y-m-d H:i:s') . "\n */\n";
+		$parts[] = "/*!\n * µCSS v{$version} — theme: {$primary}\n * Built on PicoCSS v2 — https://picocss.com\n * Generated: " . date('Y-m-d H:i:s') . "\n */\n";
 	}
 
 	$colorsInserted = false;
