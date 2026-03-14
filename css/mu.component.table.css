@@ -19,6 +19,11 @@
 .table-compact td {
 	padding: 0.25rem 0.5rem;
 }
-.table-fullwidth {
-	width: 100%;
+thead th,
+thead td {
+	background-color: color-mix(in srgb, var(--mu-secondary) 8%, transparent);
+}
+.table-bordered thead th,
+.table-bordered thead td {
+	border-bottom-width: 2px;
 }

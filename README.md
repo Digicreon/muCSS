@@ -70,7 +70,7 @@ Each file is self-contained (PicoCSS base + colors + grid + all components).
 | Progress | Colored progress bars | [progress.html](examples/progress.html) |
 | Skeleton | Loading placeholders, text, title, avatar, image | [skeleton.html](examples/skeleton.html) |
 | Spinner | Loading spinners, 11 colors, 3 sizes | [spinner.html](examples/spinner.html) |
-| Table | Hover, striped, bordered, compact, fullwidth | [table.html](examples/table.html) |
+| Table | Hover, striped, bordered, compact | [table.html](examples/table.html) |
 | Toast | Fixed-position notifications, 6 positions, 11 colors | [toast.html](examples/toast.html) |
 | Tabs | Standard, pills, aligned, fullwidth | [tabs.html](examples/tabs.html) |
 

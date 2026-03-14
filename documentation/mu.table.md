@@ -1,6 +1,6 @@
 # µTable
 
-**µTable** provides enhanced table styles for the [µCSS](.) framework. It adds hover highlights, striped rows, bordered cells, compact padding, and fullwidth layout on top of the default table styling.
+**µTable** provides enhanced table styles for the [µCSS](.) framework. It adds hover highlights, striped rows, bordered cells, and compact padding on top of the default table styling.
 
 ---
 
@@ -65,16 +65,6 @@ Reduces cell padding to `0.25rem 0.5rem` for denser data display.
 </table>
 ```
 
-### Fullwidth
-
-Forces the table to take up 100% of its container width.
-
-```html
-<table class="table-fullwidth">
-    ...
-</table>
-```
-
 ---
 
 ## Combining variants
@@ -82,8 +72,8 @@ Forces the table to take up 100% of its container width.
 All modifier classes can be combined freely. Common combinations:
 
 ```html
-<!-- Hover + bordered + fullwidth -->
-<table class="table-hover table-bordered table-fullwidth">
+<!-- Hover + bordered -->
+<table class="table-hover table-bordered">
     <thead>
         <tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th></tr>
     </thead>
@@ -93,8 +83,8 @@ All modifier classes can be combined freely. Common combinations:
     </tbody>
 </table>
 
-<!-- Compact + bordered + fullwidth -->
-<table class="table-compact table-bordered table-fullwidth">
+<!-- Compact + bordered -->
+<table class="table-compact table-bordered">
     <thead>
         <tr><th>Key</th><th>Value</th><th>Type</th></tr>
     </thead>
@@ -104,8 +94,8 @@ All modifier classes can be combined freely. Common combinations:
     </tbody>
 </table>
 
-<!-- Striped + hover + bordered + fullwidth -->
-<table class="table-striped table-hover table-bordered table-fullwidth">
+<!-- Striped + hover + bordered -->
+<table class="table-striped table-hover table-bordered">
     ...
 </table>
 ```
@@ -120,7 +110,6 @@ All modifier classes can be combined freely. Common combinations:
 | `.table-striped`   | Alternating background on odd rows (50% `--mu-secondary-background`) |
 | `.table-bordered`  | 1px solid border on table, `<th>`, and `<td>`                          |
 | `.table-compact`   | Reduced padding: `0.25rem 0.5rem`                                      |
-| `.table-fullwidth` | `width: 100%`                                                          |
 
 ---
 
@@ -130,7 +119,7 @@ For tables wider than their container, wrap them in a scrollable `<div>`:
 
 ```html
 <div style="overflow-x: auto;">
-    <table class="table-bordered table-fullwidth">
+    <table class="table-bordered">
         ...
     </table>
 </div>
