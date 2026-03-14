@@ -6,7 +6,7 @@ Full-featured themeable CSS framework built on [PicoCSS v2](https://picocss.com/
 
 - **20 color themes** — One CSS file per theme, ready to use
 - **12-column responsive grid** — 6 breakpoints, offsets, ordering, display utilities
-- **17 UI components** — Accordion, Alert, Badge, Breadcrumb, Button, Card, Forms, Hero, Modal, Nav, Pagination, Progress, Skeleton, Spinner, Table, Toast, Tabs
+- **18 UI components** — Accordion, Alert, Badge, Breadcrumb, Button, Card, Forms, Hero, Modal, Nav, Pagination, Progress, Skeleton, Spinner, Table, Toast, Tabs, Var
 - **Utility classes** — Color (text, background, border), positioning (sticky, fixed)
 - **Dark mode** — Automatic (prefers-color-scheme) or manual (`data-theme`)
 - **Pure CSS** — No JavaScript dependency
@@ -73,6 +73,7 @@ Each file is self-contained (PicoCSS base + colors + grid + all components).
 | Table | Hover, striped, bordered, compact | [table.html](examples/table.html) |
 | Toast | Fixed-position notifications, 6 positions, 11 colors | [toast.html](examples/toast.html) |
 | Tabs | Standard, pills, aligned, fullwidth | [tabs.html](examples/tabs.html) |
+| Var | Style `<var>` like `<code>`/`<kbd>`/`<samp>`, with italic | — |
 
 ## PicoCSS native
 
@@ -174,7 +175,7 @@ mucss/
     mu.grid.css           # 12-column grid
     mu.colors.css         # Color utility classes
     mu.utilities.css      # Positioning utilities (sticky, fixed)
-    mu.component.*.css    # UI components (17 files)
+    mu.component.*.css    # UI components (18 files)
   dist/                   # Build output (21 CSS files)
   documentation/          # Component and feature documentation
   examples/               # HTML demos for each component

@@ -54,6 +54,11 @@ nav a {
 :is(nav, :has(> nav)).bg-pop       { --nav-bg: var(--mu-pop); }
 :is(nav, :has(> nav)).bg-spark     { --nav-bg: var(--mu-spark); }
 
+/* PicoCSS bugfix: nav dropdown full-width on Firefox (picocss/pico#701) — remove when fixed upstream */
+nav details.dropdown {
+	display: inline-block;
+}
+
 /* Active link (current page) */
 nav .active {
 	font-weight: bold;

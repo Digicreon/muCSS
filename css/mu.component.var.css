@@ -1,0 +1,17 @@
+/*
+ * µCSS Component: Var
+ * Style <var> like <code>, <kbd>, <samp> with italic to distinguish variables.
+ */
+
+var {
+	font-family: var(--mu-font-family-monospace);
+	font-size: 0.875em;
+	font-style: italic;
+	display: inline-block;
+	padding: 0.375rem;
+	border-radius: var(--mu-border-radius);
+	background: var(--mu-code-background-color);
+	color: var(--mu-code-color);
+	font-weight: var(--mu-font-weight);
+	line-height: initial;
+}

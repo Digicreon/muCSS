@@ -13,7 +13,7 @@
 - `css/mu.grid.css` — 12-column responsive grid (6 breakpoints: sm 576px, md 768px, lg 1024px, xl 1280px, xxl 1536px — aligned with PicoCSS container)
 - `css/mu.colors.css` — Color utility classes (`.c-*`, `.bg-*`, `.border-*`)
 - `css/mu.utilities.css` — Positioning utilities (`.sticky-top`, `.fixed-top`, `.fixed-bottom`)
-- `css/mu.component.*.css` — UI components (17 files)
+- `css/mu.component.*.css` — UI components (18 files)
 - `dist/` — Build output (21 CSS files: `mu.css` + 20 `mu.{color}.css`)
 - `examples/` — HTML demos (49 files: index + 19 component pages + 9 native element pages + 20 theme recap pages)
 - `README.md` — Project documentation with installation, components, grid, dark mode, build
@@ -53,5 +53,6 @@ These µCSS rules exist to fix PicoCSS default behaviors:
 - `nav a { text-decoration: none }` — Remove underline on all nav links (PicoCSS hover underline)
 - `.table-bordered` border uses `color-mix()` blend for visible but lighter cell borders
 - Nav/header with `.bg-*` get a gradient via `color-mix(in oklch)` (same as hero)
+- `nav details.dropdown { display: inline-block }` — Fix Firefox full-width nav dropdowns (picocss/pico#701) — remove when fixed upstream
 - PicoCSS sets `:where(table) { width: 100% }` — all tables are fullwidth by default, no `.table-fullwidth` class needed
 - PicoCSS `.outline` button style (3 colors) coexists with µCSS `.btn-outline` (11 colors) — different selectors, no conflict
