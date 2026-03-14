@@ -1,6 +1,14 @@
 /*
- * µCSS Utilities: Positioning
+ * µCSS Utilities
  */
+
+/* PicoCSS bugfix: nested lists have unwanted bottom margin (picocss/pico#672) — remove when fixed upstream */
+li ul,
+li ol {
+	margin-bottom: 0;
+}
+
+/* Positioning */
 
 .sticky-top {
 	position: sticky;

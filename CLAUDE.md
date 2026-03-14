@@ -53,6 +53,7 @@ These µCSS rules exist to fix PicoCSS default behaviors:
 - `nav a { text-decoration: none }` — Remove underline on all nav links (PicoCSS hover underline)
 - `.table-bordered` border uses `color-mix()` blend for visible but lighter cell borders
 - Nav/header with `.bg-*` get a gradient via `color-mix(in oklch)` (same as hero)
+- `li ul, li ol { margin-bottom: 0 }` — Fix nested list extra margin (picocss/pico#672) — remove when fixed upstream
 - `nav details.dropdown { display: inline-block }` — Fix Firefox full-width nav dropdowns (picocss/pico#701) — remove when fixed upstream
 - PicoCSS sets `:where(table) { width: 100% }` — all tables are fullwidth by default, no `.table-fullwidth` class needed
 - PicoCSS `.outline` button style (3 colors) coexists with µCSS `.btn-outline` (11 colors) — different selectors, no conflict
