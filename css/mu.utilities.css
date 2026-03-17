@@ -23,6 +23,12 @@ li ol {
 	color: var(--mu-del-color);
 }
 
+/* PicoCSS bugfix: tooltips overflow on long text (picocss/pico#665, picocss/pico#715) — remove when fixed upstream */
+[data-tooltip]::before {
+	white-space: normal;
+	max-width: 20rem;
+}
+
 /* Positioning */
 
 .sticky-top {
