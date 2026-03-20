@@ -4,10 +4,12 @@
 
 /* Sizes */
 input.input-sm, textarea.input-sm, select.input-sm {
+	height: auto;
 	padding: 0.375rem 0.625rem;
 	font-size: 0.8125rem;
 }
 input.input-lg, textarea.input-lg, select.input-lg {
+	height: auto;
 	padding: 0.75rem 1rem;
 	font-size: 1.125rem;
 }
