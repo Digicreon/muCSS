@@ -74,6 +74,22 @@ When used on a `<nav>`, these classes automatically add `z-index: 100` and `box-
 
 ---
 
+## Cursor
+
+| Class | Effect |
+|-------|--------|
+| `.clickable` | `cursor: pointer` — shows a pointer cursor on hover |
+
+Use `.clickable` on elements that are interactive via JavaScript but are not `<a>` or `<button>` (which already show a pointer cursor natively).
+
+```html
+<tr class="clickable" onclick="openDetail(this)">
+    <td>Row content</td>
+</tr>
+```
+
+---
+
 ## Color utilities
 
 Text, background, and border color classes are documented in [µColors](mu.colors.md#utility-classes).
