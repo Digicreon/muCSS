@@ -31,11 +31,13 @@ li ol {
 
 /* Positioning */
 
+/* Stick to top on scroll (stays in document flow) */
 .sticky-top {
 	position: sticky;
 	top: 0;
 }
 
+/* Fix to viewport top (out of document flow) */
 .fixed-top {
 	position: fixed;
 	top: 0;
@@ -43,9 +45,17 @@ li ol {
 	left: 0;
 }
 
+/* Fix to viewport bottom (out of document flow) */
 .fixed-bottom {
 	position: fixed;
 	bottom: 0;
 	right: 0;
 	left: 0;
+}
+
+/* Cursor */
+
+/* Show pointer cursor on hover (for JS-interactive elements that are not links or buttons) */
+.clickable {
+	cursor: pointer;
 }

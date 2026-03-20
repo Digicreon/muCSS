@@ -136,6 +136,12 @@ On `<nav>` or its parent (e.g. `<header>`), `.bg-*` classes also apply a gradien
 
 On `<nav>`, these classes automatically add `z-index` and `box-shadow`.
 
+### Cursor
+
+| Class | Effect |
+|-------|--------|
+| `.clickable` | Pointer cursor on hover (for JS-interactive elements) |
+
 ## Dark mode
 
 µCSS supports three modes:
