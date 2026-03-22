@@ -2,8 +2,20 @@
  * µCSS Component: Table
  */
 
+/*
+ * Striped rows: two selectors for progressive enhancement.
+ * 1) Basic fallback — works on all browsers.
+ * 2) Modern selector — uses "of S" filtering (Chrome 111+, Firefox 113+, Safari 16.4+)
+ *    to skip hidden rows ([hidden]) so the odd/even alternation stays correct
+ *    when rows are dynamically shown/hidden.
+ *    Older browsers ignore this rule and fall back to (1).
+ */
 .table-striped tbody tr:nth-child(odd) th,
 .table-striped tbody tr:nth-child(odd) td {
+	background-color: color-mix(in srgb, var(--mu-secondary-background) 50%, transparent);
+}
+.table-striped tbody tr:nth-child(odd of :not([hidden])) th,
+.table-striped tbody tr:nth-child(odd of :not([hidden])) td {
 	background-color: color-mix(in srgb, var(--mu-secondary-background) 50%, transparent);
 }
 .table-hover tbody tr:hover th,
