@@ -58,5 +58,6 @@ These µCSS rules exist to fix PicoCSS default behaviors:
 - `:where([role=group], [role=search]) + small` — Fix helper text not styled after input groups (picocss/pico#540, picocss/pico#700) — remove when fixed upstream
 - `[data-tooltip] { display: inline-block }` — Fix tooltip mispositioned on inline elements in Chromium (picocss/pico#678) — remove when fixed upstream
 - `[data-tooltip]::before { white-space: pre-line; max-width: 20rem }` — Fix tooltip overflow on long text, support explicit line breaks (picocss/pico#665, picocss/pico#715) — remove when fixed upstream
+- `code, kbd, samp { padding: 0.125rem 0.375rem }` — Fix inline code vertical padding too thick (picocss/pico#651) — remove when fixed upstream
 - PicoCSS sets `:where(table) { width: 100% }` — all tables are fullwidth by default, no `.table-fullwidth` class needed
 - PicoCSS `.outline` button style (3 colors) coexists with µCSS `.btn-outline` (11 colors) — different selectors, no conflict
