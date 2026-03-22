@@ -48,6 +48,12 @@ li ol {
 	max-width: 20rem;
 }
 
+/* PicoCSS bugfix: <small> font-size not applied (picocss/pico#561) — remove when fixed upstream */
+/* PicoCSS sets --pico-font-size: 0.875em on small but never applies it; browser uses "smaller" instead */
+small {
+	font-size: var(--mu-font-size);
+}
+
 /* PicoCSS bugfix: inline code vertical padding too thick (picocss/pico#651) — remove when fixed upstream */
 code, kbd, samp {
 	padding: 0.125rem 0.375rem;

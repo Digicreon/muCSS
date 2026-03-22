@@ -207,6 +207,7 @@ Each theme maps 11 semantic roles to PicoCSS color families:
 - [Bleksak](https://github.com/Bleksak) — picocss/pico#715
 - [ManiShah7](https://github.com/ManiShah7) — picocss/pico#694 (fix for picocss/pico#678)
 - [irfanfadilah](https://github.com/irfanfadilah) — picocss/pico#651
+- [gustav-langer](https://github.com/gustav-langer) — picocss/pico#561
 
 ## License
 

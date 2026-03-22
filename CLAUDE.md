@@ -60,6 +60,7 @@ These µCSS rules exist to fix PicoCSS default behaviors:
 - `[data-tooltip] { display: inline-block }` — Fix tooltip mispositioned on inline elements in Chromium (picocss/pico#678) — remove when fixed upstream
 - `[data-tooltip]::before/::after` use `--mu-inverted-background`/`--mu-inverted-color` instead of themed contrast — PicoCSS contrast is theme-dependent in µCSS, not always readable as tooltip background
 - `[data-tooltip]::before { white-space: pre-line; width: max-content; max-width: 20rem }` — Fix tooltip overflow on long text, support explicit line breaks, comfortable width (picocss/pico#665, picocss/pico#715) — remove when fixed upstream
+- `small { font-size: var(--mu-font-size) }` — Fix `<small>` font-size not applied (picocss/pico#561) — remove when fixed upstream
 - `code, kbd, samp { padding: 0.125rem 0.375rem }` — Fix inline code vertical padding too thick (picocss/pico#651) — remove when fixed upstream
 - PicoCSS sets `:where(table) { width: 100% }` — all tables are fullwidth by default, no `.table-fullwidth` class needed
 - PicoCSS `.outline` button style (3 colors) coexists with µCSS `.btn-outline` (11 colors) — different selectors, no conflict

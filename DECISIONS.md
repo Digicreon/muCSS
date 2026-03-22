@@ -10,6 +10,7 @@ Fixes integrated into µCSS. The "Temporary" column indicates workarounds that s
 |----------|---------|--------------|-----------|
 | #540, #700 | Helper text (`<small>`) not styled after input groups | mu.utilities.css | Yes |
 | #634, #664 | Safari 18.2+ truncates dropdown text in nav | mu.component.nav.css | Yes |
+| #561 | `<small>` font-size not applied (variable set but unused) | mu.utilities.css | Yes |
 | #651 | Inline code/kbd/samp vertical padding too thick | mu.utilities.css, mu.component.var.css | Yes |
 | #663 | Striped table: hidden rows break odd/even alternation | mu.component.table.css | Yes |
 | #665, #715 | Tooltip overflow on long text, multiline support | mu.utilities.css | Yes |
