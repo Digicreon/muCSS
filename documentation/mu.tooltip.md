@@ -80,6 +80,16 @@ Tooltips can be placed on form elements to guide the user.
 
 ---
 
+## Long text and line breaks
+
+Long tooltip text wraps automatically (max-width: 20rem). You can also force explicit line breaks using `&#10;` in the attribute:
+
+```html
+<span data-tooltip="Line 1&#10;Line 2&#10;Line 3">Multiline tooltip</span>
+```
+
+---
+
 ## Attribute summary
 
 | Attribute | Required | Description |

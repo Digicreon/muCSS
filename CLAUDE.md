@@ -56,6 +56,7 @@ These µCSS rules exist to fix PicoCSS default behaviors:
 - `li ul, li ol { margin-bottom: 0 }` — Fix nested list extra margin (picocss/pico#672) — remove when fixed upstream
 - `nav details.dropdown { display: inline-block }` — Fix Firefox full-width nav dropdowns (picocss/pico#701) — remove when fixed upstream
 - `:where([role=group], [role=search]) + small` — Fix helper text not styled after input groups (picocss/pico#540, picocss/pico#700) — remove when fixed upstream
-- `[data-tooltip]::before { white-space: normal; max-width: 20rem }` — Fix tooltip overflow on long text (picocss/pico#665, picocss/pico#715) — remove when fixed upstream
+- `[data-tooltip] { display: inline-block }` — Fix tooltip mispositioned on inline elements in Chromium (picocss/pico#678) — remove when fixed upstream
+- `[data-tooltip]::before { white-space: pre-line; max-width: 20rem }` — Fix tooltip overflow on long text, support explicit line breaks (picocss/pico#665, picocss/pico#715) — remove when fixed upstream
 - PicoCSS sets `:where(table) { width: 100% }` — all tables are fullwidth by default, no `.table-fullwidth` class needed
 - PicoCSS `.outline` button style (3 colors) coexists with µCSS `.btn-outline` (11 colors) — different selectors, no conflict

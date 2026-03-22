@@ -23,9 +23,15 @@ li ol {
 	color: var(--mu-del-color);
 }
 
+/* PicoCSS bugfix: tooltip mispositioned on inline elements in Chromium (picocss/pico#678) — remove when fixed upstream */
+[data-tooltip] {
+	display: inline-block;
+}
+
 /* PicoCSS bugfix: tooltips overflow on long text (picocss/pico#665, picocss/pico#715) — remove when fixed upstream */
+/* pre-line preserves explicit line breaks (&#10;) while wrapping long text */
 [data-tooltip]::before {
-	white-space: normal;
+	white-space: pre-line;
 	max-width: 20rem;
 }
 
