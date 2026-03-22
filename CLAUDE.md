@@ -54,6 +54,7 @@ These µCSS rules exist to fix PicoCSS default behaviors:
 - `.table-bordered` border uses `color-mix()` blend for visible but lighter cell borders
 - Nav/header with `.bg-*` get a gradient via `color-mix(in oklch)` (same as hero)
 - `li ul, li ol { margin-bottom: 0 }` — Fix nested list extra margin (picocss/pico#672) — remove when fixed upstream
+- `:where(nav li)::before { float: none; content: " " }` — Fix Safari 18.2+ dropdown text truncation (picocss/pico#634, picocss/pico#664) — remove when fixed upstream
 - `nav details.dropdown { display: inline-block }` — Fix Firefox full-width nav dropdowns (picocss/pico#701) — remove when fixed upstream
 - `:where([role=group], [role=search]) + small` — Fix helper text not styled after input groups (picocss/pico#540, picocss/pico#700) — remove when fixed upstream
 - `[data-tooltip] { display: inline-block }` — Fix tooltip mispositioned on inline elements in Chromium (picocss/pico#678) — remove when fixed upstream
