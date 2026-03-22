@@ -207,6 +207,10 @@ function buildCss(array $theme, array $palette): string {
 			$out[] = "\t{$name}: {$value};";
 		}
 	}
+	$out[] = '';
+	$out[] = "\t/* Inverted surface (always opposite of page background, theme-independent) */";
+	$out[] = "\t--mu-inverted-background: #181c25;";
+	$out[] = "\t--mu-inverted-color: #fff;";
 	$out[] = '}';
 	$out[] = '';
 
@@ -223,6 +227,10 @@ function buildCss(array $theme, array $palette): string {
 			$out[] = "\t\t{$name}: {$value};";
 		}
 	}
+	$out[] = '';
+	$out[] = "\t\t/* Inverted surface (always opposite of page background, theme-independent) */";
+	$out[] = "\t\t--mu-inverted-background: #eff1f4;";
+	$out[] = "\t\t--mu-inverted-color: #000;";
 	$out[] = "\t}";
 	$out[] = '}';
 	$out[] = '';
@@ -239,6 +247,10 @@ function buildCss(array $theme, array $palette): string {
 			$out[] = "\t{$name}: {$value};";
 		}
 	}
+	$out[] = '';
+	$out[] = "\t/* Inverted surface (always opposite of page background, theme-independent) */";
+	$out[] = "\t--mu-inverted-background: #eff1f4;";
+	$out[] = "\t--mu-inverted-color: #000;";
 	$out[] = '}';
 	$out[] = '';
 

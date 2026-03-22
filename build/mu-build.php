@@ -219,7 +219,13 @@ foreach ($themes as $i => $theme) {
 		// Strip all comments (including /*! */ banners)
 		$output = preg_replace('/\/\*[^*]*\*+(?:[^\/][^*]*\*+)*\//', '', $output);
 		$output = preg_replace('/\s+/', ' ', $output);
-		$output = preg_replace('/\s*([{};:,])\s*/', '$1', $output);
+		// Strip spaces around structural tokens (but not ':' — it appears in selectors
+		// as pseudo-class prefix where a preceding space is a descendant combinator)
+		$output = preg_replace('/\s*([{};,])\s*/', '$1', $output);
+		// Strip spaces around ':' only inside declaration blocks (property: value)
+		$output = preg_replace_callback('/\{([^}]*)\}/', function ($m) {
+			return '{' . preg_replace('/\s*:\s*/', ':', $m[1]) . '}';
+		}, $output);
 		$output = str_replace(';}', '}', $output);
 		$banner = $noBanner ? '' : "/* µCSS (muCSS) - mucss.org */\n";
 		$output = $banner . trim($output) . "\n";

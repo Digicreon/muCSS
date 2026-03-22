@@ -28,10 +28,23 @@ li ol {
 	display: inline-block;
 }
 
+/* Tooltip: use inverted surface instead of themed contrast (contrast is theme-dependent, not always readable) */
+/* Extra [data-placement] selector matches PicoCSS specificity for top placement */
+[data-tooltip]::before,
+[data-tooltip][data-placement]::before {
+	background: var(--mu-inverted-background);
+	color: var(--mu-inverted-color);
+}
+/* Caret color must match tooltip body (PicoCSS uses currentColor for the border arrow) */
+[data-tooltip]::after,
+[data-tooltip][data-placement]::after {
+	color: var(--mu-inverted-background);
+}
 /* PicoCSS bugfix: tooltips overflow on long text (picocss/pico#665, picocss/pico#715) — remove when fixed upstream */
-/* pre-line preserves explicit line breaks (&#10;) while wrapping long text */
+/* pre-line preserves explicit line breaks (&#10;) while wrapping long text; width: max-content for comfortable sizing */
 [data-tooltip]::before {
 	white-space: pre-line;
+	width: max-content;
 	max-width: 20rem;
 }
 
