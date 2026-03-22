@@ -197,6 +197,17 @@ Each theme maps 11 semantic roles to PicoCSS color families:
 
 µCSS also provides utility classes for color and positioning — see [Utilities](#utilities).
 
+## Contributors
+
+- [Amaury Bouchard](https://github.com/Amaury) — author
+- [nullterminated](https://github.com/nullterminated) — digicreon/mujs#8
+- [azmeuk](https://github.com/azmeuk) — picocss/pico#701, picocss/pico#700
+- [Frozenlock](https://github.com/Frozenlock) — picocss/pico#540
+- [Yohn](https://github.com/Yohn) — picocss/pico#663, picocss/pico#665
+- [Bleksak](https://github.com/Bleksak) — picocss/pico#715
+- [ManiShah7](https://github.com/ManiShah7) — picocss/pico#694 (fix for picocss/pico#678)
+- [irfanfadilah](https://github.com/irfanfadilah) — picocss/pico#651
+
 ## License
 
 See [LICENSE](LICENSE).
