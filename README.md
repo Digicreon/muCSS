@@ -1,5 +1,5 @@
 <p align="center"><a href="https://mucss.org/" target="_blank">
-	<img src="https://static.digicreon.com/main/mucss/mucss-icon-256x256.png" alt="µCSS logo">
+	<img src="https://static.digicreon.com/main/mucss/mucss-icon-128x128.png" alt="µCSS logo">
 </a></p>
 
 # µCSS
