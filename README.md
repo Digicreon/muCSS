@@ -1,3 +1,7 @@
+<p align="center"><a href="https://mucss.org/" target="_blank">
+	<img src="https://static.digicreon.com/main/mucss/mucss-logo.svg" alt="µCSS logo">
+</a></p>
+
 # µCSS
 
 Full-featured themeable CSS framework built on [PicoCSS v2](https://picocss.com/).
