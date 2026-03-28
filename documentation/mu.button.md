@@ -120,6 +120,19 @@ Any `<a>` element can use `.btn` classes to look like a button:
 
 ---
 
+## Disabled state
+
+Use `aria-disabled="true"` to disable a `.btn` button. The button is dimmed (50% opacity) and non-interactive:
+
+```html
+<button class="btn btn-primary" aria-disabled="true">Disabled</button>
+<button class="btn btn-outline btn-error" aria-disabled="true">Disabled outline</button>
+```
+
+This approach uses ARIA rather than the native `disabled` attribute, so it works on both `<button>` and `<a>` elements.
+
+---
+
 ## CSS classes reference
 
 | Class | Description |
@@ -130,6 +143,7 @@ Any `<a>` element can use `.btn` classes to look like a button:
 | `.btn-link` | Looks like a text link (transparent, underlined, primary color) |
 | `.btn-sm` | Small size |
 | `.btn-lg` | Large size |
+| `aria-disabled="true"` | Disabled state (50% opacity, non-interactive) |
 
 ---
 
