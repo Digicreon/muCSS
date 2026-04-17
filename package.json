@@ -1,6 +1,6 @@
 {
 	"name": "@digicreon/mucss",
-	"version": "1.4.4",
+	"version": "1.4.5",
 	"description": "µCSS — Full-featured themeable CSS framework.",
 	"main": "dist/mu.css",
 	"style": "dist/mu.css",
