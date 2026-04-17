@@ -133,6 +133,26 @@ This approach uses ARIA rather than the native `disabled` attribute, so it works
 
 ---
 
+## Button groups
+
+Buttons can be grouped using `role="group"`. Filled buttons get a subtle separator, and outline buttons have no double border:
+
+```html
+<div role="group">
+    <button class="btn btn-primary">Left</button>
+    <button class="btn btn-primary">Center</button>
+    <button class="btn btn-primary">Right</button>
+</div>
+
+<div role="group">
+    <button class="btn btn-outline btn-primary">Left</button>
+    <button class="btn btn-outline btn-primary">Center</button>
+    <button class="btn btn-outline btn-primary">Right</button>
+</div>
+```
+
+---
+
 ## CSS classes reference
 
 | Class | Description |

@@ -208,6 +208,10 @@
 [role=group] > :not(:first-child):is(.outline, .btn-outline) {
 	border-left-width: 0;
 }
+/* Filled buttons in groups: add subtle separator (border-color matches background by default) */
+[role=group] > :not(:first-child):is(button, [type=submit], [type=button], [type=reset], [role=button], .btn):not(.outline):not(.btn-outline):not(.btn-link) {
+	border-left-color: rgba(0, 0, 0, 0.2);
+}
 
 /* Disabled */
 .btn[aria-disabled="true"] {
