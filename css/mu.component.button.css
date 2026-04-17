@@ -195,6 +195,20 @@
 	color: var(--mu-primary-hover);
 }
 
+/*
+ * Grouped outline buttons: fix double border at junction.
+ * PicoCSS uses margin-left: calc(border-width * -1) to overlap adjacent borders,
+ * but user-agent button margins can prevent exact overlap.
+ * Fix: reset margins on all group children, and remove the inner left border
+ * on non-first outline buttons (both PicoCSS .outline and µCSS .btn-outline).
+ */
+[role=group] > :is(button, [type=submit], [type=button], [type=reset], [role=button]) {
+	margin: 0;
+}
+[role=group] > :not(:first-child):is(.outline, .btn-outline) {
+	border-left-width: 0;
+}
+
 /* Disabled */
 .btn[aria-disabled="true"] {
 	opacity: 0.5;
