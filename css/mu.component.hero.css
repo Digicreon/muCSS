@@ -63,6 +63,10 @@
 	margin-bottom: 0.25rem;
 	letter-spacing: -0.02em;
 }
+/* Inherit hero text color on text containers — PicoCSS sets color directly on p, pre, table, ul. */
+.hero :is(p, pre, table, ul) {
+	color: inherit;
+}
 /* Defensive reset: prevent outside heading styles (borders, backgrounds) from leaking into the hero. */
 .hero :is(h2, h3, h4, h5, h6) {
 	color: inherit;

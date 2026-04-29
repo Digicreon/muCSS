@@ -31,10 +31,11 @@
 .bg-pop       { background-color: var(--mu-pop);       color: var(--mu-primary-inverse); }
 .bg-spark     { background-color: var(--mu-spark);     color: var(--mu-primary-inverse); }
 
-/* Links and headings inside filled backgrounds inherit inverse color */
+/* Links, headings and text containers inside filled backgrounds inherit inverse color.
+   PicoCSS sets color directly on p, pre, table, ul, which would otherwise short-circuit inheritance. */
 :is(.bg-primary, .bg-secondary, .bg-tertiary, .bg-contrast,
 .bg-accent, .bg-success, .bg-info, .bg-warning,
-.bg-error, .bg-pop, .bg-spark) :is(a, h1, h2, h3, h4, h5, h6) {
+.bg-error, .bg-pop, .bg-spark) :is(a, p, pre, table, ul, h1, h2, h3, h4, h5, h6) {
 	color: inherit;
 }
 
