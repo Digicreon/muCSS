@@ -4,21 +4,6 @@
  * Breakpoints: sm (576px), md (768px), lg (1024px), xl (1280px), xxl (1536px)
  */
 
-/* Container */
-.container {
-	width: 100%;
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 1rem;
-	padding-right: 1rem;
-}
-.container-fluid {
-	width: 100%;
-	padding-left: 1rem;
-	padding-right: 1rem;
-}
-
 /* Row */
 .row {
 	display: flex;

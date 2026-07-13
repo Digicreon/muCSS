@@ -28,14 +28,14 @@ All classes without a breakpoint prefix apply to all screen sizes. Prefixed clas
 Containers center and constrain content horizontally.
 
 ```html
-<!-- Fixed-width container (max-width: 1200px) -->
+<!-- Responsive fixed-width container -->
 <div class="container">...</div>
 
 <!-- Full-width container -->
 <div class="container-fluid">...</div>
 ```
 
-Both containers have `1rem` horizontal padding.
+Both classes are provided by PicoCSS. `.container` is fluid below 576px, then constrained to a maximum width at each breakpoint. See [µContainer](mu.container.md) for details.
 
 ---
 
