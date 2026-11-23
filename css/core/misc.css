@@ -1,0 +1,26 @@
+/*
+ * µCSS core: Miscellaneous (hr, [hidden], template, canvas)
+ *
+ * Derived from Pico CSS v2.1.1 (https://picocss.com)
+ * Copyright 2019-2025 Pico CSS - Licensed under MIT
+ */
+
+/**
+ * Misc
+ */
+hr {
+  height: 0;
+  margin: var(--mu-typography-spacing-vertical) 0;
+  border: 0;
+  border-top: 1px solid var(--mu-muted-border-color);
+  color: inherit;
+}
+
+[hidden],
+template {
+  display: none !important;
+}
+
+canvas {
+  display: inline-block;
+}

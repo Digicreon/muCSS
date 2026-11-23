@@ -1,0 +1,38 @@
+/*
+ * µCSS core: Tables
+ *
+ * Derived from Pico CSS v2.1.1 (https://picocss.com)
+ * Copyright 2019-2025 Pico CSS - Licensed under MIT
+ */
+
+/**
+ * Table
+ */
+:where(table) {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-indent: 0;
+}
+
+th,
+td {
+  padding: calc(var(--mu-spacing) / 2) var(--mu-spacing);
+  border-bottom: var(--mu-border-width) solid var(--mu-table-border-color);
+  background-color: var(--mu-background-color);
+  color: var(--mu-color);
+  font-weight: var(--mu-font-weight);
+  text-align: left;
+  text-align: start;
+}
+
+tfoot th,
+tfoot td {
+  border-top: var(--mu-border-width) solid var(--mu-table-border-color);
+  border-bottom: 0;
+}
+
+table.striped tbody tr:nth-child(odd) th,
+table.striped tbody tr:nth-child(odd) td {
+  background-color: var(--mu-table-row-stripped-background-color);
+}

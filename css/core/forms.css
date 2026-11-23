@@ -1,0 +1,306 @@
+/*
+ * µCSS core: Basic form elements
+ *
+ * Derived from Pico CSS v2.1.1 (https://picocss.com)
+ * Copyright 2019-2025 Pico CSS - Licensed under MIT
+ */
+
+/**
+ * Basics form elements
+ */
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-size: 1rem;
+  line-height: var(--mu-line-height);
+  font-family: inherit;
+  letter-spacing: inherit;
+}
+
+input {
+  overflow: visible;
+}
+
+select {
+  text-transform: none;
+}
+
+legend {
+  max-width: 100%;
+  padding: 0;
+  color: inherit;
+  white-space: normal;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox],
+[type=radio] {
+  padding: 0;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+:-moz-focusring {
+  outline: none;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+::-ms-expand {
+  display: none;
+}
+
+[type=file],
+[type=range] {
+  padding: 0;
+  border-width: 0;
+}
+
+input:not([type=checkbox], [type=radio], [type=range]) {
+  height: calc(1rem * var(--mu-line-height) + var(--mu-form-element-spacing-vertical) * 2 + var(--mu-border-width) * 2);
+}
+
+fieldset {
+  width: 100%;
+  margin: 0;
+  margin-bottom: var(--mu-spacing);
+  padding: 0;
+  border: 0;
+}
+
+label,
+fieldset legend {
+  display: block;
+  margin-bottom: calc(var(--mu-spacing) * 0.375);
+  color: var(--mu-color);
+  font-weight: var(--mu-form-label-font-weight, var(--mu-font-weight));
+}
+
+fieldset legend {
+  margin-bottom: calc(var(--mu-spacing) * 0.5);
+}
+
+input:not([type=checkbox], [type=radio]),
+button[type=submit],
+select,
+textarea {
+  width: 100%;
+}
+
+input:not([type=checkbox], [type=radio], [type=range], [type=file]),
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: var(--mu-form-element-spacing-vertical) var(--mu-form-element-spacing-horizontal);
+}
+
+input,
+select,
+textarea {
+  --mu-background-color: var(--mu-form-element-background-color);
+  --mu-border-color: var(--mu-form-element-border-color);
+  --mu-color: var(--mu-form-element-color);
+  --mu-box-shadow: none;
+  border: var(--mu-border-width) solid var(--mu-border-color);
+  border-radius: var(--mu-border-radius);
+  outline: none;
+  background-color: var(--mu-background-color);
+  box-shadow: var(--mu-box-shadow);
+  color: var(--mu-color);
+  font-weight: var(--mu-font-weight);
+  transition: background-color var(--mu-transition), border-color var(--mu-transition), color var(--mu-transition), box-shadow var(--mu-transition);
+}
+
+input:not([type=submit],
+[type=button],
+[type=reset],
+[type=checkbox],
+[type=radio],
+[readonly]):is(:active, :focus),
+:where(select, textarea):not([readonly]):is(:active, :focus) {
+  --mu-background-color: var(--mu-form-element-active-background-color);
+}
+
+input:not([type=submit], [type=button], [type=reset], [role=switch], [readonly]):is(:active, :focus),
+:where(select, textarea):not([readonly]):is(:active, :focus) {
+  --mu-border-color: var(--mu-form-element-active-border-color);
+}
+
+input:not([type=submit],
+[type=button],
+[type=reset],
+[type=range],
+[type=file],
+[readonly]):focus,
+:where(select, textarea):not([readonly]):focus {
+  --mu-box-shadow: 0 0 0 var(--mu-outline-width) var(--mu-form-element-focus-color);
+}
+
+input:not([type=submit], [type=button], [type=reset])[disabled],
+select[disabled],
+textarea[disabled],
+label[aria-disabled=true],
+:where(fieldset[disabled]) :is(input:not([type=submit], [type=button], [type=reset]), select, textarea) {
+  opacity: var(--mu-form-element-disabled-opacity);
+  pointer-events: none;
+}
+
+label[aria-disabled=true] input[disabled] {
+  opacity: 1;
+}
+
+:where(input, select, textarea):not([type=checkbox],
+[type=radio],
+[type=date],
+[type=datetime-local],
+[type=month],
+[type=time],
+[type=week],
+[type=range])[aria-invalid] {
+  padding-right: calc(var(--mu-form-element-spacing-horizontal) + 1.5rem) !important;
+  padding-left: var(--mu-form-element-spacing-horizontal);
+  padding-inline-start: var(--mu-form-element-spacing-horizontal) !important;
+  padding-inline-end: calc(var(--mu-form-element-spacing-horizontal) + 1.5rem) !important;
+  background-position: center right 0.75rem;
+  background-size: 1rem auto;
+  background-repeat: no-repeat;
+}
+:where(input, select, textarea):not([type=checkbox],
+[type=radio],
+[type=date],
+[type=datetime-local],
+[type=month],
+[type=time],
+[type=week],
+[type=range])[aria-invalid=false]:not(select) {
+  background-image: var(--mu-icon-valid);
+}
+:where(input, select, textarea):not([type=checkbox],
+[type=radio],
+[type=date],
+[type=datetime-local],
+[type=month],
+[type=time],
+[type=week],
+[type=range])[aria-invalid=true]:not(select) {
+  background-image: var(--mu-icon-invalid);
+}
+:where(input, select, textarea)[aria-invalid=false] {
+  --mu-border-color: var(--mu-form-element-valid-border-color);
+}
+:where(input, select, textarea)[aria-invalid=false]:is(:active, :focus) {
+  --mu-border-color: var(--mu-form-element-valid-active-border-color) !important;
+}
+:where(input, select, textarea)[aria-invalid=false]:is(:active, :focus):not([type=checkbox], [type=radio]) {
+  --mu-box-shadow: 0 0 0 var(--mu-outline-width) var(--mu-form-element-valid-focus-color) !important;
+}
+:where(input, select, textarea)[aria-invalid=true] {
+  --mu-border-color: var(--mu-form-element-invalid-border-color);
+}
+:where(input, select, textarea)[aria-invalid=true]:is(:active, :focus) {
+  --mu-border-color: var(--mu-form-element-invalid-active-border-color) !important;
+}
+:where(input, select, textarea)[aria-invalid=true]:is(:active, :focus):not([type=checkbox], [type=radio]) {
+  --mu-box-shadow: 0 0 0 var(--mu-outline-width) var(--mu-form-element-invalid-focus-color) !important;
+}
+
+[dir=rtl] :where(input, select, textarea):not([type=checkbox], [type=radio]):is([aria-invalid], [aria-invalid=true], [aria-invalid=false]) {
+  background-position: center left 0.75rem;
+}
+
+input::placeholder,
+input::-webkit-input-placeholder,
+textarea::placeholder,
+textarea::-webkit-input-placeholder,
+select:invalid {
+  color: var(--mu-form-element-placeholder-color);
+  opacity: 1;
+}
+
+input:not([type=checkbox], [type=radio]),
+select,
+textarea {
+  margin-bottom: var(--mu-spacing);
+}
+
+select::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+select:not([multiple], [size]) {
+  padding-right: calc(var(--mu-form-element-spacing-horizontal) + 1.5rem);
+  padding-left: var(--mu-form-element-spacing-horizontal);
+  padding-inline-start: var(--mu-form-element-spacing-horizontal);
+  padding-inline-end: calc(var(--mu-form-element-spacing-horizontal) + 1.5rem);
+  background-image: var(--mu-icon-chevron);
+  background-position: center right 0.75rem;
+  background-size: 1rem auto;
+  background-repeat: no-repeat;
+}
+select[multiple] option:checked {
+  background: var(--mu-form-element-selected-background-color);
+  color: var(--mu-form-element-color);
+}
+
+[dir=rtl] select:not([multiple], [size]) {
+  background-position: center left 0.75rem;
+}
+
+textarea {
+  display: block;
+  resize: vertical;
+}
+textarea[aria-invalid] {
+  --mu-icon-height: calc(1rem * var(--mu-line-height) + var(--mu-form-element-spacing-vertical) * 2 + var(--mu-border-width) * 2);
+  background-position: top right 0.75rem !important;
+  background-size: 1rem var(--mu-icon-height) !important;
+}
+
+:where(input, select, textarea, fieldset, .grid) + small {
+  display: block;
+  width: 100%;
+  margin-top: calc(var(--mu-spacing) * -0.75);
+  margin-bottom: var(--mu-spacing);
+  color: var(--mu-muted-color);
+}
+:where(input, select, textarea, fieldset, .grid)[aria-invalid=false] + small {
+  color: var(--mu-ins-color);
+}
+:where(input, select, textarea, fieldset, .grid)[aria-invalid=true] + small {
+  color: var(--mu-del-color);
+}
+
+label > :where(input, select, textarea) {
+  margin-top: calc(var(--mu-spacing) * 0.25);
+}

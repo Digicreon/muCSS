@@ -2,14 +2,19 @@
 
 ## Project overview
 
-µCSS is a CSS framework built on PicoCSS v2, part of the Temma-UI project. All tooling is PHP (no Node.js). CSS files are plain CSS (no preprocessor).
+µCSS is a CSS framework derived from PicoCSS v2 (MIT), part of the Temma-UI project. Version 2.0 (branch `v2`) makes it fully standalone: the Pico code now lives in µCSS source files. All tooling is PHP (no Node.js). CSS files are plain CSS (no preprocessor).
 
 ## Key files
 
 - `build/mu-build.php` — Main build script, generates themed CSS files into `dist/`
+- `build/mu.manifest.json`: ordered list of the CSS files concatenated by the build (`@colors` marks where the generated theme colors go); the order decides the cascade
 - `build/mu-color-gen.php` — Color generator, reads PicoCSS palette + theme → CSS variables
 - `build/mu.theme.json` — Array of 20 theme definitions (one per PicoCSS color)
-- `build/pico.css`, `build/pico.colors.css` — PicoCSS v2 base (external, do not modify)
+- `build/mu-compat.php`: reports CSS features that break the 2.0 browser baseline (Chrome 49+, Firefox 31+, Safari 10+, Edge 16+); `--strict` fails
+- `build/pico.colors.css`: Pico palette, still read by `mu-color-gen.php` until the new palette exists
+- `build/pico.css`: original Pico CSS v2.1.1, kept for reference only (no longer read by the build; to be removed)
+- `css/core/*.css`: Pico-derived code (26 files, in Pico's original order, `--mu-` variables); to be merged into the µCSS modules
+- `tests/visual/mu-visual.php`: visual regression tool (captures every example page in light/dark at 390/768/1280/1536 px with headless Chrome, compares two sets); captures in `tests/visual/shots/` (git-ignored)
 - `css/mu.grid.css` — 12-column responsive grid (6 breakpoints: sm 576px, md 768px, lg 1024px, xl 1280px, xxl 1536px — aligned with PicoCSS container)
 - `css/mu.colors.css` — Color utility classes (`.c-*`, `.bg-*`, `.border-*`)
 - `css/mu.utilities.css` — Positioning utilities (`.sticky-top`, `.fixed-top`, `.fixed-bottom`)
@@ -25,15 +30,18 @@ php build/mu-build.php              # Build all 20 themes → dist/
 php build/mu-build.php --list       # List themes and base files
 php build/mu-build.php --minify     # Build minified
 php build/mu-build.php --output=f   # Backward compat: single theme → file
+php build/mu-compat.php [--verbose]  # Browser baseline report on dist/mu.css
+php tests/visual/mu-visual.php capture <set>          # Capture all example pages
+php tests/visual/mu-visual.php compare <ref> <set>    # Pixel comparison + HTML report
 ```
 
 ## Conventions
 
 - Respond in **French** to the user
 - Keep responses **concise and factual**
-- All CSS variables use the `--mu-` prefix (PicoCSS `--pico-` vars are renamed at build time)
+- All CSS variables use the `--mu-` prefix
 - Components follow naming pattern `mu.component.{name}.css`
-- 11 color roles: primary, secondary, tertiary, contrast, accent, success, info, warning, error, pop, spark
+- 11 color roles: primary, secondary, tertiary, contrast, spark, accent, pop, success, info, warning, error (spark is the light variant of contrast, pop the light variant of accent)
 - No JavaScript in CSS files — behavior is the application's JS responsibility
 - Mobile-first, accessible (ARIA), semantic HTML
 - PHP tooling only, no Node.js/SASS dependencies
