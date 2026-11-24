@@ -10,12 +10,12 @@ A basic responsive navigation uses `<nav>` with a brand `<ul>`, a hidden checkbo
 
 ```html
 <nav>
-    <ul><li><strong>Mon site</strong></li></ul>
+    <ul><li><strong>My site</strong></li></ul>
     <input type="checkbox" id="my-nav" class="navbar-toggle" hidden>
     <label for="my-nav" class="navbar-burger">☰</label>
     <ul class="navbar-menu">
-        <li><a href="#">Accueil</a></li>
-        <li><a href="#">A propos</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
     </ul>
 </nav>
@@ -37,8 +37,8 @@ Place `<nav>` inside a `<header>` with a `.container` for a full-width navigatio
         <label for="header-nav" class="navbar-burger">☰</label>
         <ul class="navbar-menu">
             <li><a href="#">Docs</a></li>
-            <li><a href="#">Exemples</a></li>
-            <li><a href="#" role="button">Telecharger</a></li>
+            <li><a href="#">Examples</a></li>
+            <li><a href="#" role="button">Download</a></li>
         </ul>
     </nav>
 </header>
@@ -56,8 +56,8 @@ All links inside `<nav>` have no underline (including on hover), whether in the 
     <input type="checkbox" id="nav-app" class="navbar-toggle" hidden>
     <label for="nav-app" class="navbar-burger">☰</label>
     <ul class="navbar-menu">
-        <li><a href="#">Lien</a></li>
-        <li><a href="#" role="button">Bouton</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#" role="button">Button</a></li>
     </ul>
 </nav>
 ```
@@ -86,7 +86,7 @@ A dropdown menu can be integrated inside the `.navbar-menu` via `<details class=
     <input type="checkbox" id="nav-dd" class="navbar-toggle" hidden>
     <label for="nav-dd" class="navbar-burger">☰</label>
     <ul class="navbar-menu">
-        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Home</a></li>
         <li>
             <details class="dropdown">
                 <summary>Menu</summary>
@@ -114,7 +114,7 @@ Directly on `<nav>`:
     <input type="checkbox" id="nav-color" class="navbar-toggle" hidden>
     <label for="nav-color" class="navbar-burger">☰</label>
     <ul class="navbar-menu">
-        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Home</a></li>
         <li><a href="#">Contact</a></li>
     </ul>
 </nav>
@@ -129,7 +129,7 @@ For a full-width colored bar with a contained nav, place `.bg-{role}` on the par
         <input type="checkbox" id="nav-full" class="navbar-toggle" hidden>
         <label for="nav-full" class="navbar-burger">☰</label>
         <ul class="navbar-menu">
-            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
@@ -146,8 +146,8 @@ Add `.active` to a link to bold it, indicating the current page:
 
 ```html
 <ul class="navbar-menu">
-    <li><a href="#" class="active">Accueil</a></li>
-    <li><a href="#">A propos</a></li>
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#">About</a></li>
     <li><a href="#">Contact</a></li>
 </ul>
 ```
@@ -164,7 +164,7 @@ Use the utility classes `.sticky-top`, `.fixed-top`, or `.fixed-bottom` on a `<n
     <input type="checkbox" id="nav-s" class="navbar-toggle" hidden>
     <label for="nav-s" class="navbar-burger">☰</label>
     <ul class="navbar-menu">
-        <li><a href="#" class="active">Accueil</a></li>
+        <li><a href="#" class="active">Home</a></li>
         <li><a href="#">Contact</a></li>
     </ul>
 </nav>
@@ -181,7 +181,7 @@ These classes are generic utilities defined in `mu.utilities.css` and work on an
 ## Accessibility
 
 - Use `<nav>` as a landmark element for the main navigation.
-- Add `aria-label` to distinguish multiple `<nav>` elements on the same page (e.g., `aria-label="Navigation principale"`).
+- Add `aria-label` to distinguish multiple `<nav>` elements on the same page (e.g., `aria-label="Main navigation"`).
 - Links in the nav are keyboard-accessible with visible focus (outline + border-radius).
 - For production use, add `aria-label="Menu"` to the burger label and manage `aria-expanded` via JavaScript.
 - For breadcrumbs, use `aria-label="breadcrumb"` on the `<nav>` (see [µBreadcrumb](mu.breadcrumb.md)).

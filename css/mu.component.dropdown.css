@@ -1,0 +1,179 @@
+/*
+ * µCSS: Dropdowns (details.dropdown)
+ *
+ * Portions derived from Pico CSS v2.1.1 (https://picocss.com)
+ * Copyright 2019-2025 Pico CSS - Licensed under MIT
+ */
+
+/**
+ * Dropdown (details.dropdown)
+ */
+details.dropdown summary:not([role=button]) {
+	--mu-outline-width: 0.0625rem;
+}
+
+nav details.dropdown summary:focus-visible {
+	--mu-outline-width: 0.125rem;
+}
+
+details.dropdown {
+	position: relative;
+	border-bottom: none;
+}
+details.dropdown > summary::after,
+details.dropdown > button::after,
+details.dropdown > a::after {
+	display: block;
+	width: 1rem;
+	height: calc(1rem * var(--mu-line-height, 1.5));
+	margin-inline-start: 0.25rem;
+	float: right;
+	transform: rotate(0deg) translateX(0.2rem);
+	background-image: var(--mu-icon-chevron);
+	background-position: right center;
+	background-size: 1rem auto;
+	background-repeat: no-repeat;
+	content: "";
+}
+
+nav details.dropdown {
+	margin-bottom: 0;
+}
+
+details.dropdown > summary:not([role]) {
+	height: calc(1rem * var(--mu-line-height) + var(--mu-form-element-spacing-vertical) * 2 + var(--mu-border-width) * 2);
+	padding: var(--mu-form-element-spacing-vertical) var(--mu-form-element-spacing-horizontal);
+	border: var(--mu-border-width) solid var(--mu-form-element-border-color);
+	border-radius: var(--mu-border-radius);
+	background-color: var(--mu-form-element-background-color);
+	color: var(--mu-form-element-placeholder-color);
+	line-height: inherit;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	transition: background-color var(--mu-transition), border-color var(--mu-transition), color var(--mu-transition), box-shadow var(--mu-transition);
+}
+details.dropdown > summary:not([role]):active, details.dropdown > summary:not([role]):focus {
+	border-color: var(--mu-form-element-active-border-color);
+	background-color: var(--mu-form-element-active-background-color);
+}
+details.dropdown > summary:not([role]):focus {
+	box-shadow: 0 0 0 var(--mu-outline-width) var(--mu-form-element-focus-color);
+}
+details.dropdown > summary:not([role]):focus-visible {
+	outline: none;
+}
+details.dropdown > summary:not([role])[aria-invalid=false] {
+	--mu-form-element-border-color: var(--mu-form-element-valid-border-color);
+	--mu-form-element-active-border-color: var(--mu-form-element-valid-focus-color);
+	--mu-form-element-focus-color: var(--mu-form-element-valid-focus-color);
+}
+details.dropdown > summary:not([role])[aria-invalid=true] {
+	--mu-form-element-border-color: var(--mu-form-element-invalid-border-color);
+	--mu-form-element-active-border-color: var(--mu-form-element-invalid-focus-color);
+	--mu-form-element-focus-color: var(--mu-form-element-invalid-focus-color);
+}
+
+/* inline-block: an inline dropdown takes the full width in Firefox */
+nav details.dropdown {
+	display: inline-block;
+	margin: calc(var(--mu-nav-element-spacing-vertical) * -1) 0;
+}
+nav details.dropdown > summary::after {
+	transform: rotate(0deg) translateX(0rem);
+}
+nav details.dropdown > summary:not([role]) {
+	height: calc(1rem * var(--mu-line-height) + var(--mu-nav-link-spacing-vertical) * 2);
+	padding: calc(var(--mu-nav-link-spacing-vertical) - var(--mu-border-width) * 2) var(--mu-nav-link-spacing-horizontal);
+}
+nav details.dropdown > summary:not([role]):focus-visible {
+	box-shadow: 0 0 0 var(--mu-outline-width) var(--mu-primary-focus);
+}
+
+details.dropdown > summary + ul {
+	display: flex;
+	z-index: 99;
+	position: absolute;
+	left: 0;
+	flex-direction: column;
+	width: 100%;
+	min-width: -moz-fit-content;
+	min-width: fit-content;
+	margin: 0;
+	margin-top: var(--mu-outline-width);
+	padding: 0;
+	border: var(--mu-border-width) solid var(--mu-dropdown-border-color);
+	border-radius: var(--mu-border-radius);
+	background-color: var(--mu-dropdown-background-color);
+	box-shadow: var(--mu-dropdown-box-shadow);
+	color: var(--mu-dropdown-color);
+	white-space: nowrap;
+	opacity: 0;
+	transition: opacity var(--mu-transition), transform 0s ease-in-out 1s;
+}
+details.dropdown > summary + ul[dir=rtl] {
+	right: 0;
+	left: auto;
+}
+details.dropdown > summary + ul li {
+	width: 100%;
+	margin-bottom: 0;
+	padding: calc(var(--mu-form-element-spacing-vertical) * 0.5) var(--mu-form-element-spacing-horizontal);
+	list-style: none;
+}
+details.dropdown > summary + ul li:first-of-type {
+	margin-top: calc(var(--mu-form-element-spacing-vertical) * 0.5);
+}
+details.dropdown > summary + ul li:last-of-type {
+	margin-bottom: calc(var(--mu-form-element-spacing-vertical) * 0.5);
+}
+details.dropdown > summary + ul li a {
+	display: block;
+	margin: calc(var(--mu-form-element-spacing-vertical) * -0.5) calc(var(--mu-form-element-spacing-horizontal) * -1);
+	padding: calc(var(--mu-form-element-spacing-vertical) * 0.5) var(--mu-form-element-spacing-horizontal);
+	overflow: hidden;
+	border-radius: 0;
+	color: var(--mu-dropdown-color);
+	text-decoration: none;
+	text-overflow: ellipsis;
+}
+details.dropdown > summary + ul li a:hover, details.dropdown > summary + ul li a:focus, details.dropdown > summary + ul li a:active, details.dropdown > summary + ul li a:focus-visible, details.dropdown > summary + ul li a[aria-current]:not([aria-current=false]) {
+	background-color: var(--mu-dropdown-hover-background-color);
+}
+details.dropdown > summary + ul li label {
+	width: 100%;
+}
+details.dropdown > summary + ul li:has(label):hover {
+	background-color: var(--mu-dropdown-hover-background-color);
+}
+
+details.dropdown[open] > summary {
+	margin-bottom: 0;
+}
+
+details.dropdown[open] > summary + ul {
+	transform: scaleY(1);
+	opacity: 1;
+	transition: opacity var(--mu-transition), transform 0s ease-in-out 0s;
+}
+
+details.dropdown[open] > summary::before {
+	display: block;
+	z-index: 1;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	inset: 0;
+	background: none;
+	content: "";
+	cursor: default;
+}
+/* Nested dropdowns: only the outer one catches outside clicks, the inner overlay would cover the outer menu */
+details.dropdown details.dropdown[open] > summary::before {
+	display: none;
+}
+
+label > details.dropdown {
+	margin-top: calc(var(--mu-spacing) * 0.25);
+}

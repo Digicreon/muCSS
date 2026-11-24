@@ -1,6 +1,6 @@
 # µVar
 
-**µVar** styles the `<var>` HTML element to match the appearance of `<code>`, `<kbd>`, and `<samp>` in [µCSS](.). PicoCSS does not style `<var>`, so this component fills the gap.
+**µVar** styles the `<var>` HTML element to match the appearance of `<code>`, `<kbd>`, and `<samp>` in [µCSS](.). The styles are defined in `css/mu.code.css`, with the other code elements.
 
 ---
 

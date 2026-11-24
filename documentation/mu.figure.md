@@ -10,8 +10,8 @@ Wrap illustrative content in `<figure>` with a `<figcaption>` caption:
 
 ```html
 <figure>
-    <img src="photo.jpg" alt="Paysage de montagne">
-    <figcaption>Vue depuis le sommet du col</figcaption>
+    <img src="photo.jpg" alt="Mountain landscape">
+    <figcaption>View from the top of the pass</figcaption>
 </figure>
 ```
 
@@ -35,8 +35,8 @@ The `<figure>` element is reset with no margins or padding. The `<figcaption>` c
 
 ```html
 <figure>
-    <img src="graphique.png" alt="Graphique des ventes">
-    <figcaption>Ventes trimestrielles 2024</figcaption>
+    <img src="chart.png" alt="Sales chart">
+    <figcaption>Quarterly sales, 2024</figcaption>
 </figure>
 ```
 
@@ -52,7 +52,7 @@ The image is responsive by default (`max-width: 100%`, see [µEmbedded](mu.embed
 <figure>
     <pre><code>const greeting = "Hello, World!";
 console.log(greeting);</code></pre>
-    <figcaption>Exemple de code JavaScript</figcaption>
+    <figcaption>JavaScript code example</figcaption>
 </figure>
 ```
 
@@ -63,9 +63,9 @@ console.log(greeting);</code></pre>
 ```html
 <figure>
     <blockquote>
-        La simplicite est la sophistication supreme.
+        Simplicity is the ultimate sophistication.
     </blockquote>
-    <figcaption>Leonard de Vinci</figcaption>
+    <figcaption>Leonardo da Vinci</figcaption>
 </figure>
 ```
 

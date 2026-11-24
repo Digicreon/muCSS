@@ -39,8 +39,6 @@ The base font size increases at each breakpoint:
 | `--mu-typography-spacing-vertical` | `1rem` | Typographic vertical spacing |
 | `--mu-block-spacing-vertical` | `var(--mu-spacing)` | Vertical spacing between sections |
 | `--mu-block-spacing-horizontal` | `var(--mu-spacing)` | Horizontal spacing between sections |
-| `--mu-grid-column-gap` | `var(--mu-spacing)` | Grid column gutter |
-| `--mu-grid-row-gap` | `var(--mu-spacing)` | Grid row gutter |
 
 ---
 
@@ -181,7 +179,6 @@ Each heading level uses a slightly lighter shade than the previous one.
 
 | Variable | Description |
 |----------|-------------|
-| `--mu-accordion-border-color` | Accordion border |
 | `--mu-accordion-active-summary-color` | Active title color |
 | `--mu-accordion-close-summary-color` | Closed title color |
 | `--mu-accordion-open-summary-color` | Open title color |

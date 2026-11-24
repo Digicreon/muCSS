@@ -9,7 +9,7 @@
 An inline code fragment uses the `<code>` tag:
 
 ```html
-<p>Utilisez <code>var(--mu-primary)</code> pour la couleur primaire.</p>
+<p>Use <code>var(--mu-primary)</code> for the primary color.</p>
 ```
 
 ---
@@ -19,9 +19,9 @@ An inline code fragment uses the `<code>` tag:
 The `<code>`, `<kbd>`, and `<samp>` elements are displayed as `inline-block` with a colored background and border-radius:
 
 ```html
-<p>La commande <code>npm install</code> installe les dependances.</p>
-<p>Appuyez sur <kbd>Ctrl</kbd> + <kbd>C</kbd> pour copier.</p>
-<p>Le programme affiche <samp>Hello World</samp>.</p>
+<p>The <code>npm install</code> command installs the dependencies.</p>
+<p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy.</p>
+<p>The program prints <samp>Hello World</samp>.</p>
 ```
 
 | Element | Background | Text color |
@@ -68,13 +68,13 @@ All code elements use the theme's monospace font:
 
 ```css
 :root {
-    /* Changer le fond du code inline */
+    /* Inline code background */
     --mu-code-background-color: #f0f0f0;
 
-    /* Changer la couleur du texte de code */
+    /* Code text color */
     --mu-code-color: #333;
 
-    /* Personnaliser les touches clavier */
+    /* Keyboard keys */
     --mu-code-kbd-background-color: #333;
     --mu-code-kbd-color: #fff;
 }

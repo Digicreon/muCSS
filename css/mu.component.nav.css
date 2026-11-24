@@ -1,21 +1,119 @@
 /*
- * µCSS Component: Nav (burger menu)
+ * µCSS: Navigation (nav, aside, burger menu)
  *
- * Checkbox hack for CSS-only responsive nav toggle.
- * Mobile (< 640px): ☰ label toggles a dropdown menu.
- * Desktop (≥ 640px): burger hidden, links displayed inline via PicoCSS nav flex.
- *
- * HTML pattern:
- *   <nav>
- *     <ul><li><strong>Brand</strong></li></ul>
- *     <input type="checkbox" id="ID" class="navbar-toggle" hidden>
- *     <label for="ID" class="navbar-burger">☰</label>
- *     <ul class="navbar-menu">
- *       <li><a href="#">Link</a></li>
- *     </ul>
- *   </nav>
+ * Portions derived from Pico CSS v2.1.1 (https://picocss.com)
+ * Copyright 2019-2025 Pico CSS - Licensed under MIT
  */
 
+/**
+ * Nav
+ */
+/* Space before each item: keeps the list semantics for VoiceOver */
+:where(nav li)::before {
+	content: " ";
+}
+
+nav,
+nav ul {
+	display: flex;
+}
+
+nav {
+	justify-content: space-between;
+	overflow: visible;
+}
+nav ol,
+nav ul {
+	align-items: center;
+	margin-bottom: 0;
+	padding: 0;
+	list-style: none;
+}
+nav ol:first-of-type,
+nav ul:first-of-type {
+	margin-left: calc(var(--mu-nav-element-spacing-horizontal) * -1);
+}
+nav ol:last-of-type,
+nav ul:last-of-type {
+	margin-right: calc(var(--mu-nav-element-spacing-horizontal) * -1);
+}
+nav li {
+	display: inline-block;
+	margin: 0;
+	padding: var(--mu-nav-element-spacing-vertical) var(--mu-nav-element-spacing-horizontal);
+}
+nav li :where(a, [role=link]) {
+	display: inline-block;
+	margin: calc(var(--mu-nav-link-spacing-vertical) * -1) calc(var(--mu-nav-link-spacing-horizontal) * -1);
+	padding: var(--mu-nav-link-spacing-vertical) var(--mu-nav-link-spacing-horizontal);
+	border-radius: var(--mu-border-radius);
+}
+nav li :where(a, [role=link]):not(:hover) {
+	text-decoration: none;
+}
+nav li button,
+nav li [role=button],
+nav li [type=button],
+nav li input:not([type=checkbox], [type=radio], [type=range], [type=file]),
+nav li select {
+	height: auto;
+	margin-right: inherit;
+	margin-bottom: 0;
+	margin-left: inherit;
+	padding: calc(var(--mu-nav-link-spacing-vertical) - var(--mu-border-width) * 2) var(--mu-nav-link-spacing-horizontal);
+}
+nav[aria-label=breadcrumb] {
+	align-items: center;
+	justify-content: start;
+}
+nav[aria-label=breadcrumb] ul li:not(:first-child) {
+	margin-inline-start: var(--mu-nav-link-spacing-horizontal);
+}
+nav[aria-label=breadcrumb] ul li a {
+	margin: calc(var(--mu-nav-link-spacing-vertical) * -1) 0;
+	margin-inline-start: calc(var(--mu-nav-link-spacing-horizontal) * -1);
+}
+nav[aria-label=breadcrumb] ul li:not(:last-child)::after {
+	display: inline-block;
+	position: absolute;
+	width: calc(var(--mu-nav-link-spacing-horizontal) * 4);
+	margin: 0 calc(var(--mu-nav-link-spacing-horizontal) * -1);
+	content: var(--mu-nav-breadcrumb-divider);
+	color: var(--mu-muted-color);
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+}
+nav[aria-label=breadcrumb] a[aria-current]:not([aria-current=false]) {
+	background-color: transparent;
+	color: inherit;
+	text-decoration: none;
+	pointer-events: none;
+}
+
+aside nav,
+aside ol,
+aside ul,
+aside li {
+	display: block;
+}
+aside li {
+	padding: calc(var(--mu-nav-element-spacing-vertical) * 0.5) var(--mu-nav-element-spacing-horizontal);
+}
+aside li a {
+	display: block;
+}
+aside li [role=button] {
+	margin: inherit;
+}
+
+[dir=rtl] nav[aria-label=breadcrumb] ul li:not(:last-child) ::after {
+	content: "\\";
+}
+
+/**
+ * Navigation bar: burger menu, colored bars, active link
+ */
 /* Always hide the checkbox */
 nav > .navbar-toggle {
 	display: none;
@@ -31,12 +129,12 @@ nav > .navbar-burger {
 	padding: 0.25rem 0.5rem;
 }
 
-/* Remove underline on all nav links (overrides PicoCSS hover underline) */
+/* Remove underline on all nav links (including on hover) */
 nav a {
 	text-decoration: none;
 }
 
-/* Gradient background on colored navbars (same as hero) — works on nav or its parent (e.g. header) */
+/* Gradient background on colored navbars (same as hero), works on nav or its parent (e.g. header) */
 :is(nav, :has(> nav)):is(.bg-primary, .bg-secondary, .bg-tertiary, .bg-contrast,
 .bg-accent, .bg-success, .bg-info, .bg-warning,
 .bg-error, .bg-pop, .bg-spark) {
@@ -55,34 +153,18 @@ nav a {
 :is(nav, :has(> nav)).bg-spark     { --nav-bg: var(--mu-spark); }
 
 /*
- * Remove PicoCSS body > header padding when <header> is used solely as a
+ * Remove the body > header padding when <header> is used solely as a
  * full-width colored wrapper around <nav> (e.g. <header class="bg-primary"><nav class="container">).
- * PicoCSS adds padding-block to body > header for structural headers with text content;
+ * body > header has padding-block to body > header for structural headers with text content;
  * when the only child is a <nav>, that padding creates unwanted extra height.
  */
 body > header:has(> nav:only-child) {
 	padding-block: 0;
 }
 
-/* Remove heading margin inside nav (PicoCSS headings have margin-bottom by default) */
+/* Remove heading margin inside nav (headings have margin-bottom by default) */
 nav :is(h1, h2, h3, h4, h5, h6) {
 	margin-bottom: 0;
-}
-
-/*
- * PicoCSS bugfix: Safari 18.2+ truncates dropdown text (picocss/pico#634, picocss/pico#664).
- * PicoCSS uses float:left + zero-width space on nav li::before for VoiceOver list semantics;
- * Safari 18.2 miscalculates text layout with that float, causing truncation.
- * Fix: remove the float and use a regular space instead. — remove when fixed upstream
- */
-:where(nav li)::before {
-	float: none;
-	content: " ";
-}
-
-/* PicoCSS bugfix: nav dropdown full-width on Firefox (picocss/pico#701) — remove when fixed upstream */
-nav details.dropdown {
-	display: inline-block;
 }
 
 /* Dropdown summary inside a colored navbar: blend with the background instead of looking like a form input */
@@ -107,7 +189,8 @@ nav:is(.sticky-top, .fixed-top, .fixed-bottom) {
 
 /* Mobile */
 @media (max-width: 639px) {
-	nav:has(> .navbar-burger) {
+	/* :where(): .sticky-top and .fixed-* keep their own position */
+	nav:where(:has(> .navbar-burger)) {
 		position: relative;
 	}
 	nav > .navbar-burger {
@@ -137,7 +220,7 @@ nav:is(.sticky-top, .fixed-top, .fixed-bottom) {
 	nav > .navbar-toggle:checked ~ .navbar-menu {
 		display: flex;
 	}
-	/* Dropdown item styling (mirrors PicoCSS dropdown) */
+	/* Dropdown item styling (mirrors the dropdown menu) */
 	nav > .navbar-menu > li {
 		width: 100%;
 		margin: 0;

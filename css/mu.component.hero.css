@@ -63,7 +63,7 @@
 	margin-bottom: 0.25rem;
 	letter-spacing: -0.02em;
 }
-/* Inherit hero text color on text containers — PicoCSS sets color directly on p, pre, table, ul. */
+/* Inherit hero text color on text containers; the typography rules set color directly on p, pre, table, ul. */
 .hero :is(p, pre, table, ul) {
 	color: inherit;
 }
@@ -101,6 +101,7 @@
 	background: rgba(255, 255, 255, 0.2);
 	color: inherit;
 	border-color: transparent;
+	-webkit-backdrop-filter: blur(4px);
 	backdrop-filter: blur(4px);
 }
 

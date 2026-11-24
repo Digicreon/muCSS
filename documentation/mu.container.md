@@ -10,8 +10,8 @@ Wrap the main content in an element with the `.container` class:
 
 ```html
 <main class="container">
-    <h1>Mon contenu</h1>
-    <p>Centre et contraint en largeur.</p>
+    <h1>My content</h1>
+    <p>Centered, with a constrained width.</p>
 </main>
 ```
 
@@ -40,7 +40,7 @@ The fluid container always occupies 100% of the width, with constant horizontal 
 
 ```html
 <section class="container-fluid">
-    <p>Contenu pleine largeur avec marges laterales.</p>
+    <p>Full-width content with side padding.</p>
 </section>
 ```
 
@@ -54,16 +54,16 @@ The fluid container always occupies 100% of the width, with constant horizontal 
 <body>
     <header>
         <nav class="container">
-            <ul><li><strong>Mon site</strong></li></ul>
-            <ul><li><a href="#">Lien</a></li></ul>
+            <ul><li><strong>My site</strong></li></ul>
+            <ul><li><a href="#">Link</a></li></ul>
         </nav>
     </header>
     <main class="container">
-        <h1>Titre</h1>
-        <p>Contenu principal.</p>
+        <h1>Title</h1>
+        <p>Main content.</p>
     </main>
     <footer class="container">
-        <p>Pied de page</p>
+        <p>Footer</p>
     </footer>
 </body>
 ```

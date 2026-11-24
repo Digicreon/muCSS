@@ -1,79 +1,42 @@
 /*
- * µCSS Utilities
+ * µCSS: Utilities
  */
 
-/* PicoCSS bugfix: nested lists have unwanted bottom margin (picocss/pico#672) — remove when fixed upstream */
-li ul,
-li ol {
-	margin-bottom: 0;
+/* Display */
+.d-none  { display: none; }
+.d-block { display: block; }
+.d-flex  { display: flex; }
+@media (min-width: 576px) {
+	.d-sm-none  { display: none; }
+	.d-sm-block { display: block; }
+	.d-sm-flex  { display: flex; }
 }
-
-/* PicoCSS bugfix: helper text (<small>) not styled after group (picocss/pico#540, picocss/pico#700) — remove when fixed upstream */
-:where([role=group], [role=search]) + small {
-	display: block;
-	width: 100%;
-	margin-top: calc(var(--mu-spacing) * -0.75);
-	margin-bottom: var(--mu-spacing);
-	color: var(--mu-muted-color);
+@media (min-width: 768px) {
+	.d-md-none  { display: none; }
+	.d-md-block { display: block; }
+	.d-md-flex  { display: flex; }
 }
-:where([role=group], [role=search]):has([aria-invalid=false]) + small {
-	color: var(--mu-ins-color);
+@media (min-width: 1024px) {
+	.d-lg-none  { display: none; }
+	.d-lg-block { display: block; }
+	.d-lg-flex  { display: flex; }
 }
-:where([role=group], [role=search]):has([aria-invalid=true]) + small {
-	color: var(--mu-del-color);
+@media (min-width: 1280px) {
+	.d-xl-none  { display: none; }
+	.d-xl-block { display: block; }
+	.d-xl-flex  { display: flex; }
 }
-
-/* PicoCSS bugfix: tooltip mispositioned on inline elements in Chromium (picocss/pico#678) — remove when fixed upstream */
-[data-tooltip] {
-	display: inline-block;
-}
-
-/* Tooltip: use inverted surface instead of themed contrast (contrast is theme-dependent, not always readable) */
-/* Extra [data-placement] selector matches PicoCSS specificity for top placement */
-[data-tooltip]::before,
-[data-tooltip][data-placement]::before {
-	background: var(--mu-inverted-background);
-	color: var(--mu-inverted-color);
-}
-/* Caret color must match tooltip body (PicoCSS uses currentColor for the border arrow) */
-[data-tooltip]::after,
-[data-tooltip][data-placement]::after {
-	color: var(--mu-inverted-background);
-}
-/* PicoCSS bugfix: tooltips overflow on long text (picocss/pico#665, picocss/pico#715) — remove when fixed upstream */
-/* pre-line preserves explicit line breaks (&#10;) while wrapping long text; width: max-content for comfortable sizing */
-[data-tooltip]::before {
-	white-space: pre-line;
-	width: max-content;
-	max-width: 20rem;
-}
-
-/*
- * PicoCSS bugfix: nested dropdowns block parent clicks (picocss/pico#614) — remove when fixed upstream
- * PicoCSS adds a 100vw × 100vh fixed overlay on every open dropdown's summary::before
- * to catch outside clicks. With nested dropdowns, the inner overlay (later in source order)
- * paints over the parent's menu items and prevents interaction.
- * Fix: disable the overlay on nested dropdowns — the parent's overlay still handles outside clicks.
- */
-details.dropdown details.dropdown[open] > summary::before {
-	display: none;
-}
-
-/* PicoCSS bugfix: <small> font-size not applied (picocss/pico#561) — remove when fixed upstream */
-/* PicoCSS sets --pico-font-size: 0.875em on small but never applies it; browser uses "smaller" instead */
-small {
-	font-size: var(--mu-font-size);
-}
-
-/* PicoCSS bugfix: inline code vertical padding too thick (picocss/pico#651) — remove when fixed upstream */
-code, kbd, samp {
-	padding: 0.125rem 0.375rem;
+@media (min-width: 1536px) {
+	.d-xxl-none  { display: none; }
+	.d-xxl-block { display: block; }
+	.d-xxl-flex  { display: flex; }
 }
 
 /* Positioning */
 
 /* Stick to top on scroll (stays in document flow) */
 .sticky-top {
+	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
 }

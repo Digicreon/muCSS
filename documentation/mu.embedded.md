@@ -9,7 +9,7 @@
 Images are responsive by default:
 
 ```html
-<img src="photo.jpg" alt="Description de la photo">
+<img src="photo.jpg" alt="Photo description">
 ```
 
 ---
@@ -19,7 +19,7 @@ Images are responsive by default:
 Images receive `max-width: 100%` and `height: auto`, making them responsive without any additional class:
 
 ```html
-<img src="large-photo.jpg" alt="Photo responsive">
+<img src="large-photo.jpg" alt="Responsive photo">
 ```
 
 | Property | Value |
@@ -80,8 +80,8 @@ Combine embedded content with `<figure>` to add a caption:
 
 ```html
 <figure>
-    <img src="photo.jpg" alt="Paysage">
-    <figcaption>Un paysage de montagne</figcaption>
+    <img src="photo.jpg" alt="Landscape">
+    <figcaption>A mountain landscape</figcaption>
 </figure>
 ```
 

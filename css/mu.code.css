@@ -1,0 +1,92 @@
+/*
+ * µCSS: Code (code, kbd, samp, pre, var)
+ *
+ * Portions derived from Pico CSS v2.1.1 (https://picocss.com)
+ * Copyright 2019-2025 Pico CSS - Licensed under MIT
+ */
+
+/**
+ * Code
+ */
+pre,
+code,
+kbd,
+samp {
+	--mu-font-family: var(--mu-font-family-monospace);
+}
+
+kbd {
+	--mu-font-weight: bolder;
+}
+
+pre,
+code,
+kbd,
+samp {
+	font-size: 0.875em;
+	font-family: var(--mu-font-family);
+}
+
+pre code,
+pre samp {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+pre {
+	-ms-overflow-style: scrollbar;
+	overflow: auto;
+}
+
+pre,
+code,
+kbd,
+samp {
+	border-radius: var(--mu-border-radius);
+	background: var(--mu-code-background-color);
+	color: var(--mu-code-color);
+	font-weight: var(--mu-font-weight);
+	line-height: initial;
+}
+
+code,
+kbd,
+samp {
+	display: inline-block;
+	padding: 0.125rem 0.375rem;
+}
+
+pre {
+	display: block;
+	margin-bottom: var(--mu-spacing);
+	overflow-x: auto;
+}
+pre > code,
+pre > samp {
+	display: block;
+	padding: var(--mu-spacing);
+	background: none;
+	line-height: var(--mu-line-height);
+}
+
+kbd {
+	background-color: var(--mu-code-kbd-background-color);
+	color: var(--mu-code-kbd-color);
+	vertical-align: baseline;
+}
+
+/**
+ * Variable (<var>): styled like <code>, in italics
+ */
+var {
+	font-family: var(--mu-font-family-monospace);
+	font-size: 0.875em;
+	font-style: italic;
+	display: inline-block;
+	padding: 0.125rem 0.375rem;
+	border-radius: var(--mu-border-radius);
+	background: var(--mu-code-background-color);
+	color: var(--mu-code-color);
+	font-weight: var(--mu-font-weight);
+	line-height: initial;
+}

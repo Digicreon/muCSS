@@ -4,6 +4,14 @@
 
 ---
 
+## Display
+
+The `.d-none`, `.d-block` and `.d-flex` classes and their responsive variants (`.d-md-none`, `.d-lg-flex`...) are defined in `css/mu.utilities.css` too. They are described in [µGrid](mu.grid.md#display--visibility).
+
+The utility classes come last in the cascade: `.d-none` also hides a `.btn`, a `.badge`...
+
+---
+
 ## Positioning
 
 Three classes for sticky and fixed positioning, defined in `css/mu.utilities.css`:

@@ -1,0 +1,67 @@
+/*
+ * µCSS: Links
+ *
+ * Portions derived from Pico CSS v2.1.1 (https://picocss.com)
+ * Copyright 2019-2025 Pico CSS - Licensed under MIT
+ */
+
+/**
+ * Link
+ */
+a {
+	--mu-text-decoration: underline;
+}
+a.secondary, a.contrast {
+	--mu-text-decoration: underline;
+}
+
+:where(a:not([role=button])),
+[role=link] {
+	--mu-color: var(--mu-primary);
+	--mu-background-color: transparent;
+	--mu-underline: var(--mu-primary-underline);
+	outline: none;
+	background-color: var(--mu-background-color);
+	color: var(--mu-color);
+	-webkit-text-decoration: var(--mu-text-decoration);
+	text-decoration: var(--mu-text-decoration);
+	text-decoration-color: var(--mu-underline);
+	text-underline-offset: 0.125em;
+	transition: background-color var(--mu-transition), color var(--mu-transition), box-shadow var(--mu-transition), -webkit-text-decoration var(--mu-transition);
+	transition: background-color var(--mu-transition), color var(--mu-transition), text-decoration var(--mu-transition), box-shadow var(--mu-transition);
+	transition: background-color var(--mu-transition), color var(--mu-transition), text-decoration var(--mu-transition), box-shadow var(--mu-transition), -webkit-text-decoration var(--mu-transition);
+}
+:where(a:not([role=button])):is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[role=link]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+	--mu-color: var(--mu-primary-hover);
+	--mu-underline: var(--mu-primary-hover-underline);
+	--mu-text-decoration: underline;
+}
+:where(a:not([role=button])):focus-visible,
+[role=link]:focus-visible {
+	box-shadow: 0 0 0 var(--mu-outline-width) var(--mu-primary-focus);
+}
+:where(a:not([role=button])).secondary,
+[role=link].secondary {
+	--mu-color: var(--mu-secondary);
+	--mu-underline: var(--mu-secondary-underline);
+}
+:where(a:not([role=button])).secondary:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[role=link].secondary:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+	--mu-color: var(--mu-secondary-hover);
+	--mu-underline: var(--mu-secondary-hover-underline);
+}
+:where(a:not([role=button])).contrast,
+[role=link].contrast {
+	--mu-color: var(--mu-contrast);
+	--mu-underline: var(--mu-contrast-underline);
+}
+:where(a:not([role=button])).contrast:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[role=link].contrast:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+	--mu-color: var(--mu-contrast-hover);
+	--mu-underline: var(--mu-contrast-hover-underline);
+}
+
+a[role=button] {
+	display: inline-block;
+}

@@ -4,7 +4,7 @@
 
 # µCSS
 
-Full-featured themeable CSS framework built on [PicoCSS v2](https://picocss.com/).
+Full-featured themeable CSS framework with no dependency.
 
 ## Features
 
@@ -44,7 +44,7 @@ npm install @digicreon/mucss
 <link rel="stylesheet" href="dist/mu.violet.css">
 ```
 
-Each file is self-contained (PicoCSS base + colors + grid + all components).
+Each file is self-contained (native elements + colors + grid + all components).
 
 ## Available themes
 
@@ -79,7 +79,7 @@ Each file is self-contained (PicoCSS base + colors + grid + all components).
 | Tabs | Standard, pills, aligned, fullwidth | [tabs.html](examples/tabs.html) |
 | Var | Style `<var>` like `<code>`/`<kbd>`/`<samp>`, with italic | — |
 
-## PicoCSS native
+## Native elements
 
 | Component | Description | Example |
 |-----------|-------------|---------|
@@ -167,7 +167,7 @@ Requires PHP. No other dependencies.
 
 ```bash
 php build/mu-build.php              # Build all 20 themes into dist/
-php build/mu-build.php --minify     # Build minified
+php build/mu-build.php --no-minify  # Readable output (minified by default)
 php build/mu-build.php --list       # List themes and base files
 ```
 
@@ -179,21 +179,28 @@ mucss/
     mu-build.php          # Build script
     mu-color-gen.php      # Color variable generator
     mu.theme.json         # 20 theme definitions
-    pico.css              # PicoCSS v2 base (external)
-    pico.colors.css       # PicoCSS palette (external)
+    mu.manifest.json      # Ordered list of the CSS files
+    mu-compat.php         # Browser baseline checker
+    pico.colors.css       # Color palette (from Pico CSS, until the new palette exists)
   css/
-    mu.grid.css           # 12-column grid
+    mu.base.css           # Root variables, document, landmarks
+    mu.scheme.css         # Surface colors, light and dark modes
+    mu.typography.css     # Text elements (also mu.links.css, mu.code.css)
+    mu.forms*.css         # Form elements
+    mu.accessibility.css  # Cursors, reduced motion
+    mu.grid.css           # Containers and 12-column grid
     mu.colors.css         # Color utility classes
-    mu.utilities.css      # Positioning utilities (sticky, fixed)
-    mu.component.*.css    # UI components (18 files)
+    mu.utilities.css      # Display and positioning utilities
+    mu.component.*.css    # Components, one file each
   dist/                   # Build output (21 CSS files)
   documentation/          # Component and feature documentation
   examples/               # HTML demos for each component
+  tests/visual/           # Visual regression tool
 ```
 
 ## Color roles
 
-Each theme maps 11 semantic roles to PicoCSS color families:
+Each theme maps 11 semantic roles to color families:
 
 **primary** · **secondary** · **tertiary** · **contrast** · **accent** · **success** · **info** · **warning** · **error** · **pop** · **spark**
 
@@ -215,4 +222,4 @@ Each theme maps 11 semantic roles to PicoCSS color families:
 
 ## License
 
-See [LICENSE](LICENSE).
+See [LICENSE](LICENSE). µCSS is derived from [Pico CSS](https://picocss.com/) v2.1.1 (MIT License).

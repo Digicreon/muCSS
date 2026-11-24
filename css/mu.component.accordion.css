@@ -1,7 +1,91 @@
 /*
- * µCSS Component: Accordion
+ * µCSS: Accordion (details, summary, .accordion)
+ *
+ * Portions derived from Pico CSS v2.1.1 (https://picocss.com)
+ * Copyright 2019-2025 Pico CSS - Licensed under MIT
  */
 
+/**
+ * Accordion (<details>)
+ */
+details {
+	display: block;
+	margin-bottom: var(--mu-spacing);
+}
+details summary {
+	line-height: 1rem;
+	list-style-type: none;
+	cursor: pointer;
+	transition: color var(--mu-transition);
+}
+details summary:not([role]) {
+	color: var(--mu-accordion-close-summary-color);
+}
+details summary::-webkit-details-marker {
+	display: none;
+}
+details summary::marker {
+	display: none;
+}
+details summary::-moz-list-bullet {
+	list-style-type: none;
+}
+details summary::after {
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	margin-inline-start: calc(var(--mu-spacing, 1rem) * 0.5);
+	float: right;
+	transform: rotate(-90deg);
+	background-image: var(--mu-icon-chevron);
+	background-position: right center;
+	background-size: 1rem auto;
+	background-repeat: no-repeat;
+	content: "";
+	transition: transform var(--mu-transition);
+}
+details summary:focus {
+	outline: none;
+}
+details summary:focus:not([role]) {
+	color: var(--mu-accordion-active-summary-color);
+}
+details summary:focus-visible:not([role]) {
+	outline: var(--mu-outline-width) solid var(--mu-primary-focus);
+	outline-offset: calc(var(--mu-spacing, 1rem) * 0.5);
+	color: var(--mu-primary);
+}
+details summary[role=button] {
+	width: 100%;
+	text-align: left;
+}
+details summary[role=button]::after {
+	height: calc(1rem * var(--mu-line-height, 1.5));
+}
+details[open] > summary {
+	margin-bottom: var(--mu-spacing);
+}
+details[open] > summary:not([role]):not(:focus) {
+	color: var(--mu-accordion-open-summary-color);
+}
+details[open] > summary::after {
+	transform: rotate(0);
+}
+
+[dir=rtl] details summary {
+	text-align: right;
+}
+[dir=rtl] details summary::after {
+	float: left;
+	background-position: left center;
+}
+details summary[role=button]:not(.outline)::after {
+	filter: brightness(0) invert(1);
+}
+
+/**
+ * Grouped accordion (.accordion)
+ */
 .accordion {
 	border: 1px solid var(--mu-secondary-background);
 	border-radius: 0.375rem;
@@ -45,7 +129,18 @@
 	padding: 0.75rem 1rem;
 	margin-left: 0;
 }
-.accordion > details > ul,
-.accordion > details > ol {
+/* more specific than the buttons of a nav containing the accordion */
+.accordion > details > [role=button],
+.accordion > details > button[type=button] {
+	padding: 0.75rem 1rem;
+}
+.accordion > details > summary ~ [role=button],
+.accordion > details > summary ~ button[type=button] {
+	margin-left: 0;
+}
+/* summary ~ : more specific than the list margins of a nav containing the accordion */
+.accordion > details > summary ~ ul,
+.accordion > details > summary ~ ol {
+	margin-left: 0;
 	padding-left: 2.5rem;
 }

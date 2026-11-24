@@ -31,7 +31,7 @@ To force a theme, add `data-theme` on `<html>`:
 A JavaScript button allows the user to toggle between themes:
 
 ```html
-<button id="theme-toggle">Basculer le theme</button>
+<button id="theme-toggle">Toggle theme</button>
 
 <script>
 const btn = document.getElementById('theme-toggle');
@@ -72,12 +72,12 @@ The full list is available in [mu.variables.md](mu.variables.md).
 To override the colors of a theme, target the corresponding selector:
 
 ```css
-/* Surcharge du fond en mode sombre */
+/* Override the background in dark mode */
 [data-theme="dark"] {
     --mu-background-color: #1a1a2e;
 }
 
-/* Surcharge en mode clair */
+/* Override in light mode */
 :root:not([data-theme="dark"]) {
     --mu-primary: #e63946;
 }

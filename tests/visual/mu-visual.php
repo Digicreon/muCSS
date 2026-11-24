@@ -8,11 +8,13 @@
  *
  * Usage:
  *   php mu-visual.php capture <set> [--widths=390,768,1280,1536] [--modes=light,dark]
- *                                   [--pages=button,card] [--jobs=8] [--chrome=/path/to/chrome]
+ *                                   [--pages=button,card] [--jobs=8] [--chrome=/path/to/chrome] [--force]
  *   php mu-visual.php compare <reference-set> <set> [--threshold=0]
  *   php mu-visual.php list
+ *   php mu-visual.php help
  *
  * Captures are stored in tests/visual/shots/<set>/<page>.<mode>.<width>.png (git-ignored).
+ * An existing set is never modified without --force (which replaces the requested captures only).
  * A comparison writes tests/visual/shots/<reference-set>--<set>/index.html, showing each
  * differing capture next to its reference, with a difference image.
  * The comparison exits with status 1 when at least one capture differs.
@@ -21,13 +23,20 @@
  * directory. A small snippet injected in each page forces the colour scheme with data-theme on <html>
  * and disables animations, transitions and the text caret; animations embedded in SVG data URLs
  * (such as the aria-busy spinner) are removed from the copied stylesheets.
- * Each capture is full height: the page is first loaded at 900 px high to measure its height.
+ * Each capture is full height: the page is first loaded at 900 px high to measure its height. Headless Chrome
+ * never lays out --dump-dom in a window narrower than 500 px (screenshots are not affected), so narrower
+ * pages are measured inside an iframe of the requested width.
  */
 
 const DEFAULT_WIDTHS = [390, 768, 1280, 1536];
 const DEFAULT_MODES  = ['light', 'dark'];
 const MEASURE_HEIGHT = 900;
+const MIN_WINDOW     = 500;
 const TIME_BUDGET    = 3000;
+const OPTIONS        = [
+	'capture' => ['widths=', 'modes=', 'pages=', 'jobs=', 'chrome=', 'force'],
+	'compare' => ['threshold='],
+];
 
 $root        = dirname(__DIR__, 2);
 $examplesDir = "$root/examples";
@@ -39,10 +48,20 @@ $command = array_shift($args) ?? 'help';
 $options = [];
 $params  = [];
 foreach ($args as $arg) {
-	if (preg_match('/^--([a-z-]+)(?:=(.*))?$/', $arg, $m)) {
-		$options[$m[1]] = $m[2] ?? true;
-	} else {
+	if (!str_starts_with($arg, '-')) {
 		$params[] = $arg;
+		continue;
+	}
+	// the options end with '=' if they need a value
+	if (!preg_match('/^--([a-z-]+)(=.+)?$/', $arg, $m) ||
+	    !in_array($m[1] . (isset($m[2]) ? '=' : ''), OPTIONS[$command] ?? [], true)) {
+		usage("invalid option: $arg");
+	}
+	$options[$m[1]] = isset($m[2]) ? substr($m[2], 1) : true;
+}
+foreach (['jobs' => 1, 'threshold' => 0] as $name => $min) {
+	if (isset($options[$name]) && (!ctype_digit($options[$name]) || (int)$options[$name] < $min)) {
+		usage("invalid value for --$name: {$options[$name]}");
 	}
 }
 
@@ -58,9 +77,15 @@ switch ($command) {
 		}
 		exit(compare($params[0], $params[1], $options));
 	case 'list':
+		if ($params) {
+			usage("list: unexpected argument: {$params[0]}");
+		}
 		exit(listSets());
-	default:
+	case 'help':
+	case '--help':
 		usage();
+	default:
+		usage("unknown command: $command");
 }
 
 /* ---------- Commands ---------- */
@@ -76,13 +101,22 @@ function capture(string $set, array $options) : int {
 
 	checkSetName($set);
 	$chrome = $options['chrome'] ?? findChrome();
-	$widths = isset($options['widths']) ? array_map('intval', explode(',', $options['widths'])) : DEFAULT_WIDTHS;
-	$modes  = isset($options['modes']) ? explode(',', $options['modes']) : DEFAULT_MODES;
-	$jobs   = max(1, (int)($options['jobs'] ?? 8));
+	$widths = array_unique(isset($options['widths']) ? explode(',', $options['widths']) : DEFAULT_WIDTHS);
+	$modes  = array_unique(isset($options['modes']) ? explode(',', $options['modes']) : DEFAULT_MODES);
+	$jobs   = (int)($options['jobs'] ?? 8);
 	$pages  = array_map(fn($f) => basename($f, '.html'), glob("$examplesDir/*.html"));
 	if (isset($options['pages'])) {
 		$wanted = explode(',', $options['pages']);
-		$pages  = array_values(array_intersect($pages, $wanted));
+		if ($unknown = array_diff($wanted, $pages)) {
+			fail("unknown page: " . implode(', ', $unknown));
+		}
+		$pages = array_values(array_intersect($pages, $wanted));
+	}
+	foreach ($widths as $i => $width) {
+		if (!preg_match('/^[1-9]\d{1,3}$/', (string)$width)) {
+			fail("invalid width: $width");
+		}
+		$widths[$i] = (int)$width;
 	}
 	foreach ($modes as $mode) {
 		if (!in_array($mode, DEFAULT_MODES, true)) {
@@ -91,6 +125,10 @@ function capture(string $set, array $options) : int {
 	}
 	if (!$pages) {
 		fail("no page to capture");
+	}
+	$outDir = "$shotsDir/$set";
+	if (glob("$outDir/*.png") && !isset($options['force'])) {
+		fail("the set already exists: $set (use another name, or --force to replace its captures)");
 	}
 
 	// temporary copy of dist/, without the animations embedded in SVG data URLs
@@ -111,7 +149,6 @@ function capture(string $set, array $options) : int {
 		}
 	}
 
-	$outDir = "$shotsDir/$set";
 	if (!is_dir($outDir)) {
 		mkdir($outDir, 0777, true);
 	}
@@ -137,7 +174,12 @@ function capture(string $set, array $options) : int {
 	// pass 1: measure page heights
 	$cmds = [];
 	foreach ($shots as $i => $shot) {
-		$cmds[$i] = chromeCommand($chrome, "$tmp/profile-m$i", $shot['width'], MEASURE_HEIGHT, '--dump-dom', $shot['url']) .
+		$url = $shot['url'];
+		if ($shot['width'] < MIN_WINDOW) {
+			file_put_contents("$tmp/frame-$i.html", measureFrame($url, $shot['width']));
+			$url = "file://$tmp/frame-$i.html";
+		}
+		$cmds[$i] = chromeCommand($chrome, "$tmp/profile-m$i", max(MIN_WINDOW, $shot['width']), MEASURE_HEIGHT, '--dump-dom', $url) .
 		            ' > ' . escapeshellarg("$tmp/dom-$i.html") . ' 2>/dev/null';
 	}
 	runPool($cmds, $jobs, 'Measuring');
@@ -154,13 +196,13 @@ function capture(string $set, array $options) : int {
 	// pass 2: full-height screenshots
 	$cmds = [];
 	foreach ($shots as $i => $shot) {
-		@unlink($shot['file']);
-		$cmds[$i] = chromeCommand($chrome, "$tmp/profile-c$i", $shot['width'], $shot['height'], '--screenshot=' . $shot['file'], $shot['url']) .
+		$cmds[$i] = chromeCommand($chrome, "$tmp/profile-c$i", $shot['width'], $shot['height'], "--screenshot=$tmp/shot-$i.png", $shot['url']) .
 		            ' > /dev/null 2>&1';
 	}
 	runPool($cmds, $jobs, 'Capturing');
 
-	$missing = array_filter($shots, fn($s) => !is_file($s['file']));
+	// an existing capture is only replaced by a successful one
+	$missing = array_filter($shots, fn($s, $i) => !is_file("$tmp/shot-$i.png") || !copy("$tmp/shot-$i.png", $s['file']), ARRAY_FILTER_USE_BOTH);
 	removeTree($tmp);
 	foreach ($missing as $shot) {
 		fprintf(STDERR, "Error: capture failed: %s\n", basename($shot['file']));
@@ -268,6 +310,19 @@ function snippet(string $mode) : string {
 	return "\n<script>document.documentElement.setAttribute('data-theme', '$mode');" .
 	       "addEventListener('load', function () { document.title = 'MUH:' + Math.ceil(Math.max(document.documentElement.scrollHeight, document.body.scrollHeight)); });</script>" .
 	       "<style>*, *::before, *::after { animation: none !important; transition: none !important; caret-color: transparent !important; }</style>\n";
+}
+
+/**
+ * Returns a page that loads another page in an iframe of the given width, and reports its height.
+ * @param	string	$url	URL of the measured page.
+ * @param	int	$width	Width of the iframe.
+ * @return	string	HTML page.
+ */
+function measureFrame(string $url, int $width) : string {
+	return '<!doctype html><html><head></head><body style="margin:0">' .
+	       '<iframe id="f" src="' . htmlspecialchars($url) . '" style="width:' . $width . 'px;height:' . MEASURE_HEIGHT . 'px;border:0"></iframe>' .
+	       "<script>addEventListener('load', function () { var d = document.getElementById('f').contentDocument;" .
+	       " document.title = 'MUH:' + Math.ceil(Math.max(d.documentElement.scrollHeight, d.body.scrollHeight)); });</script></body></html>";
 }
 
 /**

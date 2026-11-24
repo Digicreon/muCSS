@@ -9,7 +9,7 @@
 A standard link uses the `<a>` tag without any additional class:
 
 ```html
-<a href="#">Lien standard</a>
+<a href="#">Standard link</a>
 ```
 
 The link is displayed in `--mu-primary` color with a semi-transparent underline. On hover, the color darkens and the underline intensifies.
@@ -21,9 +21,9 @@ The link is displayed in `--mu-primary` color with a semi-transparent underline.
 Three variants are available via CSS classes:
 
 ```html
-<a href="#">Lien primaire (defaut)</a>
-<a href="#" class="secondary">Lien secondaire</a>
-<a href="#" class="contrast">Lien contraste</a>
+<a href="#">Primary link (default)</a>
+<a href="#" class="secondary">Secondary link</a>
+<a href="#" class="contrast">Contrast link</a>
 ```
 
 | Class | Color | Hover |
@@ -68,8 +68,8 @@ Use `aria-current` to indicate the active page in a navigation:
 ```html
 <nav>
     <ul>
-        <li><a href="/" aria-current="page">Accueil</a></li>
-        <li><a href="/about">A propos</a></li>
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/about">About</a></li>
     </ul>
 </nav>
 ```

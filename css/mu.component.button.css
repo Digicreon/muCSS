@@ -1,7 +1,170 @@
 /*
- * µCSS Component: Button
+ * µCSS: Buttons (native buttons and .btn classes)
+ *
+ * Portions derived from Pico CSS v2.1.1 (https://picocss.com)
+ * Copyright 2019-2025 Pico CSS - Licensed under MIT
  */
 
+/**
+ * Button
+ */
+button {
+	margin: 0;
+	overflow: visible;
+	font-family: inherit;
+	text-transform: none;
+}
+
+button,
+[type=submit],
+[type=reset],
+[type=button] {
+	-webkit-appearance: button;
+}
+
+button,
+[type=submit],
+[type=reset],
+[type=button],
+[type=file]::file-selector-button,
+[role=button] {
+	--mu-background-color: var(--mu-primary-background);
+	--mu-border-color: var(--mu-primary-border);
+	--mu-color: var(--mu-primary-inverse);
+	--mu-box-shadow: var(--mu-button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+	padding: var(--mu-form-element-spacing-vertical) var(--mu-form-element-spacing-horizontal);
+	border: var(--mu-border-width) solid var(--mu-border-color);
+	border-radius: var(--mu-border-radius);
+	outline: none;
+	background-color: var(--mu-background-color);
+	box-shadow: var(--mu-box-shadow);
+	color: var(--mu-color);
+	font-weight: var(--mu-font-weight);
+	font-size: 1rem;
+	line-height: var(--mu-line-height);
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	transition: background-color var(--mu-transition), border-color var(--mu-transition), color var(--mu-transition), box-shadow var(--mu-transition);
+}
+button:is([aria-current]:not([aria-current=false])), button:is(:hover, :active, :focus),
+[type=submit]:is([aria-current]:not([aria-current=false])),
+[type=submit]:is(:hover, :active, :focus),
+[type=reset]:is([aria-current]:not([aria-current=false])),
+[type=reset]:is(:hover, :active, :focus),
+[type=button]:is([aria-current]:not([aria-current=false])),
+[type=button]:is(:hover, :active, :focus),
+[type=file]::file-selector-button:is([aria-current]:not([aria-current=false])),
+[type=file]::file-selector-button:is(:hover, :active, :focus),
+[role=button]:is([aria-current]:not([aria-current=false])),
+[role=button]:is(:hover, :active, :focus) {
+	--mu-background-color: var(--mu-primary-hover-background);
+	--mu-border-color: var(--mu-primary-hover-border);
+	--mu-box-shadow: var(--mu-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+	--mu-color: var(--mu-primary-inverse);
+}
+button:focus, button:is([aria-current]:not([aria-current=false])):focus,
+[type=submit]:focus,
+[type=submit]:is([aria-current]:not([aria-current=false])):focus,
+[type=reset]:focus,
+[type=reset]:is([aria-current]:not([aria-current=false])):focus,
+[type=button]:focus,
+[type=button]:is([aria-current]:not([aria-current=false])):focus,
+[type=file]::file-selector-button:focus,
+[type=file]::file-selector-button:is([aria-current]:not([aria-current=false])):focus,
+[role=button]:focus,
+[role=button]:is([aria-current]:not([aria-current=false])):focus {
+	--mu-box-shadow: var(--mu-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--mu-outline-width) var(--mu-primary-focus);
+}
+
+[type=submit],
+[type=reset],
+[type=button] {
+	margin-bottom: var(--mu-spacing);
+}
+
+:is(button, [type=submit], [type=button], [role=button]).secondary,
+[type=reset],
+[type=file]::file-selector-button {
+	--mu-background-color: var(--mu-secondary-background);
+	--mu-border-color: var(--mu-secondary-border);
+	--mu-color: var(--mu-secondary-inverse);
+	cursor: pointer;
+}
+:is(button, [type=submit], [type=button], [role=button]).secondary:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[type=reset]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[type=file]::file-selector-button:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+	--mu-background-color: var(--mu-secondary-hover-background);
+	--mu-border-color: var(--mu-secondary-hover-border);
+	--mu-color: var(--mu-secondary-inverse);
+}
+:is(button, [type=submit], [type=button], [role=button]).secondary:focus, :is(button, [type=submit], [type=button], [role=button]).secondary:is([aria-current]:not([aria-current=false])):focus,
+[type=reset]:focus,
+[type=reset]:is([aria-current]:not([aria-current=false])):focus,
+[type=file]::file-selector-button:focus,
+[type=file]::file-selector-button:is([aria-current]:not([aria-current=false])):focus {
+	--mu-box-shadow: var(--mu-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--mu-outline-width) var(--mu-secondary-focus);
+}
+
+:is(button, [type=submit], [type=button], [role=button]).contrast {
+	--mu-background-color: var(--mu-contrast-background);
+	--mu-border-color: var(--mu-contrast-border);
+	--mu-color: var(--mu-contrast-inverse);
+}
+:is(button, [type=submit], [type=button], [role=button]).contrast:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+	--mu-background-color: var(--mu-contrast-hover-background);
+	--mu-border-color: var(--mu-contrast-hover-border);
+	--mu-color: var(--mu-contrast-inverse);
+}
+:is(button, [type=submit], [type=button], [role=button]).contrast:focus, :is(button, [type=submit], [type=button], [role=button]).contrast:is([aria-current]:not([aria-current=false])):focus {
+	--mu-box-shadow: var(--mu-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--mu-outline-width) var(--mu-contrast-focus);
+}
+
+:is(button, [type=submit], [type=button], [role=button]).outline,
+[type=reset].outline {
+	--mu-background-color: transparent;
+	--mu-color: var(--mu-primary);
+	--mu-border-color: var(--mu-primary);
+}
+:is(button, [type=submit], [type=button], [role=button]).outline:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[type=reset].outline:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+	--mu-background-color: transparent;
+	--mu-color: var(--mu-primary-hover);
+	--mu-border-color: var(--mu-primary-hover);
+}
+
+:is(button, [type=submit], [type=button], [role=button]).outline.secondary,
+[type=reset].outline {
+	--mu-color: var(--mu-secondary);
+	--mu-border-color: var(--mu-secondary);
+}
+:is(button, [type=submit], [type=button], [role=button]).outline.secondary:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[type=reset].outline:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+	--mu-color: var(--mu-secondary-hover);
+	--mu-border-color: var(--mu-secondary-hover);
+}
+
+:is(button, [type=submit], [type=button], [role=button]).outline.contrast {
+	--mu-color: var(--mu-contrast);
+	--mu-border-color: var(--mu-contrast);
+}
+:is(button, [type=submit], [type=button], [role=button]).outline.contrast:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+	--mu-color: var(--mu-contrast-hover);
+	--mu-border-color: var(--mu-contrast-hover);
+}
+
+:where(button, [type=submit], [type=reset], [type=button], [role=button])[disabled],
+:where(fieldset[disabled]) :is(button, [type=submit], [type=button], [type=reset], [role=button]) {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+/**
+ * Button classes (.btn, .btn-*)
+ */
 .btn {
 	display: inline-flex;
 	align-items: center;
@@ -33,6 +196,7 @@
 	padding: 0.75rem 1.25rem;
 	font-size: 1.125rem;
 }
+
 
 /* Roles — filled */
 .btn-primary {
@@ -193,24 +357,6 @@
 }
 .btn-link:hover {
 	color: var(--mu-primary-hover);
-}
-
-/*
- * Grouped outline buttons: fix double border at junction.
- * PicoCSS uses margin-left: calc(border-width * -1) to overlap adjacent borders,
- * but user-agent button margins can prevent exact overlap.
- * Fix: reset margins on all group children, and remove the inner left border
- * on non-first outline buttons (both PicoCSS .outline and µCSS .btn-outline).
- */
-[role=group] > :is(button, [type=submit], [type=button], [type=reset], [role=button]) {
-	margin: 0;
-}
-[role=group] > :not(:first-child):is(.outline, .btn-outline) {
-	border-left-width: 0;
-}
-/* Filled buttons in groups: add subtle separator (border-color matches background by default) */
-[role=group] > :not(:first-child):is(button, [type=submit], [type=button], [type=reset], [role=button], .btn):not(.outline):not(.btn-outline):not(.btn-link) {
-	border-left-color: rgba(0, 0, 0, 0.2);
 }
 
 /* Disabled */

@@ -1,0 +1,61 @@
+/*
+ * µCSS: Loading indicator ([aria-busy=true])
+ *
+ * Portions derived from Pico CSS v2.1.1 (https://picocss.com)
+ * Copyright 2019-2025 Pico CSS - Licensed under MIT
+ */
+
+/**
+ * Loading ([aria-busy=true])
+ */
+[aria-busy=true]:not(input, select, textarea, html, form) {
+	white-space: nowrap;
+}
+[aria-busy=true]:not(input, select, textarea, html, form)::before {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-image: var(--mu-icon-loading);
+	background-size: 1em auto;
+	background-repeat: no-repeat;
+	content: "";
+	vertical-align: -0.125em;
+}
+[aria-busy=true]:not(input, select, textarea, html, form):not(:empty)::before {
+	margin-inline-end: calc(var(--mu-spacing) * 0.5);
+}
+[aria-busy=true]:not(input, select, textarea, html, form):empty {
+	text-align: center;
+}
+
+button[aria-busy=true],
+[type=submit][aria-busy=true],
+[type=button][aria-busy=true],
+[type=reset][aria-busy=true],
+[role=button][aria-busy=true],
+a[aria-busy=true] {
+	pointer-events: none;
+}
+
+[aria-busy=true]:not(input, select, textarea):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
+	filter: brightness(0) invert(1);
+}
+
+/* Busy element with a tooltip: the indicator takes the place of the tooltip (both use ::before) */
+[data-tooltip][aria-busy=true]:not(form)::before {
+	display: inline-block !important;
+	position: static !important;
+	width: 1em !important;
+	padding: 0 !important;
+	overflow: visible !important;
+	transform: none !important;
+	animation: none !important;
+	border-radius: 0 !important;
+	background: transparent var(--mu-icon-loading) 0 0 / 1em auto no-repeat !important;
+	content: "" !important;
+	font-size: inherit !important;
+	opacity: 1 !important;
+}
+[data-tooltip][aria-busy=true]:not(form)::after {
+	display: none !important;
+}

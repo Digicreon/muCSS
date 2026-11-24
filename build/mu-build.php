@@ -9,17 +9,65 @@
  *
  * Reads an array of themes from mu.theme.json and generates one CSS file per theme in dist/.
  *
- * Usage: php mu-build.php [--dir=.] [--css-dir=../css] [--dist-dir=../dist] [--manifest=mu.manifest.json]
- *                         [--output=mu.css] [--no-minify] [--list]
+ * Usage: php mu-build.php [options]
+ *   --dir=DIR           directory of the manifest, themes and palette (default: directory of this script)
+ *   --css-dir=DIR       directory of the CSS sources (default: ../css)
+ *   --dist-dir=DIR      output directory (default: ../dist)
+ *   --manifest=FILE     ordered list of CSS files (default: mu.manifest.json)
+ *   --theme=FILE        theme definitions (default: mu.theme.json)
+ *   --pico-colors=FILE  color palette (default: pico.colors.css; until the new palette exists)
+ *   --output=FILE       build only the first theme, into FILE
+ *   --no-minify         keep the output readable (it is minified by default)
+ *   --minify            minify the output (default)
+ *   --no-banner         no µCSS banner (the license notice of the Pico CSS code is always kept)
+ *   --list              list the themes and the CSS files, without building
+ *   --help              show this help
  */
 
-$opts = getopt('', ['dir:', 'css-dir:', 'dist-dir:', 'manifest:', 'output:', 'pico-colors:', 'theme:', 'minify', 'no-minify', 'no-banner', 'list', 'help']);
+const OPTIONS = ['dir:', 'css-dir:', 'dist-dir:', 'manifest:', 'output:', 'pico-colors:', 'theme:', 'minify', 'no-minify', 'no-banner', 'list', 'help'];
 
+/**
+ * Prints an error and exits.
+ * @param	string	$message	Error message.
+ */
+function fail(string $message) : never {
+	fprintf(STDERR, "Error: %s\n", $message);
+	exit(1);
+}
+
+// Read the options (getopt() ignores unknown options and missing values)
+$opts = [];
+for ($i = 1; $i < $argc; $i++) {
+	if (!preg_match('/^--([a-z-]+)(?:=(.*))?$/s', $argv[$i], $m)) {
+		fail("unexpected argument: {$argv[$i]} (see --help)");
+	}
+	$name  = $m[1];
+	$value = $m[2] ?? null;
+	if (isset($opts[$name])) {
+		fail("option given several times: --$name");
+	}
+	if (in_array("$name:", OPTIONS, true)) {
+		// the value may be the next argument
+		if ($value === null && !str_starts_with($argv[$i + 1] ?? '--', '--')) {
+			$value = $argv[++$i];
+		}
+		if ($value === null || $value === '') {
+			fail("missing value for option --$name");
+		}
+		$opts[$name] = $value;
+	} elseif (!in_array($name, OPTIONS, true)) {
+		fail("unknown option: --$name (see --help)");
+	} elseif ($value !== null) {
+		fail("option --$name takes no value");
+	} else {
+		$opts[$name] = true;
+	}
+}
 if (isset($opts['help'])) {
 	$lines = file(__FILE__);
 	foreach ($lines as $line) {
-		if (str_starts_with($line, ' *')) echo substr($line, 3);
-		elseif (str_starts_with($line, ' */')) break;
+		if (str_starts_with($line, ' */')) break;
+		if (str_starts_with($line, ' *')) echo rtrim(substr($line, 3), "\n"), "\n";
 	}
 	exit(0);
 }
@@ -35,6 +83,9 @@ $minify     = !isset($opts['no-minify']);
 $noBanner   = isset($opts['no-banner']);
 $listOnly   = isset($opts['list']);
 
+// License notice of the Pico CSS code, kept in every generated file ("/*!" survives minifiers)
+const LICENSE_NOTICE = "/*! Portions based on Pico CSS, Copyright 2019-2025 Pico CSS, MIT License */\n";
+
 // Read version from package.json
 $packageFile = dirname(__DIR__) . '/package.json';
 $version = 'dev';
@@ -47,13 +98,11 @@ if (is_readable($packageFile)) {
 
 // --- Read themes ---
 if (!is_readable($themeFile)) {
-	fprintf(STDERR, "Error: cannot read theme file: %s\n", $themeFile);
-	exit(1);
+	fail("cannot read theme file: $themeFile");
 }
 $themes = json_decode(file_get_contents($themeFile), true);
 if (!is_array($themes) || empty($themes)) {
-	fprintf(STDERR, "Error: invalid or empty themes in %s\n", $themeFile);
-	exit(1);
+	fail("invalid or empty themes in $themeFile");
 }
 // Support legacy single-object format
 if (isset($themes['primary'])) {
@@ -62,13 +111,24 @@ if (isset($themes['primary'])) {
 
 // --- Collect base files, in the order of the manifest ---
 if (!is_readable($manifest)) {
-	fprintf(STDERR, "Error: cannot read manifest: %s\n", $manifest);
-	exit(1);
+	fail("cannot read manifest: $manifest");
 }
 $manifestFiles = json_decode(file_get_contents($manifest), true);
-if (!is_array($manifestFiles) || !in_array('@colors', $manifestFiles, true)) {
+if (!is_array($manifestFiles) || !array_is_list($manifestFiles) || !in_array('@colors', $manifestFiles, true)) {
 	fprintf(STDERR, "Error: invalid manifest (a list of files including \"@colors\" is expected): %s\n", $manifest);
 	exit(1);
+}
+foreach ($manifestFiles as $entry) {
+	if (!is_string($entry) || $entry === '') {
+		fail("invalid entry in the manifest: " . json_encode($entry));
+	}
+}
+if ($duplicates = array_diff_assoc($manifestFiles, array_unique($manifestFiles))) {
+	fail("listed several times in the manifest: " . implode(', ', $duplicates));
+}
+// A source file missing from the manifest would be silently left out of the build
+if ($unlisted = array_diff(array_map('basename', glob($cssDir . '/mu.*.css')), $manifestFiles)) {
+	fail("CSS files missing from the manifest: " . implode(', ', $unlisted));
 }
 $baseFiles = [];
 foreach ($manifestFiles as $entry) {
@@ -77,11 +137,36 @@ foreach ($manifestFiles as $entry) {
 		continue;
 	}
 	$path = $cssDir . '/' . $entry;
-	if (!is_readable($path)) {
-		fprintf(STDERR, "Error: file listed in the manifest not found: %s\n", $path);
-		exit(1);
+	if (!is_file($path) || !is_readable($path)) {
+		fail("file listed in the manifest not found: $path");
 	}
 	$baseFiles[] = ['label' => $entry, 'path' => $path];
+}
+
+/**
+ * Minifies CSS text: removes the comments and the useless spaces. Strings and url() contents are left untouched.
+ * @param	string	$css	CSS text.
+ * @return	string	Minified text.
+ */
+function minify(string $css) : string {
+	$kept = [];
+	$css  = preg_replace_callback('~/\*.*?\*/|"(?:[^"\\\\]|\\\\.)*"|\'(?:[^\'\\\\]|\\\\.)*\'|\burl\(\s*[^"\'\s][^)]*\)~s', function ($m) use (&$kept) {
+		if (str_starts_with($m[0], '/*')) {
+			return "\x03";
+		}
+		$kept[] = $m[0];
+		return "\x01" . (count($kept) - 1) . "\x02";
+	}, $css);
+	// a comment next to a space or a separator disappears, otherwise it separates two values
+	$css = preg_replace('/^\x03+|(?<=[\s{}();:,])\x03+|\x03+(?=[\s{}();:,\x03]|$)/', '', $css);
+	$css = preg_replace('/\x03+/', '/**/', $css);
+	$css = preg_replace('/\s+/', ' ', $css);
+	// not ':', which starts a pseudo-class in selectors, where the space before it is a descendant combinator
+	$css = preg_replace('/\s*([{};,])\s*/', '$1', $css);
+	// ':' only inside declaration blocks (the innermost ones)
+	$css = preg_replace_callback('/\{([^{}]*)\}/', fn($m) => '{' . preg_replace('/\s*:\s*/', ':', $m[1]) . '}', $css);
+	$css = str_replace(';}', '}', $css);
+	return preg_replace_callback('/\x01(\d+)\x02/', fn($m) => $kept[(int)$m[1]], $css);
 }
 
 function formatSize(int $b): string {
@@ -112,8 +197,7 @@ if ($listOnly) {
 // --- Build ---
 $genScript = __DIR__ . '/mu-color-gen.php';
 if (!is_file($genScript)) {
-	fprintf(STDERR, "Error: mu-color-gen.php not found\n");
-	exit(1);
+	fail("mu-color-gen.php not found");
 }
 
 // If --output is set, only build the first theme to that path (backward compat)
@@ -123,9 +207,8 @@ if ($outFile !== null) {
 
 // Ensure dist directory exists
 if ($outFile === null && !is_dir($distDir)) {
-	if (!mkdir($distDir, 0755, true)) {
-		fprintf(STDERR, "Error: cannot create dist directory: %s\n", $distDir);
-		exit(1);
+	if (!@mkdir($distDir, 0755, true)) {
+		fail("cannot create dist directory: $distDir");
 	}
 }
 
@@ -159,9 +242,8 @@ foreach ($themes as $i => $theme) {
 	fprintf(STDERR, "[%d/%d] Generating colors for '%s'...\n", $i + 1, count($themes), $primary);
 	passthru($cmd, $ret);
 	if ($ret !== 0) {
-		fprintf(STDERR, "Error: color generation failed for theme '%s'\n", $primary);
 		@unlink($tmpFile);
-		exit(1);
+		fail("color generation failed for theme '$primary'");
 	}
 
 	$colorsContent = file_get_contents($tmpFile);
@@ -172,6 +254,9 @@ foreach ($themes as $i => $theme) {
 	if (!$noBanner) {
 		$parts[] = "/*!\n * µCSS v{$version}, theme: {$primary}\n * https://mucss.org - MIT License\n * Portions based on Pico CSS v2.1.1 (https://picocss.com), Copyright 2019-2025 Pico CSS, MIT License\n * Generated: " . date('Y-m-d H:i:s') . "\n */\n";
 	}
+	if ($noBanner) {
+		$parts[] = LICENSE_NOTICE;
+	}
 	foreach ($baseContents as $bc) {
 		$parts[] = "/* === {$bc['label']} === */\n";
 		$parts[] = trim($bc['content'] ?? $colorsContent) . "\n\n";
@@ -180,18 +265,8 @@ foreach ($themes as $i => $theme) {
 	$output = implode('', $parts);
 
 	if ($minify) {
-		// Strip all comments (including /*! */ banners)
-		$output = preg_replace('/\/\*[^*]*\*+(?:[^\/][^*]*\*+)*\//', '', $output);
-		$output = preg_replace('/\s+/', ' ', $output);
-		// Strip spaces around structural tokens (but not ':' — it appears in selectors
-		// as pseudo-class prefix where a preceding space is a descendant combinator)
-		$output = preg_replace('/\s*([{};,])\s*/', '$1', $output);
-		// Strip spaces around ':' only inside declaration blocks (property: value)
-		$output = preg_replace_callback('/\{([^}]*)\}/', function ($m) {
-			return '{' . preg_replace('/\s*:\s*/', ':', $m[1]) . '}';
-		}, $output);
-		$output = str_replace(';}', '}', $output);
-		$banner = $noBanner ? '' : "/* µCSS (muCSS) - mucss.org - MIT License - portions based on Pico CSS, Copyright 2019-2025 Pico CSS, MIT License */\n";
+		$output = minify($output);
+		$banner = $noBanner ? LICENSE_NOTICE : "/*! µCSS (muCSS) - mucss.org - MIT License - portions based on Pico CSS, Copyright 2019-2025 Pico CSS, MIT License */\n";
 		$output = $banner . trim($output) . "\n";
 	}
 
@@ -199,26 +274,23 @@ foreach ($themes as $i => $theme) {
 	if ($outFile !== null) {
 		// Backward compat: single file output
 		$dest = $outFile;
-		if (file_put_contents($dest, $output) === false) {
-			fprintf(STDERR, "Error: cannot write %s\n", $dest);
-			exit(1);
+		if (@file_put_contents($dest, $output) === false) {
+			fail("cannot write $dest");
 		}
 		fprintf(STDERR, "  → %s (%s)%s\n", $dest, formatSize(strlen($output)), $minify ? ' [minified]' : '');
 	} else {
 		// Multi-theme output to dist/
 		$namedDest = $distDir . "/mu.{$primary}.css";
-		if (file_put_contents($namedDest, $output) === false) {
-			fprintf(STDERR, "Error: cannot write %s\n", $namedDest);
-			exit(1);
+		if (@file_put_contents($namedDest, $output) === false) {
+			fail("cannot write $namedDest");
 		}
 		fprintf(STDERR, "  → %s (%s)%s\n", $namedDest, formatSize(strlen($output)), $minify ? ' [minified]' : '');
 
 		// Theme index 0 also generates mu.css (default)
 		if ($i === 0) {
 			$defaultDest = $distDir . '/mu.css';
-			if (file_put_contents($defaultDest, $output) === false) {
-				fprintf(STDERR, "Error: cannot write %s\n", $defaultDest);
-				exit(1);
+			if (@file_put_contents($defaultDest, $output) === false) {
+				fail("cannot write $defaultDest");
 			}
 			fprintf(STDERR, "  → %s (default copy)%s\n", $defaultDest, $minify ? ' [minified]' : '');
 		}

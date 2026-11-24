@@ -1,6 +1,6 @@
 # µGrid
 
-**µGrid** is a lightweight flexbox-based 12-column responsive grid system, part of the [µCSS](.) framework. It provides a Bootstrap-compatible grid fallback for CSS frameworks that lack a built-in responsive grid (such as PicoCSS v2).
+**µGrid** is a lightweight flexbox-based 12-column responsive grid system, part of the [µCSS](.) framework. Its class names follow the Bootstrap conventions.
 
 **Weight:** ~4 KB uncompressed, ~1 KB gzipped.
 
@@ -35,7 +35,7 @@ Containers center and constrain content horizontally.
 <div class="container-fluid">...</div>
 ```
 
-Both classes are provided by PicoCSS. `.container` is fluid below 576px, then constrained to a maximum width at each breakpoint. See [µContainer](mu.container.md) for details.
+`.container` is fluid below 576px, then constrained to a maximum width at each breakpoint. See [µContainer](mu.container.md) for details.
 
 ---
 
